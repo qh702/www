@@ -1,0 +1,1496 @@
+Module: console.signal_support.profiles
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 (0)
+              4 LOAD_CONST               1 (None)
+              6 IMPORT_NAME              0 (time)
+              8 STORE_NAME               0 (time)
+
+  2          10 LOAD_CONST               0 (0)
+             12 LOAD_CONST               1 (None)
+             14 IMPORT_NAME              1 (re)
+             16 STORE_NAME               1 (re)
+
+  3          18 LOAD_CONST               0 (0)
+             20 LOAD_CONST               2 (('Path',))
+             22 IMPORT_NAME              2 (pathlib)
+             24 IMPORT_FROM              3 (Path)
+             26 STORE_NAME               3 (Path)
+             28 POP_TOP
+
+  4          30 LOAD_CONST               3 (1)
+             32 LOAD_CONST               4 (('PACKAGE',))
+             34 IMPORT_NAME              4 (device)
+             36 IMPORT_FROM              5 (PACKAGE)
+             38 STORE_NAME               5 (PACKAGE)
+             40 POP_TOP
+
+  5          42 LOAD_CONST               3 (1)
+             44 LOAD_CONST               5 (('AndroidDriver',))
+             46 IMPORT_NAME              6 (registration)
+             48 IMPORT_FROM              7 (AndroidDriver)
+             50 STORE_NAME               7 (AndroidDriver)
+             52 POP_TOP
+
+  7          54 LOAD_CONST               6 (<code object label_button at 0x000001C217758A50, file "console\signal_support\profiles.py", line 7>)
+             56 MAKE_FUNCTION            0
+             58 STORE_NAME               8 (label_button)
+
+ 19          60 PUSH_NULL
+             62 LOAD_BUILD_CLASS
+             64 LOAD_CONST               7 (<code object Profile at 0x000001C217BA5930, file "console\signal_support\profiles.py", line 19>)
+             66 MAKE_FUNCTION            0
+             68 LOAD_CONST               8 ('Profile')
+             70 CALL                     2
+             78 STORE_NAME               9 (Profile)
+             80 RETURN_CONST             1 (None)
+
+Disassembly of <code object label_button at 0x000001C217758A50, file "console\signal_support\profiles.py", line 7>:
+  7           0 RESUME                   0
+
+  8           2 LOAD_FAST                0 (root)
+              4 LOAD_ATTR                1 (NULL|self + iter)
+             24 LOAD_CONST               1 ('node')
+             26 CALL                     1
+             34 GET_ITER
+             36 LOAD_FAST_AND_CLEAR      2 (parent)
+             38 LOAD_FAST_AND_CLEAR      3 (child)
+             40 SWAP                     3
+             42 BUILD_MAP                0
+             44 SWAP                     2
+        >>   46 FOR_ITER                12 (to 74)
+             50 STORE_FAST               2 (parent)
+             52 LOAD_FAST                2 (parent)
+             54 GET_ITER
+        >>   56 FOR_ITER                 5 (to 70)
+             60 STORE_FAST               3 (child)
+             62 LOAD_FAST                3 (child)
+             64 LOAD_FAST                2 (parent)
+             66 MAP_ADD                  3
+             68 JUMP_BACKWARD            7 (to 56)
+        >>   70 END_FOR
+             72 JUMP_BACKWARD           14 (to 46)
+        >>   74 END_FOR
+             76 STORE_FAST               4 (parents)
+             78 STORE_FAST               2 (parent)
+             80 STORE_FAST               3 (child)
+
+  9          82 LOAD_FAST                0 (root)
+             84 LOAD_ATTR                1 (NULL|self + iter)
+            104 LOAD_CONST               1 ('node')
+            106 CALL                     1
+            114 GET_ITER
+            116 LOAD_FAST_AND_CLEAR      5 (node)
+            118 SWAP                     2
+            120 BUILD_LIST               0
+            122 SWAP                     2
+        >>  124 FOR_ITER                24 (to 176)
+            128 STORE_FAST               5 (node)
+            130 LOAD_FAST                5 (node)
+            132 LOAD_ATTR                3 (NULL|self + get)
+            152 LOAD_CONST               2 ('text')
+            154 CALL                     1
+            162 LOAD_FAST                1 (labels)
+            164 CONTAINS_OP              0
+            166 POP_JUMP_IF_TRUE         1 (to 170)
+            168 JUMP_BACKWARD           23 (to 124)
+        >>  170 LOAD_FAST                5 (node)
+            172 LIST_APPEND              2
+            174 JUMP_BACKWARD           26 (to 124)
+        >>  176 END_FOR
+            178 STORE_FAST               6 (nodes)
+            180 STORE_FAST               5 (node)
+
+ 10         182 LOAD_GLOBAL              5 (NULL + len)
+            192 LOAD_FAST                6 (nodes)
+            194 CALL                     1
+            202 LOAD_CONST               3 (1)
+            204 COMPARE_OP              55 (!=)
+            208 POP_JUMP_IF_FALSE       11 (to 232)
+            210 LOAD_GLOBAL              7 (NULL + RuntimeError)
+            220 LOAD_CONST               4 ('无法唯一识别按钮标签')
+            222 CALL                     1
+            230 RAISE_VARARGS            1
+
+ 11     >>  232 LOAD_FAST                6 (nodes)
+            234 LOAD_CONST               5 (0)
+            236 BINARY_SUBSCR
+            240 STORE_FAST               5 (node)
+
+ 12         242 LOAD_FAST                5 (node)
+            244 LOAD_ATTR                3 (NULL|self + get)
+            264 LOAD_CONST               6 ('clickable')
+            266 CALL                     1
+            274 LOAD_CONST               7 ('true')
+            276 COMPARE_OP              40 (==)
+            280 POP_JUMP_IF_FALSE       41 (to 364)
+            282 LOAD_FAST                5 (node)
+            284 LOAD_ATTR                3 (NULL|self + get)
+            304 LOAD_CONST               8 ('enabled')
+            306 CALL                     1
+            314 LOAD_CONST               7 ('true')
+            316 COMPARE_OP              40 (==)
+            320 POP_JUMP_IF_FALSE       21 (to 364)
+            322 LOAD_GLOBAL              9 (NULL + dict)
+            332 LOAD_FAST                5 (node)
+            334 LOAD_ATTR               10 (attrib)
+            354 CALL                     1
+            362 RETURN_VALUE
+
+ 13     >>  364 LOAD_FAST                4 (parents)
+            366 LOAD_ATTR                3 (NULL|self + get)
+            386 LOAD_FAST                5 (node)
+            388 CALL                     1
+            396 STORE_FAST               2 (parent)
+
+ 14         398 LOAD_FAST                2 (parent)
+            400 POP_JUMP_IF_NONE        20 (to 442)
+            402 LOAD_FAST                2 (parent)
+            404 LOAD_ATTR                3 (NULL|self + get)
+            424 LOAD_CONST               8 ('enabled')
+            426 CALL                     1
+            434 LOAD_CONST               9 ('false')
+            436 COMPARE_OP              40 (==)
+            440 POP_JUMP_IF_FALSE       11 (to 464)
+        >>  442 LOAD_GLOBAL              7 (NULL + RuntimeError)
+            452 LOAD_CONST              10 ('目标按钮不可用')
+            454 CALL                     1
+            462 RAISE_VARARGS            1
+
+ 15     >>  464 LOAD_FAST                2 (parent)
+            466 LOAD_ATTR                1 (NULL|self + iter)
+            486 LOAD_CONST               1 ('node')
+            488 CALL                     1
+            496 GET_ITER
+            498 LOAD_FAST_AND_CLEAR      7 (n)
+            500 SWAP                     2
+            502 BUILD_LIST               0
+            504 SWAP                     2
+        >>  506 FOR_ITER                46 (to 602)
+            510 STORE_FAST               7 (n)
+            512 LOAD_FAST                7 (n)
+            514 LOAD_ATTR                3 (NULL|self + get)
+            534 LOAD_CONST               6 ('clickable')
+            536 CALL                     1
+            544 LOAD_CONST               7 ('true')
+            546 COMPARE_OP              40 (==)
+            550 POP_JUMP_IF_TRUE         1 (to 554)
+            552 JUMP_BACKWARD           24 (to 506)
+        >>  554 LOAD_FAST                7 (n)
+            556 LOAD_ATTR                3 (NULL|self + get)
+            576 LOAD_CONST               8 ('enabled')
+            578 CALL                     1
+            586 LOAD_CONST               7 ('true')
+            588 COMPARE_OP              40 (==)
+            592 POP_JUMP_IF_TRUE         1 (to 596)
+            594 JUMP_BACKWARD           45 (to 506)
+        >>  596 LOAD_FAST                7 (n)
+            598 LIST_APPEND              2
+            600 JUMP_BACKWARD           48 (to 506)
+        >>  602 END_FOR
+            604 STORE_FAST               8 (targets)
+            606 STORE_FAST               7 (n)
+
+ 16         608 LOAD_GLOBAL              5 (NULL + len)
+            618 LOAD_FAST                8 (targets)
+            620 CALL                     1
+            628 LOAD_CONST               3 (1)
+            630 COMPARE_OP              55 (!=)
+            634 POP_JUMP_IF_FALSE       11 (to 658)
+            636 LOAD_GLOBAL              7 (NULL + RuntimeError)
+            646 LOAD_CONST              11 ('按钮标签对应的可点击控件不唯一')
+            648 CALL                     1
+            656 RAISE_VARARGS            1
+
+ 17     >>  658 LOAD_GLOBAL              9 (NULL + dict)
+            668 LOAD_FAST                8 (targets)
+            670 LOAD_CONST               5 (0)
+            672 BINARY_SUBSCR
+            676 LOAD_ATTR               10 (attrib)
+            696 CALL                     1
+            704 RETURN_VALUE
+        >>  706 SWAP                     2
+            708 POP_TOP
+
+  8         710 SWAP                     3
+            712 STORE_FAST               3 (child)
+            714 STORE_FAST               2 (parent)
+            716 RERAISE                  0
+        >>  718 SWAP                     2
+            720 POP_TOP
+
+  9         722 SWAP                     2
+            724 STORE_FAST               5 (node)
+            726 RERAISE                  0
+        >>  728 SWAP                     2
+            730 POP_TOP
+
+ 15         732 SWAP                     2
+            734 STORE_FAST               7 (n)
+            736 RERAISE                  0
+ExceptionTable:
+  42 to 74 -> 706 [3]
+  120 to 166 -> 718 [2]
+  170 to 176 -> 718 [2]
+  502 to 550 -> 728 [2]
+  554 to 592 -> 728 [2]
+  596 to 602 -> 728 [2]
+
+Disassembly of <code object Profile at 0x000001C217BA5930, file "console\signal_support\profiles.py", line 19>:
+ 19           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('Profile')
+              8 STORE_NAME               2 (__qualname__)
+
+ 20          10 LOAD_CONST               1 (<code object __init__ at 0x000001C21594AC30, file "console\signal_support\profiles.py", line 20>)
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (__init__)
+
+ 21          16 LOAD_CONST               2 (<code object open_profile at 0x000001C2172832A0, file "console\signal_support\profiles.py", line 21>)
+             18 MAKE_FUNCTION            0
+             20 STORE_NAME               4 (open_profile)
+
+ 37          22 LOAD_CONST               3 (<code object set_signature at 0x000001C217758E00, file "console\signal_support\profiles.py", line 37>)
+             24 MAKE_FUNCTION            0
+             26 STORE_NAME               5 (set_signature)
+
+ 48          28 LOAD_CONST               4 (<code object stage_avatar at 0x000001C2177487E0, file "console\signal_support\profiles.py", line 48>)
+             30 MAKE_FUNCTION            0
+             32 STORE_NAME               6 (stage_avatar)
+
+ 58          34 LOAD_CONST               5 (<code object set_name at 0x000001C217855A40, file "console\signal_support\profiles.py", line 58>)
+             36 MAKE_FUNCTION            0
+             38 STORE_NAME               7 (set_name)
+
+ 77          40 LOAD_CONST               6 (<code object <lambda> at 0x000001C217B42320, file "console\signal_support\profiles.py", line 77>)
+             42 MAKE_FUNCTION            0
+             44 BUILD_TUPLE              1
+             46 LOAD_CONST               7 (<code object set_avatar at 0x000001C21775B1F0, file "console\signal_support\profiles.py", line 77>)
+             48 MAKE_FUNCTION            1 (defaults)
+             50 STORE_NAME               8 (set_avatar)
+             52 RETURN_CONST             8 (None)
+
+Disassembly of <code object __init__ at 0x000001C21594AC30, file "console\signal_support\profiles.py", line 20>:
+ 20           0 RESUME                   0
+              2 LOAD_FAST                1 (device)
+              4 LOAD_FAST                0 (self)
+              6 STORE_ATTR               0 (device)
+             16 LOAD_GLOBAL              3 (NULL + AndroidDriver)
+             26 LOAD_FAST                1 (device)
+             28 CALL                     1
+             36 LOAD_FAST                0 (self)
+             38 STORE_ATTR               2 (driver)
+             48 RETURN_CONST             0 (None)
+
+Disassembly of <code object open_profile at 0x000001C2172832A0, file "console\signal_support\profiles.py", line 21>:
+ 21           0 RESUME                   0
+
+ 22           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (device)
+             24 LOAD_ATTR                3 (NULL|self + execute)
+             44 LOAD_CONST               1 ('action')
+             46 LOAD_CONST               2 ('launch')
+             48 BUILD_MAP                1
+             50 CALL                     1
+             58 POP_TOP
+
+ 23          60 LOAD_GLOBAL              5 (NULL + range)
+             70 LOAD_CONST               3 (7)
+             72 CALL                     1
+             80 GET_ITER
+        >>   82 EXTENDED_ARG             1
+             84 FOR_ITER               454 (to 996)
+             88 STORE_FAST               1 (_)
+
+ 24          90 LOAD_FAST                0 (self)
+             92 LOAD_ATTR                0 (device)
+            112 LOAD_ATTR                7 (NULL|self + hierarchy)
+            132 CALL                     0
+            140 STORE_FAST               2 (root)
+
+ 25         142 LOAD_GLOBAL              9 (NULL + any)
+            152 LOAD_CONST               4 (<code object <genexpr> at 0x000001C217B95350, file "console\signal_support\profiles.py", line 25>)
+            154 MAKE_FUNCTION            0
+            156 LOAD_FAST                2 (root)
+            158 LOAD_ATTR               11 (NULL|self + iter)
+            178 LOAD_CONST               5 ('node')
+            180 CALL                     1
+            188 GET_ITER
+            190 CALL                     0
+            198 CALL                     1
+            206 POP_JUMP_IF_FALSE        2 (to 212)
+            208 POP_TOP
+            210 RETURN_CONST             0 (None)
+
+ 26     >>  212 LOAD_FAST                2 (root)
+            214 LOAD_ATTR               11 (NULL|self + iter)
+            234 LOAD_CONST               5 ('node')
+            236 CALL                     1
+            244 GET_ITER
+            246 LOAD_FAST_AND_CLEAR      3 (n)
+            248 SWAP                     2
+            250 BUILD_LIST               0
+            252 SWAP                     2
+        >>  254 FOR_ITER                43 (to 344)
+            258 STORE_FAST               3 (n)
+            260 LOAD_FAST                3 (n)
+            262 LOAD_ATTR               13 (NULL|self + get)
+            282 LOAD_CONST               6 ('content-desc')
+            284 CALL                     1
+            292 LOAD_CONST               7 (('設定捷徑', '设置快捷方式', 'Settings shortcut', 'Settings', '设置', '設定'))
+            294 CONTAINS_OP              0
+            296 POP_JUMP_IF_TRUE         1 (to 300)
+            298 JUMP_BACKWARD           23 (to 254)
+        >>  300 LOAD_GLOBAL             15 (NULL + dict)
+            310 LOAD_FAST                3 (n)
+            312 LOAD_ATTR               16 (attrib)
+            332 CALL                     1
+            340 LIST_APPEND              2
+            342 JUMP_BACKWARD           45 (to 254)
+        >>  344 END_FOR
+            346 STORE_FAST               4 (buttons)
+            348 STORE_FAST               3 (n)
+
+ 27         350 LOAD_GLOBAL             19 (NULL + len)
+            360 LOAD_FAST                4 (buttons)
+            362 CALL                     1
+            370 LOAD_CONST               8 (1)
+            372 COMPARE_OP              40 (==)
+            376 EXTENDED_ARG             1
+            378 POP_JUMP_IF_FALSE      277 (to 934)
+
+ 28         380 LOAD_FAST                0 (self)
+            382 LOAD_ATTR               20 (driver)
+            402 LOAD_ATTR               23 (NULL|self + tap)
+            422 LOAD_FAST                4 (buttons)
+            424 LOAD_CONST               9 (0)
+            426 BINARY_SUBSCR
+            430 CALL                     1
+            438 POP_TOP
+            440 LOAD_GLOBAL             25 (NULL + time)
+            450 LOAD_ATTR               26 (sleep)
+            470 LOAD_CONST              10 (0.5)
+            472 CALL                     1
+            480 POP_TOP
+
+ 29         482 LOAD_FAST                0 (self)
+            484 LOAD_ATTR                0 (device)
+            504 LOAD_ATTR                7 (NULL|self + hierarchy)
+            524 CALL                     0
+            532 STORE_FAST               2 (root)
+
+ 30         534 LOAD_FAST                2 (root)
+            536 LOAD_ATTR               11 (NULL|self + iter)
+            556 LOAD_CONST               5 ('node')
+            558 CALL                     1
+            566 GET_ITER
+            568 LOAD_FAST_AND_CLEAR      3 (n)
+            570 SWAP                     2
+            572 BUILD_LIST               0
+            574 SWAP                     2
+        >>  576 FOR_ITER                96 (to 772)
+            580 STORE_FAST               3 (n)
+            582 LOAD_GLOBAL             19 (NULL + len)
+            592 LOAD_GLOBAL             29 (NULL + re)
+            602 LOAD_ATTR               30 (sub)
+            622 LOAD_CONST              11 ('\\D')
+            624 LOAD_CONST              12 ('')
+            626 LOAD_FAST                3 (n)
+            628 LOAD_ATTR               13 (NULL|self + get)
+            648 LOAD_CONST              13 ('text')
+            650 LOAD_CONST              12 ('')
+            652 CALL                     2
+            660 CALL                     3
+            668 CALL                     1
+            676 LOAD_CONST              14 (8)
+            678 COMPARE_OP              92 (>=)
+            682 POP_JUMP_IF_TRUE         1 (to 686)
+            684 JUMP_BACKWARD           55 (to 576)
+        >>  686 LOAD_FAST                3 (n)
+            688 LOAD_ATTR               13 (NULL|self + get)
+            708 LOAD_CONST              15 ('class')
+            710 CALL                     1
+            718 LOAD_CONST              16 ('android.widget.TextView')
+            720 COMPARE_OP              40 (==)
+            724 POP_JUMP_IF_TRUE         1 (to 728)
+            726 JUMP_BACKWARD           76 (to 576)
+        >>  728 LOAD_GLOBAL             15 (NULL + dict)
+            738 LOAD_FAST                3 (n)
+            740 LOAD_ATTR               16 (attrib)
+            760 CALL                     1
+            768 LIST_APPEND              2
+            770 JUMP_BACKWARD           98 (to 576)
+        >>  772 END_FOR
+            774 STORE_FAST               5 (phones)
+            776 STORE_FAST               3 (n)
+
+ 31         778 LOAD_GLOBAL             19 (NULL + len)
+            788 LOAD_FAST                5 (phones)
+            790 CALL                     1
+            798 LOAD_CONST               8 (1)
+            800 COMPARE_OP              55 (!=)
+            804 POP_JUMP_IF_FALSE       11 (to 828)
+            806 LOAD_GLOBAL             33 (NULL + RuntimeError)
+            816 LOAD_CONST              17 ('无法唯一识别设置中的当前账号资料入口')
+            818 CALL                     1
+            826 RAISE_VARARGS            1
+
+ 32     >>  828 LOAD_FAST                0 (self)
+            830 LOAD_ATTR               20 (driver)
+            850 LOAD_ATTR               23 (NULL|self + tap)
+            870 LOAD_FAST                5 (phones)
+            872 LOAD_CONST               9 (0)
+            874 BINARY_SUBSCR
+            878 CALL                     1
+            886 POP_TOP
+            888 LOAD_GLOBAL             25 (NULL + time)
+            898 LOAD_ATTR               26 (sleep)
+            918 LOAD_CONST              10 (0.5)
+            920 CALL                     1
+            928 POP_TOP
+
+ 33         930 EXTENDED_ARG             1
+            932 JUMP_BACKWARD          426 (to 82)
+
+ 34     >>  934 LOAD_FAST                0 (self)
+            936 LOAD_ATTR                0 (device)
+            956 LOAD_ATTR               35 (NULL|self + command)
+            976 BUILD_LIST               0
+            978 LOAD_CONST              18 (('shell', 'input', 'keyevent', '4'))
+            980 LIST_EXTEND              1
+            982 CALL                     1
+            990 POP_TOP
+            992 EXTENDED_ARG             1
+            994 JUMP_BACKWARD          457 (to 82)
+
+ 23     >>  996 END_FOR
+
+ 35         998 LOAD_GLOBAL             33 (NULL + RuntimeError)
+           1008 LOAD_CONST              19 ('未进入 Signal 个人资料页面')
+           1010 CALL                     1
+           1018 RAISE_VARARGS            1
+        >> 1020 SWAP                     2
+           1022 POP_TOP
+
+ 26        1024 SWAP                     2
+           1026 STORE_FAST               3 (n)
+           1028 RERAISE                  0
+        >> 1030 SWAP                     2
+           1032 POP_TOP
+
+ 30        1034 SWAP                     2
+           1036 STORE_FAST               3 (n)
+           1038 RERAISE                  0
+ExceptionTable:
+  250 to 296 -> 1020 [3]
+  300 to 344 -> 1020 [3]
+  572 to 682 -> 1030 [3]
+  686 to 724 -> 1030 [3]
+  728 to 772 -> 1030 [3]
+
+Disassembly of <code object <genexpr> at 0x000001C217B95350, file "console\signal_support\profiles.py", line 25>:
+ 25           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                31 (to 74)
+             12 STORE_FAST               1 (n)
+             14 LOAD_FAST                1 (n)
+             16 LOAD_ATTR                1 (NULL|self + get)
+             36 LOAD_CONST               0 ('resource-id')
+             38 CALL                     1
+             46 LOAD_GLOBAL              2 (PACKAGE)
+             56 LOAD_CONST               1 (':id/manage_profile_name')
+             58 BINARY_OP                0 (+)
+             62 COMPARE_OP              40 (==)
+             66 YIELD_VALUE              1
+             68 RESUME                   1
+             70 POP_TOP
+             72 JUMP_BACKWARD           33 (to 8)
+        >>   74 END_FOR
+             76 RETURN_CONST             2 (None)
+        >>   78 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             80 RERAISE                  1
+ExceptionTable:
+  4 to 76 -> 78 [0] lasti
+
+Disassembly of <code object set_signature at 0x000001C217758E00, file "console\signal_support\profiles.py", line 37>:
+ 37           0 RESUME                   0
+
+ 38           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + open_profile)
+             24 CALL                     0
+             32 POP_TOP
+
+ 39          34 LOAD_FAST                0 (self)
+             36 LOAD_ATTR                2 (device)
+             56 LOAD_ATTR                5 (NULL|self + find)
+             76 LOAD_CONST               1 ('resource-id')
+             78 LOAD_GLOBAL              6 (PACKAGE)
+             88 LOAD_CONST               2 (':id/manage_profile_about')
+             90 BINARY_OP                0 (+)
+             94 CALL                     2
+            102 LOAD_ATTR                9 (NULL|self + get)
+            122 LOAD_CONST               3 ('text')
+            124 CALL                     1
+            132 LOAD_FAST                1 (text)
+            134 COMPARE_OP              40 (==)
+            138 POP_JUMP_IF_FALSE        1 (to 142)
+            140 RETURN_CONST             4 ('already_matches')
+
+ 40     >>  142 LOAD_FAST                0 (self)
+            144 LOAD_ATTR                2 (device)
+            164 LOAD_ATTR               11 (NULL|self + execute)
+            184 LOAD_CONST               5 ('tap_id')
+            186 LOAD_GLOBAL              6 (PACKAGE)
+            196 LOAD_CONST               6 (':id/manage_profile_about_container')
+            198 BINARY_OP                0 (+)
+            202 LOAD_CONST               7 (('action', 'value'))
+            204 BUILD_CONST_KEY_MAP      2
+            206 CALL                     1
+            214 POP_TOP
+
+ 41         216 LOAD_FAST                0 (self)
+            218 LOAD_ATTR                2 (device)
+            238 LOAD_ATTR                5 (NULL|self + find)
+            258 LOAD_CONST               1 ('resource-id')
+            260 LOAD_GLOBAL              6 (PACKAGE)
+            270 LOAD_CONST               8 (':id/edit_about_body')
+            272 BINARY_OP                0 (+)
+            276 CALL                     2
+            284 STORE_FAST               2 (node)
+
+ 42         286 LOAD_FAST                0 (self)
+            288 LOAD_ATTR               12 (driver)
+            308 LOAD_ATTR               15 (NULL|self + fill)
+            328 LOAD_GLOBAL             17 (NULL + dict)
+            338 LOAD_FAST                2 (node)
+            340 LOAD_ATTR               18 (attrib)
+            360 CALL                     1
+            368 LOAD_FAST                1 (text)
+            370 LOAD_CONST               9 (True)
+            372 KW_NAMES                10 (('allow_clear',))
+            374 CALL                     3
+            382 POP_TOP
+
+ 43         384 LOAD_FAST                0 (self)
+            386 LOAD_ATTR                2 (device)
+            406 LOAD_ATTR                5 (NULL|self + find)
+            426 LOAD_CONST               1 ('resource-id')
+            428 LOAD_GLOBAL              6 (PACKAGE)
+            438 LOAD_CONST               8 (':id/edit_about_body')
+            440 BINARY_OP                0 (+)
+            444 CALL                     2
+            452 LOAD_ATTR                9 (NULL|self + get)
+            472 LOAD_CONST               3 ('text')
+            474 CALL                     1
+            482 LOAD_FAST                1 (text)
+            484 COMPARE_OP              55 (!=)
+            488 POP_JUMP_IF_FALSE       11 (to 512)
+            490 LOAD_GLOBAL             21 (NULL + RuntimeError)
+            500 LOAD_CONST              11 ('简介填写后核对失败')
+            502 CALL                     1
+            510 RAISE_VARARGS            1
+
+ 44     >>  512 LOAD_FAST                0 (self)
+            514 LOAD_ATTR                2 (device)
+            534 LOAD_ATTR               11 (NULL|self + execute)
+            554 LOAD_CONST               5 ('tap_id')
+            556 LOAD_GLOBAL              6 (PACKAGE)
+            566 LOAD_CONST              12 (':id/edit_about_save')
+            568 BINARY_OP                0 (+)
+            572 LOAD_CONST               7 (('action', 'value'))
+            574 BUILD_CONST_KEY_MAP      2
+            576 CALL                     1
+            584 POP_TOP
+
+ 45         586 LOAD_GLOBAL             23 (NULL + time)
+            596 LOAD_ATTR               24 (sleep)
+            616 LOAD_CONST              13 (1)
+            618 CALL                     1
+            626 POP_TOP
+
+ 46         628 LOAD_FAST                0 (self)
+            630 LOAD_ATTR                2 (device)
+            650 LOAD_ATTR                5 (NULL|self + find)
+            670 LOAD_CONST               1 ('resource-id')
+            672 LOAD_GLOBAL              6 (PACKAGE)
+            682 LOAD_CONST               2 (':id/manage_profile_about')
+            684 BINARY_OP                0 (+)
+            688 CALL                     2
+            696 LOAD_ATTR                9 (NULL|self + get)
+            716 LOAD_CONST               3 ('text')
+            718 CALL                     1
+            726 LOAD_FAST                1 (text)
+            728 COMPARE_OP              55 (!=)
+            732 POP_JUMP_IF_FALSE       11 (to 756)
+            734 LOAD_GLOBAL             21 (NULL + RuntimeError)
+            744 LOAD_CONST              14 ('简介保存后核对失败')
+            746 CALL                     1
+            754 RAISE_VARARGS            1
+
+ 47     >>  756 RETURN_CONST            15 ('signature_saved')
+
+Disassembly of <code object stage_avatar at 0x000001C2177487E0, file "console\signal_support\profiles.py", line 48>:
+ 48           0 RESUME                   0
+
+ 49           2 LOAD_CONST               1 ('/sdcard/Pictures/SignalConsole-')
+              4 LOAD_FAST                1 (asset)
+              6 LOAD_CONST               2 ('sha256')
+              8 BINARY_SUBSCR
+             12 LOAD_CONST               0 (None)
+             14 LOAD_CONST               3 (12)
+             16 BINARY_SLICE
+             18 BINARY_OP                0 (+)
+             22 STORE_FAST               2 (folder)
+
+ 50          24 LOAD_FAST                0 (self)
+             26 LOAD_ATTR                0 (device)
+             46 LOAD_ATTR                3 (NULL|self + command)
+             66 LOAD_CONST               4 ('shell')
+             68 LOAD_CONST               5 ('mkdir')
+             70 LOAD_CONST               6 ('-p')
+             72 LOAD_FAST                2 (folder)
+             74 BUILD_LIST               4
+             76 CALL                     1
+             84 POP_TOP
+
+ 51          86 LOAD_FAST                2 (folder)
+             88 LOAD_CONST               7 ('/avatar')
+             90 BINARY_OP                0 (+)
+             94 LOAD_GLOBAL              5 (NULL + Path)
+            104 LOAD_FAST                1 (asset)
+            106 LOAD_CONST               8 ('image')
+            108 BINARY_SUBSCR
+            112 CALL                     1
+            120 LOAD_ATTR                6 (suffix)
+            140 LOAD_ATTR                9 (NULL|self + lower)
+            160 CALL                     0
+            168 BINARY_OP                0 (+)
+            172 STORE_FAST               3 (target)
+
+ 52         174 LOAD_FAST                0 (self)
+            176 LOAD_ATTR                0 (device)
+            196 LOAD_ATTR                3 (NULL|self + command)
+            216 LOAD_CONST               9 ('push')
+            218 LOAD_FAST                1 (asset)
+            220 LOAD_CONST               8 ('image')
+            222 BINARY_SUBSCR
+            226 LOAD_FAST                3 (target)
+            228 BUILD_LIST               3
+            230 LOAD_CONST              10 (90)
+            232 KW_NAMES                11 (('timeout',))
+            234 CALL                     2
+            242 POP_TOP
+
+ 53         244 LOAD_FAST                0 (self)
+            246 LOAD_ATTR                0 (device)
+            266 LOAD_ATTR                3 (NULL|self + command)
+            286 LOAD_CONST               4 ('shell')
+            288 LOAD_CONST              12 ('sha256sum')
+            290 LOAD_FAST                3 (target)
+            292 BUILD_LIST               3
+            294 CALL                     1
+            302 LOAD_ATTR               11 (NULL|self + split)
+            322 CALL                     0
+            330 LOAD_CONST              13 (0)
+            332 BINARY_SUBSCR
+            336 STORE_FAST               4 (checksum)
+
+ 54         338 LOAD_FAST                4 (checksum)
+            340 LOAD_FAST                1 (asset)
+            342 LOAD_CONST               2 ('sha256')
+            344 BINARY_SUBSCR
+            348 COMPARE_OP              55 (!=)
+            352 POP_JUMP_IF_FALSE       11 (to 376)
+            354 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            364 LOAD_CONST              14 ('设备头像文件校验失败。')
+            366 CALL                     1
+            374 RAISE_VARARGS            1
+
+ 55     >>  376 LOAD_FAST                0 (self)
+            378 LOAD_ATTR                0 (device)
+            398 LOAD_ATTR                3 (NULL|self + command)
+            418 LOAD_CONST               4 ('shell')
+            420 LOAD_CONST              15 ('content')
+            422 LOAD_CONST              16 ('call')
+            424 LOAD_CONST              17 ('--uri')
+            426 LOAD_CONST              18 ('content://media')
+            428 LOAD_CONST              19 ('--method')
+            430 LOAD_CONST              20 ('scan_file')
+            432 LOAD_CONST              21 ('--arg')
+            434 LOAD_FAST                3 (target)
+            436 LOAD_ATTR               15 (NULL|self + replace)
+            456 LOAD_CONST              22 ('/sdcard/')
+            458 LOAD_CONST              23 ('/storage/emulated/0/')
+            460 LOAD_CONST              24 (1)
+            462 CALL                     3
+            470 BUILD_LIST               9
+            472 CALL                     1
+            480 STORE_FAST               5 (scanned)
+
+ 56         482 LOAD_CONST              25 ('content://media/')
+            484 LOAD_FAST                5 (scanned)
+            486 CONTAINS_OP              1
+            488 POP_JUMP_IF_FALSE       11 (to 512)
+            490 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            500 LOAD_CONST              26 ('头像未获媒体库扫描确认，未打开相册或保存')
+            502 CALL                     1
+            510 RAISE_VARARGS            1
+
+ 57     >>  512 LOAD_FAST                3 (target)
+            514 RETURN_VALUE
+
+Disassembly of <code object set_name at 0x000001C217855A40, file "console\signal_support\profiles.py", line 58>:
+ 58           0 RESUME                   0
+
+ 59           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + open_profile)
+             24 CALL                     0
+             32 POP_TOP
+
+ 60          34 LOAD_FAST                0 (self)
+             36 LOAD_ATTR                2 (device)
+             56 LOAD_ATTR                5 (NULL|self + find)
+             76 LOAD_CONST               1 ('resource-id')
+             78 LOAD_GLOBAL              6 (PACKAGE)
+             88 LOAD_CONST               2 (':id/manage_profile_name')
+             90 BINARY_OP                0 (+)
+             94 CALL                     2
+            102 LOAD_ATTR                9 (NULL|self + get)
+            122 LOAD_CONST               3 ('text')
+            124 CALL                     1
+            132 LOAD_FAST                1 (name)
+            134 COMPARE_OP              40 (==)
+            138 POP_JUMP_IF_FALSE        1 (to 142)
+            140 RETURN_CONST             4 ('already_matches')
+
+ 61     >>  142 LOAD_FAST                0 (self)
+            144 LOAD_ATTR                2 (device)
+            164 LOAD_ATTR               11 (NULL|self + execute)
+            184 LOAD_CONST               5 ('tap_id')
+            186 LOAD_GLOBAL              6 (PACKAGE)
+            196 LOAD_CONST               6 (':id/manage_profile_name_container')
+            198 BINARY_OP                0 (+)
+            202 LOAD_CONST               7 (('action', 'value'))
+            204 BUILD_CONST_KEY_MAP      2
+            206 CALL                     1
+            214 POP_TOP
+
+ 62         216 LOAD_GLOBAL             13 (NULL + time)
+            226 LOAD_ATTR               14 (sleep)
+            246 LOAD_CONST               8 (0.5)
+            248 CALL                     1
+            256 POP_TOP
+
+ 63         258 LOAD_FAST                0 (self)
+            260 LOAD_ATTR                2 (device)
+            280 LOAD_ATTR                5 (NULL|self + find)
+            300 LOAD_CONST               1 ('resource-id')
+            302 LOAD_GLOBAL              6 (PACKAGE)
+            312 LOAD_CONST               9 (':id/edit_profile_name_given_name')
+            314 BINARY_OP                0 (+)
+            318 CALL                     2
+            326 STORE_FAST               2 (node)
+
+ 64         328 LOAD_FAST                0 (self)
+            330 LOAD_ATTR               16 (driver)
+            350 LOAD_ATTR               19 (NULL|self + fill)
+            370 LOAD_GLOBAL             21 (NULL + dict)
+            380 LOAD_FAST                2 (node)
+            382 LOAD_ATTR               22 (attrib)
+            402 CALL                     1
+            410 LOAD_FAST                1 (name)
+            412 LOAD_CONST              10 (True)
+            414 KW_NAMES                11 (('allow_clear',))
+            416 CALL                     3
+            424 POP_TOP
+
+ 65         426 LOAD_FAST                0 (self)
+            428 LOAD_ATTR                2 (device)
+            448 LOAD_ATTR                5 (NULL|self + find)
+            468 LOAD_CONST               1 ('resource-id')
+            470 LOAD_GLOBAL              6 (PACKAGE)
+            480 LOAD_CONST              12 (':id/edit_profile_name_family_name')
+            482 BINARY_OP                0 (+)
+            486 CALL                     2
+            494 STORE_FAST               3 (family)
+
+ 66         496 LOAD_FAST                3 (family)
+            498 LOAD_ATTR                9 (NULL|self + get)
+            518 LOAD_CONST               3 ('text')
+            520 CALL                     1
+            528 POP_JUMP_IF_FALSE       98 (to 726)
+
+ 67         530 LOAD_FAST                0 (self)
+            532 LOAD_ATTR               16 (driver)
+            552 LOAD_ATTR               25 (NULL|self + tap)
+            572 LOAD_GLOBAL             21 (NULL + dict)
+            582 LOAD_FAST                3 (family)
+            584 LOAD_ATTR               22 (attrib)
+            604 CALL                     1
+            612 CALL                     1
+            620 POP_TOP
+
+ 68         622 LOAD_FAST                0 (self)
+            624 LOAD_ATTR                2 (device)
+            644 LOAD_ATTR               27 (NULL|self + clear_text)
+            664 LOAD_GLOBAL             29 (NULL + len)
+            674 LOAD_FAST                3 (family)
+            676 LOAD_ATTR                9 (NULL|self + get)
+            696 LOAD_CONST               3 ('text')
+            698 LOAD_CONST              13 ('')
+            700 CALL                     2
+            708 CALL                     1
+            716 CALL                     1
+            724 POP_TOP
+
+ 69     >>  726 LOAD_FAST                0 (self)
+            728 LOAD_ATTR                2 (device)
+            748 LOAD_ATTR                5 (NULL|self + find)
+            768 LOAD_CONST               1 ('resource-id')
+            770 LOAD_GLOBAL              6 (PACKAGE)
+            780 LOAD_CONST               9 (':id/edit_profile_name_given_name')
+            782 BINARY_OP                0 (+)
+            786 CALL                     2
+            794 STORE_FAST               4 (entered)
+
+ 70         796 LOAD_FAST                4 (entered)
+            798 LOAD_ATTR                9 (NULL|self + get)
+            818 LOAD_CONST               3 ('text')
+            820 CALL                     1
+            828 LOAD_FAST                1 (name)
+            830 COMPARE_OP              55 (!=)
+            834 POP_JUMP_IF_FALSE       11 (to 858)
+            836 LOAD_GLOBAL             31 (NULL + RuntimeError)
+            846 LOAD_CONST              14 ('新名字填写校验失败，未点击保存。')
+            848 CALL                     1
+            856 RAISE_VARARGS            1
+
+ 71     >>  858 LOAD_FAST                0 (self)
+            860 LOAD_ATTR                2 (device)
+            880 LOAD_ATTR               11 (NULL|self + execute)
+            900 LOAD_CONST               5 ('tap_id')
+            902 LOAD_GLOBAL              6 (PACKAGE)
+            912 LOAD_CONST              15 (':id/edit_profile_name_save')
+            914 BINARY_OP                0 (+)
+            918 LOAD_CONST               7 (('action', 'value'))
+            920 BUILD_CONST_KEY_MAP      2
+            922 CALL                     1
+            930 POP_TOP
+
+ 72         932 LOAD_GLOBAL             13 (NULL + time)
+            942 LOAD_ATTR               14 (sleep)
+            962 LOAD_CONST              16 (2)
+            964 CALL                     1
+            972 POP_TOP
+
+ 73         974 LOAD_FAST                0 (self)
+            976 LOAD_ATTR                2 (device)
+            996 LOAD_ATTR                5 (NULL|self + find)
+           1016 LOAD_CONST               1 ('resource-id')
+           1018 LOAD_GLOBAL              6 (PACKAGE)
+           1028 LOAD_CONST               2 (':id/manage_profile_name')
+           1030 BINARY_OP                0 (+)
+           1034 CALL                     2
+           1042 STORE_FAST               5 (result)
+
+ 74        1044 LOAD_FAST                5 (result)
+           1046 LOAD_ATTR                9 (NULL|self + get)
+           1066 LOAD_CONST               3 ('text')
+           1068 CALL                     1
+           1076 LOAD_FAST                1 (name)
+           1078 COMPARE_OP              55 (!=)
+           1082 POP_JUMP_IF_FALSE       11 (to 1106)
+           1084 LOAD_GLOBAL             31 (NULL + RuntimeError)
+           1094 LOAD_CONST              17 ('保存后名字未核对成功，请检查网络和账号状态。')
+           1096 CALL                     1
+           1104 RAISE_VARARGS            1
+
+ 75     >> 1106 RETURN_CONST            18 ('name_saved')
+
+Disassembly of <code object <lambda> at 0x000001C217B42320, file "console\signal_support\profiles.py", line 77>:
+ 77           0 RESUME                   0
+              2 RETURN_CONST             0 (None)
+
+Disassembly of <code object set_avatar at 0x000001C21775B1F0, file "console\signal_support\profiles.py", line 77>:
+ 77           0 RESUME                   0
+
+ 78           2 LOAD_CONST               1 ('SignalConsole-')
+              4 LOAD_FAST                1 (asset)
+              6 LOAD_CONST               2 ('sha256')
+              8 BINARY_SUBSCR
+             12 LOAD_CONST               0 (None)
+             14 LOAD_CONST               3 (12)
+             16 BINARY_SLICE
+             18 BINARY_OP                0 (+)
+             22 STORE_FAST               3 (folder)
+
+ 79          24 LOAD_FAST                0 (self)
+             26 LOAD_ATTR                0 (device)
+             46 LOAD_ATTR                3 (NULL|self + execute)
+             66 LOAD_CONST               4 ('tap_id')
+             68 LOAD_GLOBAL              4 (PACKAGE)
+             78 LOAD_CONST               5 (':id/manage_profile_edit_photo')
+             80 BINARY_OP                0 (+)
+             84 LOAD_CONST               6 (('action', 'value'))
+             86 BUILD_CONST_KEY_MAP      2
+             88 CALL                     1
+             96 POP_TOP
+
+ 80          98 LOAD_GLOBAL              7 (NULL + time)
+            108 LOAD_ATTR                8 (sleep)
+            128 LOAD_CONST               7 (1)
+            130 CALL                     1
+            138 POP_TOP
+
+ 81         140 LOAD_FAST                0 (self)
+            142 LOAD_ATTR                0 (device)
+            162 LOAD_ATTR               11 (NULL|self + hierarchy)
+            182 CALL                     0
+            190 STORE_FAST               4 (root)
+
+ 82         192 LOAD_GLOBAL             13 (NULL + label_button)
+            202 LOAD_FAST                4 (root)
+            204 LOAD_CONST               8 (('Photo', '照片', '相片'))
+            206 CALL                     2
+            214 STORE_FAST               5 (photo)
+
+ 83         216 LOAD_FAST                0 (self)
+            218 LOAD_ATTR               14 (driver)
+            238 LOAD_ATTR               17 (NULL|self + tap)
+            258 LOAD_FAST                5 (photo)
+            260 CALL                     1
+            268 POP_TOP
+            270 LOAD_GLOBAL              7 (NULL + time)
+            280 LOAD_ATTR                8 (sleep)
+            300 LOAD_CONST               7 (1)
+            302 CALL                     1
+            310 POP_TOP
+
+ 84         312 LOAD_GLOBAL             19 (NULL + range)
+            322 LOAD_CONST               9 (8)
+            324 CALL                     1
+            332 GET_ITER
+        >>  334 EXTENDED_ARG             1
+            336 FOR_ITER               418 (to 1176)
+            340 STORE_FAST               6 (_)
+
+ 85         342 LOAD_FAST                0 (self)
+            344 LOAD_ATTR                0 (device)
+            364 LOAD_ATTR               11 (NULL|self + hierarchy)
+            384 CALL                     0
+            392 STORE_FAST               4 (root)
+
+ 86         394 LOAD_FAST                4 (root)
+            396 LOAD_ATTR               21 (NULL|self + iter)
+            416 LOAD_CONST              10 ('node')
+            418 CALL                     1
+            426 GET_ITER
+            428 LOAD_FAST_AND_CLEAR      7 (n)
+            430 SWAP                     2
+            432 BUILD_LIST               0
+            434 SWAP                     2
+        >>  436 FOR_ITER                72 (to 584)
+            440 STORE_FAST               7 (n)
+            442 LOAD_FAST                7 (n)
+            444 LOAD_ATTR               23 (NULL|self + get)
+            464 LOAD_CONST              11 ('resource-id')
+            466 CALL                     1
+            474 LOAD_GLOBAL              4 (PACKAGE)
+            484 LOAD_CONST              12 (':id/media_gallery_title')
+            486 BINARY_OP                0 (+)
+            490 COMPARE_OP              40 (==)
+            494 POP_JUMP_IF_TRUE         1 (to 498)
+            496 JUMP_BACKWARD           31 (to 436)
+        >>  498 LOAD_FAST                7 (n)
+            500 LOAD_ATTR               23 (NULL|self + get)
+            520 LOAD_CONST              13 ('text')
+            522 CALL                     1
+            530 LOAD_FAST                3 (folder)
+            532 COMPARE_OP              40 (==)
+            536 POP_JUMP_IF_TRUE         1 (to 540)
+            538 JUMP_BACKWARD           52 (to 436)
+        >>  540 LOAD_GLOBAL             25 (NULL + dict)
+            550 LOAD_FAST                7 (n)
+            552 LOAD_ATTR               26 (attrib)
+            572 CALL                     1
+            580 LIST_APPEND              2
+            582 JUMP_BACKWARD           74 (to 436)
+        >>  584 END_FOR
+            586 STORE_FAST               8 (albums)
+            588 STORE_FAST               7 (n)
+
+ 87         590 LOAD_GLOBAL             29 (NULL + len)
+            600 LOAD_FAST                8 (albums)
+            602 CALL                     1
+            610 LOAD_CONST               7 (1)
+            612 COMPARE_OP              40 (==)
+            616 POP_JUMP_IF_FALSE       33 (to 684)
+            618 LOAD_FAST                0 (self)
+            620 LOAD_ATTR               14 (driver)
+            640 LOAD_ATTR               17 (NULL|self + tap)
+            660 LOAD_FAST                8 (albums)
+            662 LOAD_CONST              14 (0)
+            664 BINARY_SUBSCR
+            668 CALL                     1
+            676 POP_TOP
+            678 POP_TOP
+            680 EXTENDED_ARG             1
+            682 JUMP_FORWARD           258 (to 1200)
+
+ 88     >>  684 LOAD_FAST                4 (root)
+            686 LOAD_ATTR               21 (NULL|self + iter)
+            706 LOAD_CONST              10 ('node')
+            708 CALL                     1
+            716 GET_ITER
+            718 LOAD_FAST_AND_CLEAR      7 (n)
+            720 SWAP                     2
+            722 BUILD_LIST               0
+            724 SWAP                     2
+        >>  726 FOR_ITER                51 (to 832)
+            730 STORE_FAST               7 (n)
+            732 LOAD_FAST                7 (n)
+            734 LOAD_ATTR               23 (NULL|self + get)
+            754 LOAD_CONST              11 ('resource-id')
+            756 CALL                     1
+            764 LOAD_GLOBAL              4 (PACKAGE)
+            774 LOAD_CONST              15 (':id/media_gallery_grid')
+            776 BINARY_OP                0 (+)
+            780 COMPARE_OP              40 (==)
+            784 POP_JUMP_IF_TRUE         1 (to 788)
+            786 JUMP_BACKWARD           31 (to 726)
+        >>  788 LOAD_GLOBAL             25 (NULL + dict)
+            798 LOAD_FAST                7 (n)
+            800 LOAD_ATTR               26 (attrib)
+            820 CALL                     1
+            828 LIST_APPEND              2
+            830 JUMP_BACKWARD           53 (to 726)
+        >>  832 END_FOR
+            834 STORE_FAST               9 (grid)
+            836 STORE_FAST               7 (n)
+
+ 89         838 LOAD_GLOBAL             29 (NULL + len)
+            848 LOAD_FAST                9 (grid)
+            850 CALL                     1
+            858 LOAD_CONST               7 (1)
+            860 COMPARE_OP              55 (!=)
+            864 POP_JUMP_IF_FALSE       11 (to 888)
+            866 LOAD_GLOBAL             31 (NULL + RuntimeError)
+            876 LOAD_CONST              16 ('当前不是已适配的 Signal 相册页面，可能需要处理权限。')
+            878 CALL                     1
+            886 RAISE_VARARGS            1
+
+ 90     >>  888 LOAD_CONST              14 (0)
+            890 LOAD_CONST               0 (None)
+            892 IMPORT_NAME             16 (re)
+            894 STORE_FAST              10 (re)
+
+ 91         896 PUSH_NULL
+            898 LOAD_FAST               10 (re)
+            900 LOAD_ATTR               34 (fullmatch)
+            920 LOAD_CONST              17 ('\\[(\\d+),(\\d+)\\]\\[(\\d+),(\\d+)\\]')
+            922 LOAD_FAST                9 (grid)
+            924 LOAD_CONST              14 (0)
+            926 BINARY_SUBSCR
+            930 LOAD_ATTR               23 (NULL|self + get)
+            950 LOAD_CONST              18 ('bounds')
+            952 LOAD_CONST              19 ('')
+            954 CALL                     2
+            962 CALL                     2
+            970 STORE_FAST              11 (bounds)
+
+ 92         972 LOAD_FAST               11 (bounds)
+            974 POP_JUMP_IF_TRUE        11 (to 998)
+            976 LOAD_GLOBAL             31 (NULL + RuntimeError)
+            986 LOAD_CONST              20 ('无法读取相册滚动区域。')
+            988 CALL                     1
+            996 RAISE_VARARGS            1
+
+ 93     >>  998 LOAD_GLOBAL             37 (NULL + map)
+           1008 LOAD_GLOBAL             38 (int)
+           1018 LOAD_FAST               11 (bounds)
+           1020 LOAD_ATTR               41 (NULL|self + groups)
+           1040 CALL                     0
+           1048 CALL                     2
+           1056 UNPACK_SEQUENCE          4
+           1060 STORE_FAST              12 (a)
+           1062 STORE_FAST              13 (b)
+           1064 STORE_FAST              14 (c)
+           1066 STORE_FAST              15 (d)
+           1068 LOAD_FAST                0 (self)
+           1070 LOAD_ATTR                0 (device)
+           1090 LOAD_ATTR                3 (NULL|self + execute)
+           1110 LOAD_CONST              21 ('swipe')
+           1112 LOAD_FAST               12 (a)
+           1114 LOAD_FAST               14 (c)
+           1116 BINARY_OP                0 (+)
+           1120 LOAD_CONST              22 (2)
+           1122 BINARY_OP                2 (//)
+           1126 LOAD_FAST               12 (a)
+           1128 LOAD_FAST               14 (c)
+           1130 BINARY_OP                0 (+)
+           1134 LOAD_CONST              22 (2)
+           1136 BINARY_OP                2 (//)
+           1140 LOAD_FAST               15 (d)
+           1142 LOAD_CONST              23 (30)
+           1144 BINARY_OP               10 (-)
+           1148 LOAD_FAST               13 (b)
+           1150 LOAD_CONST              23 (30)
+           1152 BINARY_OP                0 (+)
+           1156 LOAD_CONST              24 (400)
+           1158 LOAD_CONST              25 (('action', 'x1', 'x2', 'y1', 'y2', 'ms'))
+           1160 BUILD_CONST_KEY_MAP      6
+           1162 CALL                     1
+           1170 POP_TOP
+           1172 EXTENDED_ARG             1
+           1174 JUMP_BACKWARD          421 (to 334)
+
+ 84     >> 1176 END_FOR
+
+ 94        1178 LOAD_GLOBAL             31 (NULL + RuntimeError)
+           1188 LOAD_CONST              26 ('未在相册中找到按校验码创建的独立文件夹，未选择任何替代图片。')
+           1190 CALL                     1
+           1198 RAISE_VARARGS            1
+
+ 95     >> 1200 LOAD_GLOBAL              7 (NULL + time)
+           1210 LOAD_ATTR                8 (sleep)
+           1230 LOAD_CONST              27 (0.5)
+           1232 CALL                     1
+           1240 POP_TOP
+
+ 96        1242 LOAD_FAST                0 (self)
+           1244 LOAD_ATTR                0 (device)
+           1264 LOAD_ATTR               11 (NULL|self + hierarchy)
+           1284 CALL                     0
+           1292 STORE_FAST               4 (root)
+
+ 97        1294 LOAD_FAST                4 (root)
+           1296 LOAD_ATTR               21 (NULL|self + iter)
+           1316 LOAD_CONST              10 ('node')
+           1318 CALL                     1
+           1326 GET_ITER
+           1328 LOAD_FAST_AND_CLEAR      7 (n)
+           1330 SWAP                     2
+           1332 BUILD_LIST               0
+           1334 SWAP                     2
+        >> 1336 FOR_ITER                20 (to 1380)
+           1340 STORE_FAST               7 (n)
+           1342 LOAD_FAST                7 (n)
+           1344 LOAD_ATTR               23 (NULL|self + get)
+           1364 LOAD_CONST              13 ('text')
+           1366 LOAD_CONST              19 ('')
+           1368 CALL                     2
+           1376 LIST_APPEND              2
+           1378 JUMP_BACKWARD           22 (to 1336)
+        >> 1380 END_FOR
+           1382 STORE_FAST              16 (titles)
+           1384 STORE_FAST               7 (n)
+
+ 98        1386 LOAD_FAST                3 (folder)
+           1388 LOAD_FAST               16 (titles)
+           1390 CONTAINS_OP              1
+           1392 POP_JUMP_IF_FALSE       11 (to 1416)
+           1394 LOAD_GLOBAL             31 (NULL + RuntimeError)
+           1404 LOAD_CONST              28 ('相册标题未能核对，已停止以避免选错头像。')
+           1406 CALL                     1
+           1414 RAISE_VARARGS            1
+
+ 99     >> 1416 LOAD_FAST                4 (root)
+           1418 LOAD_ATTR               21 (NULL|self + iter)
+           1438 LOAD_CONST              10 ('node')
+           1440 CALL                     1
+           1448 GET_ITER
+           1450 LOAD_FAST_AND_CLEAR      7 (n)
+           1452 SWAP                     2
+           1454 BUILD_LIST               0
+           1456 SWAP                     2
+        >> 1458 FOR_ITER                51 (to 1564)
+           1462 STORE_FAST               7 (n)
+           1464 LOAD_FAST                7 (n)
+           1466 LOAD_ATTR               23 (NULL|self + get)
+           1486 LOAD_CONST              11 ('resource-id')
+           1488 CALL                     1
+           1496 LOAD_GLOBAL              4 (PACKAGE)
+           1506 LOAD_CONST              29 (':id/media_gallery_image')
+           1508 BINARY_OP                0 (+)
+           1512 COMPARE_OP              40 (==)
+           1516 POP_JUMP_IF_TRUE         1 (to 1520)
+           1518 JUMP_BACKWARD           31 (to 1458)
+        >> 1520 LOAD_GLOBAL             25 (NULL + dict)
+           1530 LOAD_FAST                7 (n)
+           1532 LOAD_ATTR               26 (attrib)
+           1552 CALL                     1
+           1560 LIST_APPEND              2
+           1562 JUMP_BACKWARD           53 (to 1458)
+        >> 1564 END_FOR
+           1566 STORE_FAST              17 (images)
+           1568 STORE_FAST               7 (n)
+
+100        1570 LOAD_GLOBAL             29 (NULL + len)
+           1580 LOAD_FAST               17 (images)
+           1582 CALL                     1
+           1590 LOAD_CONST               7 (1)
+           1592 COMPARE_OP              55 (!=)
+           1596 POP_JUMP_IF_FALSE       11 (to 1620)
+           1598 LOAD_GLOBAL             31 (NULL + RuntimeError)
+           1608 LOAD_CONST              30 ('独立相册内不是唯一图片，未自动选择。')
+           1610 CALL                     1
+           1618 RAISE_VARARGS            1
+
+101     >> 1620 LOAD_FAST                0 (self)
+           1622 LOAD_ATTR               14 (driver)
+           1642 LOAD_ATTR               17 (NULL|self + tap)
+           1662 LOAD_FAST               17 (images)
+           1664 LOAD_CONST              14 (0)
+           1666 BINARY_SUBSCR
+           1670 CALL                     1
+           1678 POP_TOP
+           1680 LOAD_GLOBAL              7 (NULL + time)
+           1690 LOAD_ATTR                8 (sleep)
+           1710 LOAD_CONST              31 (3)
+           1712 CALL                     1
+           1720 POP_TOP
+
+102        1722 LOAD_FAST                0 (self)
+           1724 LOAD_ATTR                0 (device)
+           1744 LOAD_ATTR                3 (NULL|self + execute)
+           1764 LOAD_CONST               4 ('tap_id')
+           1766 LOAD_GLOBAL              4 (PACKAGE)
+           1776 LOAD_CONST              32 (':id/image_editor_hud_done_button')
+           1778 BINARY_OP                0 (+)
+           1782 LOAD_CONST               6 (('action', 'value'))
+           1784 BUILD_CONST_KEY_MAP      2
+           1786 CALL                     1
+           1794 POP_TOP
+
+103        1796 LOAD_GLOBAL              7 (NULL + time)
+           1806 LOAD_ATTR                8 (sleep)
+           1826 LOAD_CONST               7 (1)
+           1828 CALL                     1
+           1836 POP_TOP
+
+104        1838 LOAD_FAST                0 (self)
+           1840 LOAD_ATTR                0 (device)
+           1860 LOAD_ATTR               11 (NULL|self + hierarchy)
+           1880 CALL                     0
+           1888 STORE_FAST               4 (root)
+
+107        1890 LOAD_FAST                4 (root)
+           1892 LOAD_ATTR               21 (NULL|self + iter)
+           1912 LOAD_CONST              10 ('node')
+           1914 CALL                     1
+           1922 GET_ITER
+           1924 LOAD_FAST_AND_CLEAR      7 (n)
+           1926 SWAP                     2
+           1928 BUILD_SET                0
+           1930 SWAP                     2
+        >> 1932 FOR_ITER                20 (to 1976)
+           1936 STORE_FAST               7 (n)
+           1938 LOAD_FAST                7 (n)
+           1940 LOAD_ATTR               23 (NULL|self + get)
+           1960 LOAD_CONST              11 ('resource-id')
+           1962 LOAD_CONST              19 ('')
+           1964 CALL                     2
+           1972 SET_ADD                  2
+           1974 JUMP_BACKWARD           22 (to 1932)
+        >> 1976 END_FOR
+           1978 STORE_FAST              18 (ids)
+           1980 STORE_FAST               7 (n)
+
+108        1982 LOAD_GLOBAL              4 (PACKAGE)
+           1992 LOAD_CONST              33 (':id/image_editor_hud_draw_brush')
+           1994 BINARY_OP                0 (+)
+           1998 LOAD_FAST               18 (ids)
+           2000 CONTAINS_OP              0
+           2002 POP_JUMP_IF_FALSE       48 (to 2100)
+           2004 LOAD_GLOBAL              4 (PACKAGE)
+           2014 LOAD_CONST              32 (':id/image_editor_hud_done_button')
+           2016 BINARY_OP                0 (+)
+           2020 LOAD_FAST               18 (ids)
+           2022 CONTAINS_OP              0
+           2024 POP_JUMP_IF_FALSE       37 (to 2100)
+
+109        2026 LOAD_FAST                0 (self)
+           2028 LOAD_ATTR                0 (device)
+           2048 LOAD_ATTR                3 (NULL|self + execute)
+           2068 LOAD_CONST               4 ('tap_id')
+           2070 LOAD_GLOBAL              4 (PACKAGE)
+           2080 LOAD_CONST              32 (':id/image_editor_hud_done_button')
+           2082 BINARY_OP                0 (+)
+           2086 LOAD_CONST               6 (('action', 'value'))
+           2088 BUILD_CONST_KEY_MAP      2
+           2090 CALL                     1
+           2098 POP_TOP
+
+110     >> 2100 LOAD_GLOBAL             19 (NULL + range)
+           2110 LOAD_CONST              34 (10)
+           2112 CALL                     1
+           2120 GET_ITER
+        >> 2122 FOR_ITER                62 (to 2250)
+           2126 STORE_FAST               6 (_)
+
+111        2128 LOAD_GLOBAL              7 (NULL + time)
+           2138 LOAD_ATTR                8 (sleep)
+           2158 LOAD_CONST               7 (1)
+           2160 CALL                     1
+           2168 POP_TOP
+
+112        2170 LOAD_FAST                0 (self)
+           2172 LOAD_ATTR                0 (device)
+           2192 LOAD_ATTR               11 (NULL|self + hierarchy)
+           2212 CALL                     0
+           2220 STORE_FAST               4 (root)
+
+113        2222 LOAD_GLOBAL             13 (NULL + label_button)
+           2232 LOAD_FAST                4 (root)
+           2234 LOAD_CONST              35 (('Save', '保存', '儲存'))
+           2236 CALL                     2
+           2244 STORE_FAST              19 (save)
+           2246 POP_TOP
+           2248 JUMP_FORWARD            12 (to 2274)
+
+110     >> 2250 END_FOR
+
+115        2252 LOAD_GLOBAL             31 (NULL + RuntimeError)
+           2262 LOAD_CONST              36 ('裁剪后未进入可保存的头像预览页面，未提交保存')
+           2264 CALL                     1
+           2272 RAISE_VARARGS            1
+
+116     >> 2274 PUSH_NULL
+           2276 LOAD_FAST                2 (before_save)
+           2278 CALL                     0
+           2286 POP_TOP
+
+117        2288 LOAD_FAST                0 (self)
+           2290 LOAD_ATTR               14 (driver)
+           2310 LOAD_ATTR               17 (NULL|self + tap)
+           2330 LOAD_FAST               19 (save)
+           2332 CALL                     1
+           2340 POP_TOP
+
+118        2342 LOAD_GLOBAL             19 (NULL + range)
+           2352 LOAD_CONST              34 (10)
+           2354 CALL                     1
+           2362 GET_ITER
+        >> 2364 FOR_ITER                84 (to 2536)
+           2368 STORE_FAST               6 (_)
+
+119        2370 LOAD_GLOBAL              7 (NULL + time)
+           2380 LOAD_ATTR                8 (sleep)
+           2400 LOAD_CONST               7 (1)
+           2402 CALL                     1
+           2410 POP_TOP
+
+120        2412 LOAD_FAST                0 (self)
+           2414 LOAD_ATTR                0 (device)
+           2434 LOAD_ATTR               11 (NULL|self + hierarchy)
+           2454 CALL                     0
+           2462 STORE_FAST               4 (root)
+
+121        2464 LOAD_GLOBAL             43 (NULL + any)
+           2474 LOAD_CONST              37 (<code object <genexpr> at 0x000001C217B94FF0, file "console\signal_support\profiles.py", line 121>)
+           2476 MAKE_FUNCTION            0
+           2478 LOAD_FAST                4 (root)
+           2480 LOAD_ATTR               21 (NULL|self + iter)
+           2500 LOAD_CONST              10 ('node')
+           2502 CALL                     1
+           2510 GET_ITER
+           2512 CALL                     0
+           2520 CALL                     1
+           2528 POP_JUMP_IF_TRUE         1 (to 2532)
+           2530 JUMP_BACKWARD           84 (to 2364)
+
+122     >> 2532 POP_TOP
+           2534 RETURN_CONST            38 ('save_requested_not_server_verified')
+
+118     >> 2536 END_FOR
+
+123        2538 LOAD_GLOBAL             31 (NULL + RuntimeError)
+           2548 LOAD_CONST              39 ('头像保存后未返回资料页，结果未知，请核对截图，不自动重试。')
+           2550 CALL                     1
+           2558 RAISE_VARARGS            1
+        >> 2560 SWAP                     2
+           2562 POP_TOP
+
+ 86        2564 SWAP                     2
+           2566 STORE_FAST               7 (n)
+           2568 RERAISE                  0
+        >> 2570 SWAP                     2
+           2572 POP_TOP
+
+ 88        2574 SWAP                     2
+           2576 STORE_FAST               7 (n)
+           2578 RERAISE                  0
+        >> 2580 SWAP                     2
+           2582 POP_TOP
+
+ 97        2584 SWAP                     2
+           2586 STORE_FAST               7 (n)
+           2588 RERAISE                  0
+        >> 2590 SWAP                     2
+           2592 POP_TOP
+
+ 99        2594 SWAP                     2
+           2596 STORE_FAST               7 (n)
+           2598 RERAISE                  0
+        >> 2600 SWAP                     2
+           2602 POP_TOP
+
+107        2604 SWAP                     2
+           2606 STORE_FAST               7 (n)
+           2608 RERAISE                  0
+        >> 2610 PUSH_EXC_INFO
+
+114        2612 LOAD_GLOBAL             30 (RuntimeError)
+           2622 CHECK_EXC_MATCH
+           2624 POP_JUMP_IF_FALSE        3 (to 2632)
+           2626 POP_TOP
+           2628 POP_EXCEPT
+           2630 JUMP_BACKWARD          255 (to 2122)
+        >> 2632 RERAISE                  0
+        >> 2634 COPY                     3
+           2636 POP_EXCEPT
+           2638 RERAISE                  1
+ExceptionTable:
+  432 to 494 -> 2560 [3]
+  498 to 536 -> 2560 [3]
+  540 to 584 -> 2560 [3]
+  722 to 784 -> 2570 [3]
+  788 to 832 -> 2570 [3]
+  1332 to 1380 -> 2580 [2]
+  1454 to 1516 -> 2590 [2]
+  1520 to 1564 -> 2590 [2]
+  1928 to 1976 -> 2600 [2]
+  2222 to 2244 -> 2610 [1]
+  2610 to 2626 -> 2634 [2] lasti
+  2632 to 2632 -> 2634 [2] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217B94FF0, file "console\signal_support\profiles.py", line 121>:
+121           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                31 (to 74)
+             12 STORE_FAST               1 (n)
+             14 LOAD_FAST                1 (n)
+             16 LOAD_ATTR                1 (NULL|self + get)
+             36 LOAD_CONST               0 ('resource-id')
+             38 CALL                     1
+             46 LOAD_GLOBAL              2 (PACKAGE)
+             56 LOAD_CONST               1 (':id/manage_profile_name')
+             58 BINARY_OP                0 (+)
+             62 COMPARE_OP              40 (==)
+             66 YIELD_VALUE              1
+             68 RESUME                   1
+             70 POP_TOP
+             72 JUMP_BACKWARD           33 (to 8)
+        >>   74 END_FOR
+             76 RETURN_CONST             2 (None)
+        >>   78 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             80 RERAISE                  1
+ExceptionTable:
+  4 to 76 -> 78 [0] lasti

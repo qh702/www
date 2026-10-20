@@ -1,0 +1,193 @@
+Module: console.signal_support.errors
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('Actionable exceptions without API keys, phone numbers, PINs or codes.')
+              4 STORE_NAME               0 (__doc__)
+
+  2           6 LOAD_CONST               1 (0)
+              8 LOAD_CONST               2 (('Path',))
+             10 IMPORT_NAME              1 (pathlib)
+             12 IMPORT_FROM              2 (Path)
+             14 STORE_NAME               2 (Path)
+             16 POP_TOP
+
+  3          18 LOAD_CONST               1 (0)
+             20 LOAD_CONST               3 (None)
+             22 IMPORT_NAME              3 (re)
+             24 STORE_NAME               3 (re)
+
+  4          26 LOAD_CONST               1 (0)
+             28 LOAD_CONST               3 (None)
+             30 IMPORT_NAME              4 (traceback)
+             32 STORE_NAME               4 (traceback)
+
+  6          34 LOAD_CONST               6 (((), ''))
+             36 LOAD_CONST               4 (<code object safe_error at 0x000001C217743460, file "console\signal_support\errors.py", line 6>)
+             38 MAKE_FUNCTION            1 (defaults)
+             40 STORE_NAME               5 (safe_error)
+
+ 15          42 LOAD_CONST               5 (<code object summary at 0x000001C217B51A70, file "console\signal_support\errors.py", line 15>)
+             44 MAKE_FUNCTION            0
+             46 STORE_NAME               6 (summary)
+             48 RETURN_CONST             3 (None)
+
+Disassembly of <code object safe_error at 0x000001C217743460, file "console\signal_support\errors.py", line 6>:
+  6           0 RESUME                   0
+
+  7           2 LOAD_GLOBAL              1 (NULL + str)
+             12 LOAD_FAST                0 (error)
+             14 CALL                     1
+             22 STORE_FAST               3 (message)
+
+  8          24 LOAD_GLOBAL              3 (NULL + sorted)
+             34 LOAD_CONST               1 (<code object <genexpr> at 0x000001C21594AC30, file "console\signal_support\errors.py", line 8>)
+             36 MAKE_FUNCTION            0
+             38 LOAD_FAST                1 (secrets)
+             40 GET_ITER
+             42 CALL                     0
+             50 LOAD_GLOBAL              4 (len)
+             60 LOAD_CONST               2 (True)
+             62 KW_NAMES                 3 (('key', 'reverse'))
+             64 CALL                     3
+             72 GET_ITER
+        >>   74 FOR_ITER                20 (to 118)
+             78 STORE_FAST               4 (secret)
+             80 LOAD_FAST                3 (message)
+             82 LOAD_ATTR                7 (NULL|self + replace)
+            102 LOAD_FAST                4 (secret)
+            104 LOAD_CONST               4 ('[敏感值隐藏]')
+            106 CALL                     2
+            114 STORE_FAST               3 (message)
+            116 JUMP_BACKWARD           22 (to 74)
+        >>  118 END_FOR
+
+  9         120 LOAD_GLOBAL              9 (NULL + re)
+            130 LOAD_ATTR               10 (sub)
+            150 LOAD_CONST               5 ('https?://\\S+')
+            152 LOAD_CONST               6 ('[请求地址隐藏]')
+            154 LOAD_FAST                3 (message)
+            156 CALL                     3
+            164 STORE_FAST               3 (message)
+
+ 10         166 LOAD_GLOBAL              9 (NULL + re)
+            176 LOAD_ATTR               10 (sub)
+            196 LOAD_CONST               7 ('(?i)(api_key|token|password|pin|code)\\s*[:=]\\s*[^\\s,&]+')
+            198 LOAD_CONST               8 ('\\1=[隐藏]')
+            200 LOAD_FAST                3 (message)
+            202 CALL                     3
+            210 STORE_FAST               3 (message)
+
+ 11         212 LOAD_GLOBAL              9 (NULL + re)
+            222 LOAD_ATTR               10 (sub)
+            242 LOAD_CONST               9 ('\\b\\d{4,}\\b')
+            244 LOAD_CONST              10 ('[数字隐藏]')
+            246 LOAD_FAST                3 (message)
+            248 CALL                     3
+            256 STORE_FAST               3 (message)
+
+ 12         258 LOAD_GLOBAL             13 (NULL + traceback)
+            268 LOAD_ATTR               14 (extract_tb)
+            288 LOAD_FAST                0 (error)
+            290 LOAD_ATTR               16 (__traceback__)
+            310 CALL                     1
+            318 GET_ITER
+            320 LOAD_FAST_AND_CLEAR      5 (frame)
+            322 SWAP                     2
+            324 BUILD_LIST               0
+            326 SWAP                     2
+        >>  328 FOR_ITER                57 (to 446)
+            332 STORE_FAST               5 (frame)
+            334 LOAD_GLOBAL             19 (NULL + Path)
+            344 LOAD_FAST                5 (frame)
+            346 LOAD_ATTR               20 (filename)
+            366 CALL                     1
+            374 LOAD_ATTR               22 (name)
+            394 LOAD_FAST                5 (frame)
+            396 LOAD_ATTR               24 (lineno)
+            416 LOAD_FAST                5 (frame)
+            418 LOAD_ATTR               22 (name)
+            438 LOAD_CONST              11 (('file', 'line', 'function'))
+            440 BUILD_CONST_KEY_MAP      3
+            442 LIST_APPEND              2
+            444 JUMP_BACKWARD           59 (to 328)
+        >>  446 END_FOR
+            448 STORE_FAST               6 (frames)
+            450 STORE_FAST               5 (frame)
+
+ 13         452 LOAD_FAST                2 (phase)
+            454 LOAD_GLOBAL             27 (NULL + type)
+            464 LOAD_FAST                0 (error)
+            466 CALL                     1
+            474 LOAD_ATTR               28 (__name__)
+            494 LOAD_FAST                3 (message)
+            496 LOAD_CONST               0 (None)
+            498 LOAD_CONST              12 (1400)
+            500 BINARY_SLICE
+            502 COPY                     1
+            504 POP_JUMP_IF_TRUE         2 (to 510)
+            506 POP_TOP
+            508 LOAD_CONST              13 ('未提供错误文本')
+        >>  510 LOAD_FAST                6 (frames)
+            512 LOAD_CONST              14 (('phase', 'type', 'message', 'frames'))
+            514 BUILD_CONST_KEY_MAP      4
+            516 RETURN_VALUE
+        >>  518 SWAP                     2
+            520 POP_TOP
+
+ 12         522 SWAP                     2
+            524 STORE_FAST               5 (frame)
+            526 RERAISE                  0
+ExceptionTable:
+  324 to 446 -> 518 [2]
+
+Disassembly of <code object <genexpr> at 0x000001C21594AC30, file "console\signal_support\errors.py", line 8>:
+  8           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                18 (to 48)
+             12 STORE_FAST               1 (x)
+             14 LOAD_FAST                1 (x)
+             16 POP_JUMP_IF_TRUE         1 (to 20)
+             18 JUMP_BACKWARD            6 (to 8)
+        >>   20 LOAD_GLOBAL              1 (NULL + str)
+             30 LOAD_FAST                1 (x)
+             32 CALL                     1
+             40 YIELD_VALUE              1
+             42 RESUME                   1
+             44 POP_TOP
+             46 JUMP_BACKWARD           20 (to 8)
+        >>   48 END_FOR
+             50 RETURN_CONST             0 (None)
+        >>   52 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             54 RERAISE                  1
+ExceptionTable:
+  4 to 16 -> 52 [0] lasti
+  20 to 50 -> 52 [0] lasti
+
+Disassembly of <code object summary at 0x000001C217B51A70, file "console\signal_support\errors.py", line 15>:
+ 15           0 RESUME                   0
+              2 LOAD_FAST                0 (details)
+              4 LOAD_ATTR                1 (NULL|self + get)
+             24 LOAD_CONST               1 ('phase')
+             26 LOAD_CONST               2 ('')
+             28 CALL                     2
+             36 FORMAT_VALUE             0
+             38 LOAD_CONST               3 (' / ')
+             40 LOAD_FAST                0 (details)
+             42 LOAD_ATTR                1 (NULL|self + get)
+             62 LOAD_CONST               4 ('type')
+             64 LOAD_CONST               5 ('Error')
+             66 CALL                     2
+             74 FORMAT_VALUE             0
+             76 LOAD_CONST               6 ('：')
+             78 LOAD_FAST                0 (details)
+             80 LOAD_ATTR                1 (NULL|self + get)
+            100 LOAD_CONST               7 ('message')
+            102 LOAD_CONST               8 ('未知错误')
+            104 CALL                     2
+            112 FORMAT_VALUE             0
+            114 BUILD_STRING             5
+            116 RETURN_VALUE

@@ -1,0 +1,121 @@
+{
+  "python_version": "3.12",
+  "entrypoint": "main.pyc",
+  "modules": [
+    {
+      "module": "console",
+      "bytecode": "console.pyc",
+      "disassembly": "disassembly/console.txt"
+    },
+    {
+      "module": "console.advanced_ui",
+      "bytecode": "console/advanced_ui.pyc",
+      "disassembly": "disassembly/console/advanced_ui.txt"
+    },
+    {
+      "module": "console.android",
+      "bytecode": "console/android.pyc",
+      "disassembly": "disassembly/console/android.txt"
+    },
+    {
+      "module": "console.business",
+      "bytecode": "console/business.pyc",
+      "disassembly": "disassembly/console/business.txt"
+    },
+    {
+      "module": "console.captcha_extractor",
+      "bytecode": "console/captcha_extractor.pyc",
+      "disassembly": "disassembly/console/captcha_extractor.txt"
+    },
+    {
+      "module": "console.captcha_solver",
+      "bytecode": "console/captcha_solver.pyc",
+      "disassembly": "disassembly/console/captcha_solver.txt"
+    },
+    {
+      "module": "console.engine",
+      "bytecode": "console/engine.pyc",
+      "disassembly": "disassembly/console/engine.txt"
+    },
+    {
+      "module": "console.gui",
+      "bytecode": "console/gui.pyc",
+      "disassembly": "disassembly/console/gui.txt"
+    },
+    {
+      "module": "console.infrastructure",
+      "bytecode": "console/infrastructure.pyc",
+      "disassembly": "disassembly/console/infrastructure.txt"
+    },
+    {
+      "module": "console.local_secrets",
+      "bytecode": "console/local_secrets.pyc",
+      "disassembly": "disassembly/console/local_secrets.txt"
+    },
+    {
+      "module": "console.param_panel",
+      "bytecode": "console/param_panel.pyc",
+      "disassembly": "disassembly/console/param_panel.txt"
+    },
+    {
+      "module": "console.signal_support",
+      "bytecode": "console/signal_support.pyc",
+      "disassembly": "disassembly/console/signal_support.txt"
+    },
+    {
+      "module": "console.signal_support.accounts",
+      "bytecode": "console/signal_support/accounts.pyc",
+      "disassembly": "disassembly/console/signal_support/accounts.txt"
+    },
+    {
+      "module": "console.signal_support.device",
+      "bytecode": "console/signal_support/device.pyc",
+      "disassembly": "disassembly/console/signal_support/device.txt"
+    },
+    {
+      "module": "console.signal_support.errors",
+      "bytecode": "console/signal_support/errors.pyc",
+      "disassembly": "disassembly/console/signal_support/errors.txt"
+    },
+    {
+      "module": "console.signal_support.messaging",
+      "bytecode": "console/signal_support/messaging.pyc",
+      "disassembly": "disassembly/console/signal_support/messaging.txt"
+    },
+    {
+      "module": "console.signal_support.operations",
+      "bytecode": "console/signal_support/operations.pyc",
+      "disassembly": "disassembly/console/signal_support/operations.txt"
+    },
+    {
+      "module": "console.signal_support.profiles",
+      "bytecode": "console/signal_support/profiles.pyc",
+      "disassembly": "disassembly/console/signal_support/profiles.txt"
+    },
+    {
+      "module": "console.signal_support.registration",
+      "bytecode": "console/signal_support/registration.pyc",
+      "disassembly": "disassembly/console/signal_support/registration.txt"
+    },
+    {
+      "module": "console.sms",
+      "bytecode": "console/sms.pyc",
+      "disassembly": "disassembly/console/sms.txt"
+    },
+    {
+      "module": "console.storage",
+      "bytecode": "console/storage.pyc",
+      "disassembly": "disassembly/console/storage.txt"
+    },
+    {
+      "module": "console.watchdog",
+      "bytecode": "console/watchdog.pyc",
+      "disassembly": "disassembly/console/watchdog.txt"
+    },
+    {
+      "module": "main",
+      "bytecode": "main.pyc",
+      "disassembly": "disassembly/main.txt"
+    }
+  ]
+}

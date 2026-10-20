@@ -1,0 +1,1525 @@
+Module: console.storage
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 (0)
+              4 LOAD_CONST               1 (None)
+              6 IMPORT_NAME              0 (csv)
+              8 STORE_NAME               0 (csv)
+
+  2          10 LOAD_CONST               0 (0)
+             12 LOAD_CONST               1 (None)
+             14 IMPORT_NAME              1 (json)
+             16 STORE_NAME               1 (json)
+
+  3          18 LOAD_CONST               0 (0)
+             20 LOAD_CONST               1 (None)
+             22 IMPORT_NAME              2 (sqlite3)
+             24 STORE_NAME               2 (sqlite3)
+
+  4          26 LOAD_CONST               0 (0)
+             28 LOAD_CONST               1 (None)
+             30 IMPORT_NAME              3 (threading)
+             32 STORE_NAME               3 (threading)
+
+  5          34 LOAD_CONST               0 (0)
+             36 LOAD_CONST               2 (('datetime',))
+             38 IMPORT_NAME              4 (datetime)
+             40 IMPORT_FROM              4 (datetime)
+             42 STORE_NAME               4 (datetime)
+             44 POP_TOP
+
+  6          46 LOAD_CONST               0 (0)
+             48 LOAD_CONST               3 (('Path',))
+             50 IMPORT_NAME              5 (pathlib)
+             52 IMPORT_FROM              6 (Path)
+             54 STORE_NAME               6 (Path)
+             56 POP_TOP
+
+  7          58 LOAD_CONST               0 (0)
+             60 LOAD_CONST               4 (('escape',))
+             62 IMPORT_NAME              7 (xml.sax.saxutils)
+             64 IMPORT_FROM              8 (escape)
+             66 STORE_NAME               8 (escape)
+             68 POP_TOP
+
+  8          70 LOAD_CONST               0 (0)
+             72 LOAD_CONST               5 (('ZipFile', 'ZIP_DEFLATED'))
+             74 IMPORT_NAME              9 (zipfile)
+             76 IMPORT_FROM             10 (ZipFile)
+             78 STORE_NAME              10 (ZipFile)
+             80 IMPORT_FROM             11 (ZIP_DEFLATED)
+             82 STORE_NAME              11 (ZIP_DEFLATED)
+             84 POP_TOP
+
+ 11          86 LOAD_CONST               6 (<code object now at 0x000001C217BB3880, file "console\storage.py", line 11>)
+             88 MAKE_FUNCTION            0
+             90 STORE_NAME              12 (now)
+
+ 15          92 PUSH_NULL
+             94 LOAD_BUILD_CLASS
+             96 LOAD_CONST               7 (<code object Store at 0x000001C217BB3CC0, file "console\storage.py", line 15>)
+             98 MAKE_FUNCTION            0
+            100 LOAD_CONST               8 ('Store')
+            102 CALL                     2
+            110 STORE_NAME              13 (Store)
+
+123         112 LOAD_CONST               9 (<code object import_lines at 0x000001C217B0DDF0, file "console\storage.py", line 123>)
+            114 MAKE_FUNCTION            0
+            116 STORE_NAME              14 (import_lines)
+
+133         118 LOAD_CONST              10 (<code object export_table at 0x000001C21772F0F0, file "console\storage.py", line 133>)
+            120 MAKE_FUNCTION            0
+            122 STORE_NAME              15 (export_table)
+            124 RETURN_CONST             1 (None)
+
+Disassembly of <code object now at 0x000001C217BB3880, file "console\storage.py", line 11>:
+ 11           0 RESUME                   0
+
+ 12           2 LOAD_GLOBAL              1 (NULL + datetime)
+             12 LOAD_ATTR                2 (now)
+             32 CALL                     0
+             40 LOAD_ATTR                5 (NULL|self + isoformat)
+             60 LOAD_CONST               1 ('seconds')
+             62 KW_NAMES                 2 (('timespec',))
+             64 CALL                     1
+             72 RETURN_VALUE
+
+Disassembly of <code object Store at 0x000001C217BB3CC0, file "console\storage.py", line 15>:
+ 15           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('Store')
+              8 STORE_NAME               2 (__qualname__)
+
+ 16          10 LOAD_CONST               1 (<code object __init__ at 0x000001C217758A50, file "console\storage.py", line 16>)
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (__init__)
+
+ 57          16 LOAD_CONST              11 (((),))
+             18 LOAD_CONST               2 (<code object query at 0x000001C217653430, file "console\storage.py", line 57>)
+             20 MAKE_FUNCTION            1 (defaults)
+             22 STORE_NAME               4 (query)
+
+ 61          24 LOAD_CONST              11 (((),))
+             26 LOAD_CONST               3 (<code object execute at 0x000001C217C45160, file "console\storage.py", line 61>)
+             28 MAKE_FUNCTION            1 (defaults)
+             30 STORE_NAME               5 (execute)
+
+ 67          32 LOAD_CONST              12 ((None,))
+             34 LOAD_CONST               5 (<code object setting at 0x000001C21769F340, file "console\storage.py", line 67>)
+             36 MAKE_FUNCTION            1 (defaults)
+             38 STORE_NAME               6 (setting)
+
+ 71          40 LOAD_CONST               6 (<code object set_setting at 0x000001C217B95110, file "console\storage.py", line 71>)
+             42 MAKE_FUNCTION            0
+             44 STORE_NAME               7 (set_setting)
+
+ 74          46 LOAD_CONST               7 (<code object log at 0x000001C217B6AA30, file "console\storage.py", line 74>)
+             48 MAKE_FUNCTION            0
+             50 STORE_NAME               8 (log)
+
+ 82          52 LOAD_CONST              13 ((0, 'real', ''))
+             54 LOAD_CONST               8 (<code object add_task at 0x000001C217B9E3D0, file "console\storage.py", line 82>)
+             56 MAKE_FUNCTION            1 (defaults)
+             58 STORE_NAME               9 (add_task)
+
+ 87          60 LOAD_CONST              12 ((None,))
+             62 LOAD_CONST               9 (<code object checkpoint at 0x000001C217653910, file "console\storage.py", line 87>)
+             64 MAKE_FUNCTION            1 (defaults)
+             66 STORE_NAME              10 (checkpoint)
+
+ 94          68 LOAD_CONST              14 (('',))
+             70 LOAD_CONST              10 (<code object finish_task at 0x000001C2173A1240, file "console\storage.py", line 94>)
+             72 MAKE_FUNCTION            1 (defaults)
+             74 STORE_NAME              11 (finish_task)
+             76 RETURN_CONST             4 (None)
+
+Disassembly of <code object __init__ at 0x000001C217758A50, file "console\storage.py", line 16>:
+ 16           0 RESUME                   0
+
+ 17           2 LOAD_GLOBAL              1 (NULL + Path)
+             12 LOAD_FAST                1 (root)
+             14 CALL                     1
+             22 LOAD_FAST                0 (self)
+             24 STORE_ATTR               1 (root)
+
+ 18          34 LOAD_FAST                0 (self)
+             36 LOAD_ATTR                2 (root)
+             56 LOAD_ATTR                5 (NULL|self + mkdir)
+             76 LOAD_CONST               1 (True)
+             78 LOAD_CONST               1 (True)
+             80 KW_NAMES                 2 (('parents', 'exist_ok'))
+             82 CALL                     2
+             90 POP_TOP
+
+ 19          92 LOAD_GLOBAL              7 (NULL + threading)
+            102 LOAD_ATTR                8 (RLock)
+            122 CALL                     0
+            130 LOAD_FAST                0 (self)
+            132 STORE_ATTR               5 (lock)
+
+ 20         142 LOAD_GLOBAL             13 (NULL + sqlite3)
+            152 LOAD_ATTR               14 (connect)
+            172 LOAD_FAST                0 (self)
+            174 LOAD_ATTR                2 (root)
+            194 LOAD_CONST               3 ('console.sqlite3')
+            196 BINARY_OP               11 (/)
+            200 LOAD_CONST               4 (False)
+            202 KW_NAMES                 5 (('check_same_thread',))
+            204 CALL                     2
+            212 LOAD_FAST                0 (self)
+            214 STORE_ATTR               8 (db)
+
+ 21         224 LOAD_GLOBAL             12 (sqlite3)
+            234 LOAD_ATTR               18 (Row)
+            254 LOAD_FAST                0 (self)
+            256 LOAD_ATTR               16 (db)
+            276 STORE_ATTR              10 (row_factory)
+
+ 22         286 LOAD_FAST                0 (self)
+            288 LOAD_ATTR               16 (db)
+            308 LOAD_ATTR               23 (NULL|self + execute)
+            328 LOAD_CONST               6 ('PRAGMA journal_mode=WAL')
+            330 CALL                     1
+            338 POP_TOP
+
+ 23         340 LOAD_FAST                0 (self)
+            342 LOAD_ATTR               16 (db)
+            362 LOAD_ATTR               25 (NULL|self + executescript)
+            382 LOAD_CONST               7 ("\n        CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY,value TEXT NOT NULL);\n        CREATE TABLE IF NOT EXISTS devices(serial TEXT PRIMARY KEY,status TEXT,name TEXT,seen TEXT);\n        CREATE TABLE IF NOT EXISTS accounts(id INTEGER PRIMARY KEY,phone TEXT UNIQUE NOT NULL,serial TEXT,\n          status TEXT DEFAULT '待检测',group_name TEXT DEFAULT '',created TEXT,last_active TEXT);\n        CREATE TABLE IF NOT EXISTS materials(id INTEGER PRIMARY KEY,kind TEXT,content TEXT,\n          UNIQUE(kind,content));\n        CREATE TABLE IF NOT EXISTS tasks(id INTEGER PRIMARY KEY,kind TEXT,serial TEXT,phone TEXT,\n          state TEXT,priority INTEGER DEFAULT 0,config TEXT,created TEXT,started TEXT,ended TEXT,\n          step INTEGER DEFAULT 0,error TEXT DEFAULT '',mode TEXT DEFAULT 'real');\n        CREATE TABLE IF NOT EXISTS logs(id INTEGER PRIMARY KEY,time TEXT,level TEXT,serial TEXT,\n          kind TEXT,message TEXT);\n        CREATE TABLE IF NOT EXISTS results(id INTEGER PRIMARY KEY,task_id INTEGER,kind TEXT,\n          serial TEXT,phone TEXT,target TEXT,content TEXT,time TEXT,status TEXT,mode TEXT);\n        CREATE TABLE IF NOT EXISTS checkpoints(task_id INTEGER,stage TEXT,payload TEXT,updated TEXT,PRIMARY KEY(task_id,stage));\n        CREATE TABLE IF NOT EXISTS activations(task_id INTEGER PRIMARY KEY,activation_id TEXT,phone TEXT,country TEXT,price_cap TEXT,state TEXT,updated TEXT);\n        CREATE TABLE IF NOT EXISTS schedules(id INTEGER PRIMARY KEY,name TEXT,kind TEXT,serial TEXT,phone TEXT,config TEXT,mode TEXT,due TEXT,interval_seconds INTEGER DEFAULT 0,enabled INTEGER DEFAULT 1);\n        CREATE TABLE IF NOT EXISTS instances(instance_id TEXT PRIMARY KEY,name TEXT,serial TEXT,status TEXT,proxy TEXT DEFAULT '',created TEXT);\n        ")
+            384 CALL                     1
+            392 POP_TOP
+
+ 42         394 LOAD_FAST                0 (self)
+            396 LOAD_ATTR               16 (db)
+            416 LOAD_ATTR               23 (NULL|self + execute)
+            436 LOAD_CONST               8 ('PRAGMA table_info(accounts)')
+            438 CALL                     1
+            446 GET_ITER
+            448 LOAD_FAST_AND_CLEAR      2 (row)
+            450 SWAP                     2
+            452 BUILD_SET                0
+            454 SWAP                     2
+        >>  456 FOR_ITER                 7 (to 474)
+            460 STORE_FAST               2 (row)
+            462 LOAD_FAST                2 (row)
+            464 LOAD_CONST               9 (1)
+            466 BINARY_SUBSCR
+            470 SET_ADD                  2
+            472 JUMP_BACKWARD            9 (to 456)
+        >>  474 END_FOR
+            476 STORE_FAST               3 (existing)
+            478 STORE_FAST               2 (row)
+
+ 43         480 LOAD_CONST              10 ('INTEGER DEFAULT 0')
+            482 LOAD_CONST              10 ('INTEGER DEFAULT 0')
+            484 LOAD_CONST              10 ('INTEGER DEFAULT 0')
+            486 LOAD_CONST              11 ("TEXT DEFAULT ''")
+            488 LOAD_CONST              11 ("TEXT DEFAULT ''")
+            490 LOAD_CONST              12 (('friend_count', 'msg_count', 'info_modified', 'pin_enc', 'password'))
+            492 BUILD_CONST_KEY_MAP      5
+            494 LOAD_ATTR               27 (NULL|self + items)
+            514 CALL                     0
+            522 GET_ITER
+        >>  524 FOR_ITER                43 (to 614)
+            528 UNPACK_SEQUENCE          2
+            532 STORE_FAST               4 (column)
+            534 STORE_FAST               5 (declaration)
+
+ 44         536 LOAD_FAST                4 (column)
+            538 LOAD_FAST                3 (existing)
+            540 CONTAINS_OP              1
+            542 POP_JUMP_IF_TRUE         1 (to 546)
+            544 JUMP_BACKWARD           11 (to 524)
+
+ 45     >>  546 LOAD_FAST                0 (self)
+            548 LOAD_ATTR               16 (db)
+            568 LOAD_ATTR               23 (NULL|self + execute)
+            588 LOAD_CONST              13 ('ALTER TABLE accounts ADD COLUMN ')
+            590 LOAD_FAST                4 (column)
+            592 FORMAT_VALUE             0
+            594 LOAD_CONST              14 (' ')
+            596 LOAD_FAST                5 (declaration)
+            598 FORMAT_VALUE             0
+            600 BUILD_STRING             4
+            602 CALL                     1
+            610 POP_TOP
+            612 JUMP_BACKWARD           45 (to 524)
+
+ 43     >>  614 END_FOR
+
+ 46         616 LOAD_FAST                0 (self)
+            618 LOAD_ATTR               16 (db)
+            638 LOAD_ATTR               23 (NULL|self + execute)
+            658 LOAD_CONST              15 ('PRAGMA table_info(results)')
+            660 CALL                     1
+            668 GET_ITER
+            670 LOAD_FAST_AND_CLEAR      2 (row)
+            672 SWAP                     2
+            674 BUILD_SET                0
+            676 SWAP                     2
+        >>  678 FOR_ITER                 7 (to 696)
+            682 STORE_FAST               2 (row)
+            684 LOAD_FAST                2 (row)
+            686 LOAD_CONST               9 (1)
+            688 BINARY_SUBSCR
+            692 SET_ADD                  2
+            694 JUMP_BACKWARD            9 (to 678)
+        >>  696 END_FOR
+            698 STORE_FAST               6 (result_columns)
+            700 STORE_FAST               2 (row)
+
+ 47         702 LOAD_CONST              16 (('outcome', 'detail'))
+            704 GET_ITER
+        >>  706 FOR_ITER                38 (to 786)
+            710 STORE_FAST               4 (column)
+
+ 48         712 LOAD_FAST                4 (column)
+            714 LOAD_FAST                6 (result_columns)
+            716 CONTAINS_OP              1
+            718 POP_JUMP_IF_TRUE         1 (to 722)
+            720 JUMP_BACKWARD            8 (to 706)
+
+ 49     >>  722 LOAD_FAST                0 (self)
+            724 LOAD_ATTR               16 (db)
+            744 LOAD_ATTR               23 (NULL|self + execute)
+            764 LOAD_CONST              17 ('ALTER TABLE results ADD COLUMN ')
+            766 LOAD_FAST                4 (column)
+            768 FORMAT_VALUE             0
+            770 LOAD_CONST              18 (" TEXT DEFAULT ''")
+            772 BUILD_STRING             3
+            774 CALL                     1
+            782 POP_TOP
+            784 JUMP_BACKWARD           40 (to 706)
+
+ 47     >>  786 END_FOR
+
+ 50         788 LOAD_FAST                0 (self)
+            790 LOAD_ATTR               16 (db)
+            810 LOAD_ATTR               23 (NULL|self + execute)
+            830 LOAD_CONST              19 ('PRAGMA table_info(tasks)')
+            832 CALL                     1
+            840 GET_ITER
+            842 LOAD_FAST_AND_CLEAR      2 (row)
+            844 SWAP                     2
+            846 BUILD_SET                0
+            848 SWAP                     2
+        >>  850 FOR_ITER                 7 (to 868)
+            854 STORE_FAST               2 (row)
+            856 LOAD_FAST                2 (row)
+            858 LOAD_CONST               9 (1)
+            860 BINARY_SUBSCR
+            864 SET_ADD                  2
+            866 JUMP_BACKWARD            9 (to 850)
+        >>  868 END_FOR
+            870 STORE_FAST               7 (task_columns)
+            872 STORE_FAST               2 (row)
+
+ 51         874 LOAD_CONST              20 ('batch')
+            876 LOAD_FAST                7 (task_columns)
+            878 CONTAINS_OP              1
+            880 POP_JUMP_IF_FALSE       27 (to 936)
+
+ 52         882 LOAD_FAST                0 (self)
+            884 LOAD_ATTR               16 (db)
+            904 LOAD_ATTR               23 (NULL|self + execute)
+            924 LOAD_CONST              21 ("ALTER TABLE tasks ADD COLUMN batch TEXT DEFAULT ''")
+            926 CALL                     1
+            934 POP_TOP
+
+ 54     >>  936 LOAD_FAST                0 (self)
+            938 LOAD_ATTR               16 (db)
+            958 LOAD_ATTR               23 (NULL|self + execute)
+            978 LOAD_CONST              22 ("UPDATE tasks SET state='interrupted', error='上次运行中断，请检查设备后手动重试' WHERE state='running'")
+            980 CALL                     1
+            988 POP_TOP
+
+ 55         990 LOAD_FAST                0 (self)
+            992 LOAD_ATTR               16 (db)
+           1012 LOAD_ATTR               29 (NULL|self + commit)
+           1032 CALL                     0
+           1040 POP_TOP
+           1042 RETURN_CONST             0 (None)
+        >> 1044 SWAP                     2
+           1046 POP_TOP
+
+ 42        1048 SWAP                     2
+           1050 STORE_FAST               2 (row)
+           1052 RERAISE                  0
+        >> 1054 SWAP                     2
+           1056 POP_TOP
+
+ 46        1058 SWAP                     2
+           1060 STORE_FAST               2 (row)
+           1062 RERAISE                  0
+        >> 1064 SWAP                     2
+           1066 POP_TOP
+
+ 50        1068 SWAP                     2
+           1070 STORE_FAST               2 (row)
+           1072 RERAISE                  0
+ExceptionTable:
+  452 to 474 -> 1044 [2]
+  674 to 696 -> 1054 [2]
+  846 to 868 -> 1064 [2]
+
+Disassembly of <code object query at 0x000001C217653430, file "console\storage.py", line 57>:
+ 57           0 RESUME                   0
+
+ 58           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (lock)
+             24 BEFORE_WITH
+             26 POP_TOP
+
+ 59          28 LOAD_FAST                0 (self)
+             30 LOAD_ATTR                2 (db)
+             50 LOAD_ATTR                5 (NULL|self + execute)
+             70 LOAD_FAST                1 (sql)
+             72 LOAD_FAST                2 (args)
+             74 CALL                     2
+             82 LOAD_ATTR                7 (NULL|self + fetchall)
+            102 CALL                     0
+            110 GET_ITER
+            112 LOAD_FAST_AND_CLEAR      3 (r)
+            114 SWAP                     2
+            116 BUILD_LIST               0
+            118 SWAP                     2
+        >>  120 FOR_ITER                13 (to 150)
+            124 STORE_FAST               3 (r)
+            126 LOAD_GLOBAL              9 (NULL + dict)
+            136 LOAD_FAST                3 (r)
+            138 CALL                     1
+            146 LIST_APPEND              2
+            148 JUMP_BACKWARD           15 (to 120)
+        >>  150 END_FOR
+            152 SWAP                     2
+            154 STORE_FAST               3 (r)
+
+ 58         156 SWAP                     2
+            158 LOAD_CONST               0 (None)
+            160 LOAD_CONST               0 (None)
+            162 LOAD_CONST               0 (None)
+            164 CALL                     2
+            172 POP_TOP
+            174 RETURN_VALUE
+        >>  176 SWAP                     2
+            178 POP_TOP
+
+ 59         180 SWAP                     2
+            182 STORE_FAST               3 (r)
+            184 RERAISE                  0
+
+ 58     >>  186 PUSH_EXC_INFO
+            188 WITH_EXCEPT_START
+            190 POP_JUMP_IF_TRUE         1 (to 194)
+            192 RERAISE                  2
+        >>  194 POP_TOP
+            196 POP_EXCEPT
+            198 POP_TOP
+            200 POP_TOP
+            202 RETURN_CONST             0 (None)
+        >>  204 COPY                     3
+            206 POP_EXCEPT
+            208 RERAISE                  1
+ExceptionTable:
+  26 to 114 -> 186 [1] lasti
+  116 to 150 -> 176 [3]
+  152 to 154 -> 186 [1] lasti
+  176 to 184 -> 186 [1] lasti
+  186 to 194 -> 204 [3] lasti
+
+Disassembly of <code object execute at 0x000001C217C45160, file "console\storage.py", line 61>:
+ 61           0 RESUME                   0
+
+ 62           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (lock)
+             24 BEFORE_WITH
+             26 POP_TOP
+
+ 63          28 LOAD_FAST                0 (self)
+             30 LOAD_ATTR                2 (db)
+             50 LOAD_ATTR                5 (NULL|self + execute)
+             70 LOAD_FAST                1 (sql)
+             72 LOAD_FAST                2 (args)
+             74 CALL                     2
+             82 STORE_FAST               3 (cur)
+
+ 64          84 LOAD_FAST                0 (self)
+             86 LOAD_ATTR                2 (db)
+            106 LOAD_ATTR                7 (NULL|self + commit)
+            126 CALL                     0
+            134 POP_TOP
+
+ 65         136 LOAD_FAST                3 (cur)
+            138 LOAD_ATTR                8 (lastrowid)
+
+ 62         158 SWAP                     2
+            160 LOAD_CONST               0 (None)
+            162 LOAD_CONST               0 (None)
+            164 LOAD_CONST               0 (None)
+            166 CALL                     2
+            174 POP_TOP
+            176 RETURN_VALUE
+        >>  178 PUSH_EXC_INFO
+            180 WITH_EXCEPT_START
+            182 POP_JUMP_IF_TRUE         1 (to 186)
+            184 RERAISE                  2
+        >>  186 POP_TOP
+            188 POP_EXCEPT
+            190 POP_TOP
+            192 POP_TOP
+            194 RETURN_CONST             0 (None)
+        >>  196 COPY                     3
+            198 POP_EXCEPT
+            200 RERAISE                  1
+ExceptionTable:
+  26 to 156 -> 178 [1] lasti
+  178 to 186 -> 196 [3] lasti
+
+Disassembly of <code object setting at 0x000001C21769F340, file "console\storage.py", line 67>:
+ 67           0 RESUME                   0
+
+ 68           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + query)
+             24 LOAD_CONST               1 ('SELECT value FROM settings WHERE key=?')
+             26 LOAD_FAST                1 (key)
+             28 BUILD_TUPLE              1
+             30 CALL                     2
+             38 STORE_FAST               3 (rows)
+
+ 69          40 LOAD_FAST                3 (rows)
+             42 POP_JUMP_IF_FALSE       27 (to 98)
+             44 LOAD_GLOBAL              3 (NULL + json)
+             54 LOAD_ATTR                4 (loads)
+             74 LOAD_FAST                3 (rows)
+             76 LOAD_CONST               2 (0)
+             78 BINARY_SUBSCR
+             82 LOAD_CONST               3 ('value')
+             84 BINARY_SUBSCR
+             88 CALL                     1
+             96 RETURN_VALUE
+        >>   98 LOAD_FAST                2 (default)
+            100 RETURN_VALUE
+
+Disassembly of <code object set_setting at 0x000001C217B95110, file "console\storage.py", line 71>:
+ 71           0 RESUME                   0
+
+ 72           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + execute)
+             24 LOAD_CONST               1 ('INSERT OR REPLACE INTO settings VALUES(?,?)')
+             26 LOAD_FAST                1 (key)
+             28 LOAD_GLOBAL              3 (NULL + json)
+             38 LOAD_ATTR                4 (dumps)
+             58 LOAD_FAST                2 (value)
+             60 LOAD_CONST               2 (False)
+             62 KW_NAMES                 3 (('ensure_ascii',))
+             64 CALL                     2
+             72 BUILD_TUPLE              2
+             74 CALL                     2
+             82 POP_TOP
+             84 RETURN_CONST             0 (None)
+
+Disassembly of <code object log at 0x000001C217B6AA30, file "console\storage.py", line 74>:
+ 74           0 RESUME                   0
+
+ 75           2 LOAD_GLOBAL              1 (NULL + now)
+             12 CALL                     0
+             20 STORE_FAST               5 (stamp)
+
+ 76          22 LOAD_FAST                0 (self)
+             24 LOAD_ATTR                3 (NULL|self + execute)
+             44 LOAD_CONST               1 ('INSERT INTO logs(time,level,serial,kind,message) VALUES(?,?,?,?,?)')
+
+ 77          46 LOAD_FAST                5 (stamp)
+             48 LOAD_FAST                1 (level)
+             50 LOAD_FAST                2 (serial)
+             52 LOAD_FAST                3 (kind)
+             54 LOAD_FAST                4 (message)
+             56 BUILD_TUPLE              5
+
+ 76          58 CALL                     2
+             66 POP_TOP
+
+ 78          68 LOAD_FAST                0 (self)
+             70 LOAD_ATTR                4 (lock)
+             90 BEFORE_WITH
+             92 POP_TOP
+
+ 79          94 LOAD_FAST                0 (self)
+             96 LOAD_ATTR                6 (root)
+            116 LOAD_CONST               2 ('console.log')
+            118 BINARY_OP               11 (/)
+            122 LOAD_ATTR                9 (NULL|self + open)
+            142 LOAD_CONST               3 ('a')
+            144 LOAD_CONST               4 ('utf-8')
+            146 KW_NAMES                 5 (('encoding',))
+            148 CALL                     2
+            156 BEFORE_WITH
+            158 STORE_FAST               6 (f)
+
+ 80         160 LOAD_FAST                6 (f)
+            162 LOAD_ATTR               11 (NULL|self + write)
+            182 LOAD_FAST                5 (stamp)
+            184 FORMAT_VALUE             0
+            186 LOAD_CONST               6 (' [')
+            188 LOAD_FAST                1 (level)
+            190 FORMAT_VALUE             0
+            192 LOAD_CONST               7 ('] [')
+            194 LOAD_FAST                2 (serial)
+            196 FORMAT_VALUE             0
+            198 LOAD_CONST               7 ('] [')
+            200 LOAD_FAST                3 (kind)
+            202 FORMAT_VALUE             0
+            204 LOAD_CONST               8 ('] ')
+            206 LOAD_FAST                4 (message)
+            208 FORMAT_VALUE             0
+            210 LOAD_CONST               9 ('\n')
+            212 BUILD_STRING            10
+            214 CALL                     1
+            222 POP_TOP
+
+ 79         224 LOAD_CONST               0 (None)
+            226 LOAD_CONST               0 (None)
+            228 LOAD_CONST               0 (None)
+            230 CALL                     2
+            238 POP_TOP
+
+ 78     >>  240 LOAD_CONST               0 (None)
+            242 LOAD_CONST               0 (None)
+            244 LOAD_CONST               0 (None)
+            246 CALL                     2
+            254 POP_TOP
+            256 RETURN_CONST             0 (None)
+
+ 79     >>  258 PUSH_EXC_INFO
+            260 WITH_EXCEPT_START
+            262 POP_JUMP_IF_TRUE         1 (to 266)
+            264 RERAISE                  2
+        >>  266 POP_TOP
+            268 POP_EXCEPT
+            270 POP_TOP
+            272 POP_TOP
+            274 JUMP_BACKWARD           18 (to 240)
+        >>  276 COPY                     3
+            278 POP_EXCEPT
+            280 RERAISE                  1
+
+ 78     >>  282 PUSH_EXC_INFO
+            284 WITH_EXCEPT_START
+            286 POP_JUMP_IF_TRUE         1 (to 290)
+            288 RERAISE                  2
+        >>  290 POP_TOP
+            292 POP_EXCEPT
+            294 POP_TOP
+            296 POP_TOP
+            298 RETURN_CONST             0 (None)
+        >>  300 COPY                     3
+            302 POP_EXCEPT
+            304 RERAISE                  1
+ExceptionTable:
+  92 to 156 -> 282 [1] lasti
+  158 to 222 -> 258 [2] lasti
+  224 to 238 -> 282 [1] lasti
+  258 to 266 -> 276 [4] lasti
+  268 to 280 -> 282 [1] lasti
+  282 to 290 -> 300 [3] lasti
+
+Disassembly of <code object add_task at 0x000001C217B9E3D0, file "console\storage.py", line 82>:
+ 82           0 RESUME                   0
+
+ 83           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + execute)
+             24 LOAD_CONST               1 ("INSERT INTO tasks(kind,serial,phone,state,priority,config,created,mode,batch) VALUES(?,?,?,'queued',?,?,?,?,?)")
+
+ 85          26 LOAD_FAST                1 (kind)
+             28 LOAD_FAST                2 (serial)
+             30 LOAD_FAST                3 (phone)
+             32 LOAD_FAST                5 (priority)
+             34 LOAD_GLOBAL              3 (NULL + json)
+             44 LOAD_ATTR                4 (dumps)
+             64 LOAD_FAST                4 (config)
+             66 LOAD_CONST               2 (False)
+             68 KW_NAMES                 3 (('ensure_ascii',))
+             70 CALL                     2
+             78 LOAD_GLOBAL              7 (NULL + now)
+             88 CALL                     0
+             96 LOAD_FAST                6 (mode)
+             98 LOAD_FAST                7 (batch)
+            100 BUILD_TUPLE              8
+
+ 83         102 CALL                     2
+            110 RETURN_VALUE
+
+Disassembly of <code object checkpoint at 0x000001C217653910, file "console\storage.py", line 87>:
+ 87           0 RESUME                   0
+
+ 88           2 LOAD_FAST                3 (payload)
+              4 POP_JUMP_IF_NOT_NONE    51 (to 108)
+
+ 89           6 LOAD_FAST                0 (self)
+              8 LOAD_ATTR                1 (NULL|self + query)
+             28 LOAD_CONST               1 ('SELECT payload FROM checkpoints WHERE task_id=? AND stage=?')
+             30 LOAD_FAST                1 (task_id)
+             32 LOAD_FAST                2 (stage)
+             34 BUILD_TUPLE              2
+             36 CALL                     2
+             44 STORE_FAST               4 (rows)
+
+ 90          46 LOAD_FAST                4 (rows)
+             48 POP_JUMP_IF_FALSE       27 (to 104)
+             50 LOAD_GLOBAL              3 (NULL + json)
+             60 LOAD_ATTR                4 (loads)
+             80 LOAD_FAST                4 (rows)
+             82 LOAD_CONST               2 (0)
+             84 BINARY_SUBSCR
+             88 LOAD_CONST               3 ('payload')
+             90 BINARY_SUBSCR
+             94 CALL                     1
+            102 RETURN_VALUE
+        >>  104 LOAD_CONST               0 (None)
+            106 RETURN_VALUE
+
+ 91     >>  108 LOAD_FAST                0 (self)
+            110 LOAD_ATTR                7 (NULL|self + execute)
+            130 LOAD_CONST               4 ('INSERT OR REPLACE INTO checkpoints VALUES(?,?,?,?)')
+            132 LOAD_FAST                1 (task_id)
+            134 LOAD_FAST                2 (stage)
+            136 LOAD_GLOBAL              3 (NULL + json)
+            146 LOAD_ATTR                8 (dumps)
+            166 LOAD_FAST                3 (payload)
+            168 LOAD_CONST               5 (False)
+            170 KW_NAMES                 6 (('ensure_ascii',))
+            172 CALL                     2
+            180 LOAD_GLOBAL             11 (NULL + now)
+            190 CALL                     0
+            198 BUILD_TUPLE              4
+            200 CALL                     2
+            208 POP_TOP
+
+ 92         210 LOAD_FAST                3 (payload)
+            212 RETURN_VALUE
+
+Disassembly of <code object finish_task at 0x000001C2173A1240, file "console\storage.py", line 94>:
+ 94           0 RESUME                   0
+
+ 95           2 LOAD_GLOBAL              1 (NULL + isinstance)
+             12 LOAD_FAST                4 (config)
+             14 LOAD_GLOBAL              2 (dict)
+             24 CALL                     2
+             32 POP_JUMP_IF_FALSE        2 (to 38)
+             34 LOAD_FAST                4 (config)
+             36 JUMP_FORWARD             1 (to 40)
+        >>   38 BUILD_MAP                0
+        >>   40 STORE_FAST               4 (config)
+
+ 96          42 LOAD_FAST                4 (config)
+             44 LOAD_ATTR                5 (NULL|self + get)
+             64 LOAD_CONST               1 ('variables')
+             66 BUILD_MAP                0
+             68 CALL                     2
+             76 STORE_FAST               6 (variables)
+
+ 97          78 LOAD_FAST                0 (self)
+             80 LOAD_ATTR                7 (NULL|self + checkpoint)
+            100 LOAD_FAST                1 (task)
+            102 LOAD_CONST               2 ('id')
+            104 BINARY_SUBSCR
+            108 LOAD_CONST               3 ('business_result')
+            110 CALL                     2
+            118 COPY                     1
+            120 POP_JUMP_IF_TRUE         2 (to 126)
+            122 POP_TOP
+            124 BUILD_MAP                0
+        >>  126 STORE_FAST               7 (outcome)
+
+ 98         128 LOAD_GLOBAL              9 (NULL + now)
+            138 CALL                     0
+            146 STORE_FAST               8 (stamp)
+
+ 99         148 LOAD_FAST                0 (self)
+            150 LOAD_ATTR               10 (lock)
+            170 BEFORE_WITH
+            172 POP_TOP
+
+100         174 NOP
+
+101         176 LOAD_FAST                0 (self)
+            178 LOAD_ATTR               12 (db)
+            198 LOAD_ATTR               15 (NULL|self + execute)
+            218 LOAD_CONST               4 ('BEGIN')
+            220 CALL                     1
+            228 POP_TOP
+
+102         230 LOAD_FAST                0 (self)
+            232 LOAD_ATTR               12 (db)
+            252 LOAD_ATTR               15 (NULL|self + execute)
+            272 LOAD_CONST               5 ('INSERT INTO results(task_id,kind,serial,phone,target,content,time,status,mode,outcome,detail) VALUES(?,?,?,?,?,?,?,?,?,?,?)')
+            274 LOAD_FAST                1 (task)
+            276 LOAD_CONST               2 ('id')
+            278 BINARY_SUBSCR
+            282 LOAD_FAST                1 (task)
+            284 LOAD_CONST               6 ('kind')
+            286 BINARY_SUBSCR
+            290 LOAD_FAST                1 (task)
+            292 LOAD_CONST               7 ('serial')
+            294 BINARY_SUBSCR
+            298 LOAD_FAST                1 (task)
+            300 LOAD_CONST               8 ('phone')
+            302 BINARY_SUBSCR
+            306 LOAD_FAST                6 (variables)
+            308 LOAD_ATTR                5 (NULL|self + get)
+            328 LOAD_CONST               9 ('target')
+            330 LOAD_CONST              10 ('')
+            332 CALL                     2
+            340 LOAD_FAST                6 (variables)
+            342 LOAD_ATTR                5 (NULL|self + get)
+            362 LOAD_CONST              11 ('message')
+            364 LOAD_CONST              10 ('')
+            366 CALL                     2
+            374 LOAD_FAST                8 (stamp)
+            376 LOAD_FAST                2 (state)
+            378 LOAD_CONST              12 ('done')
+            380 COMPARE_OP              40 (==)
+            384 POP_JUMP_IF_FALSE        2 (to 390)
+            386 LOAD_CONST              13 ('success')
+            388 JUMP_FORWARD             1 (to 392)
+        >>  390 LOAD_FAST                2 (state)
+        >>  392 LOAD_FAST                1 (task)
+            394 LOAD_CONST              14 ('mode')
+            396 BINARY_SUBSCR
+            400 LOAD_FAST                7 (outcome)
+            402 LOAD_ATTR                5 (NULL|self + get)
+            422 LOAD_CONST              15 ('status')
+            424 LOAD_CONST              10 ('')
+            426 CALL                     2
+            434 LOAD_FAST                2 (state)
+            436 LOAD_CONST              12 ('done')
+            438 COMPARE_OP              40 (==)
+            442 POP_JUMP_IF_FALSE       18 (to 480)
+            444 LOAD_FAST                7 (outcome)
+            446 LOAD_ATTR                5 (NULL|self + get)
+            466 LOAD_CONST              16 ('detail')
+            468 LOAD_CONST              10 ('')
+            470 CALL                     2
+            478 JUMP_FORWARD             1 (to 482)
+        >>  480 LOAD_FAST                3 (error)
+        >>  482 BUILD_TUPLE             11
+            484 CALL                     2
+            492 POP_TOP
+
+103         494 LOAD_FAST                2 (state)
+            496 LOAD_CONST              12 ('done')
+            498 COMPARE_OP              40 (==)
+            502 EXTENDED_ARG             1
+            504 POP_JUMP_IF_FALSE      281 (to 1068)
+            506 LOAD_FAST                1 (task)
+            508 LOAD_CONST              14 ('mode')
+            510 BINARY_SUBSCR
+            514 LOAD_CONST              17 ('real')
+            516 COMPARE_OP              40 (==)
+            520 EXTENDED_ARG             1
+            522 POP_JUMP_IF_FALSE      272 (to 1068)
+
+104         524 LOAD_FAST                1 (task)
+            526 LOAD_CONST               6 ('kind')
+            528 BINARY_SUBSCR
+            532 LOAD_CONST              18 ('register')
+            534 COMPARE_OP              40 (==)
+            538 POP_JUMP_IF_FALSE       45 (to 630)
+            540 LOAD_FAST                1 (task)
+            542 LOAD_CONST               8 ('phone')
+            544 BINARY_SUBSCR
+            548 POP_JUMP_IF_FALSE       40 (to 630)
+
+105         550 LOAD_FAST                0 (self)
+            552 LOAD_ATTR               12 (db)
+            572 LOAD_ATTR               15 (NULL|self + execute)
+            592 LOAD_CONST              19 ("INSERT INTO accounts(phone,serial,created,last_active,pin_enc) VALUES(?,?,?,?,?) ON CONFLICT(phone) DO UPDATE SET serial=excluded.serial,last_active=excluded.last_active,pin_enc=CASE WHEN excluded.pin_enc<>'' THEN excluded.pin_enc ELSE accounts.pin_enc END")
+            594 LOAD_FAST                1 (task)
+            596 LOAD_CONST               8 ('phone')
+            598 BINARY_SUBSCR
+            602 LOAD_FAST                1 (task)
+            604 LOAD_CONST               7 ('serial')
+            606 BINARY_SUBSCR
+            610 LOAD_FAST                8 (stamp)
+            612 LOAD_FAST                8 (stamp)
+            614 LOAD_FAST                5 (pin_enc)
+            616 BUILD_TUPLE              5
+            618 CALL                     2
+            626 POP_TOP
+            628 JUMP_FORWARD            33 (to 696)
+
+107     >>  630 LOAD_FAST                0 (self)
+            632 LOAD_ATTR               12 (db)
+            652 LOAD_ATTR               15 (NULL|self + execute)
+            672 LOAD_CONST              20 ('UPDATE accounts SET last_active=? WHERE phone=?')
+            674 LOAD_FAST                8 (stamp)
+            676 LOAD_FAST                1 (task)
+            678 LOAD_CONST               8 ('phone')
+            680 BINARY_SUBSCR
+            684 BUILD_TUPLE              2
+            686 CALL                     2
+            694 POP_TOP
+
+108     >>  696 LOAD_FAST                1 (task)
+            698 LOAD_CONST               6 ('kind')
+            700 BINARY_SUBSCR
+            704 LOAD_CONST              21 ('friend')
+            706 COMPARE_OP              40 (==)
+            710 POP_JUMP_IF_FALSE       33 (to 778)
+
+109         712 LOAD_FAST                0 (self)
+            714 LOAD_ATTR               12 (db)
+            734 LOAD_ATTR               15 (NULL|self + execute)
+            754 LOAD_CONST              22 ('UPDATE accounts SET friend_count=friend_count+1 WHERE phone=?')
+            756 LOAD_FAST                1 (task)
+            758 LOAD_CONST               8 ('phone')
+            760 BINARY_SUBSCR
+            764 BUILD_TUPLE              1
+            766 CALL                     2
+            774 POP_TOP
+            776 JUMP_FORWARD           145 (to 1068)
+
+110     >>  778 LOAD_FAST                1 (task)
+            780 LOAD_CONST               6 ('kind')
+            782 BINARY_SUBSCR
+            786 LOAD_CONST              11 ('message')
+            788 COMPARE_OP              40 (==)
+            792 POP_JUMP_IF_FALSE       33 (to 860)
+
+111         794 LOAD_FAST                0 (self)
+            796 LOAD_ATTR               12 (db)
+            816 LOAD_ATTR               15 (NULL|self + execute)
+            836 LOAD_CONST              23 ('UPDATE accounts SET msg_count=msg_count+1 WHERE phone=?')
+            838 LOAD_FAST                1 (task)
+            840 LOAD_CONST               8 ('phone')
+            842 BINARY_SUBSCR
+            846 BUILD_TUPLE              1
+            848 CALL                     2
+            856 POP_TOP
+            858 JUMP_FORWARD           104 (to 1068)
+
+112     >>  860 LOAD_FAST                1 (task)
+            862 LOAD_CONST               6 ('kind')
+            864 BINARY_SUBSCR
+            868 LOAD_CONST              24 ('profile')
+            870 COMPARE_OP              40 (==)
+            874 POP_JUMP_IF_FALSE       33 (to 942)
+
+113         876 LOAD_FAST                0 (self)
+            878 LOAD_ATTR               12 (db)
+            898 LOAD_ATTR               15 (NULL|self + execute)
+            918 LOAD_CONST              25 ('UPDATE accounts SET info_modified=1 WHERE phone=?')
+            920 LOAD_FAST                1 (task)
+            922 LOAD_CONST               8 ('phone')
+            924 BINARY_SUBSCR
+            928 BUILD_TUPLE              1
+            930 CALL                     2
+            938 POP_TOP
+            940 JUMP_FORWARD            63 (to 1068)
+
+114     >>  942 LOAD_FAST                1 (task)
+            944 LOAD_CONST               6 ('kind')
+            946 BINARY_SUBSCR
+            950 LOAD_CONST              26 ('check')
+            952 COMPARE_OP              40 (==)
+            956 POP_JUMP_IF_FALSE       55 (to 1068)
+            958 LOAD_FAST                4 (config)
+            960 LOAD_ATTR                5 (NULL|self + get)
+            980 LOAD_CONST              27 ('account_status')
+            982 CALL                     1
+            990 LOAD_CONST              28 (('正常', '封禁', '功能限制', '待检测'))
+            992 CONTAINS_OP              0
+            994 POP_JUMP_IF_FALSE       36 (to 1068)
+
+115         996 LOAD_FAST                0 (self)
+            998 LOAD_ATTR               12 (db)
+           1018 LOAD_ATTR               15 (NULL|self + execute)
+           1038 LOAD_CONST              29 ('UPDATE accounts SET status=? WHERE phone=?')
+           1040 LOAD_FAST                4 (config)
+           1042 LOAD_CONST              27 ('account_status')
+           1044 BINARY_SUBSCR
+           1048 LOAD_FAST                1 (task)
+           1050 LOAD_CONST               8 ('phone')
+           1052 BINARY_SUBSCR
+           1056 BUILD_TUPLE              2
+           1058 CALL                     2
+           1066 POP_TOP
+
+116     >> 1068 LOAD_FAST                0 (self)
+           1070 LOAD_ATTR               12 (db)
+           1090 LOAD_ATTR               15 (NULL|self + execute)
+           1110 LOAD_CONST              30 ('UPDATE tasks SET state=?,ended=?,error=?,phone=?,serial=? WHERE id=?')
+           1112 LOAD_FAST                2 (state)
+           1114 LOAD_FAST                8 (stamp)
+           1116 LOAD_FAST                3 (error)
+           1118 LOAD_FAST                1 (task)
+           1120 LOAD_CONST               8 ('phone')
+           1122 BINARY_SUBSCR
+           1126 LOAD_FAST                1 (task)
+           1128 LOAD_CONST               7 ('serial')
+           1130 BINARY_SUBSCR
+           1134 LOAD_FAST                1 (task)
+           1136 LOAD_CONST               2 ('id')
+           1138 BINARY_SUBSCR
+           1142 BUILD_TUPLE              6
+           1144 CALL                     2
+           1152 POP_TOP
+
+117        1154 LOAD_FAST                0 (self)
+           1156 LOAD_ATTR               12 (db)
+           1176 LOAD_ATTR               17 (NULL|self + commit)
+           1196 CALL                     0
+           1204 POP_TOP
+           1206 NOP
+
+ 99        1208 LOAD_CONST               0 (None)
+           1210 LOAD_CONST               0 (None)
+           1212 LOAD_CONST               0 (None)
+           1214 CALL                     2
+           1222 POP_TOP
+           1224 RETURN_CONST             0 (None)
+        >> 1226 PUSH_EXC_INFO
+
+118        1228 LOAD_GLOBAL             18 (BaseException)
+           1238 CHECK_EXC_MATCH
+           1240 POP_JUMP_IF_FALSE       28 (to 1298)
+           1242 POP_TOP
+
+119        1244 LOAD_FAST                0 (self)
+           1246 LOAD_ATTR               12 (db)
+           1266 LOAD_ATTR               21 (NULL|self + rollback)
+           1286 CALL                     0
+           1294 POP_TOP
+
+120        1296 RAISE_VARARGS            0
+
+118     >> 1298 RERAISE                  0
+        >> 1300 COPY                     3
+           1302 POP_EXCEPT
+           1304 RERAISE                  1
+
+ 99     >> 1306 PUSH_EXC_INFO
+           1308 WITH_EXCEPT_START
+           1310 POP_JUMP_IF_TRUE         1 (to 1314)
+           1312 RERAISE                  2
+        >> 1314 POP_TOP
+           1316 POP_EXCEPT
+           1318 POP_TOP
+           1320 POP_TOP
+           1322 RETURN_CONST             0 (None)
+        >> 1324 COPY                     3
+           1326 POP_EXCEPT
+           1328 RERAISE                  1
+ExceptionTable:
+  172 to 172 -> 1306 [1] lasti
+  176 to 1204 -> 1226 [1]
+  1226 to 1298 -> 1300 [2] lasti
+  1300 to 1304 -> 1306 [1] lasti
+  1306 to 1314 -> 1324 [3] lasti
+
+Disassembly of <code object import_lines at 0x000001C217B0DDF0, file "console\storage.py", line 123>:
+123           0 RESUME                   0
+
+124           2 LOAD_GLOBAL              1 (NULL + Path)
+             12 LOAD_FAST                0 (path)
+             14 CALL                     1
+             22 LOAD_ATTR                3 (NULL|self + read_bytes)
+             42 CALL                     0
+             50 STORE_FAST               1 (raw)
+
+125          52 LOAD_CONST               1 (('utf-8-sig', 'gb18030'))
+             54 GET_ITER
+        >>   56 FOR_ITER                70 (to 200)
+             60 STORE_FAST               2 (encoding)
+
+126          62 NOP
+
+127          64 LOAD_GLOBAL              5 (NULL + list)
+             74 LOAD_GLOBAL              6 (dict)
+             84 LOAD_ATTR                9 (NULL|self + fromkeys)
+            104 LOAD_CONST               2 (<code object <genexpr> at 0x000001C217B95350, file "console\storage.py", line 127>)
+            106 MAKE_FUNCTION            0
+            108 LOAD_FAST                1 (raw)
+            110 LOAD_ATTR               11 (NULL|self + decode)
+            130 LOAD_FAST                2 (encoding)
+            132 CALL                     1
+            140 LOAD_ATTR               13 (NULL|self + splitlines)
+            160 CALL                     0
+            168 GET_ITER
+            170 CALL                     0
+            178 CALL                     1
+            186 CALL                     1
+            194 SWAP                     2
+            196 POP_TOP
+            198 RETURN_VALUE
+
+125     >>  200 END_FOR
+
+130         202 LOAD_GLOBAL             17 (NULL + ValueError)
+            212 LOAD_CONST               3 ('文本编码不支持，请另存为 UTF-8')
+            214 CALL                     1
+            222 RAISE_VARARGS            1
+        >>  224 PUSH_EXC_INFO
+
+128         226 LOAD_GLOBAL             14 (UnicodeDecodeError)
+            236 CHECK_EXC_MATCH
+            238 POP_JUMP_IF_FALSE        3 (to 246)
+            240 POP_TOP
+
+129         242 POP_EXCEPT
+            244 JUMP_BACKWARD           95 (to 56)
+
+128     >>  246 RERAISE                  0
+        >>  248 COPY                     3
+            250 POP_EXCEPT
+            252 RERAISE                  1
+ExceptionTable:
+  64 to 192 -> 224 [1]
+  224 to 240 -> 248 [2] lasti
+  246 to 246 -> 248 [2] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217B95350, file "console\storage.py", line 127>:
+127           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                37 (to 86)
+             12 STORE_FAST               1 (x)
+             14 LOAD_FAST                1 (x)
+             16 LOAD_ATTR                1 (NULL|self + strip)
+             36 CALL                     0
+             44 POP_JUMP_IF_TRUE         1 (to 48)
+             46 JUMP_BACKWARD           20 (to 8)
+        >>   48 LOAD_FAST                1 (x)
+             50 LOAD_ATTR                1 (NULL|self + strip)
+             70 CALL                     0
+             78 YIELD_VALUE              1
+             80 RESUME                   1
+             82 POP_TOP
+             84 JUMP_BACKWARD           39 (to 8)
+        >>   86 END_FOR
+             88 RETURN_CONST             0 (None)
+        >>   90 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             92 RERAISE                  1
+ExceptionTable:
+  4 to 44 -> 90 [0] lasti
+  48 to 88 -> 90 [0] lasti
+
+Disassembly of <code object export_table at 0x000001C21772F0F0, file "console\storage.py", line 133>:
+133           0 RESUME                   0
+
+135           2 LOAD_GLOBAL              1 (NULL + Path)
+             12 LOAD_FAST                0 (path)
+             14 CALL                     1
+             22 STORE_FAST               0 (path)
+
+136          24 LOAD_FAST                0 (path)
+             26 LOAD_ATTR                2 (suffix)
+             46 LOAD_ATTR                5 (NULL|self + lower)
+             66 CALL                     0
+             74 LOAD_CONST               1 ('.xlsx')
+             76 COMPARE_OP              55 (!=)
+             80 POP_JUMP_IF_FALSE      202 (to 486)
+
+137          82 LOAD_FAST                0 (path)
+             84 LOAD_ATTR                7 (NULL|self + open)
+            104 LOAD_CONST               2 ('w')
+            106 LOAD_CONST               3 ('')
+            108 LOAD_CONST               4 ('utf-8-sig')
+            110 KW_NAMES                 5 (('newline', 'encoding'))
+            112 CALL                     3
+            120 BEFORE_WITH
+            122 STORE_FAST               3 (f)
+
+138         124 LOAD_GLOBAL              9 (NULL + csv)
+            134 LOAD_ATTR               10 (writer)
+            154 LOAD_FAST                3 (f)
+            156 CALL                     1
+            164 STORE_FAST               4 (writer)
+
+139         166 LOAD_FAST                4 (writer)
+            168 LOAD_ATTR               13 (NULL|self + writerow)
+            188 LOAD_FAST                2 (columns)
+            190 CALL                     1
+            198 POP_TOP
+
+140         200 LOAD_FAST                1 (rows)
+            202 GET_ITER
+        >>  204 FOR_ITER               128 (to 464)
+            208 STORE_FAST               5 (row)
+
+141         210 LOAD_FAST                2 (columns)
+            212 GET_ITER
+            214 LOAD_FAST_AND_CLEAR      6 (k)
+            216 SWAP                     2
+            218 BUILD_LIST               0
+            220 SWAP                     2
+        >>  222 FOR_ITER                48 (to 322)
+            226 STORE_FAST               6 (k)
+            228 LOAD_GLOBAL             15 (NULL + str)
+            238 LOAD_FAST                5 (row)
+            240 LOAD_ATTR               17 (NULL|self + get)
+            260 LOAD_FAST                6 (k)
+            262 CALL                     1
+            270 POP_JUMP_IF_NONE        18 (to 308)
+            272 LOAD_FAST                5 (row)
+            274 LOAD_ATTR               17 (NULL|self + get)
+            294 LOAD_FAST                6 (k)
+            296 LOAD_CONST               3 ('')
+            298 CALL                     2
+            306 JUMP_FORWARD             1 (to 310)
+        >>  308 LOAD_CONST               3 ('')
+        >>  310 CALL                     1
+            318 LIST_APPEND              2
+            320 JUMP_BACKWARD           50 (to 222)
+        >>  322 END_FOR
+            324 STORE_FAST               7 (values)
+            326 STORE_FAST               6 (k)
+
+142         328 LOAD_FAST                4 (writer)
+            330 LOAD_ATTR               13 (NULL|self + writerow)
+            350 LOAD_FAST                7 (values)
+            352 GET_ITER
+            354 LOAD_FAST_AND_CLEAR      8 (v)
+            356 SWAP                     2
+            358 BUILD_LIST               0
+            360 SWAP                     2
+        >>  362 FOR_ITER                40 (to 446)
+            366 STORE_FAST               8 (v)
+            368 LOAD_FAST                8 (v)
+            370 LOAD_ATTR               19 (NULL|self + lstrip)
+            390 CALL                     0
+            398 LOAD_ATTR               21 (NULL|self + startswith)
+            418 LOAD_CONST               7 (('=', '+', '-', '@'))
+            420 CALL                     1
+            428 POP_JUMP_IF_FALSE        5 (to 440)
+            430 LOAD_CONST               8 ("'")
+            432 LOAD_FAST                8 (v)
+            434 BINARY_OP                0 (+)
+            438 JUMP_FORWARD             1 (to 442)
+        >>  440 LOAD_FAST                8 (v)
+        >>  442 LIST_APPEND              2
+            444 JUMP_BACKWARD           42 (to 362)
+        >>  446 END_FOR
+            448 SWAP                     2
+            450 STORE_FAST               8 (v)
+            452 CALL                     1
+            460 POP_TOP
+            462 JUMP_BACKWARD          130 (to 204)
+
+140     >>  464 END_FOR
+            466 NOP
+
+137         468 LOAD_CONST               6 (None)
+            470 LOAD_CONST               6 (None)
+            472 LOAD_CONST               6 (None)
+            474 CALL                     2
+            482 POP_TOP
+
+143         484 RETURN_CONST             6 (None)
+
+144     >>  486 LOAD_FAST                2 (columns)
+            488 BUILD_LIST               1
+            490 LOAD_FAST                1 (rows)
+            492 GET_ITER
+            494 LOAD_FAST_AND_CLEAR      5 (row)
+            496 LOAD_FAST_AND_CLEAR      6 (k)
+            498 SWAP                     3
+            500 BUILD_LIST               0
+            502 SWAP                     2
+        >>  504 FOR_ITER                34 (to 576)
+            508 STORE_FAST               5 (row)
+            510 LOAD_FAST                2 (columns)
+            512 GET_ITER
+            514 LOAD_FAST_AND_CLEAR      6 (k)
+            516 SWAP                     2
+            518 BUILD_LIST               0
+            520 SWAP                     2
+        >>  522 FOR_ITER                20 (to 566)
+            526 STORE_FAST               6 (k)
+            528 LOAD_FAST                5 (row)
+            530 LOAD_ATTR               17 (NULL|self + get)
+            550 LOAD_FAST                6 (k)
+            552 LOAD_CONST               3 ('')
+            554 CALL                     2
+            562 LIST_APPEND              2
+            564 JUMP_BACKWARD           22 (to 522)
+        >>  566 END_FOR
+            568 SWAP                     2
+            570 STORE_FAST               6 (k)
+            572 LIST_APPEND              2
+            574 JUMP_BACKWARD           36 (to 504)
+        >>  576 END_FOR
+            578 SWAP                     3
+            580 STORE_FAST               6 (k)
+            582 STORE_FAST               5 (row)
+            584 BINARY_OP                0 (+)
+            588 STORE_FAST               9 (data)
+
+145         590 BUILD_LIST               0
+            592 STORE_FAST              10 (xml_rows)
+
+146         594 LOAD_GLOBAL             23 (NULL + enumerate)
+            604 LOAD_FAST                9 (data)
+            606 LOAD_CONST               9 (1)
+            608 CALL                     2
+            616 GET_ITER
+        >>  618 FOR_ITER               182 (to 986)
+            622 UNPACK_SEQUENCE          2
+            626 STORE_FAST              11 (i)
+            628 STORE_FAST               7 (values)
+
+147         630 BUILD_LIST               0
+            632 STORE_FAST              12 (cells)
+
+148         634 LOAD_GLOBAL             23 (NULL + enumerate)
+            644 LOAD_FAST                7 (values)
+            646 LOAD_CONST               9 (1)
+            648 CALL                     2
+            656 GET_ITER
+        >>  658 FOR_ITER               121 (to 904)
+            662 UNPACK_SEQUENCE          2
+            666 STORE_FAST              13 (j)
+            668 STORE_FAST              14 (value)
+
+149         670 LOAD_FAST               13 (j)
+            672 LOAD_CONST               3 ('')
+            674 STORE_FAST              16 (col)
+            676 STORE_FAST              15 (n)
+
+150         678 LOAD_FAST               15 (n)
+            680 POP_JUMP_IF_FALSE       38 (to 758)
+
+151     >>  682 LOAD_GLOBAL             25 (NULL + divmod)
+            692 LOAD_FAST               15 (n)
+            694 LOAD_CONST               9 (1)
+            696 BINARY_OP               10 (-)
+            700 LOAD_CONST              10 (26)
+            702 CALL                     2
+            710 UNPACK_SEQUENCE          2
+            714 STORE_FAST              15 (n)
+            716 STORE_FAST              17 (rem)
+
+152         718 LOAD_GLOBAL             27 (NULL + chr)
+            728 LOAD_CONST              11 (65)
+            730 LOAD_FAST               17 (rem)
+            732 BINARY_OP                0 (+)
+            736 CALL                     1
+            744 LOAD_FAST               16 (col)
+            746 BINARY_OP                0 (+)
+            750 STORE_FAST              16 (col)
+
+150         752 LOAD_FAST               15 (n)
+            754 POP_JUMP_IF_FALSE        1 (to 758)
+            756 JUMP_BACKWARD           38 (to 682)
+
+153     >>  758 LOAD_CONST               3 ('')
+            760 LOAD_ATTR               29 (NULL|self + join)
+            780 LOAD_CONST              12 (<code object <genexpr> at 0x000001C217BB3AA0, file "console\storage.py", line 153>)
+            782 MAKE_FUNCTION            0
+            784 LOAD_GLOBAL             15 (NULL + str)
+            794 LOAD_FAST               14 (value)
+            796 POP_JUMP_IF_NONE         2 (to 802)
+            798 LOAD_FAST               14 (value)
+            800 JUMP_FORWARD             1 (to 804)
+        >>  802 LOAD_CONST               3 ('')
+        >>  804 CALL                     1
+            812 GET_ITER
+            814 CALL                     0
+            822 CALL                     1
+            830 STORE_FAST              18 (text)
+
+154         832 LOAD_FAST               12 (cells)
+            834 LOAD_ATTR               31 (NULL|self + append)
+            854 LOAD_CONST              13 ('<c r="')
+            856 LOAD_FAST               16 (col)
+            858 FORMAT_VALUE             0
+            860 LOAD_FAST               11 (i)
+            862 FORMAT_VALUE             0
+            864 LOAD_CONST              14 ('" t="inlineStr"><is><t xml:space="preserve">')
+            866 LOAD_GLOBAL             33 (NULL + escape)
+            876 LOAD_FAST               18 (text)
+            878 CALL                     1
+            886 FORMAT_VALUE             0
+            888 LOAD_CONST              15 ('</t></is></c>')
+            890 BUILD_STRING             6
+            892 CALL                     1
+            900 POP_TOP
+            902 JUMP_BACKWARD          123 (to 658)
+
+148     >>  904 END_FOR
+
+155         906 LOAD_FAST               10 (xml_rows)
+            908 LOAD_ATTR               31 (NULL|self + append)
+            928 LOAD_CONST              16 ('<row r="')
+            930 LOAD_FAST               11 (i)
+            932 FORMAT_VALUE             0
+            934 LOAD_CONST              17 ('">')
+            936 LOAD_CONST               3 ('')
+            938 LOAD_ATTR               29 (NULL|self + join)
+            958 LOAD_FAST               12 (cells)
+            960 CALL                     1
+            968 FORMAT_VALUE             0
+            970 LOAD_CONST              18 ('</row>')
+            972 BUILD_STRING             5
+            974 CALL                     1
+            982 POP_TOP
+            984 JUMP_BACKWARD          184 (to 618)
+
+146     >>  986 END_FOR
+
+156         988 LOAD_GLOBAL             35 (NULL + ZipFile)
+            998 LOAD_FAST                0 (path)
+           1000 LOAD_CONST               2 ('w')
+           1002 LOAD_GLOBAL             36 (ZIP_DEFLATED)
+           1012 CALL                     3
+           1020 BEFORE_WITH
+           1022 STORE_FAST              19 (z)
+
+157        1024 LOAD_FAST               19 (z)
+           1026 LOAD_ATTR               39 (NULL|self + writestr)
+           1046 LOAD_CONST              19 ('[Content_Types].xml')
+           1048 LOAD_CONST              20 ('<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>')
+           1050 CALL                     2
+           1058 POP_TOP
+
+158        1060 LOAD_FAST               19 (z)
+           1062 LOAD_ATTR               39 (NULL|self + writestr)
+           1082 LOAD_CONST              21 ('_rels/.rels')
+           1084 LOAD_CONST              22 ('<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>')
+           1086 CALL                     2
+           1094 POP_TOP
+
+159        1096 LOAD_FAST               19 (z)
+           1098 LOAD_ATTR               39 (NULL|self + writestr)
+           1118 LOAD_CONST              23 ('xl/workbook.xml')
+           1120 LOAD_CONST              24 ('<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="记录" sheetId="1" r:id="rId1"/></sheets></workbook>')
+           1122 CALL                     2
+           1130 POP_TOP
+
+160        1132 LOAD_FAST               19 (z)
+           1134 LOAD_ATTR               39 (NULL|self + writestr)
+           1154 LOAD_CONST              25 ('xl/_rels/workbook.xml.rels')
+           1156 LOAD_CONST              26 ('<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/></Relationships>')
+           1158 CALL                     2
+           1166 POP_TOP
+
+161        1168 LOAD_FAST               19 (z)
+           1170 LOAD_ATTR               39 (NULL|self + writestr)
+           1190 LOAD_CONST              27 ('xl/worksheets/sheet1.xml')
+           1192 LOAD_CONST              28 ('<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetData>')
+           1194 LOAD_CONST               3 ('')
+           1196 LOAD_ATTR               29 (NULL|self + join)
+           1216 LOAD_FAST               10 (xml_rows)
+           1218 CALL                     1
+           1226 BINARY_OP                0 (+)
+           1230 LOAD_CONST              29 ('</sheetData></worksheet>')
+           1232 BINARY_OP                0 (+)
+           1236 CALL                     2
+           1244 POP_TOP
+
+156        1246 LOAD_CONST               6 (None)
+           1248 LOAD_CONST               6 (None)
+           1250 LOAD_CONST               6 (None)
+           1252 CALL                     2
+           1260 POP_TOP
+           1262 RETURN_CONST             6 (None)
+        >> 1264 SWAP                     2
+           1266 POP_TOP
+
+141        1268 SWAP                     2
+           1270 STORE_FAST               6 (k)
+           1272 RERAISE                  0
+        >> 1274 SWAP                     2
+           1276 POP_TOP
+
+142        1278 SWAP                     2
+           1280 STORE_FAST               8 (v)
+           1282 RERAISE                  0
+
+137     >> 1284 PUSH_EXC_INFO
+           1286 WITH_EXCEPT_START
+           1288 POP_JUMP_IF_TRUE         1 (to 1292)
+           1290 RERAISE                  2
+        >> 1292 POP_TOP
+           1294 POP_EXCEPT
+           1296 POP_TOP
+           1298 POP_TOP
+
+143        1300 RETURN_CONST             6 (None)
+        >> 1302 COPY                     3
+           1304 POP_EXCEPT
+           1306 RERAISE                  1
+        >> 1308 SWAP                     2
+           1310 POP_TOP
+
+144        1312 SWAP                     2
+           1314 STORE_FAST               6 (k)
+           1316 RERAISE                  0
+        >> 1318 SWAP                     2
+           1320 POP_TOP
+           1322 SWAP                     3
+           1324 STORE_FAST               6 (k)
+           1326 STORE_FAST               5 (row)
+           1328 RERAISE                  0
+
+156     >> 1330 PUSH_EXC_INFO
+           1332 WITH_EXCEPT_START
+           1334 POP_JUMP_IF_TRUE         1 (to 1338)
+           1336 RERAISE                  2
+        >> 1338 POP_TOP
+           1340 POP_EXCEPT
+           1342 POP_TOP
+           1344 POP_TOP
+           1346 RETURN_CONST             6 (None)
+        >> 1348 COPY                     3
+           1350 POP_EXCEPT
+           1352 RERAISE                  1
+ExceptionTable:
+  122 to 216 -> 1284 [1] lasti
+  218 to 322 -> 1264 [4]
+  324 to 356 -> 1284 [1] lasti
+  358 to 446 -> 1274 [6]
+  448 to 464 -> 1284 [1] lasti
+  500 to 516 -> 1318 [4]
+  518 to 566 -> 1308 [7]
+  568 to 576 -> 1318 [4]
+  1022 to 1244 -> 1330 [1] lasti
+  1264 to 1282 -> 1284 [1] lasti
+  1284 to 1292 -> 1302 [3] lasti
+  1308 to 1316 -> 1318 [4]
+  1330 to 1338 -> 1348 [3] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217BB3AA0, file "console\storage.py", line 153>:
+153           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                25 (to 62)
+             12 STORE_FAST               1 (c)
+             14 LOAD_GLOBAL              1 (NULL + ord)
+             24 LOAD_FAST                1 (c)
+             26 CALL                     1
+             34 LOAD_CONST               0 (32)
+             36 COMPARE_OP              92 (>=)
+             40 POP_JUMP_IF_TRUE         5 (to 52)
+             42 LOAD_FAST                1 (c)
+             44 LOAD_CONST               1 ('\n\t\r')
+             46 CONTAINS_OP              0
+             48 POP_JUMP_IF_TRUE         1 (to 52)
+             50 JUMP_BACKWARD           22 (to 8)
+        >>   52 LOAD_FAST                1 (c)
+             54 YIELD_VALUE              1
+             56 RESUME                   1
+             58 POP_TOP
+             60 JUMP_BACKWARD           27 (to 8)
+        >>   62 END_FOR
+             64 RETURN_CONST             2 (None)
+        >>   66 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             68 RERAISE                  1
+ExceptionTable:
+  4 to 48 -> 66 [0] lasti
+  52 to 64 -> 66 [0] lasti

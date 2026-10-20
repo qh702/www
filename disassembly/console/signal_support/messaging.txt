@@ -1,0 +1,1050 @@
+Module: console.signal_support.messaging
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('Submit user configured messages only after exact recipient verification.')
+              4 STORE_NAME               0 (__doc__)
+
+  2           6 LOAD_CONST               1 (0)
+              8 LOAD_CONST               2 (None)
+             10 IMPORT_NAME              1 (re)
+             12 STORE_NAME               1 (re)
+
+  3          14 LOAD_CONST               1 (0)
+             16 LOAD_CONST               2 (None)
+             18 IMPORT_NAME              2 (time)
+             20 STORE_NAME               2 (time)
+
+  4          22 LOAD_CONST               3 (1)
+             24 LOAD_CONST               4 (('PACKAGE',))
+             26 IMPORT_NAME              3 (device)
+             28 IMPORT_FROM              4 (PACKAGE)
+             30 STORE_NAME               4 (PACKAGE)
+             32 POP_TOP
+
+  5          34 LOAD_CONST               3 (1)
+             36 LOAD_CONST               5 (('normalize_phone',))
+             38 IMPORT_NAME              5 (operations)
+             40 IMPORT_FROM              6 (normalize_phone)
+             42 STORE_NAME               6 (normalize_phone)
+             44 POP_TOP
+
+  6          46 LOAD_CONST               3 (1)
+             48 LOAD_CONST               6 (('AndroidDriver',))
+             50 IMPORT_NAME              7 (registration)
+             52 IMPORT_FROM              8 (AndroidDriver)
+             54 STORE_NAME               8 (AndroidDriver)
+             56 POP_TOP
+
+  8          58 PUSH_NULL
+             60 LOAD_BUILD_CLASS
+             62 LOAD_CONST               7 (<code object Messenger at 0x000001C217B9DCB0, file "console\signal_support\messaging.py", line 8>)
+             64 MAKE_FUNCTION            0
+             66 LOAD_CONST               8 ('Messenger')
+             68 CALL                     2
+             76 STORE_NAME               9 (Messenger)
+             78 RETURN_CONST             2 (None)
+
+Disassembly of <code object Messenger at 0x000001C217B9DCB0, file "console\signal_support\messaging.py", line 8>:
+  8           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('Messenger')
+              8 STORE_NAME               2 (__qualname__)
+
+  9          10 LOAD_CONST               1 (<code object __init__ at 0x000001C21594AC30, file "console\signal_support\messaging.py", line 9>)
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (__init__)
+
+ 10          16 LOAD_NAME                4 (staticmethod)
+
+ 11          18 LOAD_CONST               2 (<code object editor_value at 0x000001C217BA5B30, file "console\signal_support\messaging.py", line 10>)
+             20 MAKE_FUNCTION            0
+
+ 10          22 CALL                     0
+
+ 11          30 STORE_NAME               5 (editor_value)
+
+ 14          32 LOAD_NAME                4 (staticmethod)
+
+ 15          34 LOAD_CONST               3 (<code object post_submit_state at 0x000001C2172DFAB0, file "console\signal_support\messaging.py", line 14>)
+             36 MAKE_FUNCTION            0
+
+ 14          38 CALL                     0
+
+ 15          46 STORE_NAME               6 (post_submit_state)
+
+ 20          48 LOAD_NAME                4 (staticmethod)
+
+ 21          50 LOAD_CONST               4 (<code object sending_verification_required at 0x000001C217D04030, file "console\signal_support\messaging.py", line 20>)
+             52 MAKE_FUNCTION            0
+
+ 20          54 CALL                     0
+
+ 21          62 STORE_NAME               7 (sending_verification_required)
+
+ 27          64 LOAD_NAME                4 (staticmethod)
+
+ 28          66 LOAD_CONST               5 (<code object receipt_for_message at 0x000001C217763220, file "console\signal_support\messaging.py", line 27>)
+             68 MAKE_FUNCTION            0
+
+ 27          70 CALL                     0
+
+ 28          78 STORE_NAME               8 (receipt_for_message)
+
+ 43          80 LOAD_CONST               6 (<code object verify_header at 0x000001C2173B35B0, file "console\signal_support\messaging.py", line 43>)
+             82 MAKE_FUNCTION            0
+             84 STORE_NAME               9 (verify_header)
+
+ 48          86 LOAD_CONST               7 (<code object editor at 0x000001C217C60200, file "console\signal_support\messaging.py", line 48>)
+             88 MAKE_FUNCTION            0
+             90 STORE_NAME              10 (editor)
+
+ 52          92 LOAD_CONST               8 (<code object prepare at 0x000001C217764440, file "console\signal_support\messaging.py", line 52>)
+             94 MAKE_FUNCTION            0
+             96 STORE_NAME              11 (prepare)
+
+ 67          98 LOAD_CONST               9 (<code object submit at 0x000001C217758A50, file "console\signal_support\messaging.py", line 67>)
+            100 MAKE_FUNCTION            0
+            102 STORE_NAME              12 (submit)
+            104 RETURN_CONST            10 (None)
+
+Disassembly of <code object __init__ at 0x000001C21594AC30, file "console\signal_support\messaging.py", line 9>:
+  9           0 RESUME                   0
+              2 LOAD_FAST                1 (device)
+              4 LOAD_FAST                0 (self)
+              6 STORE_ATTR               0 (device)
+             16 LOAD_GLOBAL              3 (NULL + AndroidDriver)
+             26 LOAD_FAST                1 (device)
+             28 CALL                     1
+             36 LOAD_FAST                0 (self)
+             38 STORE_ATTR               2 (driver)
+             48 RETURN_CONST             0 (None)
+
+Disassembly of <code object editor_value at 0x000001C217BA5B30, file "console\signal_support\messaging.py", line 10>:
+ 10           0 RESUME                   0
+
+ 12           2 LOAD_FAST                0 (field)
+              4 LOAD_ATTR                1 (NULL|self + get)
+             24 LOAD_CONST               1 ('text')
+             26 LOAD_CONST               2 ('')
+             28 CALL                     2
+             36 STORE_FAST               1 (value)
+
+ 13          38 LOAD_FAST                1 (value)
+             40 LOAD_CONST               3 (('Signal 訊息', 'Signal 消息', 'Signal message', 'Signal Message'))
+             42 CONTAINS_OP              0
+             44 POP_JUMP_IF_FALSE        2 (to 50)
+             46 LOAD_CONST               2 ('')
+             48 RETURN_VALUE
+        >>   50 LOAD_FAST                1 (value)
+             52 RETURN_VALUE
+
+Disassembly of <code object post_submit_state at 0x000001C2172DFAB0, file "console\signal_support\messaging.py", line 14>:
+              0 MAKE_CELL                1 (message)
+
+ 14           2 RESUME                   0
+
+ 16           4 LOAD_GLOBAL              1 (NULL + any)
+             14 LOAD_CLOSURE             1 (message)
+             16 BUILD_TUPLE              1
+             18 LOAD_CONST               1 (<code object <genexpr> at 0x000001C217BB3BB0, file "console\signal_support\messaging.py", line 16>)
+             20 MAKE_FUNCTION            8 (closure)
+             22 LOAD_FAST                0 (root)
+             24 LOAD_ATTR                3 (NULL|self + iter)
+             44 LOAD_CONST               2 ('node')
+             46 CALL                     1
+             54 GET_ITER
+             56 CALL                     0
+             64 CALL                     1
+             72 STORE_FAST               2 (bubble)
+
+ 17          74 LOAD_FAST                0 (root)
+             76 LOAD_ATTR                3 (NULL|self + iter)
+             96 LOAD_CONST               2 ('node')
+             98 CALL                     1
+            106 GET_ITER
+            108 LOAD_FAST_AND_CLEAR      3 (node)
+            110 SWAP                     2
+            112 BUILD_LIST               0
+            114 SWAP                     2
+        >>  116 FOR_ITER                72 (to 264)
+            120 STORE_FAST               3 (node)
+            122 LOAD_FAST                3 (node)
+            124 LOAD_ATTR                5 (NULL|self + get)
+            144 LOAD_CONST               3 ('resource-id')
+            146 CALL                     1
+            154 LOAD_GLOBAL              6 (PACKAGE)
+            164 LOAD_CONST               4 (':id/embedded_text_editor')
+            166 BINARY_OP                0 (+)
+            170 COMPARE_OP              40 (==)
+            174 POP_JUMP_IF_TRUE         1 (to 178)
+            176 JUMP_BACKWARD           31 (to 116)
+        >>  178 LOAD_FAST                3 (node)
+            180 LOAD_ATTR                5 (NULL|self + get)
+            200 LOAD_CONST               5 ('enabled')
+            202 CALL                     1
+            210 LOAD_CONST               6 ('true')
+            212 COMPARE_OP              40 (==)
+            216 POP_JUMP_IF_TRUE         1 (to 220)
+            218 JUMP_BACKWARD           52 (to 116)
+        >>  220 LOAD_GLOBAL              9 (NULL + dict)
+            230 LOAD_FAST                3 (node)
+            232 LOAD_ATTR               10 (attrib)
+            252 CALL                     1
+            260 LIST_APPEND              2
+            262 JUMP_BACKWARD           74 (to 116)
+        >>  264 END_FOR
+            266 STORE_FAST               4 (editors)
+            268 STORE_FAST               3 (node)
+
+ 18         270 LOAD_GLOBAL             13 (NULL + len)
+            280 LOAD_FAST                4 (editors)
+            282 CALL                     1
+            290 LOAD_CONST               7 (1)
+            292 COMPARE_OP              55 (!=)
+            296 POP_JUMP_IF_FALSE        2 (to 302)
+            298 LOAD_CONST               0 (None)
+            300 JUMP_FORWARD            26 (to 354)
+        >>  302 LOAD_GLOBAL             14 (Messenger)
+            312 LOAD_ATTR               17 (NULL|self + editor_value)
+            332 LOAD_FAST                4 (editors)
+            334 LOAD_CONST               8 (0)
+            336 BINARY_SUBSCR
+            340 CALL                     1
+            348 LOAD_CONST               9 ('')
+            350 COMPARE_OP              40 (==)
+        >>  354 STORE_FAST               5 (editor_empty)
+
+ 19         356 LOAD_FAST                2 (bubble)
+            358 LOAD_FAST                5 (editor_empty)
+            360 BUILD_TUPLE              2
+            362 RETURN_VALUE
+        >>  364 SWAP                     2
+            366 POP_TOP
+
+ 17         368 SWAP                     2
+            370 STORE_FAST               3 (node)
+            372 RERAISE                  0
+ExceptionTable:
+  112 to 174 -> 364 [2]
+  178 to 216 -> 364 [2]
+  220 to 264 -> 364 [2]
+
+Disassembly of <code object <genexpr> at 0x000001C217BB3BB0, file "console\signal_support\messaging.py", line 16>:
+              0 COPY_FREE_VARS           1
+
+ 16           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                25 (to 64)
+             14 STORE_FAST               1 (node)
+             16 LOAD_FAST                1 (node)
+             18 LOAD_ATTR                1 (NULL|self + get)
+             38 LOAD_CONST               0 ('text')
+             40 LOAD_CONST               1 ('')
+             42 CALL                     2
+             50 LOAD_DEREF               2 (message)
+             52 COMPARE_OP              40 (==)
+             56 YIELD_VALUE              1
+             58 RESUME                   1
+             60 POP_TOP
+             62 JUMP_BACKWARD           27 (to 10)
+        >>   64 END_FOR
+             66 RETURN_CONST             2 (None)
+        >>   68 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             70 RERAISE                  1
+ExceptionTable:
+  6 to 66 -> 68 [0] lasti
+
+Disassembly of <code object sending_verification_required at 0x000001C217D04030, file "console\signal_support\messaging.py", line 20>:
+              0 MAKE_CELL                1 (text)
+
+ 20           2 RESUME                   0
+
+ 22           4 LOAD_CONST               1 (' ')
+              6 LOAD_ATTR                1 (NULL|self + join)
+             26 LOAD_CONST               2 (<code object <genexpr> at 0x000001C217B51A70, file "console\signal_support\messaging.py", line 22>)
+             28 MAKE_FUNCTION            0
+             30 LOAD_FAST                0 (root)
+             32 LOAD_ATTR                3 (NULL|self + iter)
+             52 LOAD_CONST               3 ('node')
+             54 CALL                     1
+             62 GET_ITER
+             64 CALL                     0
+             72 CALL                     1
+             80 STORE_DEREF              1 (text)
+
+ 23          82 LOAD_GLOBAL              5 (NULL + any)
+             92 LOAD_CLOSURE             1 (text)
+             94 BUILD_TUPLE              1
+             96 LOAD_CONST               4 (<code object <genexpr> at 0x000001C217405200, file "console\signal_support\messaging.py", line 23>)
+             98 MAKE_FUNCTION            8 (closure)
+            100 LOAD_CONST               5 (('驗證以繼續傳送訊息', '验证以继续发送消息', 'verify to continue sending messages', '請完成驗證', '请完成验证', 'complete verification'))
+            102 GET_ITER
+            104 CALL                     0
+            112 CALL                     1
+            120 COPY                     1
+            122 POP_JUMP_IF_FALSE       20 (to 164)
+            124 POP_TOP
+
+ 26         126 LOAD_GLOBAL              5 (NULL + any)
+            136 LOAD_CLOSURE             1 (text)
+            138 BUILD_TUPLE              1
+            140 LOAD_CONST               6 (<code object <genexpr> at 0x000001C2174057A0, file "console\signal_support\messaging.py", line 26>)
+            142 MAKE_FUNCTION            8 (closure)
+            144 LOAD_CONST               7 (('垃圾訊息', '垃圾消息', 'spam'))
+            146 GET_ITER
+            148 CALL                     0
+            156 CALL                     1
+
+ 23     >>  164 RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x000001C217B51A70, file "console\signal_support\messaging.py", line 22>:
+ 22           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                50 (to 112)
+             12 STORE_FAST               1 (node)
+             14 LOAD_FAST                1 (node)
+             16 LOAD_ATTR                1 (NULL|self + get)
+             36 LOAD_CONST               0 ('text')
+             38 LOAD_CONST               1 ('')
+             40 CALL                     2
+             48 LOAD_ATTR                3 (NULL|self + strip)
+             68 CALL                     0
+             76 LOAD_ATTR                5 (NULL|self + lower)
+             96 CALL                     0
+            104 YIELD_VALUE              1
+            106 RESUME                   1
+            108 POP_TOP
+            110 JUMP_BACKWARD           52 (to 8)
+        >>  112 END_FOR
+            114 RETURN_CONST             2 (None)
+        >>  116 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            118 RERAISE                  1
+ExceptionTable:
+  4 to 114 -> 116 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217405200, file "console\signal_support\messaging.py", line 23>:
+              0 COPY_FREE_VARS           1
+
+ 23           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                 8 (to 30)
+             14 STORE_FAST               1 (marker)
+             16 LOAD_FAST                1 (marker)
+             18 LOAD_DEREF               2 (text)
+             20 CONTAINS_OP              0
+             22 YIELD_VALUE              1
+             24 RESUME                   1
+             26 POP_TOP
+             28 JUMP_BACKWARD           10 (to 10)
+        >>   30 END_FOR
+             32 RETURN_CONST             0 (None)
+        >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             36 RERAISE                  1
+ExceptionTable:
+  6 to 32 -> 34 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C2174057A0, file "console\signal_support\messaging.py", line 26>:
+              0 COPY_FREE_VARS           1
+
+ 26           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                 8 (to 30)
+             14 STORE_FAST               1 (marker)
+             16 LOAD_FAST                1 (marker)
+             18 LOAD_DEREF               2 (text)
+             20 CONTAINS_OP              0
+             22 YIELD_VALUE              1
+             24 RESUME                   1
+             26 POP_TOP
+             28 JUMP_BACKWARD           10 (to 10)
+        >>   30 END_FOR
+             32 RETURN_CONST             0 (None)
+        >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             36 RERAISE                  1
+ExceptionTable:
+  6 to 32 -> 34 [0] lasti
+
+Disassembly of <code object receipt_for_message at 0x000001C217763220, file "console\signal_support\messaging.py", line 27>:
+ 27           0 RESUME                   0
+
+ 29           2 LOAD_FAST                0 (root)
+              4 LOAD_ATTR                1 (NULL|self + iter)
+             24 LOAD_CONST               1 ('node')
+             26 CALL                     1
+             34 GET_ITER
+             36 LOAD_FAST_AND_CLEAR      2 (parent)
+             38 LOAD_FAST_AND_CLEAR      3 (child)
+             40 SWAP                     3
+             42 BUILD_MAP                0
+             44 SWAP                     2
+        >>   46 FOR_ITER                12 (to 74)
+             50 STORE_FAST               2 (parent)
+             52 LOAD_FAST                2 (parent)
+             54 GET_ITER
+        >>   56 FOR_ITER                 5 (to 70)
+             60 STORE_FAST               3 (child)
+             62 LOAD_FAST                3 (child)
+             64 LOAD_FAST                2 (parent)
+             66 MAP_ADD                  3
+             68 JUMP_BACKWARD            7 (to 56)
+        >>   70 END_FOR
+             72 JUMP_BACKWARD           14 (to 46)
+        >>   74 END_FOR
+             76 STORE_FAST               4 (parents)
+             78 STORE_FAST               2 (parent)
+             80 STORE_FAST               3 (child)
+
+ 30          82 BUILD_LIST               0
+             84 STORE_FAST               5 (found)
+
+ 31          86 LOAD_FAST                0 (root)
+             88 LOAD_ATTR                1 (NULL|self + iter)
+            108 LOAD_CONST               1 ('node')
+            110 CALL                     1
+            118 GET_ITER
+        >>  120 EXTENDED_ARG             1
+            122 FOR_ITER               259 (to 644)
+            126 STORE_FAST               6 (node)
+
+ 32         128 LOAD_FAST                6 (node)
+            130 LOAD_ATTR                3 (NULL|self + get)
+            150 LOAD_CONST               2 ('text')
+            152 CALL                     1
+            160 LOAD_FAST                1 (message)
+            162 COMPARE_OP              55 (!=)
+            166 POP_JUMP_IF_FALSE        1 (to 170)
+            168 JUMP_BACKWARD           25 (to 120)
+
+ 33     >>  170 LOAD_FAST                4 (parents)
+            172 LOAD_ATTR                3 (NULL|self + get)
+            192 LOAD_FAST                6 (node)
+            194 CALL                     1
+            202 STORE_FAST               2 (parent)
+
+ 34         204 LOAD_FAST                2 (parent)
+            206 POP_JUMP_IF_NOT_NONE     1 (to 210)
+            208 JUMP_BACKWARD           45 (to 120)
+        >>  210 LOAD_FAST                2 (parent)
+            212 LOAD_ATTR                3 (NULL|self + get)
+            232 LOAD_CONST               3 ('resource-id')
+            234 CALL                     1
+            242 LOAD_GLOBAL              4 (PACKAGE)
+            252 LOAD_CONST               4 (':id/conversation_item_recycler')
+            254 BINARY_OP                0 (+)
+            258 COMPARE_OP              55 (!=)
+            262 POP_JUMP_IF_TRUE         1 (to 266)
+            264 JUMP_BACKWARD           73 (to 120)
+
+ 35     >>  266 LOAD_FAST                2 (parent)
+            268 LOAD_ATTR                1 (NULL|self + iter)
+            288 LOAD_CONST               1 ('node')
+            290 CALL                     1
+            298 GET_ITER
+            300 LOAD_FAST_AND_CLEAR      7 (n)
+            302 SWAP                     2
+            304 BUILD_LIST               0
+            306 SWAP                     2
+        >>  308 FOR_ITER                76 (to 464)
+            312 STORE_FAST               7 (n)
+            314 LOAD_FAST                7 (n)
+            316 LOAD_ATTR                3 (NULL|self + get)
+            336 LOAD_CONST               3 ('resource-id')
+            338 CALL                     1
+            346 LOAD_GLOBAL              4 (PACKAGE)
+            356 LOAD_CONST               5 (':id/conversation_item_delivery_status')
+            358 BINARY_OP                0 (+)
+            362 COMPARE_OP              40 (==)
+            366 POP_JUMP_IF_TRUE         1 (to 370)
+            368 JUMP_BACKWARD           31 (to 308)
+        >>  370 LOAD_FAST                7 (n)
+            372 LOAD_ATTR                3 (NULL|self + get)
+            392 LOAD_CONST               6 ('content-desc')
+            394 LOAD_CONST               7 ('')
+            396 CALL                     2
+            404 LOAD_ATTR                7 (NULL|self + strip)
+            424 CALL                     0
+            432 LOAD_ATTR                9 (NULL|self + lower)
+            452 CALL                     0
+            460 LIST_APPEND              2
+            462 JUMP_BACKWARD           78 (to 308)
+        >>  464 END_FOR
+            466 STORE_FAST               8 (receipts)
+            468 STORE_FAST               7 (n)
+
+ 36         470 LOAD_FAST                8 (receipts)
+            472 POP_JUMP_IF_FALSE       35 (to 544)
+
+ 37         474 LOAD_GLOBAL             11 (NULL + len)
+            484 LOAD_FAST                8 (receipts)
+            486 CALL                     1
+            494 LOAD_CONST               8 (1)
+            496 COMPARE_OP              40 (==)
+            500 POP_JUMP_IF_FALSE       20 (to 542)
+            502 LOAD_FAST                5 (found)
+            504 LOAD_ATTR               13 (NULL|self + append)
+            524 LOAD_FAST                8 (receipts)
+            526 LOAD_CONST               9 (0)
+            528 BINARY_SUBSCR
+            532 CALL                     1
+            540 POP_TOP
+
+ 38     >>  542 JUMP_BACKWARD          212 (to 120)
+
+ 39     >>  544 LOAD_FAST                4 (parents)
+            546 LOAD_ATTR                3 (NULL|self + get)
+            566 LOAD_FAST                2 (parent)
+            568 CALL                     1
+            576 STORE_FAST               2 (parent)
+
+ 34         578 LOAD_FAST                2 (parent)
+            580 POP_JUMP_IF_NOT_NONE     1 (to 584)
+            582 JUMP_BACKWARD          232 (to 120)
+        >>  584 LOAD_FAST                2 (parent)
+            586 LOAD_ATTR                3 (NULL|self + get)
+            606 LOAD_CONST               3 ('resource-id')
+            608 CALL                     1
+            616 LOAD_GLOBAL              4 (PACKAGE)
+            626 LOAD_CONST               4 (':id/conversation_item_recycler')
+            628 BINARY_OP                0 (+)
+            632 COMPARE_OP              55 (!=)
+            636 POP_JUMP_IF_FALSE        1 (to 640)
+            638 JUMP_BACKWARD          187 (to 266)
+        >>  640 EXTENDED_ARG             1
+            642 JUMP_BACKWARD          262 (to 120)
+
+ 31     >>  644 END_FOR
+
+ 40         646 LOAD_GLOBAL             11 (NULL + len)
+            656 LOAD_FAST                5 (found)
+            658 CALL                     1
+            666 LOAD_CONST               8 (1)
+            668 COMPARE_OP              55 (!=)
+            672 POP_JUMP_IF_FALSE        1 (to 676)
+            674 RETURN_CONST             0 (None)
+
+ 41     >>  676 LOAD_FAST                5 (found)
+            678 LOAD_CONST               9 (0)
+            680 BINARY_SUBSCR
+            684 LOAD_CONST              10 (('read', 'message read', '已讀', '已读', '訊息已讀', '消息已读'))
+            686 CONTAINS_OP              0
+            688 POP_JUMP_IF_FALSE        1 (to 692)
+            690 RETURN_CONST            11 ('read')
+
+ 42     >>  692 RETURN_CONST            12 ('not_read')
+        >>  694 SWAP                     2
+            696 POP_TOP
+
+ 29         698 SWAP                     3
+            700 STORE_FAST               3 (child)
+            702 STORE_FAST               2 (parent)
+            704 RERAISE                  0
+        >>  706 SWAP                     2
+            708 POP_TOP
+
+ 35         710 SWAP                     2
+            712 STORE_FAST               7 (n)
+            714 RERAISE                  0
+ExceptionTable:
+  42 to 74 -> 694 [3]
+  304 to 366 -> 706 [3]
+  370 to 464 -> 706 [3]
+
+Disassembly of <code object verify_header at 0x000001C2173B35B0, file "console\signal_support\messaging.py", line 43>:
+ 43           0 RESUME                   0
+
+ 44           2 LOAD_FAST                1 (root)
+              4 LOAD_ATTR                1 (NULL|self + iter)
+             24 LOAD_CONST               1 ('node')
+             26 CALL                     1
+             34 GET_ITER
+             36 LOAD_FAST_AND_CLEAR      3 (n)
+             38 SWAP                     2
+             40 BUILD_LIST               0
+             42 SWAP                     2
+        >>   44 FOR_ITER                32 (to 112)
+             48 STORE_FAST               3 (n)
+             50 LOAD_FAST                3 (n)
+             52 LOAD_ATTR                3 (NULL|self + get)
+             72 LOAD_CONST               2 ('resource-id')
+             74 CALL                     1
+             82 LOAD_GLOBAL              4 (PACKAGE)
+             92 LOAD_CONST               3 (':id/conversation_title_view')
+             94 BINARY_OP                0 (+)
+             98 COMPARE_OP              40 (==)
+            102 POP_JUMP_IF_TRUE         1 (to 106)
+            104 JUMP_BACKWARD           31 (to 44)
+        >>  106 LOAD_FAST                3 (n)
+            108 LIST_APPEND              2
+            110 JUMP_BACKWARD           34 (to 44)
+        >>  112 END_FOR
+            114 STORE_FAST               4 (containers)
+            116 STORE_FAST               3 (n)
+
+ 45         118 LOAD_FAST                4 (containers)
+            120 GET_ITER
+            122 LOAD_FAST_AND_CLEAR      5 (container)
+            124 LOAD_FAST_AND_CLEAR      3 (n)
+            126 SWAP                     3
+            128 BUILD_LIST               0
+            130 SWAP                     2
+        >>  132 FOR_ITER                54 (to 244)
+            136 STORE_FAST               5 (container)
+            138 LOAD_FAST                5 (container)
+            140 LOAD_ATTR                1 (NULL|self + iter)
+            160 LOAD_CONST               1 ('node')
+            162 CALL                     1
+            170 GET_ITER
+        >>  172 FOR_ITER                32 (to 240)
+            176 STORE_FAST               3 (n)
+            178 LOAD_FAST                3 (n)
+            180 LOAD_ATTR                3 (NULL|self + get)
+            200 LOAD_CONST               2 ('resource-id')
+            202 CALL                     1
+            210 LOAD_GLOBAL              4 (PACKAGE)
+            220 LOAD_CONST               4 (':id/title')
+            222 BINARY_OP                0 (+)
+            226 COMPARE_OP              40 (==)
+            230 POP_JUMP_IF_TRUE         1 (to 234)
+            232 JUMP_BACKWARD           31 (to 172)
+        >>  234 LOAD_FAST                3 (n)
+            236 LIST_APPEND              3
+            238 JUMP_BACKWARD           34 (to 172)
+        >>  240 END_FOR
+            242 JUMP_BACKWARD           56 (to 132)
+        >>  244 END_FOR
+            246 STORE_FAST               6 (titles)
+            248 STORE_FAST               5 (container)
+            250 STORE_FAST               3 (n)
+
+ 46         252 LOAD_FAST                6 (titles)
+            254 GET_ITER
+            256 LOAD_FAST_AND_CLEAR      3 (n)
+            258 SWAP                     2
+            260 BUILD_LIST               0
+            262 SWAP                     2
+        >>  264 FOR_ITER                62 (to 392)
+            268 STORE_FAST               3 (n)
+            270 LOAD_GLOBAL              7 (NULL + re)
+            280 LOAD_ATTR                8 (sub)
+            300 LOAD_CONST               5 ('\\D')
+            302 LOAD_CONST               6 ('')
+            304 LOAD_FAST                3 (n)
+            306 LOAD_ATTR                3 (NULL|self + get)
+            326 LOAD_CONST               7 ('text')
+            328 LOAD_CONST               6 ('')
+            330 CALL                     2
+            338 CALL                     3
+            346 LOAD_FAST                2 (phone)
+            348 LOAD_ATTR               11 (NULL|self + lstrip)
+            368 LOAD_CONST               8 ('+')
+            370 CALL                     1
+            378 COMPARE_OP              40 (==)
+            382 POP_JUMP_IF_TRUE         1 (to 386)
+            384 JUMP_BACKWARD           61 (to 264)
+        >>  386 LOAD_FAST                3 (n)
+            388 LIST_APPEND              2
+            390 JUMP_BACKWARD           64 (to 264)
+        >>  392 END_FOR
+            394 STORE_FAST               7 (matches)
+            396 STORE_FAST               3 (n)
+
+ 47         398 LOAD_GLOBAL             13 (NULL + len)
+            408 LOAD_FAST                7 (matches)
+            410 CALL                     1
+            418 LOAD_CONST               9 (1)
+            420 COMPARE_OP              55 (!=)
+            424 POP_JUMP_IF_FALSE       11 (to 448)
+            426 LOAD_GLOBAL             15 (NULL + RuntimeError)
+            436 LOAD_CONST              10 ('无法在会话标题核对完整收件号码，已停止，不会发送。')
+            438 CALL                     1
+            446 RAISE_VARARGS            1
+        >>  448 RETURN_CONST             0 (None)
+        >>  450 SWAP                     2
+            452 POP_TOP
+
+ 44         454 SWAP                     2
+            456 STORE_FAST               3 (n)
+            458 RERAISE                  0
+        >>  460 SWAP                     2
+            462 POP_TOP
+
+ 45         464 SWAP                     3
+            466 STORE_FAST               3 (n)
+            468 STORE_FAST               5 (container)
+            470 RERAISE                  0
+        >>  472 SWAP                     2
+            474 POP_TOP
+
+ 46         476 SWAP                     2
+            478 STORE_FAST               3 (n)
+            480 RERAISE                  0
+ExceptionTable:
+  40 to 102 -> 450 [2]
+  106 to 112 -> 450 [2]
+  128 to 230 -> 460 [3]
+  234 to 244 -> 460 [3]
+  260 to 382 -> 472 [2]
+  386 to 392 -> 472 [2]
+
+Disassembly of <code object editor at 0x000001C217C60200, file "console\signal_support\messaging.py", line 48>:
+ 48           0 RESUME                   0
+
+ 49           2 LOAD_FAST                1 (root)
+              4 LOAD_ATTR                1 (NULL|self + iter)
+             24 LOAD_CONST               1 ('node')
+             26 CALL                     1
+             34 GET_ITER
+             36 LOAD_FAST_AND_CLEAR      2 (n)
+             38 SWAP                     2
+             40 BUILD_LIST               0
+             42 SWAP                     2
+        >>   44 FOR_ITER                72 (to 192)
+             48 STORE_FAST               2 (n)
+             50 LOAD_FAST                2 (n)
+             52 LOAD_ATTR                3 (NULL|self + get)
+             72 LOAD_CONST               2 ('resource-id')
+             74 CALL                     1
+             82 LOAD_GLOBAL              4 (PACKAGE)
+             92 LOAD_CONST               3 (':id/embedded_text_editor')
+             94 BINARY_OP                0 (+)
+             98 COMPARE_OP              40 (==)
+            102 POP_JUMP_IF_TRUE         1 (to 106)
+            104 JUMP_BACKWARD           31 (to 44)
+        >>  106 LOAD_FAST                2 (n)
+            108 LOAD_ATTR                3 (NULL|self + get)
+            128 LOAD_CONST               4 ('enabled')
+            130 CALL                     1
+            138 LOAD_CONST               5 ('true')
+            140 COMPARE_OP              40 (==)
+            144 POP_JUMP_IF_TRUE         1 (to 148)
+            146 JUMP_BACKWARD           52 (to 44)
+        >>  148 LOAD_GLOBAL              7 (NULL + dict)
+            158 LOAD_FAST                2 (n)
+            160 LOAD_ATTR                8 (attrib)
+            180 CALL                     1
+            188 LIST_APPEND              2
+            190 JUMP_BACKWARD           74 (to 44)
+        >>  192 END_FOR
+            194 STORE_FAST               3 (nodes)
+            196 STORE_FAST               2 (n)
+
+ 50         198 LOAD_GLOBAL             11 (NULL + len)
+            208 LOAD_FAST                3 (nodes)
+            210 CALL                     1
+            218 LOAD_CONST               6 (1)
+            220 COMPARE_OP              55 (!=)
+            224 POP_JUMP_IF_FALSE       11 (to 248)
+            226 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            236 LOAD_CONST               7 ('当前没有唯一的 Signal 消息输入框。')
+            238 CALL                     1
+            246 RAISE_VARARGS            1
+
+ 51     >>  248 LOAD_FAST                3 (nodes)
+            250 LOAD_CONST               8 (0)
+            252 BINARY_SUBSCR
+            256 RETURN_VALUE
+        >>  258 SWAP                     2
+            260 POP_TOP
+
+ 49         262 SWAP                     2
+            264 STORE_FAST               2 (n)
+            266 RERAISE                  0
+ExceptionTable:
+  40 to 102 -> 258 [2]
+  106 to 144 -> 258 [2]
+  148 to 192 -> 258 [2]
+
+Disassembly of <code object prepare at 0x000001C217764440, file "console\signal_support\messaging.py", line 52>:
+ 52           0 RESUME                   0
+
+ 53           2 LOAD_GLOBAL              1 (NULL + normalize_phone)
+             12 LOAD_FAST                1 (phone)
+             14 CALL                     1
+             22 STORE_FAST               1 (phone)
+
+ 54          24 LOAD_FAST                2 (message)
+             26 LOAD_ATTR                3 (NULL|self + strip)
+             46 CALL                     0
+             54 POP_JUMP_IF_TRUE        11 (to 78)
+             56 LOAD_GLOBAL              5 (NULL + ValueError)
+             66 LOAD_CONST               1 ('消息不能为空。')
+             68 CALL                     1
+             76 RAISE_VARARGS            1
+
+ 55     >>   78 LOAD_FAST                0 (self)
+             80 LOAD_ATTR                6 (device)
+            100 LOAD_ATTR                9 (NULL|self + command)
+            120 LOAD_CONST               2 ('shell')
+            122 LOAD_CONST               3 ('am')
+            124 LOAD_CONST               4 ('start')
+            126 LOAD_CONST               5 ('-W')
+            128 LOAD_CONST               6 ('-a')
+            130 LOAD_CONST               7 ('android.intent.action.VIEW')
+            132 LOAD_CONST               8 ('-d')
+            134 LOAD_CONST               9 ('https://signal.me/#p/')
+            136 LOAD_FAST                1 (phone)
+            138 BINARY_OP                0 (+)
+            142 LOAD_CONST              10 ('-p')
+            144 LOAD_GLOBAL             10 (PACKAGE)
+            154 BUILD_LIST              10
+            156 CALL                     1
+            164 POP_TOP
+
+ 56         166 LOAD_CONST               0 (None)
+            168 STORE_FAST               3 (last)
+
+ 57         170 LOAD_GLOBAL             13 (NULL + range)
+            180 LOAD_CONST              11 (8)
+            182 CALL                     1
+            190 GET_ITER
+        >>  192 FOR_ITER                85 (to 366)
+            196 STORE_FAST               4 (_)
+
+ 58         198 LOAD_GLOBAL             15 (NULL + time)
+            208 LOAD_ATTR               16 (sleep)
+            228 LOAD_CONST              12 (1)
+            230 CALL                     1
+            238 POP_TOP
+
+ 59         240 LOAD_FAST                0 (self)
+            242 LOAD_ATTR                6 (device)
+            262 LOAD_ATTR               19 (NULL|self + hierarchy)
+            282 CALL                     0
+            290 STORE_FAST               5 (root)
+
+ 60         292 LOAD_FAST                0 (self)
+            294 LOAD_ATTR               21 (NULL|self + verify_header)
+            314 LOAD_FAST                5 (root)
+            316 LOAD_FAST                1 (phone)
+            318 CALL                     2
+            326 POP_TOP
+            328 LOAD_FAST                0 (self)
+            330 LOAD_ATTR               23 (NULL|self + editor)
+            350 LOAD_FAST                5 (root)
+            352 CALL                     1
+            360 STORE_FAST               6 (field)
+            362 POP_TOP
+            364 JUMP_FORWARD             3 (to 372)
+
+ 57     >>  366 END_FOR
+
+ 62         368 LOAD_FAST                3 (last)
+            370 RAISE_VARARGS            1
+
+ 63     >>  372 LOAD_FAST                6 (field)
+            374 LOAD_ATTR               27 (NULL|self + get)
+            394 LOAD_CONST              13 ('text')
+            396 CALL                     1
+            404 POP_JUMP_IF_FALSE       11 (to 428)
+            406 LOAD_GLOBAL             25 (NULL + RuntimeError)
+            416 LOAD_CONST              14 ('当前会话有未发送草稿，不会覆盖。')
+            418 CALL                     1
+            426 RAISE_VARARGS            1
+
+ 64     >>  428 LOAD_FAST                0 (self)
+            430 LOAD_ATTR               28 (driver)
+            450 LOAD_ATTR               31 (NULL|self + fill)
+            470 LOAD_FAST                6 (field)
+            472 LOAD_FAST                2 (message)
+            474 CALL                     2
+            482 POP_TOP
+
+ 65         484 LOAD_FAST                0 (self)
+            486 LOAD_ATTR                6 (device)
+            506 LOAD_ATTR               19 (NULL|self + hierarchy)
+            526 CALL                     0
+            534 STORE_FAST               5 (root)
+            536 LOAD_FAST                0 (self)
+            538 LOAD_ATTR               21 (NULL|self + verify_header)
+            558 LOAD_FAST                5 (root)
+            560 LOAD_FAST                1 (phone)
+            562 CALL                     2
+            570 POP_TOP
+
+ 66         572 LOAD_FAST                0 (self)
+            574 LOAD_ATTR               23 (NULL|self + editor)
+            594 LOAD_FAST                5 (root)
+            596 CALL                     1
+            604 LOAD_ATTR               27 (NULL|self + get)
+            624 LOAD_CONST              13 ('text')
+            626 CALL                     1
+            634 LOAD_FAST                2 (message)
+            636 COMPARE_OP              55 (!=)
+            640 POP_JUMP_IF_FALSE       11 (to 664)
+            642 LOAD_GLOBAL             25 (NULL + RuntimeError)
+            652 LOAD_CONST              15 ('消息输入校验失败，没有点击发送。')
+            654 CALL                     1
+            662 RAISE_VARARGS            1
+        >>  664 RETURN_CONST             0 (None)
+        >>  666 PUSH_EXC_INFO
+
+ 61         668 LOAD_GLOBAL             24 (RuntimeError)
+            678 CHECK_EXC_MATCH
+            680 POP_JUMP_IF_FALSE       12 (to 706)
+            682 STORE_FAST               7 (error)
+            684 LOAD_FAST                7 (error)
+            686 STORE_FAST               3 (last)
+            688 POP_EXCEPT
+            690 LOAD_CONST               0 (None)
+            692 STORE_FAST               7 (error)
+            694 DELETE_FAST              7 (error)
+            696 JUMP_BACKWARD          253 (to 192)
+        >>  698 LOAD_CONST               0 (None)
+            700 STORE_FAST               7 (error)
+            702 DELETE_FAST              7 (error)
+            704 RERAISE                  1
+        >>  706 RERAISE                  0
+        >>  708 COPY                     3
+            710 POP_EXCEPT
+            712 RERAISE                  1
+ExceptionTable:
+  292 to 360 -> 666 [1]
+  666 to 682 -> 708 [2] lasti
+  684 to 686 -> 698 [2] lasti
+  698 to 706 -> 708 [2] lasti
+
+Disassembly of <code object submit at 0x000001C217758A50, file "console\signal_support\messaging.py", line 67>:
+ 67           0 RESUME                   0
+
+ 68           2 LOAD_GLOBAL              1 (NULL + normalize_phone)
+             12 LOAD_FAST                1 (phone)
+             14 CALL                     1
+             22 STORE_FAST               1 (phone)
+             24 LOAD_FAST                0 (self)
+             26 LOAD_ATTR                2 (device)
+             46 LOAD_ATTR                5 (NULL|self + hierarchy)
+             66 CALL                     0
+             74 STORE_FAST               3 (root)
+             76 LOAD_FAST                0 (self)
+             78 LOAD_ATTR                7 (NULL|self + verify_header)
+             98 LOAD_FAST                3 (root)
+            100 LOAD_FAST                1 (phone)
+            102 CALL                     2
+            110 POP_TOP
+
+ 69         112 LOAD_FAST                0 (self)
+            114 LOAD_ATTR                9 (NULL|self + editor)
+            134 LOAD_FAST                3 (root)
+            136 CALL                     1
+            144 LOAD_ATTR               11 (NULL|self + get)
+            164 LOAD_CONST               1 ('text')
+            166 CALL                     1
+            174 LOAD_FAST                2 (message)
+            176 COMPARE_OP              55 (!=)
+            180 POP_JUMP_IF_FALSE       11 (to 204)
+            182 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            192 LOAD_CONST               2 ('发送前草稿与预览不一致，已停止。')
+            194 CALL                     1
+            202 RAISE_VARARGS            1
+
+ 70     >>  204 LOAD_FAST                3 (root)
+            206 LOAD_ATTR               15 (NULL|self + iter)
+            226 LOAD_CONST               3 ('node')
+            228 CALL                     1
+            236 GET_ITER
+            238 LOAD_FAST_AND_CLEAR      4 (n)
+            240 SWAP                     2
+            242 BUILD_LIST               0
+            244 SWAP                     2
+        >>  246 FOR_ITER                72 (to 394)
+            250 STORE_FAST               4 (n)
+            252 LOAD_FAST                4 (n)
+            254 LOAD_ATTR               11 (NULL|self + get)
+            274 LOAD_CONST               4 ('resource-id')
+            276 CALL                     1
+            284 LOAD_GLOBAL             16 (PACKAGE)
+            294 LOAD_CONST               5 (':id/send_button')
+            296 BINARY_OP                0 (+)
+            300 COMPARE_OP              40 (==)
+            304 POP_JUMP_IF_TRUE         1 (to 308)
+            306 JUMP_BACKWARD           31 (to 246)
+        >>  308 LOAD_FAST                4 (n)
+            310 LOAD_ATTR               11 (NULL|self + get)
+            330 LOAD_CONST               6 ('enabled')
+            332 CALL                     1
+            340 LOAD_CONST               7 ('true')
+            342 COMPARE_OP              40 (==)
+            346 POP_JUMP_IF_TRUE         1 (to 350)
+            348 JUMP_BACKWARD           52 (to 246)
+        >>  350 LOAD_GLOBAL             19 (NULL + dict)
+            360 LOAD_FAST                4 (n)
+            362 LOAD_ATTR               20 (attrib)
+            382 CALL                     1
+            390 LIST_APPEND              2
+            392 JUMP_BACKWARD           74 (to 246)
+        >>  394 END_FOR
+            396 STORE_FAST               5 (buttons)
+            398 STORE_FAST               4 (n)
+
+ 71         400 LOAD_GLOBAL             23 (NULL + len)
+            410 LOAD_FAST                5 (buttons)
+            412 CALL                     1
+            420 LOAD_CONST               8 (1)
+            422 COMPARE_OP              55 (!=)
+            426 POP_JUMP_IF_FALSE       11 (to 450)
+            428 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            438 LOAD_CONST               9 ('没有唯一的可用发送按钮。')
+            440 CALL                     1
+            448 RAISE_VARARGS            1
+
+ 72     >>  450 LOAD_FAST                0 (self)
+            452 LOAD_ATTR               24 (driver)
+            472 LOAD_ATTR               27 (NULL|self + tap)
+            492 LOAD_FAST                5 (buttons)
+            494 LOAD_CONST              10 (0)
+            496 BINARY_SUBSCR
+            500 CALL                     1
+            508 POP_TOP
+            510 LOAD_GLOBAL             29 (NULL + time)
+            520 LOAD_ATTR               30 (sleep)
+            540 LOAD_CONST               8 (1)
+            542 CALL                     1
+            550 POP_TOP
+
+ 73         552 LOAD_FAST                0 (self)
+            554 LOAD_ATTR                2 (device)
+            574 LOAD_ATTR                5 (NULL|self + hierarchy)
+            594 CALL                     0
+            602 STORE_FAST               3 (root)
+            604 LOAD_FAST                0 (self)
+            606 LOAD_ATTR                7 (NULL|self + verify_header)
+            626 LOAD_FAST                3 (root)
+            628 LOAD_FAST                1 (phone)
+            630 CALL                     2
+            638 POP_TOP
+
+ 74         640 LOAD_FAST                0 (self)
+            642 LOAD_ATTR                9 (NULL|self + editor)
+            662 LOAD_FAST                3 (root)
+            664 CALL                     1
+            672 LOAD_ATTR               11 (NULL|self + get)
+            692 LOAD_CONST               1 ('text')
+            694 CALL                     1
+            702 POP_JUMP_IF_FALSE       11 (to 726)
+            704 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            714 LOAD_CONST              11 ('点击后未确认草稿清空；发送结果未知，不能自动重试。')
+            716 CALL                     1
+            724 RAISE_VARARGS            1
+
+ 75     >>  726 RETURN_CONST            12 ('已点击发送并确认草稿清空；未验证服务器送达或对方已读')
+        >>  728 SWAP                     2
+            730 POP_TOP
+
+ 70         732 SWAP                     2
+            734 STORE_FAST               4 (n)
+            736 RERAISE                  0
+ExceptionTable:
+  242 to 304 -> 728 [2]
+  308 to 346 -> 728 [2]
+  350 to 394 -> 728 [2]

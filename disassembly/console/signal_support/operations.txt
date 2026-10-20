@@ -1,0 +1,2021 @@
+Module: console.signal_support.operations
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('Contact import, quota planning, profile assets, and evidence based status.')
+              4 STORE_NAME               0 (__doc__)
+
+  2           6 LOAD_CONST               1 (0)
+              8 LOAD_CONST               2 (None)
+             10 IMPORT_NAME              1 (csv)
+             12 STORE_NAME               1 (csv)
+
+  3          14 LOAD_CONST               1 (0)
+             16 LOAD_CONST               2 (None)
+             18 IMPORT_NAME              2 (hashlib)
+             20 STORE_NAME               2 (hashlib)
+
+  4          22 LOAD_CONST               1 (0)
+             24 LOAD_CONST               2 (None)
+             26 IMPORT_NAME              3 (json)
+             28 STORE_NAME               3 (json)
+
+  5          30 LOAD_CONST               1 (0)
+             32 LOAD_CONST               3 (('Path',))
+             34 IMPORT_NAME              4 (pathlib)
+             36 IMPORT_FROM              5 (Path)
+             38 STORE_NAME               5 (Path)
+             40 POP_TOP
+
+  6          42 LOAD_CONST               1 (0)
+             44 LOAD_CONST               2 (None)
+             46 IMPORT_NAME              6 (re)
+             48 STORE_NAME               6 (re)
+
+  7          50 LOAD_CONST               1 (0)
+             52 LOAD_CONST               2 (None)
+             54 IMPORT_NAME              7 (shlex)
+             56 STORE_NAME               7 (shlex)
+
+  8          58 LOAD_CONST               1 (0)
+             60 LOAD_CONST               2 (None)
+             62 IMPORT_NAME              8 (sqlite3)
+             64 STORE_NAME               8 (sqlite3)
+
+  9          66 LOAD_CONST               1 (0)
+             68 LOAD_CONST               2 (None)
+             70 IMPORT_NAME              9 (uuid)
+             72 STORE_NAME               9 (uuid)
+
+ 10          74 LOAD_CONST               4 (1)
+             76 LOAD_CONST               5 (('PACKAGE',))
+             78 IMPORT_NAME             10 (device)
+             80 IMPORT_FROM             11 (PACKAGE)
+             82 STORE_NAME              11 (PACKAGE)
+             84 POP_TOP
+
+ 12          86 LOAD_CONST              17 (('',))
+             88 LOAD_CONST               6 (<code object normalize_phone at 0x000001C217793D70, file "console\signal_support\operations.py", line 12>)
+             90 MAKE_FUNCTION            1 (defaults)
+             92 STORE_NAME              12 (normalize_phone)
+
+ 21          94 LOAD_CONST              17 (('',))
+             96 LOAD_CONST               7 (<code object load_phones at 0x000001C2176DBB60, file "console\signal_support\operations.py", line 21>)
+             98 MAKE_FUNCTION            1 (defaults)
+            100 STORE_NAME              13 (load_phones)
+
+ 38         102 LOAD_CONST              18 (((), ()))
+            104 LOAD_CONST               8 (<code object allocate at 0x000001C217764440, file "console\signal_support\operations.py", line 38>)
+            106 MAKE_FUNCTION            1 (defaults)
+            108 STORE_NAME              14 (allocate)
+
+ 52         110 LOAD_CONST               9 (<code object render_message at 0x000001C217B75A70, file "console\signal_support\operations.py", line 52>)
+            112 MAKE_FUNCTION            0
+            114 STORE_NAME              15 (render_message)
+
+ 57         116 LOAD_CONST              10 (<code object load_template at 0x000001C2172DF870, file "console\signal_support\operations.py", line 57>)
+            118 MAKE_FUNCTION            0
+            120 STORE_NAME              16 (load_template)
+
+ 64         122 LOAD_CONST              11 (<code object profile_assets at 0x000001C217855A40, file "console\signal_support\operations.py", line 64>)
+            124 MAKE_FUNCTION            0
+            126 STORE_NAME              17 (profile_assets)
+
+103         128 LOAD_CONST              19 ((True, True))
+            130 LOAD_CONST              12 (<code object classify_account at 0x000001C217AFCFB0, file "console\signal_support\operations.py", line 103>)
+            132 MAKE_FUNCTION            1 (defaults)
+            134 STORE_NAME              18 (classify_account)
+
+119         136 PUSH_NULL
+            138 LOAD_BUILD_CLASS
+            140 LOAD_CONST              13 (<code object ContactBook at 0x000001C217B8EE20, file "console\signal_support\operations.py", line 119>)
+            142 MAKE_FUNCTION            0
+            144 LOAD_CONST              14 ('ContactBook')
+            146 CALL                     2
+            154 STORE_NAME              19 (ContactBook)
+
+150         156 PUSH_NULL
+            158 LOAD_BUILD_CLASS
+            160 LOAD_CONST              15 (<code object OutreachStore at 0x000001C217B8ED30, file "console\signal_support\operations.py", line 150>)
+            162 MAKE_FUNCTION            0
+            164 LOAD_CONST              16 ('OutreachStore')
+            166 CALL                     2
+            174 STORE_NAME              20 (OutreachStore)
+            176 RETURN_CONST             2 (None)
+
+Disassembly of <code object normalize_phone at 0x000001C217793D70, file "console\signal_support\operations.py", line 12>:
+ 12           0 RESUME                   0
+
+ 13           2 LOAD_FAST                0 (value)
+              4 LOAD_ATTR                1 (NULL|self + strip)
+             24 CALL                     0
+             32 STORE_FAST               0 (value)
+             34 LOAD_GLOBAL              3 (NULL + re)
+             44 LOAD_ATTR                4 (sub)
+             64 LOAD_CONST               1 ('[\\s().-]')
+             66 LOAD_CONST               2 ('')
+             68 LOAD_FAST                0 (value)
+             70 CALL                     3
+             78 STORE_FAST               0 (value)
+
+ 14          80 LOAD_FAST                0 (value)
+             82 LOAD_ATTR                7 (NULL|self + startswith)
+            102 LOAD_CONST               3 ('00')
+            104 CALL                     1
+            112 POP_JUMP_IF_FALSE        8 (to 130)
+            114 LOAD_CONST               4 ('+')
+            116 LOAD_FAST                0 (value)
+            118 LOAD_CONST               5 (2)
+            120 LOAD_CONST               0 (None)
+            122 BINARY_SLICE
+            124 BINARY_OP                0 (+)
+            128 STORE_FAST               0 (value)
+
+ 15     >>  130 LOAD_FAST                0 (value)
+            132 LOAD_ATTR                7 (NULL|self + startswith)
+            152 LOAD_CONST               4 ('+')
+            154 CALL                     1
+            162 POP_JUMP_IF_TRUE        60 (to 284)
+
+ 16         164 LOAD_FAST                0 (value)
+            166 LOAD_ATTR                9 (NULL|self + isdigit)
+            186 CALL                     0
+            194 POP_JUMP_IF_FALSE       20 (to 236)
+            196 LOAD_GLOBAL             11 (NULL + len)
+            206 LOAD_FAST                0 (value)
+            208 CALL                     1
+            216 LOAD_CONST               6 (11)
+            218 COMPARE_OP              92 (>=)
+            222 POP_JUMP_IF_FALSE        6 (to 236)
+            224 LOAD_CONST               4 ('+')
+            226 LOAD_FAST                0 (value)
+            228 BINARY_OP                0 (+)
+            232 STORE_FAST               0 (value)
+            234 JUMP_FORWARD            24 (to 284)
+
+ 17     >>  236 LOAD_FAST                1 (default_dial)
+            238 LOAD_ATTR                9 (NULL|self + isdigit)
+            258 CALL                     0
+            266 POP_JUMP_IF_FALSE        8 (to 284)
+            268 LOAD_CONST               4 ('+')
+            270 LOAD_FAST                1 (default_dial)
+            272 BINARY_OP                0 (+)
+            276 LOAD_FAST                0 (value)
+            278 BINARY_OP                0 (+)
+            282 STORE_FAST               0 (value)
+
+ 18     >>  284 LOAD_GLOBAL              3 (NULL + re)
+            294 LOAD_ATTR               12 (fullmatch)
+            314 LOAD_CONST               7 ('\\+[1-9]\\d{7,14}')
+            316 LOAD_FAST                0 (value)
+            318 CALL                     2
+            326 POP_JUMP_IF_TRUE        11 (to 350)
+            328 LOAD_GLOBAL             15 (NULL + ValueError)
+            338 LOAD_CONST               8 ('需要完整国际号码，或设置国家拨号码。')
+            340 CALL                     1
+            348 RAISE_VARARGS            1
+
+ 19     >>  350 LOAD_FAST                0 (value)
+            352 RETURN_VALUE
+
+Disassembly of <code object load_phones at 0x000001C2176DBB60, file "console\signal_support\operations.py", line 21>:
+ 21           0 RESUME                   0
+
+ 22           2 LOAD_GLOBAL              1 (NULL + Path)
+             12 LOAD_FAST                0 (path)
+             14 CALL                     1
+             22 LOAD_ATTR                3 (NULL|self + read_bytes)
+             42 CALL                     0
+             50 STORE_FAST               2 (raw)
+
+ 23          52 LOAD_FAST                2 (raw)
+             54 LOAD_ATTR                5 (NULL|self + startswith)
+             74 LOAD_CONST               1 ((b'\xff\xfe', b'\xfe\xff'))
+             76 CALL                     1
+             84 POP_JUMP_IF_FALSE        2 (to 90)
+             86 LOAD_CONST               2 (('utf-16',))
+             88 JUMP_FORWARD             1 (to 92)
+        >>   90 LOAD_CONST               3 (('utf-8-sig', 'gb18030'))
+        >>   92 STORE_FAST               3 (encodings)
+
+ 24          94 LOAD_FAST                3 (encodings)
+             96 GET_ITER
+        >>   98 FOR_ITER                20 (to 142)
+            102 STORE_FAST               4 (encoding)
+
+ 25         104 LOAD_FAST                2 (raw)
+            106 LOAD_ATTR                7 (NULL|self + decode)
+            126 LOAD_FAST                4 (encoding)
+            128 CALL                     1
+            136 STORE_FAST               5 (text)
+            138 POP_TOP
+            140 JUMP_FORWARD            12 (to 166)
+
+ 24     >>  142 END_FOR
+
+ 27         144 LOAD_GLOBAL             11 (NULL + ValueError)
+            154 LOAD_CONST               4 ('无法识别 TXT 编码。')
+            156 CALL                     1
+            164 RAISE_VARARGS            1
+
+ 28     >>  166 BUILD_LIST               0
+            168 STORE_FAST               6 (valid)
+            170 BUILD_LIST               0
+            172 STORE_FAST               7 (errors)
+            174 LOAD_GLOBAL             13 (NULL + set)
+            184 CALL                     0
+            192 STORE_FAST               8 (seen)
+            194 LOAD_CONST               5 (0)
+            196 STORE_FAST               9 (duplicates)
+
+ 29         198 LOAD_GLOBAL             15 (NULL + enumerate)
+            208 LOAD_FAST                5 (text)
+            210 LOAD_ATTR               17 (NULL|self + splitlines)
+            230 CALL                     0
+            238 LOAD_CONST               6 (1)
+            240 CALL                     2
+            248 GET_ITER
+        >>  250 FOR_ITER                97 (to 448)
+            254 UNPACK_SEQUENCE          2
+            258 STORE_FAST              10 (index)
+            260 STORE_FAST              11 (line)
+
+ 30         262 LOAD_FAST               11 (line)
+            264 LOAD_ATTR               19 (NULL|self + strip)
+            284 CALL                     0
+            292 STORE_FAST              11 (line)
+
+ 31         294 LOAD_FAST               11 (line)
+            296 POP_JUMP_IF_FALSE       17 (to 332)
+            298 LOAD_FAST               11 (line)
+            300 LOAD_ATTR                5 (NULL|self + startswith)
+            320 LOAD_CONST               7 ('#')
+            322 CALL                     1
+            330 POP_JUMP_IF_FALSE        1 (to 334)
+        >>  332 JUMP_BACKWARD           42 (to 250)
+
+ 32     >>  334 LOAD_GLOBAL             21 (NULL + normalize_phone)
+            344 LOAD_FAST               11 (line)
+            346 LOAD_FAST                1 (default_dial)
+            348 CALL                     2
+            356 STORE_FAST              12 (phone)
+
+ 34         358 LOAD_FAST               12 (phone)
+            360 LOAD_FAST                8 (seen)
+            362 CONTAINS_OP              0
+            364 POP_JUMP_IF_FALSE        6 (to 378)
+            366 LOAD_FAST                9 (duplicates)
+            368 LOAD_CONST               6 (1)
+            370 BINARY_OP               13 (+=)
+            374 STORE_FAST               9 (duplicates)
+            376 JUMP_BACKWARD           64 (to 250)
+
+ 35     >>  378 LOAD_FAST                8 (seen)
+            380 LOAD_ATTR               27 (NULL|self + add)
+            400 LOAD_FAST               12 (phone)
+            402 CALL                     1
+            410 POP_TOP
+            412 LOAD_FAST                6 (valid)
+            414 LOAD_ATTR               23 (NULL|self + append)
+            434 LOAD_FAST               12 (phone)
+            436 CALL                     1
+            444 POP_TOP
+            446 JUMP_BACKWARD           99 (to 250)
+
+ 29     >>  448 END_FOR
+
+ 36         450 LOAD_FAST                6 (valid)
+            452 LOAD_FAST                7 (errors)
+            454 LOAD_FAST                9 (duplicates)
+            456 LOAD_CONST               9 (('phones', 'errors', 'duplicates'))
+            458 BUILD_CONST_KEY_MAP      3
+            460 RETURN_VALUE
+        >>  462 PUSH_EXC_INFO
+
+ 26         464 LOAD_GLOBAL              8 (UnicodeError)
+            474 CHECK_EXC_MATCH
+            476 POP_JUMP_IF_FALSE        3 (to 484)
+            478 POP_TOP
+            480 POP_EXCEPT
+            482 JUMP_BACKWARD          193 (to 98)
+        >>  484 RERAISE                  0
+        >>  486 COPY                     3
+            488 POP_EXCEPT
+            490 RERAISE                  1
+        >>  492 PUSH_EXC_INFO
+
+ 33         494 LOAD_GLOBAL             10 (ValueError)
+            504 CHECK_EXC_MATCH
+            506 POP_JUMP_IF_FALSE       39 (to 586)
+            508 STORE_FAST              13 (e)
+            510 LOAD_FAST                7 (errors)
+            512 LOAD_ATTR               23 (NULL|self + append)
+            532 LOAD_FAST               10 (index)
+            534 LOAD_GLOBAL             25 (NULL + str)
+            544 LOAD_FAST               13 (e)
+            546 CALL                     1
+            554 LOAD_CONST               8 (('line', 'reason'))
+            556 BUILD_CONST_KEY_MAP      2
+            558 CALL                     1
+            566 POP_TOP
+            568 POP_EXCEPT
+            570 LOAD_CONST               0 (None)
+            572 STORE_FAST              13 (e)
+            574 DELETE_FAST             13 (e)
+            576 JUMP_BACKWARD          164 (to 250)
+        >>  578 LOAD_CONST               0 (None)
+            580 STORE_FAST              13 (e)
+            582 DELETE_FAST             13 (e)
+            584 RERAISE                  1
+        >>  586 RERAISE                  0
+        >>  588 COPY                     3
+            590 POP_EXCEPT
+            592 RERAISE                  1
+ExceptionTable:
+  104 to 136 -> 462 [1]
+  334 to 356 -> 492 [1]
+  462 to 478 -> 486 [2] lasti
+  484 to 484 -> 486 [2] lasti
+  492 to 508 -> 588 [2] lasti
+  510 to 566 -> 578 [2] lasti
+  578 to 586 -> 588 [2] lasti
+
+Disassembly of <code object allocate at 0x000001C217764440, file "console\signal_support\operations.py", line 38>:
+              0 MAKE_CELL                3 (excluded)
+
+ 38           2 RESUME                   0
+
+ 39           4 LOAD_GLOBAL              1 (NULL + type)
+             14 LOAD_FAST                2 (quota)
+             16 CALL                     1
+             24 LOAD_GLOBAL              2 (int)
+             34 IS_OP                    1
+             36 POP_JUMP_IF_TRUE        23 (to 84)
+             38 LOAD_CONST               1 (1)
+             40 LOAD_FAST                2 (quota)
+             42 SWAP                     2
+             44 COPY                     2
+             46 COMPARE_OP              26 (<=)
+             50 POP_JUMP_IF_FALSE       15 (to 82)
+             52 LOAD_CONST               2 (10000)
+             54 COMPARE_OP              26 (<=)
+             58 POP_JUMP_IF_TRUE        23 (to 106)
+             60 LOAD_GLOBAL              5 (NULL + ValueError)
+             70 LOAD_CONST               3 ('每号人数应为 1～10000。')
+             72 CALL                     1
+             80 RAISE_VARARGS            1
+        >>   82 POP_TOP
+        >>   84 LOAD_GLOBAL              5 (NULL + ValueError)
+             94 LOAD_CONST               3 ('每号人数应为 1～10000。')
+             96 CALL                     1
+            104 RAISE_VARARGS            1
+
+ 40     >>  106 LOAD_FAST                1 (accounts)
+            108 POP_JUMP_IF_TRUE        11 (to 132)
+            110 LOAD_GLOBAL              5 (NULL + ValueError)
+            120 LOAD_CONST               4 ('请选择账号。')
+            122 CALL                     1
+            130 RAISE_VARARGS            1
+
+ 41     >>  132 LOAD_GLOBAL              7 (NULL + len)
+            142 LOAD_GLOBAL              9 (NULL + set)
+            152 LOAD_GLOBAL             11 (NULL + map)
+            162 LOAD_GLOBAL             12 (str)
+            172 LOAD_FAST                1 (accounts)
+            174 CALL                     2
+            182 CALL                     1
+            190 CALL                     1
+            198 LOAD_GLOBAL              7 (NULL + len)
+            208 LOAD_FAST                1 (accounts)
+            210 CALL                     1
+            218 COMPARE_OP              55 (!=)
+            222 POP_JUMP_IF_FALSE       11 (to 246)
+            224 LOAD_GLOBAL              5 (NULL + ValueError)
+            234 LOAD_CONST               5 ('账号列表不能重复。')
+            236 CALL                     1
+            244 RAISE_VARARGS            1
+
+ 42     >>  246 LOAD_GLOBAL             15 (NULL + list)
+            256 LOAD_FAST                4 (history)
+            258 CALL                     1
+            266 STORE_FAST               4 (history)
+            268 LOAD_GLOBAL              9 (NULL + set)
+            278 LOAD_DEREF               3 (excluded)
+            280 CALL                     1
+            288 LOAD_FAST                4 (history)
+            290 GET_ITER
+            292 LOAD_FAST_AND_CLEAR      5 (r)
+            294 SWAP                     2
+            296 BUILD_SET                0
+            298 SWAP                     2
+        >>  300 FOR_ITER                 7 (to 318)
+            304 STORE_FAST               5 (r)
+            306 LOAD_FAST                5 (r)
+            308 LOAD_CONST               6 ('phone')
+            310 BINARY_SUBSCR
+            314 SET_ADD                  2
+            316 JUMP_BACKWARD            9 (to 300)
+        >>  318 END_FOR
+            320 SWAP                     2
+            322 STORE_FAST               5 (r)
+            324 BINARY_OP                7 (|)
+            328 STORE_DEREF              3 (excluded)
+
+ 43         330 LOAD_GLOBAL             15 (NULL + list)
+            340 LOAD_GLOBAL             16 (dict)
+            350 LOAD_ATTR               19 (NULL|self + fromkeys)
+            370 LOAD_CLOSURE             3 (excluded)
+            372 BUILD_TUPLE              1
+            374 LOAD_CONST               7 (<code object <genexpr> at 0x000001C2174A6A60, file "console\signal_support\operations.py", line 43>)
+            376 MAKE_FUNCTION            8 (closure)
+            378 LOAD_FAST                0 (phones)
+            380 GET_ITER
+            382 CALL                     0
+            390 CALL                     1
+            398 CALL                     1
+            406 STORE_FAST               6 (unique)
+
+ 44         408 BUILD_LIST               0
+            410 STORE_FAST               7 (rows)
+            412 LOAD_CONST               8 (0)
+            414 STORE_FAST               8 (position)
+
+ 45         416 LOAD_FAST                1 (accounts)
+            418 GET_ITER
+        >>  420 FOR_ITER               130 (to 684)
+            424 STORE_FAST               9 (account)
+
+ 46         426 LOAD_GLOBAL              7 (NULL + len)
+            436 LOAD_FAST                4 (history)
+            438 GET_ITER
+            440 LOAD_FAST_AND_CLEAR      5 (r)
+            442 SWAP                     2
+            444 BUILD_SET                0
+            446 SWAP                     2
+        >>  448 FOR_ITER                34 (to 520)
+            452 STORE_FAST               5 (r)
+            454 LOAD_GLOBAL             13 (NULL + str)
+            464 LOAD_FAST                5 (r)
+            466 LOAD_CONST               9 ('account')
+            468 BINARY_SUBSCR
+            472 CALL                     1
+            480 LOAD_GLOBAL             13 (NULL + str)
+            490 LOAD_FAST                9 (account)
+            492 CALL                     1
+            500 COMPARE_OP              40 (==)
+            504 POP_JUMP_IF_TRUE         1 (to 508)
+            506 JUMP_BACKWARD           30 (to 448)
+        >>  508 LOAD_FAST                5 (r)
+            510 LOAD_CONST               6 ('phone')
+            512 BINARY_SUBSCR
+            516 SET_ADD                  2
+            518 JUMP_BACKWARD           36 (to 448)
+        >>  520 END_FOR
+            522 SWAP                     2
+            524 STORE_FAST               5 (r)
+            526 CALL                     1
+            534 STORE_FAST              10 (used)
+
+ 47         536 LOAD_GLOBAL             21 (NULL + max)
+            546 LOAD_CONST               8 (0)
+            548 LOAD_FAST                2 (quota)
+            550 LOAD_FAST               10 (used)
+            552 BINARY_OP               10 (-)
+            556 CALL                     2
+            564 STORE_FAST              11 (room)
+            566 LOAD_FAST                6 (unique)
+            568 LOAD_FAST                8 (position)
+            570 LOAD_FAST                8 (position)
+            572 LOAD_FAST               11 (room)
+            574 BINARY_OP                0 (+)
+            578 BINARY_SLICE
+            580 STORE_FAST              12 (chunk)
+
+ 48         582 LOAD_FAST               12 (chunk)
+            584 GET_ITER
+        >>  586 FOR_ITER                31 (to 652)
+            590 STORE_FAST              13 (phone)
+            592 LOAD_FAST                7 (rows)
+            594 LOAD_ATTR               23 (NULL|self + append)
+            614 LOAD_GLOBAL             13 (NULL + str)
+            624 LOAD_FAST                9 (account)
+            626 CALL                     1
+            634 LOAD_FAST               13 (phone)
+            636 LOAD_CONST              10 (('account', 'phone'))
+            638 BUILD_CONST_KEY_MAP      2
+            640 CALL                     1
+            648 POP_TOP
+            650 JUMP_BACKWARD           33 (to 586)
+        >>  652 END_FOR
+
+ 49         654 LOAD_FAST                8 (position)
+            656 LOAD_GLOBAL              7 (NULL + len)
+            666 LOAD_FAST               12 (chunk)
+            668 CALL                     1
+            676 BINARY_OP               13 (+=)
+            680 STORE_FAST               8 (position)
+            682 JUMP_BACKWARD          132 (to 420)
+
+ 45     >>  684 END_FOR
+
+ 50         686 LOAD_FAST                7 (rows)
+            688 LOAD_FAST                6 (unique)
+            690 LOAD_FAST                8 (position)
+            692 LOAD_CONST               0 (None)
+            694 BINARY_SLICE
+            696 BUILD_TUPLE              2
+            698 RETURN_VALUE
+        >>  700 SWAP                     2
+            702 POP_TOP
+
+ 42         704 SWAP                     2
+            706 STORE_FAST               5 (r)
+            708 RERAISE                  0
+        >>  710 SWAP                     2
+            712 POP_TOP
+
+ 46         714 SWAP                     2
+            716 STORE_FAST               5 (r)
+            718 RERAISE                  0
+ExceptionTable:
+  296 to 318 -> 700 [3]
+  444 to 504 -> 710 [5]
+  508 to 520 -> 710 [5]
+
+Disassembly of <code object <genexpr> at 0x000001C2174A6A60, file "console\signal_support\operations.py", line 43>:
+              0 COPY_FREE_VARS           1
+
+ 43           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                11 (to 36)
+             14 STORE_FAST               1 (p)
+             16 LOAD_FAST                1 (p)
+             18 LOAD_DEREF               2 (excluded)
+             20 CONTAINS_OP              1
+             22 POP_JUMP_IF_TRUE         1 (to 26)
+             24 JUMP_BACKWARD            8 (to 10)
+        >>   26 LOAD_FAST                1 (p)
+             28 YIELD_VALUE              1
+             30 RESUME                   1
+             32 POP_TOP
+             34 JUMP_BACKWARD           13 (to 10)
+        >>   36 END_FOR
+             38 RETURN_CONST             0 (None)
+        >>   40 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             42 RERAISE                  1
+ExceptionTable:
+  6 to 22 -> 40 [0] lasti
+  26 to 38 -> 40 [0] lasti
+
+Disassembly of <code object render_message at 0x000001C217B75A70, file "console\signal_support\operations.py", line 52>:
+ 52           0 RESUME                   0
+
+ 54           2 LOAD_FAST                0 (template)
+              4 LOAD_ATTR                1 (NULL|self + strip)
+             24 CALL                     0
+             32 POP_JUMP_IF_TRUE        11 (to 56)
+             34 LOAD_GLOBAL              3 (NULL + ValueError)
+             44 LOAD_CONST               1 ('请填写私信话术。')
+             46 CALL                     1
+             54 RAISE_VARARGS            1
+
+ 55     >>   56 LOAD_FAST                0 (template)
+             58 LOAD_ATTR                5 (NULL|self + replace)
+             78 LOAD_CONST               2 ('{phone}')
+             80 LOAD_FAST                1 (phone)
+             82 CALL                     2
+             90 LOAD_ATTR                5 (NULL|self + replace)
+            110 LOAD_CONST               3 ('{account}')
+            112 LOAD_GLOBAL              7 (NULL + str)
+            122 LOAD_FAST                2 (account)
+            124 CALL                     1
+            132 CALL                     2
+            140 RETURN_VALUE
+
+Disassembly of <code object load_template at 0x000001C2172DF870, file "console\signal_support\operations.py", line 57>:
+ 57           0 RESUME                   0
+
+ 58           2 LOAD_GLOBAL              1 (NULL + Path)
+             12 LOAD_FAST                0 (path)
+             14 CALL                     1
+             22 LOAD_ATTR                3 (NULL|self + read_bytes)
+             42 CALL                     0
+             50 STORE_FAST               1 (raw)
+
+ 59          52 LOAD_FAST                1 (raw)
+             54 LOAD_ATTR                5 (NULL|self + startswith)
+             74 LOAD_CONST               1 ((b'\xff\xfe', b'\xfe\xff'))
+             76 CALL                     1
+             84 POP_JUMP_IF_FALSE       17 (to 120)
+             86 LOAD_FAST                1 (raw)
+             88 LOAD_ATTR                7 (NULL|self + decode)
+            108 LOAD_CONST               2 ('utf-16')
+            110 CALL                     1
+            118 JUMP_FORWARD            16 (to 152)
+        >>  120 LOAD_FAST                1 (raw)
+            122 LOAD_ATTR                7 (NULL|self + decode)
+            142 LOAD_CONST               3 ('utf-8-sig')
+            144 CALL                     1
+        >>  152 STORE_FAST               2 (text)
+
+ 61     >>  154 LOAD_FAST                2 (text)
+            156 LOAD_ATTR               11 (NULL|self + strip)
+            176 CALL                     0
+            184 POP_JUMP_IF_TRUE        11 (to 208)
+            186 LOAD_GLOBAL             13 (NULL + ValueError)
+            196 LOAD_CONST               5 ('私信话术文件为空。')
+            198 CALL                     1
+            206 RAISE_VARARGS            1
+
+ 62     >>  208 LOAD_FAST                2 (text)
+            210 LOAD_ATTR               15 (NULL|self + replace)
+            230 LOAD_CONST               6 ('\r\n')
+            232 LOAD_CONST               7 ('\n')
+            234 CALL                     2
+            242 LOAD_ATTR               15 (NULL|self + replace)
+            262 LOAD_CONST               8 ('\r')
+            264 LOAD_CONST               7 ('\n')
+            266 CALL                     2
+            274 LOAD_ATTR               11 (NULL|self + strip)
+            294 CALL                     0
+            302 RETURN_VALUE
+        >>  304 PUSH_EXC_INFO
+
+ 60         306 LOAD_GLOBAL              8 (UnicodeError)
+            316 CHECK_EXC_MATCH
+            318 POP_JUMP_IF_FALSE       20 (to 360)
+            320 POP_TOP
+            322 LOAD_FAST                1 (raw)
+            324 LOAD_ATTR                7 (NULL|self + decode)
+            344 LOAD_CONST               4 ('gb18030')
+            346 CALL                     1
+            354 STORE_FAST               2 (text)
+            356 POP_EXCEPT
+            358 JUMP_BACKWARD          103 (to 154)
+        >>  360 RERAISE                  0
+        >>  362 COPY                     3
+            364 POP_EXCEPT
+            366 RERAISE                  1
+ExceptionTable:
+  52 to 152 -> 304 [0]
+  304 to 354 -> 362 [1] lasti
+  360 to 360 -> 362 [1] lasti
+
+Disassembly of <code object profile_assets at 0x000001C217855A40, file "console\signal_support\operations.py", line 64>:
+ 64           0 RESUME                   0
+
+ 65           2 LOAD_GLOBAL              1 (NULL + Path)
+             12 LOAD_FAST                0 (folder)
+             14 CALL                     1
+             22 LOAD_ATTR                3 (NULL|self + resolve)
+             42 CALL                     0
+             50 STORE_FAST               0 (folder)
+
+ 66          52 LOAD_FAST                0 (folder)
+             54 LOAD_ATTR                5 (NULL|self + is_dir)
+             74 CALL                     0
+             82 POP_JUMP_IF_TRUE        11 (to 106)
+             84 LOAD_GLOBAL              7 (NULL + ValueError)
+             94 LOAD_CONST               1 ('素材目录不存在。')
+             96 CALL                     1
+            104 RAISE_VARARGS            1
+
+ 67     >>  106 LOAD_FAST                0 (folder)
+            108 LOAD_CONST               2 ('profiles.csv')
+            110 BINARY_OP               11 (/)
+            114 STORE_FAST               1 (mapping)
+
+ 68         116 BUILD_LIST               0
+            118 STORE_FAST               2 (rows)
+
+ 69         120 LOAD_FAST                1 (mapping)
+            122 LOAD_ATTR                9 (NULL|self + exists)
+            142 CALL                     0
+            150 POP_JUMP_IF_FALSE      233 (to 618)
+
+ 70         152 LOAD_FAST                1 (mapping)
+            154 LOAD_ATTR               11 (NULL|self + open)
+            174 LOAD_CONST               3 ('utf-8-sig')
+            176 LOAD_CONST               4 ('')
+            178 KW_NAMES                 5 (('encoding', 'newline'))
+            180 CALL                     2
+            188 BEFORE_WITH
+            190 STORE_FAST               3 (stream)
+
+ 71         192 LOAD_GLOBAL             13 (NULL + csv)
+            202 LOAD_ATTR               14 (DictReader)
+            222 LOAD_FAST                3 (stream)
+            224 CALL                     1
+            232 STORE_FAST               4 (reader)
+
+ 72         234 LOAD_CONST               6 ('name')
+            236 LOAD_CONST               7 ('image')
+            238 BUILD_SET                2
+            240 LOAD_ATTR               17 (NULL|self + issubset)
+            260 LOAD_FAST                4 (reader)
+            262 LOAD_ATTR               18 (fieldnames)
+            282 COPY                     1
+            284 POP_JUMP_IF_TRUE         2 (to 290)
+            286 POP_TOP
+            288 BUILD_LIST               0
+        >>  290 CALL                     1
+            298 POP_JUMP_IF_TRUE        11 (to 322)
+            300 LOAD_GLOBAL              7 (NULL + ValueError)
+            310 LOAD_CONST               8 ('profiles.csv 需要 name、image 列，可选 account。')
+            312 CALL                     1
+            320 RAISE_VARARGS            1
+
+ 73     >>  322 LOAD_FAST                4 (reader)
+            324 GET_ITER
+        >>  326 FOR_ITER               132 (to 594)
+            330 STORE_FAST               5 (row)
+
+ 74         332 LOAD_FAST                0 (folder)
+            334 LOAD_FAST                5 (row)
+            336 LOAD_CONST               7 ('image')
+            338 BINARY_SUBSCR
+            342 BINARY_OP               11 (/)
+            346 LOAD_ATTR                3 (NULL|self + resolve)
+            366 CALL                     0
+            374 STORE_FAST               6 (image)
+
+ 75         376 LOAD_FAST                6 (image)
+            378 LOAD_ATTR               21 (NULL|self + is_relative_to)
+            398 LOAD_FAST                0 (folder)
+            400 CALL                     1
+            408 POP_JUMP_IF_TRUE        11 (to 432)
+            410 LOAD_GLOBAL              7 (NULL + ValueError)
+            420 LOAD_CONST               9 ('图片路径必须位于素材文件夹内。')
+            422 CALL                     1
+            430 RAISE_VARARGS            1
+
+ 76     >>  432 LOAD_FAST                2 (rows)
+            434 LOAD_ATTR               23 (NULL|self + append)
+            454 LOAD_FAST                5 (row)
+            456 LOAD_CONST               6 ('name')
+            458 BINARY_SUBSCR
+            462 LOAD_ATTR               25 (NULL|self + strip)
+            482 CALL                     0
+            490 LOAD_GLOBAL             27 (NULL + str)
+            500 LOAD_FAST                6 (image)
+            502 CALL                     1
+            510 LOAD_FAST                5 (row)
+            512 LOAD_ATTR               29 (NULL|self + get)
+            532 LOAD_CONST              10 ('account')
+            534 CALL                     1
+            542 COPY                     1
+            544 POP_JUMP_IF_TRUE         2 (to 550)
+            546 POP_TOP
+            548 LOAD_CONST               4 ('')
+        >>  550 LOAD_ATTR               25 (NULL|self + strip)
+            570 CALL                     0
+            578 LOAD_CONST              11 (('name', 'image', 'account'))
+            580 BUILD_CONST_KEY_MAP      3
+            582 CALL                     1
+            590 POP_TOP
+            592 JUMP_BACKWARD          134 (to 326)
+
+ 73     >>  594 END_FOR
+            596 NOP
+
+ 70         598 LOAD_CONST               0 (None)
+            600 LOAD_CONST               0 (None)
+            602 LOAD_CONST               0 (None)
+            604 CALL                     2
+            612 POP_TOP
+            614 EXTENDED_ARG             1
+            616 JUMP_FORWARD           322 (to 1262)
+
+ 78     >>  618 LOAD_GLOBAL             31 (NULL + sorted)
+            628 LOAD_FAST                0 (folder)
+            630 LOAD_ATTR               33 (NULL|self + iterdir)
+            650 CALL                     0
+            658 CALL                     1
+            666 GET_ITER
+            668 LOAD_FAST_AND_CLEAR      6 (image)
+            670 SWAP                     2
+            672 BUILD_LIST               0
+            674 SWAP                     2
+        >>  676 FOR_ITER                73 (to 826)
+            680 STORE_FAST               6 (image)
+            682 LOAD_FAST                6 (image)
+            684 LOAD_ATTR               34 (suffix)
+            704 LOAD_ATTR               37 (NULL|self + lower)
+            724 CALL                     0
+            732 LOAD_CONST              12 (('.jpg', '.jpeg', '.png', '.webp'))
+            734 CONTAINS_OP              0
+            736 POP_JUMP_IF_TRUE         1 (to 740)
+            738 JUMP_BACKWARD           32 (to 676)
+        >>  740 LOAD_FAST                6 (image)
+            742 LOAD_ATTR               39 (NULL|self + is_file)
+            762 CALL                     0
+            770 POP_JUMP_IF_TRUE         1 (to 774)
+            772 JUMP_BACKWARD           49 (to 676)
+        >>  774 LOAD_FAST                6 (image)
+            776 LOAD_ATTR               40 (stem)
+            796 LOAD_GLOBAL             27 (NULL + str)
+            806 LOAD_FAST                6 (image)
+            808 CALL                     1
+            816 LOAD_CONST               4 ('')
+            818 LOAD_CONST              11 (('name', 'image', 'account'))
+            820 BUILD_CONST_KEY_MAP      3
+            822 LIST_APPEND              2
+            824 JUMP_BACKWARD           75 (to 676)
+        >>  826 END_FOR
+            828 STORE_FAST               2 (rows)
+            830 STORE_FAST               6 (image)
+
+ 79         832 LOAD_FAST                0 (folder)
+            834 LOAD_CONST              13 ('名字.txt')
+            836 BINARY_OP               11 (/)
+            840 STORE_FAST               7 (names_file)
+
+ 80         842 LOAD_FAST                7 (names_file)
+            844 LOAD_ATTR                9 (NULL|self + exists)
+            864 CALL                     0
+            872 POP_JUMP_IF_FALSE      194 (to 1262)
+
+ 81         874 LOAD_FAST                7 (names_file)
+            876 LOAD_ATTR               43 (NULL|self + read_bytes)
+            896 CALL                     0
+            904 STORE_FAST               8 (raw)
+
+ 82         906 LOAD_FAST                8 (raw)
+            908 LOAD_ATTR               45 (NULL|self + startswith)
+            928 LOAD_CONST              14 ((b'\xff\xfe', b'\xfe\xff'))
+            930 CALL                     1
+            938 POP_JUMP_IF_FALSE       17 (to 974)
+            940 LOAD_FAST                8 (raw)
+            942 LOAD_ATTR               47 (NULL|self + decode)
+            962 LOAD_CONST              15 ('utf-16')
+            964 CALL                     1
+            972 JUMP_FORWARD            16 (to 1006)
+        >>  974 LOAD_FAST                8 (raw)
+            976 LOAD_ATTR               47 (NULL|self + decode)
+            996 LOAD_CONST               3 ('utf-8-sig')
+            998 CALL                     1
+        >> 1006 STORE_FAST               9 (names_text)
+
+ 84     >> 1008 LOAD_FAST                9 (names_text)
+           1010 LOAD_ATTR               51 (NULL|self + splitlines)
+           1030 CALL                     0
+           1038 GET_ITER
+           1040 LOAD_FAST_AND_CLEAR     10 (value)
+           1042 SWAP                     2
+           1044 BUILD_LIST               0
+           1046 SWAP                     2
+        >> 1048 FOR_ITER                35 (to 1122)
+           1052 STORE_FAST              10 (value)
+           1054 LOAD_FAST               10 (value)
+           1056 LOAD_ATTR               25 (NULL|self + strip)
+           1076 CALL                     0
+           1084 POP_JUMP_IF_TRUE         1 (to 1088)
+           1086 JUMP_BACKWARD           20 (to 1048)
+        >> 1088 LOAD_FAST               10 (value)
+           1090 LOAD_ATTR               25 (NULL|self + strip)
+           1110 CALL                     0
+           1118 LIST_APPEND              2
+           1120 JUMP_BACKWARD           37 (to 1048)
+        >> 1122 END_FOR
+           1124 STORE_FAST              11 (names)
+           1126 STORE_FAST              10 (value)
+
+ 85        1128 LOAD_FAST               11 (names)
+           1130 POP_JUMP_IF_TRUE        11 (to 1154)
+           1132 LOAD_GLOBAL              7 (NULL + ValueError)
+           1142 LOAD_CONST              17 ('名字.txt 是空文件，请每行填写一个名字。头像保持原样，不自动生成身份名称。')
+           1144 CALL                     1
+           1152 RAISE_VARARGS            1
+
+ 86     >> 1154 LOAD_FAST                2 (rows)
+           1156 POP_JUMP_IF_FALSE       52 (to 1262)
+
+ 87        1158 LOAD_FAST                2 (rows)
+           1160 STORE_FAST              12 (images)
+
+ 88        1162 LOAD_GLOBAL             53 (NULL + enumerate)
+           1172 LOAD_FAST               11 (names)
+           1174 CALL                     1
+           1182 GET_ITER
+           1184 LOAD_FAST_AND_CLEAR     13 (index)
+           1186 LOAD_FAST_AND_CLEAR     14 (name)
+           1188 SWAP                     3
+           1190 BUILD_LIST               0
+           1192 SWAP                     2
+        >> 1194 FOR_ITER                28 (to 1254)
+           1198 UNPACK_SEQUENCE          2
+           1202 STORE_FAST              13 (index)
+           1204 STORE_FAST              14 (name)
+           1206 BUILD_MAP                0
+           1208 LOAD_FAST               12 (images)
+           1210 LOAD_FAST               13 (index)
+           1212 LOAD_GLOBAL             55 (NULL + len)
+           1222 LOAD_FAST               12 (images)
+           1224 CALL                     1
+           1232 BINARY_OP                6 (%)
+           1236 BINARY_SUBSCR
+           1240 DICT_UPDATE              1
+           1242 LOAD_CONST               6 ('name')
+           1244 LOAD_FAST               14 (name)
+           1246 BUILD_MAP                1
+           1248 DICT_UPDATE              1
+           1250 LIST_APPEND              2
+           1252 JUMP_BACKWARD           30 (to 1194)
+        >> 1254 END_FOR
+           1256 STORE_FAST               2 (rows)
+           1258 STORE_FAST              13 (index)
+           1260 STORE_FAST              14 (name)
+
+ 89     >> 1262 LOAD_FAST                2 (rows)
+           1264 POP_JUMP_IF_TRUE        11 (to 1288)
+           1266 LOAD_GLOBAL              7 (NULL + ValueError)
+           1276 LOAD_CONST              18 ('未找到头像图片或 profiles.csv。')
+           1278 CALL                     1
+           1286 RAISE_VARARGS            1
+
+ 90     >> 1288 BUILD_MAP                0
+           1290 STORE_FAST              15 (checked)
+
+ 91        1292 LOAD_FAST                2 (rows)
+           1294 GET_ITER
+        >> 1296 FOR_ITER               253 (to 1806)
+           1300 STORE_FAST               5 (row)
+
+ 92        1302 LOAD_GLOBAL              1 (NULL + Path)
+           1312 LOAD_FAST                5 (row)
+           1314 LOAD_CONST               7 ('image')
+           1316 BINARY_SUBSCR
+           1320 CALL                     1
+           1328 STORE_FAST              16 (path)
+
+ 93        1330 LOAD_FAST                5 (row)
+           1332 LOAD_CONST               6 ('name')
+           1334 BINARY_SUBSCR
+           1338 POP_JUMP_IF_TRUE        11 (to 1362)
+           1340 LOAD_GLOBAL              7 (NULL + ValueError)
+           1350 LOAD_CONST              19 ('资料名称不能为空。')
+           1352 CALL                     1
+           1360 RAISE_VARARGS            1
+
+ 94     >> 1362 LOAD_FAST               16 (path)
+           1364 LOAD_ATTR               39 (NULL|self + is_file)
+           1384 CALL                     0
+           1392 POP_JUMP_IF_FALSE       28 (to 1450)
+           1394 LOAD_FAST               16 (path)
+           1396 LOAD_ATTR               34 (suffix)
+           1416 LOAD_ATTR               37 (NULL|self + lower)
+           1436 CALL                     0
+           1444 LOAD_CONST              12 (('.jpg', '.jpeg', '.png', '.webp'))
+           1446 CONTAINS_OP              1
+           1448 POP_JUMP_IF_FALSE       24 (to 1498)
+        >> 1450 LOAD_GLOBAL              7 (NULL + ValueError)
+           1460 LOAD_CONST              20 ('图片不存在或格式不支持：')
+           1462 LOAD_FAST               16 (path)
+           1464 LOAD_ATTR               56 (name)
+           1484 BINARY_OP                0 (+)
+           1488 CALL                     1
+           1496 RAISE_VARARGS            1
+
+ 95     >> 1498 LOAD_FAST               16 (path)
+           1500 LOAD_FAST               15 (checked)
+           1502 CONTAINS_OP              1
+           1504 POP_JUMP_IF_FALSE      141 (to 1788)
+
+ 96        1506 LOAD_FAST               16 (path)
+           1508 LOAD_ATTR               43 (NULL|self + read_bytes)
+           1528 CALL                     0
+           1536 STORE_FAST              17 (content)
+           1538 LOAD_FAST               17 (content)
+           1540 LOAD_CONST               0 (None)
+           1542 LOAD_CONST              21 (12)
+           1544 BINARY_SLICE
+           1546 STORE_FAST              18 (signature)
+
+ 97        1548 LOAD_FAST               18 (signature)
+           1550 LOAD_ATTR               45 (NULL|self + startswith)
+           1570 LOAD_CONST              22 (b'\x89PNG\r\n\x1a\n')
+           1572 CALL                     1
+           1580 COPY                     1
+           1582 POP_JUMP_IF_TRUE        37 (to 1658)
+           1584 POP_TOP
+           1586 LOAD_FAST               18 (signature)
+           1588 LOAD_ATTR               45 (NULL|self + startswith)
+           1608 LOAD_CONST              23 (b'\xff\xd8\xff')
+           1610 CALL                     1
+           1618 COPY                     1
+           1620 POP_JUMP_IF_TRUE        18 (to 1658)
+           1622 POP_TOP
+           1624 LOAD_FAST               18 (signature)
+           1626 LOAD_CONST               0 (None)
+           1628 LOAD_CONST              24 (4)
+           1630 BINARY_SLICE
+           1632 LOAD_CONST              25 (b'RIFF')
+           1634 COMPARE_OP              40 (==)
+           1638 COPY                     1
+           1640 POP_JUMP_IF_FALSE        8 (to 1658)
+           1642 POP_TOP
+           1644 LOAD_FAST               18 (signature)
+           1646 LOAD_CONST              26 (8)
+           1648 LOAD_CONST              21 (12)
+           1650 BINARY_SLICE
+           1652 LOAD_CONST              27 (b'WEBP')
+           1654 COMPARE_OP              40 (==)
+        >> 1658 STORE_FAST              19 (valid)
+
+ 98        1660 LOAD_FAST               19 (valid)
+           1662 POP_JUMP_IF_TRUE        24 (to 1712)
+           1664 LOAD_GLOBAL              7 (NULL + ValueError)
+           1674 LOAD_CONST              28 ('文件不是有效的常见图片格式：')
+           1676 LOAD_FAST               16 (path)
+           1678 LOAD_ATTR               56 (name)
+           1698 BINARY_OP                0 (+)
+           1702 CALL                     1
+           1710 RAISE_VARARGS            1
+
+ 99     >> 1712 LOAD_GLOBAL             59 (NULL + hashlib)
+           1722 LOAD_ATTR               60 (sha256)
+           1742 LOAD_FAST               17 (content)
+           1744 CALL                     1
+           1752 LOAD_ATTR               63 (NULL|self + hexdigest)
+           1772 CALL                     0
+           1780 LOAD_FAST               15 (checked)
+           1782 LOAD_FAST               16 (path)
+           1784 STORE_SUBSCR
+
+100     >> 1788 LOAD_FAST               15 (checked)
+           1790 LOAD_FAST               16 (path)
+           1792 BINARY_SUBSCR
+           1796 LOAD_FAST                5 (row)
+           1798 LOAD_CONST              29 ('sha256')
+           1800 STORE_SUBSCR
+           1804 JUMP_BACKWARD          255 (to 1296)
+
+ 91     >> 1806 END_FOR
+
+101        1808 LOAD_FAST                2 (rows)
+           1810 RETURN_VALUE
+
+ 70     >> 1812 PUSH_EXC_INFO
+           1814 WITH_EXCEPT_START
+           1816 POP_JUMP_IF_TRUE         1 (to 1820)
+           1818 RERAISE                  2
+        >> 1820 POP_TOP
+           1822 POP_EXCEPT
+           1824 POP_TOP
+           1826 POP_TOP
+           1828 EXTENDED_ARG             1
+           1830 JUMP_BACKWARD          285 (to 1262)
+        >> 1832 COPY                     3
+           1834 POP_EXCEPT
+           1836 RERAISE                  1
+        >> 1838 SWAP                     2
+           1840 POP_TOP
+
+ 78        1842 SWAP                     2
+           1844 STORE_FAST               6 (image)
+           1846 RERAISE                  0
+        >> 1848 PUSH_EXC_INFO
+
+ 83        1850 LOAD_GLOBAL             48 (UnicodeError)
+           1860 CHECK_EXC_MATCH
+           1862 POP_JUMP_IF_FALSE       21 (to 1906)
+           1864 POP_TOP
+           1866 LOAD_FAST                8 (raw)
+           1868 LOAD_ATTR               47 (NULL|self + decode)
+           1888 LOAD_CONST              16 ('gb18030')
+           1890 CALL                     1
+           1898 STORE_FAST               9 (names_text)
+           1900 POP_EXCEPT
+           1902 EXTENDED_ARG             1
+           1904 JUMP_BACKWARD          449 (to 1008)
+        >> 1906 RERAISE                  0
+        >> 1908 COPY                     3
+           1910 POP_EXCEPT
+           1912 RERAISE                  1
+        >> 1914 SWAP                     2
+           1916 POP_TOP
+
+ 84        1918 SWAP                     2
+           1920 STORE_FAST              10 (value)
+           1922 RERAISE                  0
+        >> 1924 SWAP                     2
+           1926 POP_TOP
+
+ 88        1928 SWAP                     3
+           1930 STORE_FAST              14 (name)
+           1932 STORE_FAST              13 (index)
+           1934 RERAISE                  0
+ExceptionTable:
+  190 to 594 -> 1812 [1] lasti
+  672 to 736 -> 1838 [2]
+  740 to 770 -> 1838 [2]
+  774 to 826 -> 1838 [2]
+  906 to 1006 -> 1848 [0]
+  1044 to 1084 -> 1914 [2]
+  1088 to 1122 -> 1914 [2]
+  1190 to 1254 -> 1924 [3]
+  1812 to 1820 -> 1832 [3] lasti
+  1848 to 1898 -> 1908 [1] lasti
+  1906 to 1906 -> 1908 [1] lasti
+
+Disassembly of <code object classify_account at 0x000001C217AFCFB0, file "console\signal_support\operations.py", line 103>:
+              0 MAKE_CELL                3 (text)
+
+103           2 RESUME                   0
+
+104           4 LOAD_FAST                2 (online)
+              6 POP_JUMP_IF_TRUE         1 (to 10)
+              8 RETURN_CONST             1 (('offline', '设备未连接，不能判断账号状态'))
+
+105     >>   10 LOAD_FAST                1 (installed)
+             12 POP_JUMP_IF_TRUE         1 (to 16)
+             14 RETURN_CONST             2 (('not_installed', 'Signal 未安装'))
+
+106     >>   16 LOAD_CONST               3 (' ')
+             18 LOAD_ATTR                1 (NULL|self + join)
+             38 LOAD_CONST               4 (<code object <genexpr> at 0x000001C21594AC30, file "console\signal_support\operations.py", line 106>)
+             40 MAKE_FUNCTION            0
+             42 LOAD_FAST                0 (nodes)
+             44 GET_ITER
+             46 CALL                     0
+             54 CALL                     1
+             62 LOAD_ATTR                3 (NULL|self + lower)
+             82 CALL                     0
+             90 STORE_DEREF              3 (text)
+
+107          92 LOAD_GLOBAL              5 (NULL + any)
+            102 LOAD_CLOSURE             3 (text)
+            104 BUILD_TUPLE              1
+            106 LOAD_CONST               5 (<code object <genexpr> at 0x000001C217405200, file "console\signal_support\operations.py", line 107>)
+            108 MAKE_FUNCTION            8 (closure)
+            110 LOAD_CONST               6 (('your account has been banned', 'your account is banned', '账号已被封禁', '帳號已遭停權'))
+            112 GET_ITER
+            114 CALL                     0
+            122 CALL                     1
+            130 POP_JUMP_IF_FALSE        1 (to 134)
+
+108         132 RETURN_CONST             7 (('ban_evidence', '发现疑似明确封禁文字，需要人工核对截图'))
+
+109     >>  134 LOAD_GLOBAL              5 (NULL + any)
+            144 LOAD_CLOSURE             3 (text)
+            146 BUILD_TUPLE              1
+            148 LOAD_CONST               8 (<code object <genexpr> at 0x000001C2174057A0, file "console\signal_support\operations.py", line 109>)
+            150 MAKE_FUNCTION            8 (closure)
+            152 LOAD_CONST               9 (('account locked', 'account has been locked', '账号已锁定', '帳號已鎖定'))
+            154 GET_ITER
+            156 CALL                     0
+            164 CALL                     1
+            172 POP_JUMP_IF_FALSE        1 (to 176)
+
+110         174 RETURN_CONST            10 (('locked', '账号锁定不等同于封禁'))
+
+111     >>  176 LOAD_GLOBAL              5 (NULL + any)
+            186 LOAD_CLOSURE             3 (text)
+            188 BUILD_TUPLE              1
+            190 LOAD_CONST              11 (<code object <genexpr> at 0x000001C217B8EC40, file "console\signal_support\operations.py", line 111>)
+            192 MAKE_FUNCTION            8 (closure)
+            194 LOAD_CONST              12 (('device is no longer registered', 'no longer registered', '设备已不再注册', '裝置已取消註冊'))
+            196 GET_ITER
+            198 CALL                     0
+            206 CALL                     1
+            214 POP_JUMP_IF_FALSE        1 (to 218)
+
+112         216 RETURN_CONST            13 (('unregistered', '设备需要重新注册，不等同于封禁'))
+
+113     >>  218 LOAD_GLOBAL              5 (NULL + any)
+            228 LOAD_CLOSURE             3 (text)
+            230 BUILD_TUPLE              1
+            232 LOAD_CONST              14 (<code object <genexpr> at 0x000001C217B8F000, file "console\signal_support\operations.py", line 113>)
+            234 MAKE_FUNCTION            8 (closure)
+            236 LOAD_CONST              15 (('captcha', 'verification code', '验证码', '驗證碼'))
+            238 GET_ITER
+            240 CALL                     0
+            248 CALL                     1
+            256 POP_JUMP_IF_FALSE        1 (to 260)
+
+114         258 RETURN_CONST            16 (('verification', '当前为验证页面，不能判断封禁'))
+
+115     >>  260 LOAD_GLOBAL              5 (NULL + any)
+            270 LOAD_CLOSURE             3 (text)
+            272 BUILD_TUPLE              1
+            274 LOAD_CONST              17 (<code object <genexpr> at 0x000001C217B8EF10, file "console\signal_support\operations.py", line 115>)
+            276 MAKE_FUNCTION            8 (closure)
+            278 LOAD_CONST              18 (('network error', 'no internet', '网络错误', '網路錯誤', 'disconnected'))
+            280 GET_ITER
+            282 CALL                     0
+            290 CALL                     1
+            298 POP_JUMP_IF_FALSE        1 (to 302)
+
+116         300 RETURN_CONST            19 (('network', '网络故障，不能判断封禁'))
+
+117     >>  302 RETURN_CONST            20 (('unknown', '仅检查了当前屏幕，尚无明确登录或封禁证据'))
+
+Disassembly of <code object <genexpr> at 0x000001C21594AC30, file "console\signal_support\operations.py", line 106>:
+106           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                22 (to 56)
+             12 STORE_FAST               1 (n)
+             14 LOAD_FAST                1 (n)
+             16 LOAD_ATTR                1 (NULL|self + get)
+             36 LOAD_CONST               0 ('text')
+             38 LOAD_CONST               1 ('')
+             40 CALL                     2
+             48 YIELD_VALUE              1
+             50 RESUME                   1
+             52 POP_TOP
+             54 JUMP_BACKWARD           24 (to 8)
+        >>   56 END_FOR
+             58 RETURN_CONST             2 (None)
+        >>   60 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             62 RERAISE                  1
+ExceptionTable:
+  4 to 58 -> 60 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217405200, file "console\signal_support\operations.py", line 107>:
+              0 COPY_FREE_VARS           1
+
+107           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                 8 (to 30)
+             14 STORE_FAST               1 (word)
+             16 LOAD_FAST                1 (word)
+             18 LOAD_DEREF               2 (text)
+             20 CONTAINS_OP              0
+             22 YIELD_VALUE              1
+             24 RESUME                   1
+             26 POP_TOP
+             28 JUMP_BACKWARD           10 (to 10)
+        >>   30 END_FOR
+             32 RETURN_CONST             0 (None)
+        >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             36 RERAISE                  1
+ExceptionTable:
+  6 to 32 -> 34 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C2174057A0, file "console\signal_support\operations.py", line 109>:
+              0 COPY_FREE_VARS           1
+
+109           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                 8 (to 30)
+             14 STORE_FAST               1 (word)
+             16 LOAD_FAST                1 (word)
+             18 LOAD_DEREF               2 (text)
+             20 CONTAINS_OP              0
+             22 YIELD_VALUE              1
+             24 RESUME                   1
+             26 POP_TOP
+             28 JUMP_BACKWARD           10 (to 10)
+        >>   30 END_FOR
+             32 RETURN_CONST             0 (None)
+        >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             36 RERAISE                  1
+ExceptionTable:
+  6 to 32 -> 34 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217B8EC40, file "console\signal_support\operations.py", line 111>:
+              0 COPY_FREE_VARS           1
+
+111           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                 8 (to 30)
+             14 STORE_FAST               1 (word)
+             16 LOAD_FAST                1 (word)
+             18 LOAD_DEREF               2 (text)
+             20 CONTAINS_OP              0
+             22 YIELD_VALUE              1
+             24 RESUME                   1
+             26 POP_TOP
+             28 JUMP_BACKWARD           10 (to 10)
+        >>   30 END_FOR
+             32 RETURN_CONST             0 (None)
+        >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             36 RERAISE                  1
+ExceptionTable:
+  6 to 32 -> 34 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217B8F000, file "console\signal_support\operations.py", line 113>:
+              0 COPY_FREE_VARS           1
+
+113           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                 8 (to 30)
+             14 STORE_FAST               1 (word)
+             16 LOAD_FAST                1 (word)
+             18 LOAD_DEREF               2 (text)
+             20 CONTAINS_OP              0
+             22 YIELD_VALUE              1
+             24 RESUME                   1
+             26 POP_TOP
+             28 JUMP_BACKWARD           10 (to 10)
+        >>   30 END_FOR
+             32 RETURN_CONST             0 (None)
+        >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             36 RERAISE                  1
+ExceptionTable:
+  6 to 32 -> 34 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217B8EF10, file "console\signal_support\operations.py", line 115>:
+              0 COPY_FREE_VARS           1
+
+115           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                 8 (to 30)
+             14 STORE_FAST               1 (word)
+             16 LOAD_FAST                1 (word)
+             18 LOAD_DEREF               2 (text)
+             20 CONTAINS_OP              0
+             22 YIELD_VALUE              1
+             24 RESUME                   1
+             26 POP_TOP
+             28 JUMP_BACKWARD           10 (to 10)
+        >>   30 END_FOR
+             32 RETURN_CONST             0 (None)
+        >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             36 RERAISE                  1
+ExceptionTable:
+  6 to 32 -> 34 [0] lasti
+
+Disassembly of <code object ContactBook at 0x000001C217B8EE20, file "console\signal_support\operations.py", line 119>:
+119           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('ContactBook')
+              8 STORE_NAME               2 (__qualname__)
+
+120          10 LOAD_CONST               1 (<code object __init__ at 0x000001C217B9AA30, file "console\signal_support\operations.py", line 120>)
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (__init__)
+
+121          16 LOAD_CONST               2 (<code object content at 0x000001C217B9E2A0, file "console\signal_support\operations.py", line 121>)
+             18 MAKE_FUNCTION            0
+             20 STORE_NAME               4 (content)
+
+123          22 LOAD_CONST               3 (<code object find at 0x000001C217653910, file "console\signal_support\operations.py", line 123>)
+             24 MAKE_FUNCTION            0
+             26 STORE_NAME               5 (find)
+
+129          28 LOAD_CONST               4 (<code object add at 0x000001C217758A50, file "console\signal_support\operations.py", line 129>)
+             30 MAKE_FUNCTION            0
+             32 STORE_NAME               6 (add)
+             34 RETURN_CONST             5 (None)
+
+Disassembly of <code object __init__ at 0x000001C217B9AA30, file "console\signal_support\operations.py", line 120>:
+120           0 RESUME                   0
+              2 LOAD_FAST                1 (device)
+              4 LOAD_FAST                0 (self)
+              6 STORE_ATTR               0 (device)
+             16 RETURN_CONST             0 (None)
+
+Disassembly of <code object content at 0x000001C217B9E2A0, file "console\signal_support\operations.py", line 121>:
+121           0 RESUME                   0
+
+122           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (device)
+             24 LOAD_ATTR                3 (NULL|self + command)
+             44 LOAD_CONST               1 ('shell')
+             46 LOAD_CONST               2 (' ')
+             48 LOAD_ATTR                5 (NULL|self + join)
+             68 LOAD_CONST               3 (<code object <genexpr> at 0x000001C217B94FF0, file "console\signal_support\operations.py", line 122>)
+             70 MAKE_FUNCTION            0
+             72 LOAD_CONST               4 ('content')
+             74 BUILD_LIST               1
+             76 LOAD_FAST                1 (args)
+             78 LIST_EXTEND              1
+             80 GET_ITER
+             82 CALL                     0
+             90 CALL                     1
+             98 BUILD_LIST               2
+            100 CALL                     1
+            108 RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x000001C217B94FF0, file "console\signal_support\operations.py", line 122>:
+122           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                34 (to 80)
+             12 STORE_FAST               1 (value)
+             14 LOAD_GLOBAL              1 (NULL + shlex)
+             24 LOAD_ATTR                2 (quote)
+             44 LOAD_GLOBAL              5 (NULL + str)
+             54 LOAD_FAST                1 (value)
+             56 CALL                     1
+             64 CALL                     1
+             72 YIELD_VALUE              1
+             74 RESUME                   1
+             76 POP_TOP
+             78 JUMP_BACKWARD           36 (to 8)
+        >>   80 END_FOR
+             82 RETURN_CONST             0 (None)
+        >>   84 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             86 RERAISE                  1
+ExceptionTable:
+  4 to 82 -> 84 [0] lasti
+
+Disassembly of <code object find at 0x000001C217653910, file "console\signal_support\operations.py", line 123>:
+123           0 RESUME                   0
+
+124           2 LOAD_GLOBAL              1 (NULL + normalize_phone)
+             12 LOAD_FAST                1 (phone)
+             14 CALL                     1
+             22 STORE_FAST               1 (phone)
+
+125          24 LOAD_FAST                0 (self)
+             26 LOAD_ATTR                3 (NULL|self + content)
+             46 LOAD_CONST               1 ('query')
+             48 LOAD_CONST               2 ('--uri')
+             50 LOAD_CONST               3 ('content://com.android.contacts/data')
+             52 LOAD_CONST               4 ('--projection')
+             54 LOAD_CONST               5 ('raw_contact_id')
+
+126          56 LOAD_CONST               6 ('--where')
+             58 LOAD_CONST               7 ("mimetype='vnd.android.cursor.item/phone_v2' AND data1='")
+             60 LOAD_FAST                1 (phone)
+             62 BINARY_OP                0 (+)
+             66 LOAD_CONST               8 ("'")
+             68 BINARY_OP                0 (+)
+
+125          72 BUILD_LIST               7
+             74 CALL                     1
+             82 STORE_FAST               2 (output)
+
+127          84 LOAD_CONST               9 ('Exception')
+             86 LOAD_FAST                2 (output)
+             88 CONTAINS_OP              0
+             90 POP_JUMP_IF_TRUE         4 (to 100)
+             92 LOAD_CONST              10 ('Error')
+             94 LOAD_FAST                2 (output)
+             96 CONTAINS_OP              0
+             98 POP_JUMP_IF_FALSE       11 (to 122)
+        >>  100 LOAD_GLOBAL              5 (NULL + RuntimeError)
+            110 LOAD_CONST              11 ('无法查询通讯录权限或数据。')
+            112 CALL                     1
+            120 RAISE_VARARGS            1
+
+128     >>  122 LOAD_GLOBAL              7 (NULL + re)
+            132 LOAD_ATTR                8 (findall)
+            152 LOAD_CONST              12 ('raw_contact_id=(\\d+)')
+            154 LOAD_FAST                2 (output)
+            156 CALL                     2
+            164 GET_ITER
+            166 LOAD_FAST_AND_CLEAR      3 (x)
+            168 SWAP                     2
+            170 BUILD_LIST               0
+            172 SWAP                     2
+        >>  174 FOR_ITER                13 (to 204)
+            178 STORE_FAST               3 (x)
+            180 LOAD_GLOBAL             11 (NULL + int)
+            190 LOAD_FAST                3 (x)
+            192 CALL                     1
+            200 LIST_APPEND              2
+            202 JUMP_BACKWARD           15 (to 174)
+        >>  204 END_FOR
+            206 SWAP                     2
+            208 STORE_FAST               3 (x)
+            210 RETURN_VALUE
+        >>  212 SWAP                     2
+            214 POP_TOP
+            216 SWAP                     2
+            218 STORE_FAST               3 (x)
+            220 RERAISE                  0
+ExceptionTable:
+  170 to 204 -> 212 [2]
+
+Disassembly of <code object add at 0x000001C217758A50, file "console\signal_support\operations.py", line 129>:
+129           0 RESUME                   0
+
+130           2 LOAD_GLOBAL              1 (NULL + normalize_phone)
+             12 LOAD_FAST                1 (phone)
+             14 CALL                     1
+             22 STORE_FAST               1 (phone)
+
+131          24 LOAD_FAST                0 (self)
+             26 LOAD_ATTR                3 (NULL|self + find)
+             46 LOAD_FAST                1 (phone)
+             48 CALL                     1
+             56 STORE_FAST               3 (existing)
+
+132          58 LOAD_FAST                3 (existing)
+             60 POP_JUMP_IF_FALSE        8 (to 78)
+             62 LOAD_CONST               1 ('already_present')
+             64 LOAD_FAST                3 (existing)
+             66 LOAD_CONST               2 (0)
+             68 BINARY_SUBSCR
+             72 LOAD_CONST               3 (('state', 'raw_id'))
+             74 BUILD_CONST_KEY_MAP      2
+             76 RETURN_VALUE
+
+133     >>   78 LOAD_CONST               4 ('SignalConsole-')
+             80 LOAD_GLOBAL              5 (NULL + uuid)
+             90 LOAD_ATTR                6 (uuid4)
+            110 CALL                     0
+            118 LOAD_ATTR                8 (hex)
+            138 BINARY_OP                0 (+)
+            142 STORE_FAST               4 (marker)
+
+134         144 LOAD_FAST                0 (self)
+            146 LOAD_ATTR               11 (NULL|self + content)
+            166 LOAD_CONST               5 ('insert')
+            168 LOAD_CONST               6 ('--uri')
+            170 LOAD_CONST               7 ('content://com.android.contacts/raw_contacts')
+            172 LOAD_CONST               8 ('--bind')
+            174 LOAD_CONST               9 ('account_type:n:')
+            176 LOAD_CONST               8 ('--bind')
+            178 LOAD_CONST              10 ('account_name:n:')
+            180 LOAD_CONST               8 ('--bind')
+            182 LOAD_CONST              11 ('sourceid:s:')
+            184 LOAD_FAST                4 (marker)
+            186 BINARY_OP                0 (+)
+            190 BUILD_LIST               9
+            192 CALL                     1
+            200 STORE_FAST               5 (output)
+
+135         202 LOAD_CONST              12 ('Exception')
+            204 LOAD_FAST                5 (output)
+            206 CONTAINS_OP              0
+            208 POP_JUMP_IF_TRUE         4 (to 218)
+            210 LOAD_CONST              13 ('Error')
+            212 LOAD_FAST                5 (output)
+            214 CONTAINS_OP              0
+            216 POP_JUMP_IF_FALSE       11 (to 240)
+        >>  218 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            228 LOAD_CONST              14 ('创建通讯录记录失败。')
+            230 CALL                     1
+            238 RAISE_VARARGS            1
+
+136     >>  240 LOAD_FAST                0 (self)
+            242 LOAD_ATTR               11 (NULL|self + content)
+            262 LOAD_CONST              15 ('query')
+            264 LOAD_CONST               6 ('--uri')
+            266 LOAD_CONST               7 ('content://com.android.contacts/raw_contacts')
+            268 LOAD_CONST              16 ('--projection')
+            270 LOAD_CONST              17 ('_id')
+            272 LOAD_CONST              18 ('--where')
+            274 LOAD_CONST              19 ("sourceid='")
+            276 LOAD_FAST                4 (marker)
+            278 BINARY_OP                0 (+)
+            282 LOAD_CONST              20 ("'")
+            284 BINARY_OP                0 (+)
+            288 BUILD_LIST               7
+            290 CALL                     1
+            298 STORE_FAST               6 (created)
+
+137         300 LOAD_GLOBAL             15 (NULL + re)
+            310 LOAD_ATTR               16 (findall)
+            330 LOAD_CONST              21 ('_id=(\\d+)')
+            332 LOAD_FAST                6 (created)
+            334 CALL                     2
+            342 STORE_FAST               7 (identifiers)
+
+138         344 LOAD_GLOBAL             19 (NULL + len)
+            354 LOAD_FAST                7 (identifiers)
+            356 CALL                     1
+            364 LOAD_CONST              22 (1)
+            366 COMPARE_OP              55 (!=)
+            370 POP_JUMP_IF_FALSE       11 (to 394)
+            372 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            382 LOAD_CONST              23 ('创建通讯录记录结果不明确，不能自动重复执行。')
+            384 CALL                     1
+            392 RAISE_VARARGS            1
+
+139     >>  394 LOAD_GLOBAL             21 (NULL + int)
+            404 LOAD_FAST                7 (identifiers)
+            406 LOAD_CONST               2 (0)
+            408 BINARY_SUBSCR
+            412 CALL                     1
+            420 STORE_FAST               8 (ident)
+
+141         422 LOAD_CONST              24 ('raw_contact_id:l:')
+            424 LOAD_GLOBAL             23 (NULL + str)
+            434 LOAD_FAST                8 (ident)
+            436 CALL                     1
+            444 BINARY_OP                0 (+)
+            448 LOAD_CONST              25 ('mimetype:s:vnd.android.cursor.item/phone_v2')
+            450 LOAD_CONST              26 ('data1:s:')
+            452 LOAD_FAST                1 (phone)
+            454 BINARY_OP                0 (+)
+            458 LOAD_CONST              27 ('data2:i:2')
+            460 BUILD_LIST               4
+
+142         462 LOAD_CONST              24 ('raw_contact_id:l:')
+            464 LOAD_GLOBAL             23 (NULL + str)
+            474 LOAD_FAST                8 (ident)
+            476 CALL                     1
+            484 BINARY_OP                0 (+)
+            488 LOAD_CONST              28 ('mimetype:s:vnd.android.cursor.item/name')
+            490 LOAD_CONST              26 ('data1:s:')
+            492 LOAD_FAST                2 (name)
+            494 BINARY_OP                0 (+)
+            498 BUILD_LIST               3
+
+140         500 BUILD_TUPLE              2
+            502 GET_ITER
+        >>  504 FOR_ITER                60 (to 628)
+            508 STORE_FAST               9 (bindings)
+
+143         510 BUILD_LIST               0
+            512 LOAD_CONST              29 (('insert', '--uri', 'content://com.android.contacts/data'))
+            514 LIST_EXTEND              1
+            516 STORE_FAST              10 (args)
+
+144         518 LOAD_FAST                9 (bindings)
+            520 GET_ITER
+        >>  522 FOR_ITER                 9 (to 544)
+            526 STORE_FAST              11 (binding)
+            528 LOAD_FAST               10 (args)
+            530 LOAD_CONST               8 ('--bind')
+            532 LOAD_FAST               11 (binding)
+            534 BUILD_LIST               2
+            536 BINARY_OP               13 (+=)
+            540 STORE_FAST              10 (args)
+            542 JUMP_BACKWARD           11 (to 522)
+        >>  544 END_FOR
+
+145         546 LOAD_FAST                0 (self)
+            548 LOAD_ATTR               11 (NULL|self + content)
+            568 LOAD_FAST               10 (args)
+            570 CALL                     1
+            578 STORE_FAST               5 (output)
+
+146         580 LOAD_CONST              12 ('Exception')
+            582 LOAD_FAST                5 (output)
+            584 CONTAINS_OP              0
+            586 POP_JUMP_IF_TRUE         5 (to 598)
+            588 LOAD_CONST              13 ('Error')
+            590 LOAD_FAST                5 (output)
+            592 CONTAINS_OP              0
+            594 POP_JUMP_IF_TRUE         1 (to 598)
+            596 JUMP_BACKWARD           47 (to 504)
+        >>  598 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            608 LOAD_CONST              30 ('通讯录记录 ')
+            610 LOAD_FAST                8 (ident)
+            612 FORMAT_VALUE             0
+            614 LOAD_CONST              31 (' 尚未完整写入，请核对后继续。')
+            616 BUILD_STRING             3
+            618 CALL                     1
+            626 RAISE_VARARGS            1
+
+140     >>  628 END_FOR
+
+147         630 LOAD_FAST                8 (ident)
+            632 LOAD_FAST                0 (self)
+            634 LOAD_ATTR                3 (NULL|self + find)
+            654 LOAD_FAST                1 (phone)
+            656 CALL                     1
+            664 CONTAINS_OP              1
+            666 POP_JUMP_IF_FALSE       11 (to 690)
+            668 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            678 LOAD_CONST              32 ('联系人写入后的号码校验失败。')
+            680 CALL                     1
+            688 RAISE_VARARGS            1
+
+148     >>  690 LOAD_CONST              33 ('contact_saved')
+            692 LOAD_FAST                8 (ident)
+            694 LOAD_CONST               3 (('state', 'raw_id'))
+            696 BUILD_CONST_KEY_MAP      2
+            698 RETURN_VALUE
+
+Disassembly of <code object OutreachStore at 0x000001C217B8ED30, file "console\signal_support\operations.py", line 150>:
+150           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('OutreachStore')
+              8 STORE_NAME               2 (__qualname__)
+
+151          10 LOAD_CONST               1 (<code object __init__ at 0x000001C217B0DDF0, file "console\signal_support\operations.py", line 151>)
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (__init__)
+
+157          16 LOAD_CONST               2 (<code object add_plan at 0x000001C21772A830, file "console\signal_support\operations.py", line 157>)
+             18 MAKE_FUNCTION            0
+             20 STORE_NAME               4 (add_plan)
+
+165          22 LOAD_CONST               3 (<code object all at 0x000001C217C603D0, file "console\signal_support\operations.py", line 165>)
+             24 MAKE_FUNCTION            0
+             26 STORE_NAME               5 (all)
+
+169          28 LOAD_CONST               6 (('',))
+             30 LOAD_CONST               4 (<code object update at 0x000001C2176B7480, file "console\signal_support\operations.py", line 169>)
+             32 MAKE_FUNCTION            1 (defaults)
+             34 STORE_NAME               6 (update)
+             36 RETURN_CONST             5 (None)
+
+Disassembly of <code object __init__ at 0x000001C217B0DDF0, file "console\signal_support\operations.py", line 151>:
+151           0 RESUME                   0
+
+152           2 LOAD_GLOBAL              1 (NULL + Path)
+             12 LOAD_FAST                1 (path)
+             14 CALL                     1
+             22 LOAD_FAST                0 (self)
+             24 STORE_ATTR               1 (path)
+
+153          34 LOAD_GLOBAL              5 (NULL + sqlite3)
+             44 LOAD_ATTR                6 (connect)
+             64 LOAD_FAST                0 (self)
+             66 LOAD_ATTR                2 (path)
+             86 CALL                     1
+             94 STORE_FAST               2 (db)
+
+154          96 NOP
+
+155          98 LOAD_FAST                2 (db)
+            100 BEFORE_WITH
+            102 POP_TOP
+            104 LOAD_FAST                2 (db)
+            106 LOAD_ATTR                9 (NULL|self + execute)
+            126 LOAD_CONST               1 ('CREATE TABLE IF NOT EXISTS outreach(id INTEGER PRIMARY KEY,account TEXT,phone TEXT,message TEXT,state TEXT,detail TEXT,UNIQUE(account,phone))')
+            128 CALL                     1
+            136 POP_TOP
+            138 LOAD_CONST               0 (None)
+            140 LOAD_CONST               0 (None)
+            142 LOAD_CONST               0 (None)
+            144 CALL                     2
+            152 POP_TOP
+
+156     >>  154 LOAD_FAST                2 (db)
+            156 LOAD_ATTR               11 (NULL|self + close)
+            176 CALL                     0
+            184 POP_TOP
+            186 RETURN_CONST             0 (None)
+
+155     >>  188 PUSH_EXC_INFO
+            190 WITH_EXCEPT_START
+            192 POP_JUMP_IF_TRUE         1 (to 196)
+            194 RERAISE                  2
+        >>  196 POP_TOP
+            198 POP_EXCEPT
+            200 POP_TOP
+            202 POP_TOP
+            204 JUMP_BACKWARD           26 (to 154)
+        >>  206 COPY                     3
+            208 POP_EXCEPT
+            210 RERAISE                  1
+        >>  212 PUSH_EXC_INFO
+
+156         214 LOAD_FAST                2 (db)
+            216 LOAD_ATTR               11 (NULL|self + close)
+            236 CALL                     0
+            244 POP_TOP
+            246 RERAISE                  0
+        >>  248 COPY                     3
+            250 POP_EXCEPT
+            252 RERAISE                  1
+ExceptionTable:
+  98 to 100 -> 212 [0]
+  102 to 136 -> 188 [1] lasti
+  138 to 152 -> 212 [0]
+  188 to 196 -> 206 [3] lasti
+  198 to 210 -> 212 [0]
+  212 to 246 -> 248 [1] lasti
+
+Disassembly of <code object add_plan at 0x000001C21772A830, file "console\signal_support\operations.py", line 157>:
+157           0 RESUME                   0
+
+158           2 LOAD_GLOBAL              1 (NULL + sqlite3)
+             12 LOAD_ATTR                2 (connect)
+             32 LOAD_FAST                0 (self)
+             34 LOAD_ATTR                4 (path)
+             54 CALL                     1
+             62 STORE_FAST               3 (db)
+
+159          64 NOP
+
+160          66 LOAD_FAST                3 (db)
+             68 BEFORE_WITH
+             70 POP_TOP
+
+161          72 LOAD_FAST                3 (db)
+             74 LOAD_ATTR                6 (total_changes)
+             94 STORE_FAST               4 (before)
+
+162          96 LOAD_FAST                1 (rows)
+             98 GET_ITER
+        >>  100 FOR_ITER                64 (to 232)
+            104 STORE_FAST               5 (row)
+            106 LOAD_FAST                3 (db)
+            108 LOAD_ATTR                9 (NULL|self + execute)
+            128 LOAD_CONST               1 ("INSERT INTO outreach(account,phone,message,state,detail) VALUES(?,?,?,'planned','') ON CONFLICT(account,phone) DO UPDATE SET message=excluded.message WHERE outreach.state IN ('planned','contact_saved','already_present')")
+            130 LOAD_FAST                5 (row)
+            132 LOAD_CONST               2 ('account')
+            134 BINARY_SUBSCR
+            138 LOAD_FAST                5 (row)
+            140 LOAD_CONST               3 ('phone')
+            142 BINARY_SUBSCR
+            146 LOAD_FAST                2 (template)
+            148 LOAD_ATTR               11 (NULL|self + strip)
+            168 CALL                     0
+            176 POP_JUMP_IF_FALSE       19 (to 216)
+            178 LOAD_GLOBAL             13 (NULL + render_message)
+            188 LOAD_FAST                2 (template)
+            190 LOAD_FAST                5 (row)
+            192 LOAD_CONST               3 ('phone')
+            194 BINARY_SUBSCR
+            198 LOAD_FAST                5 (row)
+            200 LOAD_CONST               2 ('account')
+            202 BINARY_SUBSCR
+            206 CALL                     3
+            214 JUMP_FORWARD             1 (to 218)
+        >>  216 LOAD_CONST               4 ('')
+        >>  218 BUILD_TUPLE              3
+            220 CALL                     2
+            228 POP_TOP
+            230 JUMP_BACKWARD           66 (to 100)
+        >>  232 END_FOR
+
+163         234 LOAD_FAST                3 (db)
+            236 LOAD_ATTR                6 (total_changes)
+            256 LOAD_FAST                4 (before)
+            258 BINARY_OP               10 (-)
+
+160         262 SWAP                     2
+            264 LOAD_CONST               0 (None)
+            266 LOAD_CONST               0 (None)
+            268 LOAD_CONST               0 (None)
+            270 CALL                     2
+            278 POP_TOP
+
+164         280 LOAD_FAST                3 (db)
+            282 LOAD_ATTR               15 (NULL|self + close)
+            302 CALL                     0
+            310 POP_TOP
+            312 RETURN_VALUE
+
+160     >>  314 PUSH_EXC_INFO
+            316 WITH_EXCEPT_START
+            318 POP_JUMP_IF_TRUE         1 (to 322)
+            320 RERAISE                  2
+        >>  322 POP_TOP
+            324 POP_EXCEPT
+            326 POP_TOP
+            328 POP_TOP
+            330 JUMP_FORWARD             3 (to 338)
+        >>  332 COPY                     3
+            334 POP_EXCEPT
+            336 RERAISE                  1
+        >>  338 NOP
+
+164         340 LOAD_FAST                3 (db)
+            342 LOAD_ATTR               15 (NULL|self + close)
+            362 CALL                     0
+            370 POP_TOP
+            372 RETURN_CONST             0 (None)
+        >>  374 PUSH_EXC_INFO
+            376 LOAD_FAST                3 (db)
+            378 LOAD_ATTR               15 (NULL|self + close)
+            398 CALL                     0
+            406 POP_TOP
+            408 RERAISE                  0
+        >>  410 COPY                     3
+            412 POP_EXCEPT
+            414 RERAISE                  1
+ExceptionTable:
+  66 to 68 -> 374 [0]
+  70 to 260 -> 314 [1] lasti
+  262 to 278 -> 374 [0]
+  314 to 322 -> 332 [3] lasti
+  324 to 336 -> 374 [0]
+  374 to 408 -> 410 [1] lasti
+
+Disassembly of <code object all at 0x000001C217C603D0, file "console\signal_support\operations.py", line 165>:
+165           0 RESUME                   0
+
+166           2 LOAD_GLOBAL              1 (NULL + sqlite3)
+             12 LOAD_ATTR                2 (connect)
+             32 LOAD_FAST                0 (self)
+             34 LOAD_ATTR                4 (path)
+             54 CALL                     1
+             62 STORE_FAST               1 (db)
+             64 LOAD_GLOBAL              0 (sqlite3)
+             74 LOAD_ATTR                6 (Row)
+             94 LOAD_FAST                1 (db)
+             96 STORE_ATTR               4 (row_factory)
+
+167         106 LOAD_FAST                1 (db)
+            108 LOAD_ATTR               11 (NULL|self + execute)
+            128 LOAD_CONST               1 ('SELECT * FROM outreach ORDER BY id')
+            130 CALL                     1
+            138 GET_ITER
+            140 LOAD_FAST_AND_CLEAR      2 (row)
+            142 SWAP                     2
+            144 BUILD_LIST               0
+            146 SWAP                     2
+        >>  148 FOR_ITER                13 (to 178)
+            152 STORE_FAST               2 (row)
+            154 LOAD_GLOBAL             13 (NULL + dict)
+            164 LOAD_FAST                2 (row)
+            166 CALL                     1
+            174 LIST_APPEND              2
+            176 JUMP_BACKWARD           15 (to 148)
+        >>  178 END_FOR
+            180 SWAP                     2
+            182 STORE_FAST               2 (row)
+
+168         184 LOAD_FAST                1 (db)
+            186 LOAD_ATTR               15 (NULL|self + close)
+            206 CALL                     0
+            214 POP_TOP
+            216 RETURN_VALUE
+        >>  218 SWAP                     2
+            220 POP_TOP
+
+167         222 SWAP                     2
+            224 STORE_FAST               2 (row)
+            226 RERAISE                  0
+        >>  228 PUSH_EXC_INFO
+
+168         230 LOAD_FAST                1 (db)
+            232 LOAD_ATTR               15 (NULL|self + close)
+            252 CALL                     0
+            260 POP_TOP
+            262 RERAISE                  0
+        >>  264 COPY                     3
+            266 POP_EXCEPT
+            268 RERAISE                  1
+ExceptionTable:
+  106 to 142 -> 228 [0]
+  144 to 178 -> 218 [2]
+  180 to 182 -> 228 [0]
+  218 to 226 -> 228 [0]
+  228 to 262 -> 264 [1] lasti
+
+Disassembly of <code object update at 0x000001C2176B7480, file "console\signal_support\operations.py", line 169>:
+169           0 RESUME                   0
+
+170           2 LOAD_GLOBAL              1 (NULL + sqlite3)
+             12 LOAD_ATTR                2 (connect)
+             32 LOAD_FAST                0 (self)
+             34 LOAD_ATTR                4 (path)
+             54 CALL                     1
+             62 STORE_FAST               4 (db)
+
+171          64 NOP
+
+172          66 LOAD_FAST                4 (db)
+             68 BEFORE_WITH
+             70 POP_TOP
+             72 LOAD_FAST                4 (db)
+             74 LOAD_ATTR                7 (NULL|self + execute)
+             94 LOAD_CONST               1 ('UPDATE outreach SET state=?,detail=? WHERE id=?')
+             96 LOAD_FAST                2 (state)
+             98 LOAD_FAST                3 (detail)
+            100 LOAD_FAST                1 (ident)
+            102 BUILD_TUPLE              3
+            104 CALL                     2
+            112 POP_TOP
+            114 LOAD_CONST               0 (None)
+            116 LOAD_CONST               0 (None)
+            118 LOAD_CONST               0 (None)
+            120 CALL                     2
+            128 POP_TOP
+
+173     >>  130 LOAD_FAST                4 (db)
+            132 LOAD_ATTR                9 (NULL|self + close)
+            152 CALL                     0
+            160 POP_TOP
+            162 RETURN_CONST             0 (None)
+
+172     >>  164 PUSH_EXC_INFO
+            166 WITH_EXCEPT_START
+            168 POP_JUMP_IF_TRUE         1 (to 172)
+            170 RERAISE                  2
+        >>  172 POP_TOP
+            174 POP_EXCEPT
+            176 POP_TOP
+            178 POP_TOP
+            180 JUMP_BACKWARD           26 (to 130)
+        >>  182 COPY                     3
+            184 POP_EXCEPT
+            186 RERAISE                  1
+        >>  188 PUSH_EXC_INFO
+
+173         190 LOAD_FAST                4 (db)
+            192 LOAD_ATTR                9 (NULL|self + close)
+            212 CALL                     0
+            220 POP_TOP
+            222 RERAISE                  0
+        >>  224 COPY                     3
+            226 POP_EXCEPT
+            228 RERAISE                  1
+ExceptionTable:
+  66 to 68 -> 188 [0]
+  70 to 112 -> 164 [1] lasti
+  114 to 128 -> 188 [0]
+  164 to 172 -> 182 [3] lasti
+  174 to 186 -> 188 [0]
+  188 to 222 -> 224 [1] lasti

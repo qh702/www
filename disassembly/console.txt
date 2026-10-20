@@ -1,0 +1,8 @@
+Module: console
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('Local Android automation console.')
+              4 STORE_NAME               0 (__doc__)
+              6 RETURN_CONST             1 (None)

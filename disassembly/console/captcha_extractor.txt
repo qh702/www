@@ -1,0 +1,575 @@
+Module: console.captcha_extractor
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('增强版 hCaptcha sitekey 提取器\n\n通过多种方法从 Android WebView 中提取 hCaptcha sitekey：\n1. ADB shell dumpsys webview 获取 WebView 信息\n2. 通过 UI hierarchy 查找 iframe src\n3. 尝试从页面 HTML 提取\n')
+              4 STORE_NAME               0 (__doc__)
+
+  9           6 LOAD_CONST               1 (<code object extract_hcaptcha_sitekey_from_webview at 0x000001C2172A41C0, file "console\captcha_extractor.py", line 9>)
+              8 MAKE_FUNCTION            0
+             10 STORE_NAME               1 (extract_hcaptcha_sitekey_from_webview)
+
+ 70          12 LOAD_CONST               2 (<code object _extract_from_hierarchy at 0x000001C217774340, file "console\captcha_extractor.py", line 70>)
+             14 MAKE_FUNCTION            0
+             16 STORE_NAME               2 (_extract_from_hierarchy)
+
+100          18 LOAD_CONST               3 (<code object _extract_from_dumpsys at 0x000001C21739D8C0, file "console\captcha_extractor.py", line 100>)
+             20 MAKE_FUNCTION            0
+             22 STORE_NAME               3 (_extract_from_dumpsys)
+
+124          24 LOAD_CONST               4 (<code object _extract_from_html_dump at 0x000001C2175AFC30, file "console\captcha_extractor.py", line 124>)
+             26 MAKE_FUNCTION            0
+             28 STORE_NAME               4 (_extract_from_html_dump)
+
+141          30 LOAD_CONST               5 (<code object _is_valid_sitekey at 0x000001C217B517F0, file "console\captcha_extractor.py", line 141>)
+             32 MAKE_FUNCTION            0
+             34 STORE_NAME               5 (_is_valid_sitekey)
+
+149          36 LOAD_CONST               6 (<code object get_signal_captcha_url at 0x000001C217B42320, file "console\captcha_extractor.py", line 149>)
+             38 MAKE_FUNCTION            0
+             40 STORE_NAME               6 (get_signal_captcha_url)
+             42 RETURN_CONST             7 (None)
+
+Disassembly of <code object extract_hcaptcha_sitekey_from_webview at 0x000001C2172A41C0, file "console\captcha_extractor.py", line 9>:
+  9           0 RESUME                   0
+
+ 22           2 LOAD_CONST               1 ('a5f74b19-9e45-40e0-b45d-47ff91b7a6c2')
+
+ 23           4 LOAD_CONST               2 ('c3d8e6e8-1e3d-4f8e-9c3a-2b4e5f6a7b8c')
+
+ 21           6 BUILD_LIST               2
+              8 STORE_FAST               1 (SIGNAL_KNOWN_SITEKEYS)
+
+ 28          10 LOAD_GLOBAL              0 (_extract_from_hierarchy)
+
+ 29          20 LOAD_GLOBAL              2 (_extract_from_dumpsys)
+
+ 30          30 LOAD_GLOBAL              4 (_extract_from_html_dump)
+
+ 27          40 BUILD_LIST               3
+             42 STORE_FAST               2 (methods)
+
+ 33          44 LOAD_FAST                2 (methods)
+             46 GET_ITER
+        >>   48 FOR_ITER                28 (to 108)
+             52 STORE_FAST               3 (method)
+
+ 34          54 NOP
+
+ 35          56 PUSH_NULL
+             58 LOAD_FAST                3 (method)
+             60 LOAD_FAST                0 (device)
+             62 CALL                     1
+             70 STORE_FAST               4 (sitekey)
+
+ 36          72 LOAD_FAST                4 (sitekey)
+             74 POP_JUMP_IF_FALSE       15 (to 106)
+             76 LOAD_GLOBAL              7 (NULL + _is_valid_sitekey)
+             86 LOAD_FAST                4 (sitekey)
+             88 CALL                     1
+             96 POP_JUMP_IF_FALSE        4 (to 106)
+
+ 37          98 LOAD_FAST                4 (sitekey)
+            100 SWAP                     2
+            102 POP_TOP
+            104 RETURN_VALUE
+        >>  106 JUMP_BACKWARD           30 (to 48)
+
+ 33     >>  108 END_FOR
+
+ 42         110 NOP
+
+ 43         112 LOAD_FAST                0 (device)
+            114 LOAD_ATTR               11 (NULL|self + hierarchy)
+            134 CALL                     0
+            142 STORE_FAST               5 (hierarchy)
+
+ 45         144 LOAD_CONST               3 (False)
+            146 STORE_FAST               6 (has_signal)
+
+ 46         148 LOAD_CONST               3 (False)
+            150 STORE_FAST               7 (has_hcaptcha)
+
+ 48         152 LOAD_FAST                5 (hierarchy)
+            154 LOAD_ATTR               13 (NULL|self + iter)
+            174 LOAD_CONST               4 ('node')
+            176 CALL                     1
+            184 GET_ITER
+        >>  186 FOR_ITER                91 (to 372)
+            190 STORE_FAST               8 (node)
+
+ 49         192 LOAD_FAST                8 (node)
+            194 LOAD_ATTR               15 (NULL|self + get)
+            214 LOAD_CONST               5 ('package')
+            216 LOAD_CONST               6 ('')
+            218 CALL                     2
+            226 STORE_FAST               9 (package)
+
+ 50         228 LOAD_FAST                8 (node)
+            230 LOAD_ATTR               15 (NULL|self + get)
+            250 LOAD_CONST               7 ('text')
+            252 LOAD_CONST               6 ('')
+            254 CALL                     2
+            262 LOAD_ATTR               17 (NULL|self + lower)
+            282 CALL                     0
+            290 STORE_FAST              10 (text)
+
+ 51         292 LOAD_FAST                8 (node)
+            294 LOAD_ATTR               15 (NULL|self + get)
+            314 LOAD_CONST               8 ('resource-id')
+            316 LOAD_CONST               6 ('')
+            318 CALL                     2
+            326 STORE_FAST              11 (resource_id)
+
+ 53         328 LOAD_CONST               9 ('thoughtcrime.securesms')
+            330 LOAD_FAST                9 (package)
+            332 CONTAINS_OP              0
+            334 POP_JUMP_IF_FALSE        2 (to 340)
+
+ 54         336 LOAD_CONST              10 (True)
+            338 STORE_FAST               6 (has_signal)
+
+ 56     >>  340 LOAD_CONST              11 ('hcaptcha')
+            342 LOAD_FAST               10 (text)
+            344 CONTAINS_OP              0
+            346 POP_JUMP_IF_TRUE         9 (to 366)
+            348 LOAD_CONST              11 ('hcaptcha')
+            350 LOAD_FAST               11 (resource_id)
+            352 CONTAINS_OP              0
+            354 POP_JUMP_IF_TRUE         5 (to 366)
+
+ 57         356 LOAD_FAST               11 (resource_id)
+            358 LOAD_CONST              12 (('checkbox', 'anchor', 'captcha'))
+            360 CONTAINS_OP              0
+            362 POP_JUMP_IF_TRUE         1 (to 366)
+            364 JUMP_BACKWARD           90 (to 186)
+
+ 58     >>  366 LOAD_CONST              10 (True)
+            368 STORE_FAST               7 (has_hcaptcha)
+            370 JUMP_BACKWARD           93 (to 186)
+
+ 48     >>  372 END_FOR
+
+ 61         374 LOAD_FAST                6 (has_signal)
+            376 POP_JUMP_IF_FALSE        7 (to 392)
+            378 LOAD_FAST                7 (has_hcaptcha)
+            380 POP_JUMP_IF_FALSE        5 (to 392)
+
+ 62         382 LOAD_FAST                1 (SIGNAL_KNOWN_SITEKEYS)
+            384 LOAD_CONST              13 (0)
+            386 BINARY_SUBSCR
+            390 RETURN_VALUE
+
+ 67     >>  392 RETURN_CONST            14 (None)
+        >>  394 PUSH_EXC_INFO
+
+ 38         396 LOAD_GLOBAL              8 (Exception)
+            406 CHECK_EXC_MATCH
+            408 POP_JUMP_IF_FALSE        3 (to 416)
+            410 POP_TOP
+
+ 39         412 POP_EXCEPT
+            414 JUMP_BACKWARD          184 (to 48)
+
+ 38     >>  416 RERAISE                  0
+        >>  418 COPY                     3
+            420 POP_EXCEPT
+            422 RERAISE                  1
+        >>  424 PUSH_EXC_INFO
+
+ 64         426 LOAD_GLOBAL              8 (Exception)
+            436 CHECK_EXC_MATCH
+            438 POP_JUMP_IF_FALSE        3 (to 446)
+            440 POP_TOP
+
+ 65         442 POP_EXCEPT
+
+ 67         444 RETURN_CONST            14 (None)
+
+ 64     >>  446 RERAISE                  0
+        >>  448 COPY                     3
+            450 POP_EXCEPT
+            452 RERAISE                  1
+ExceptionTable:
+  56 to 98 -> 394 [1]
+  112 to 362 -> 424 [0]
+  366 to 388 -> 424 [0]
+  394 to 410 -> 418 [2] lasti
+  416 to 416 -> 418 [2] lasti
+  424 to 440 -> 448 [1] lasti
+  446 to 446 -> 448 [1] lasti
+
+Disassembly of <code object _extract_from_hierarchy at 0x000001C217774340, file "console\captcha_extractor.py", line 70>:
+ 70           0 RESUME                   0
+
+ 72           2 NOP
+
+ 73           4 LOAD_FAST                0 (device)
+              6 LOAD_ATTR                1 (NULL|self + hierarchy)
+             26 CALL                     0
+             34 STORE_FAST               1 (hierarchy)
+
+ 75          36 LOAD_FAST                1 (hierarchy)
+             38 LOAD_ATTR                3 (NULL|self + iter)
+             58 LOAD_CONST               1 ('node')
+             60 CALL                     1
+             68 GET_ITER
+        >>   70 FOR_ITER               123 (to 320)
+             74 STORE_FAST               2 (node)
+
+ 76          76 LOAD_CONST               2 ('WebView')
+             78 LOAD_FAST                2 (node)
+             80 LOAD_ATTR                5 (NULL|self + get)
+            100 LOAD_CONST               3 ('class')
+            102 LOAD_CONST               4 ('')
+            104 CALL                     2
+            112 CONTAINS_OP              0
+            114 POP_JUMP_IF_TRUE         1 (to 118)
+            116 JUMP_BACKWARD           24 (to 70)
+
+ 78     >>  118 LOAD_CONST               5 (('content-desc', 'text', 'resource-id'))
+            120 GET_ITER
+        >>  122 FOR_ITER                95 (to 316)
+            126 STORE_FAST               3 (attr)
+
+ 79         128 LOAD_FAST                2 (node)
+            130 LOAD_ATTR                5 (NULL|self + get)
+            150 LOAD_FAST                3 (attr)
+            152 LOAD_CONST               4 ('')
+            154 CALL                     2
+            162 STORE_FAST               4 (value)
+
+ 80         164 LOAD_CONST               6 ('hcaptcha')
+            166 LOAD_FAST                4 (value)
+            168 LOAD_ATTR                7 (NULL|self + lower)
+            188 CALL                     0
+            196 CONTAINS_OP              0
+            198 POP_JUMP_IF_TRUE         1 (to 202)
+            200 JUMP_BACKWARD           40 (to 122)
+
+ 82     >>  202 LOAD_CONST               7 (0)
+            204 LOAD_CONST               8 (None)
+            206 IMPORT_NAME              4 (re)
+            208 STORE_FAST               5 (re)
+
+ 83         210 LOAD_FAST                5 (re)
+            212 LOAD_ATTR               11 (NULL|self + search)
+            232 LOAD_CONST               9 ('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
+            234 LOAD_FAST                4 (value)
+            236 LOAD_FAST                5 (re)
+            238 LOAD_ATTR               12 (I)
+            258 CALL                     3
+            266 STORE_FAST               6 (match)
+
+ 84         268 LOAD_FAST                6 (match)
+            270 POP_JUMP_IF_TRUE         1 (to 274)
+            272 JUMP_BACKWARD           76 (to 122)
+
+ 85     >>  274 LOAD_FAST                6 (match)
+            276 LOAD_ATTR               15 (NULL|self + group)
+            296 LOAD_CONST               7 (0)
+            298 CALL                     1
+            306 SWAP                     2
+            308 POP_TOP
+            310 SWAP                     2
+            312 POP_TOP
+            314 RETURN_VALUE
+
+ 78     >>  316 END_FOR
+            318 JUMP_BACKWARD          125 (to 70)
+
+ 75     >>  320 END_FOR
+
+ 88         322 LOAD_FAST                1 (hierarchy)
+            324 LOAD_ATTR                3 (NULL|self + iter)
+            344 LOAD_CONST               1 ('node')
+            346 CALL                     1
+            354 GET_ITER
+        >>  356 FOR_ITER               130 (to 620)
+            360 STORE_FAST               2 (node)
+
+ 89         362 LOAD_FAST                2 (node)
+            364 LOAD_ATTR                5 (NULL|self + get)
+            384 LOAD_CONST              10 ('text')
+            386 LOAD_CONST               4 ('')
+            388 CALL                     2
+            396 LOAD_FAST                2 (node)
+            398 LOAD_ATTR                5 (NULL|self + get)
+            418 LOAD_CONST              11 ('content-desc')
+            420 LOAD_CONST               4 ('')
+            422 CALL                     2
+            430 BINARY_OP                0 (+)
+            434 STORE_FAST               7 (text)
+
+ 90         436 LOAD_CONST              12 ('iframe')
+            438 LOAD_FAST                7 (text)
+            440 LOAD_ATTR                7 (NULL|self + lower)
+            460 CALL                     0
+            468 CONTAINS_OP              0
+            470 POP_JUMP_IF_TRUE        19 (to 510)
+            472 LOAD_CONST               6 ('hcaptcha')
+            474 LOAD_FAST                7 (text)
+            476 LOAD_ATTR                7 (NULL|self + lower)
+            496 CALL                     0
+            504 CONTAINS_OP              0
+            506 POP_JUMP_IF_TRUE         1 (to 510)
+            508 JUMP_BACKWARD           77 (to 356)
+
+ 91     >>  510 LOAD_CONST               7 (0)
+            512 LOAD_CONST               8 (None)
+            514 IMPORT_NAME              4 (re)
+            516 STORE_FAST               5 (re)
+
+ 92         518 LOAD_FAST                5 (re)
+            520 LOAD_ATTR               11 (NULL|self + search)
+            540 LOAD_CONST               9 ('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
+            542 LOAD_FAST                7 (text)
+            544 LOAD_FAST                5 (re)
+            546 LOAD_ATTR               12 (I)
+            566 CALL                     3
+            574 STORE_FAST               6 (match)
+
+ 93         576 LOAD_FAST                6 (match)
+            578 POP_JUMP_IF_TRUE         1 (to 582)
+            580 JUMP_BACKWARD          113 (to 356)
+
+ 94     >>  582 LOAD_FAST                6 (match)
+            584 LOAD_ATTR               15 (NULL|self + group)
+            604 LOAD_CONST               7 (0)
+            606 CALL                     1
+            614 SWAP                     2
+            616 POP_TOP
+            618 RETURN_VALUE
+
+ 88     >>  620 END_FOR
+            622 NOP
+
+ 97         624 RETURN_CONST             8 (None)
+        >>  626 PUSH_EXC_INFO
+
+ 95         628 LOAD_GLOBAL             16 (Exception)
+            638 CHECK_EXC_MATCH
+            640 POP_JUMP_IF_FALSE        3 (to 648)
+            642 POP_TOP
+
+ 96         644 POP_EXCEPT
+
+ 97         646 RETURN_CONST             8 (None)
+
+ 95     >>  648 RERAISE                  0
+        >>  650 COPY                     3
+            652 POP_EXCEPT
+            654 RERAISE                  1
+ExceptionTable:
+  4 to 114 -> 626 [0]
+  118 to 198 -> 626 [0]
+  202 to 270 -> 626 [0]
+  274 to 312 -> 626 [0]
+  316 to 506 -> 626 [0]
+  510 to 578 -> 626 [0]
+  582 to 616 -> 626 [0]
+  620 to 620 -> 626 [0]
+  626 to 642 -> 650 [1] lasti
+  648 to 648 -> 650 [1] lasti
+
+Disassembly of <code object _extract_from_dumpsys at 0x000001C21739D8C0, file "console\captcha_extractor.py", line 100>:
+100           0 RESUME                   0
+
+102           2 NOP
+
+104           4 LOAD_FAST                0 (device)
+              6 LOAD_ATTR                1 (NULL|self + command)
+             26 BUILD_LIST               0
+             28 LOAD_CONST               1 (('shell', 'dumpsys', 'webview'))
+             30 LIST_EXTEND              1
+             32 LOAD_CONST               2 (10)
+             34 KW_NAMES                 3 (('timeout',))
+             36 CALL                     2
+             44 STORE_FAST               1 (result)
+
+107          46 LOAD_CONST               4 (0)
+             48 LOAD_CONST               5 (None)
+             50 IMPORT_NAME              1 (re)
+             52 STORE_FAST               2 (re)
+
+108          54 LOAD_FAST                1 (result)
+             56 LOAD_ATTR                5 (NULL|self + split)
+             76 LOAD_CONST               6 ('\n')
+             78 CALL                     1
+             86 GET_ITER
+        >>   88 FOR_ITER               121 (to 334)
+             92 STORE_FAST               3 (line)
+
+109          94 LOAD_CONST               7 ('hcaptcha')
+             96 LOAD_FAST                3 (line)
+             98 LOAD_ATTR                7 (NULL|self + lower)
+            118 CALL                     0
+            126 CONTAINS_OP              0
+            128 POP_JUMP_IF_TRUE         1 (to 132)
+            130 JUMP_BACKWARD           22 (to 88)
+
+111     >>  132 LOAD_FAST                2 (re)
+            134 LOAD_ATTR                9 (NULL|self + search)
+            154 LOAD_CONST               8 ('sitekey[=:]([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})')
+            156 LOAD_FAST                3 (line)
+            158 LOAD_FAST                2 (re)
+            160 LOAD_ATTR               10 (I)
+            180 CALL                     3
+            188 STORE_FAST               4 (match)
+
+112         190 LOAD_FAST                4 (match)
+            192 POP_JUMP_IF_FALSE       19 (to 232)
+
+113         194 LOAD_FAST                4 (match)
+            196 LOAD_ATTR               13 (NULL|self + group)
+            216 LOAD_CONST               9 (1)
+            218 CALL                     1
+            226 SWAP                     2
+            228 POP_TOP
+            230 RETURN_VALUE
+
+116     >>  232 LOAD_FAST                2 (re)
+            234 LOAD_ATTR                9 (NULL|self + search)
+            254 LOAD_CONST              10 ('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
+            256 LOAD_FAST                3 (line)
+            258 LOAD_FAST                2 (re)
+            260 LOAD_ATTR               10 (I)
+            280 CALL                     3
+            288 STORE_FAST               4 (match)
+
+117         290 LOAD_FAST                4 (match)
+            292 POP_JUMP_IF_TRUE         1 (to 296)
+            294 JUMP_BACKWARD          104 (to 88)
+
+118     >>  296 LOAD_FAST                4 (match)
+            298 LOAD_ATTR               13 (NULL|self + group)
+            318 LOAD_CONST               4 (0)
+            320 CALL                     1
+            328 SWAP                     2
+            330 POP_TOP
+            332 RETURN_VALUE
+
+108     >>  334 END_FOR
+            336 NOP
+
+121         338 RETURN_CONST             5 (None)
+        >>  340 PUSH_EXC_INFO
+
+119         342 LOAD_GLOBAL             14 (Exception)
+            352 CHECK_EXC_MATCH
+            354 POP_JUMP_IF_FALSE        3 (to 362)
+            356 POP_TOP
+
+120         358 POP_EXCEPT
+
+121         360 RETURN_CONST             5 (None)
+
+119     >>  362 RERAISE                  0
+        >>  364 COPY                     3
+            366 POP_EXCEPT
+            368 RERAISE                  1
+ExceptionTable:
+  4 to 128 -> 340 [0]
+  132 to 228 -> 340 [0]
+  232 to 292 -> 340 [0]
+  296 to 330 -> 340 [0]
+  334 to 334 -> 340 [0]
+  340 to 356 -> 364 [1] lasti
+  362 to 362 -> 364 [1] lasti
+
+Disassembly of <code object _extract_from_html_dump at 0x000001C2175AFC30, file "console\captcha_extractor.py", line 124>:
+124           0 RESUME                   0
+
+126           2 NOP
+
+129           4 LOAD_FAST                0 (device)
+              6 LOAD_ATTR                1 (NULL|self + command)
+             26 BUILD_LIST               0
+             28 LOAD_CONST               1 (('shell', 'dumpsys', 'activity', 'top'))
+             30 LIST_EXTEND              1
+             32 LOAD_CONST               2 (10)
+             34 KW_NAMES                 3 (('timeout',))
+             36 CALL                     2
+             44 STORE_FAST               1 (result)
+
+132          46 LOAD_CONST               4 (0)
+             48 LOAD_CONST               5 (None)
+             50 IMPORT_NAME              1 (re)
+             52 STORE_FAST               2 (re)
+
+133          54 LOAD_FAST                2 (re)
+             56 LOAD_ATTR                5 (NULL|self + search)
+             76 LOAD_CONST               6 ('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
+             78 LOAD_FAST                1 (result)
+             80 LOAD_FAST                2 (re)
+             82 LOAD_ATTR                6 (I)
+            102 CALL                     3
+            110 STORE_FAST               3 (match)
+
+134         112 LOAD_FAST                3 (match)
+            114 POP_JUMP_IF_FALSE       17 (to 150)
+
+135         116 LOAD_FAST                3 (match)
+            118 LOAD_ATTR                9 (NULL|self + group)
+            138 LOAD_CONST               4 (0)
+            140 CALL                     1
+            148 RETURN_VALUE
+
+134     >>  150 NOP
+
+138         152 RETURN_CONST             5 (None)
+        >>  154 PUSH_EXC_INFO
+
+136         156 LOAD_GLOBAL             10 (Exception)
+            166 CHECK_EXC_MATCH
+            168 POP_JUMP_IF_FALSE        3 (to 176)
+            170 POP_TOP
+
+137         172 POP_EXCEPT
+
+138         174 RETURN_CONST             5 (None)
+
+136     >>  176 RERAISE                  0
+        >>  178 COPY                     3
+            180 POP_EXCEPT
+            182 RERAISE                  1
+ExceptionTable:
+  4 to 146 -> 154 [0]
+  154 to 170 -> 178 [1] lasti
+  176 to 176 -> 178 [1] lasti
+
+Disassembly of <code object _is_valid_sitekey at 0x000001C217B517F0, file "console\captcha_extractor.py", line 141>:
+141           0 RESUME                   0
+
+143           2 LOAD_FAST                0 (sitekey)
+              4 POP_JUMP_IF_FALSE       14 (to 34)
+              6 LOAD_GLOBAL              1 (NULL + len)
+             16 LOAD_FAST                0 (sitekey)
+             18 CALL                     1
+             26 LOAD_CONST               1 (36)
+             28 COMPARE_OP              55 (!=)
+             32 POP_JUMP_IF_FALSE        1 (to 36)
+
+144     >>   34 RETURN_CONST             2 (False)
+
+145     >>   36 LOAD_CONST               3 (0)
+             38 LOAD_CONST               4 (None)
+             40 IMPORT_NAME              1 (re)
+             42 STORE_FAST               1 (re)
+
+146          44 LOAD_GLOBAL              5 (NULL + bool)
+             54 LOAD_FAST                1 (re)
+             56 LOAD_ATTR                7 (NULL|self + fullmatch)
+             76 LOAD_CONST               5 ('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
+             78 LOAD_FAST                0 (sitekey)
+             80 LOAD_FAST                1 (re)
+             82 LOAD_ATTR                8 (I)
+            102 CALL                     3
+            110 CALL                     1
+            118 RETURN_VALUE
+
+Disassembly of <code object get_signal_captcha_url at 0x000001C217B42320, file "console\captcha_extractor.py", line 149>:
+149           0 RESUME                   0
+
+152           2 RETURN_CONST             1 ('https://signalcaptchas.org/registration/generate.html')

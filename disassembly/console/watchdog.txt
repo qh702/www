@@ -1,0 +1,721 @@
+Module: console.watchdog
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('Optional device health recovery. Never replays uncertain writes.')
+              4 STORE_NAME               0 (__doc__)
+
+  2           6 LOAD_CONST               1 (0)
+              8 LOAD_CONST               2 (None)
+             10 IMPORT_NAME              1 (threading)
+             12 STORE_NAME               1 (threading)
+
+  3          14 LOAD_CONST               1 (0)
+             16 LOAD_CONST               2 (None)
+             18 IMPORT_NAME              2 (time)
+             20 STORE_NAME               2 (time)
+
+  5          22 LOAD_CONST               3 (1)
+             24 LOAD_CONST               4 (('MuMu',))
+             26 IMPORT_NAME              3 (infrastructure)
+             28 IMPORT_FROM              4 (MuMu)
+             30 STORE_NAME               4 (MuMu)
+             32 POP_TOP
+
+  6          34 LOAD_CONST               3 (1)
+             36 LOAD_CONST               5 (('now',))
+             38 IMPORT_NAME              5 (storage)
+             40 IMPORT_FROM              6 (now)
+             42 STORE_NAME               6 (now)
+             44 POP_TOP
+
+  9          46 PUSH_NULL
+             48 LOAD_BUILD_CLASS
+             50 LOAD_CONST               6 (<code object Watchdog at 0x000001C217405200, file "console\watchdog.py", line 9>)
+             52 MAKE_FUNCTION            0
+             54 LOAD_CONST               7 ('Watchdog')
+             56 CALL                     2
+             64 STORE_NAME               7 (Watchdog)
+             66 RETURN_CONST             2 (None)
+
+Disassembly of <code object Watchdog at 0x000001C217405200, file "console\watchdog.py", line 9>:
+  9           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('Watchdog')
+              8 STORE_NAME               2 (__qualname__)
+
+ 10          10 LOAD_CONST               1 (<code object __init__ at 0x000001C217B0DDF0, file "console\watchdog.py", line 10>)
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (__init__)
+
+ 17          16 LOAD_CONST               2 (<code object close at 0x000001C21594AC30, file "console\watchdog.py", line 17>)
+             18 MAKE_FUNCTION            0
+             20 STORE_NAME               4 (close)
+
+ 20          22 LOAD_CONST               3 (<code object loop at 0x000001C217769800, file "console\watchdog.py", line 20>)
+             24 MAKE_FUNCTION            0
+             26 STORE_NAME               5 (loop)
+
+ 30          28 LOAD_CONST               4 (<code object tick at 0x000001C217855A40, file "console\watchdog.py", line 30>)
+             30 MAKE_FUNCTION            0
+             32 STORE_NAME               6 (tick)
+             34 RETURN_CONST             5 (None)
+
+Disassembly of <code object __init__ at 0x000001C217B0DDF0, file "console\watchdog.py", line 10>:
+ 10           0 RESUME                   0
+
+ 11           2 LOAD_FAST                1 (engine)
+              4 LOAD_FAST                0 (self)
+              6 STORE_ATTR               0 (engine)
+
+ 12          16 LOAD_GLOBAL              3 (NULL + threading)
+             26 LOAD_ATTR                4 (Event)
+             46 CALL                     0
+             54 LOAD_FAST                0 (self)
+             56 STORE_ATTR               3 (stop)
+
+ 13          66 BUILD_MAP                0
+             68 LOAD_GLOBAL              9 (NULL + set)
+             78 CALL                     0
+             86 SWAP                     2
+             88 LOAD_FAST                0 (self)
+             90 STORE_ATTR               5 (failures)
+            100 LOAD_FAST                0 (self)
+            102 STORE_ATTR               6 (pending)
+
+ 14         112 LOAD_GLOBAL              3 (NULL + threading)
+            122 LOAD_ATTR               14 (Thread)
+            142 LOAD_FAST                0 (self)
+            144 LOAD_ATTR               16 (loop)
+            164 LOAD_CONST               1 (True)
+            166 LOAD_CONST               2 ('health-watchdog')
+            168 KW_NAMES                 3 (('target', 'daemon', 'name'))
+            170 CALL                     3
+            178 LOAD_FAST                0 (self)
+            180 STORE_ATTR               9 (thread)
+
+ 15         190 LOAD_FAST                0 (self)
+            192 LOAD_ATTR               18 (thread)
+            212 LOAD_ATTR               21 (NULL|self + start)
+            232 CALL                     0
+            240 POP_TOP
+            242 RETURN_CONST             0 (None)
+
+Disassembly of <code object close at 0x000001C21594AC30, file "console\watchdog.py", line 17>:
+ 17           0 RESUME                   0
+
+ 18           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (stop)
+             24 LOAD_ATTR                3 (NULL|self + set)
+             44 CALL                     0
+             52 POP_TOP
+             54 RETURN_CONST             0 (None)
+
+Disassembly of <code object loop at 0x000001C217769800, file "console\watchdog.py", line 20>:
+ 20           0 RESUME                   0
+
+ 21     >>    2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (stop)
+             24 LOAD_ATTR                3 (NULL|self + wait)
+             44 LOAD_CONST               1 (10)
+             46 CALL                     1
+             54 POP_JUMP_IF_TRUE       141 (to 338)
+
+ 22     >>   56 LOAD_FAST                0 (self)
+             58 LOAD_ATTR                4 (engine)
+             78 LOAD_ATTR                6 (store)
+             98 LOAD_ATTR                9 (NULL|self + setting)
+            118 LOAD_CONST               2 ('watchdog')
+            120 BUILD_MAP                0
+            122 CALL                     2
+            130 STORE_FAST               1 (options)
+
+ 23         132 LOAD_FAST                1 (options)
+            134 LOAD_ATTR               11 (NULL|self + get)
+            154 LOAD_CONST               3 ('enabled')
+            156 CALL                     1
+            164 LOAD_CONST               4 ('是')
+            166 COMPARE_OP              55 (!=)
+            170 POP_JUMP_IF_FALSE        1 (to 174)
+
+ 24         172 JUMP_BACKWARD           86 (to 2)
+
+ 25     >>  174 NOP
+
+ 26         176 LOAD_FAST                0 (self)
+            178 LOAD_ATTR               13 (NULL|self + tick)
+            198 LOAD_GLOBAL             15 (NULL + max)
+            208 LOAD_CONST               5 (1)
+            210 LOAD_GLOBAL             17 (NULL + int)
+            220 LOAD_FAST                1 (options)
+            222 LOAD_ATTR               11 (NULL|self + get)
+            242 LOAD_CONST               6 ('threshold')
+            244 LOAD_CONST               7 (3)
+            246 CALL                     2
+            254 CALL                     1
+            262 CALL                     2
+            270 CALL                     1
+            278 POP_TOP
+
+ 21     >>  280 LOAD_FAST                0 (self)
+            282 LOAD_ATTR                0 (stop)
+            302 LOAD_ATTR                3 (NULL|self + wait)
+            322 LOAD_CONST               1 (10)
+            324 CALL                     1
+            332 POP_JUMP_IF_TRUE         1 (to 336)
+            334 JUMP_BACKWARD          140 (to 56)
+        >>  336 RETURN_CONST             0 (None)
+        >>  338 RETURN_CONST             0 (None)
+        >>  340 PUSH_EXC_INFO
+
+ 27         342 LOAD_GLOBAL             18 (Exception)
+            352 CHECK_EXC_MATCH
+            354 POP_JUMP_IF_FALSE       65 (to 486)
+            356 STORE_FAST               2 (error)
+
+ 28         358 LOAD_FAST                0 (self)
+            360 LOAD_ATTR                4 (engine)
+            380 LOAD_ATTR                6 (store)
+            400 LOAD_ATTR               21 (NULL|self + log)
+            420 LOAD_CONST               8 ('WARN')
+            422 LOAD_CONST               9 ('')
+            424 LOAD_CONST               2 ('watchdog')
+            426 LOAD_CONST              10 ('设备监控异常：')
+            428 LOAD_GLOBAL             23 (NULL + str)
+            438 LOAD_FAST                2 (error)
+            440 CALL                     1
+            448 LOAD_CONST               0 (None)
+            450 LOAD_CONST              11 (300)
+            452 BINARY_SLICE
+            454 BINARY_OP                0 (+)
+            458 CALL                     4
+            466 POP_TOP
+            468 POP_EXCEPT
+            470 LOAD_CONST               0 (None)
+            472 STORE_FAST               2 (error)
+            474 DELETE_FAST              2 (error)
+            476 JUMP_BACKWARD           99 (to 280)
+        >>  478 LOAD_CONST               0 (None)
+            480 STORE_FAST               2 (error)
+            482 DELETE_FAST              2 (error)
+            484 RERAISE                  1
+
+ 27     >>  486 RERAISE                  0
+        >>  488 COPY                     3
+            490 POP_EXCEPT
+            492 RERAISE                  1
+ExceptionTable:
+  176 to 278 -> 340 [0]
+  340 to 356 -> 488 [1] lasti
+  358 to 466 -> 478 [1] lasti
+  478 to 486 -> 488 [1] lasti
+
+Disassembly of <code object tick at 0x000001C217855A40, file "console\watchdog.py", line 30>:
+              0 MAKE_CELL                0 (self)
+              2 MAKE_CELL               15 (serial)
+
+ 30           4 RESUME                   0
+
+ 31           6 LOAD_DEREF               0 (self)
+              8 LOAD_ATTR                0 (engine)
+             28 STORE_FAST               2 (engine)
+
+ 32          30 LOAD_FAST                2 (engine)
+             32 LOAD_ATTR                2 (lock)
+             52 BEFORE_WITH
+             54 POP_TOP
+
+ 33          56 LOAD_GLOBAL              5 (NULL + list)
+             66 LOAD_FAST                2 (engine)
+             68 LOAD_ATTR                6 (active)
+             88 LOAD_ATTR                9 (NULL|self + values)
+            108 CALL                     0
+            116 CALL                     1
+            124 STORE_FAST               3 (active)
+
+ 32         126 LOAD_CONST               0 (None)
+            128 LOAD_CONST               0 (None)
+            130 LOAD_CONST               0 (None)
+            132 CALL                     2
+            140 POP_TOP
+
+ 34     >>  142 LOAD_FAST_CHECK          3 (active)
+            144 GET_ITER
+            146 LOAD_FAST_AND_CLEAR      4 (t)
+            148 LOAD_FAST_AND_CLEAR      5 (_)
+            150 SWAP                     3
+            152 BUILD_SET                0
+            154 SWAP                     2
+        >>  156 FOR_ITER                40 (to 240)
+            160 UNPACK_SEQUENCE          2
+            164 STORE_FAST               4 (t)
+            166 STORE_FAST               5 (_)
+            168 LOAD_FAST                4 (t)
+            170 LOAD_CONST               1 ('mode')
+            172 BINARY_SUBSCR
+            176 LOAD_CONST               2 ('real')
+            178 COMPARE_OP              40 (==)
+            182 POP_JUMP_IF_TRUE         1 (to 186)
+            184 JUMP_BACKWARD           15 (to 156)
+        >>  186 LOAD_FAST                4 (t)
+            188 LOAD_CONST               3 ('serial')
+            190 BINARY_SUBSCR
+            194 LOAD_ATTR               11 (NULL|self + startswith)
+            214 LOAD_CONST               4 ('provision:')
+            216 CALL                     1
+            224 POP_JUMP_IF_FALSE        1 (to 228)
+            226 JUMP_BACKWARD           36 (to 156)
+        >>  228 LOAD_FAST                4 (t)
+            230 LOAD_CONST               3 ('serial')
+            232 BINARY_SUBSCR
+            236 SET_ADD                  2
+            238 JUMP_BACKWARD           42 (to 156)
+        >>  240 END_FOR
+            242 STORE_FAST               6 (serials)
+            244 STORE_FAST               4 (t)
+            246 STORE_FAST               5 (_)
+
+ 35         248 LOAD_FAST                6 (serials)
+            250 LOAD_FAST                2 (engine)
+            252 LOAD_ATTR               12 (store)
+            272 LOAD_ATTR               15 (NULL|self + query)
+            292 LOAD_CONST               5 ("SELECT serial FROM devices WHERE status='device'")
+            294 CALL                     1
+            302 GET_ITER
+            304 LOAD_FAST_AND_CLEAR      7 (r)
+            306 SWAP                     2
+            308 BUILD_SET                0
+            310 SWAP                     2
+        >>  312 FOR_ITER                 7 (to 330)
+            316 STORE_FAST               7 (r)
+            318 LOAD_FAST                7 (r)
+            320 LOAD_CONST               3 ('serial')
+            322 BINARY_SUBSCR
+            326 SET_ADD                  2
+            328 JUMP_BACKWARD            9 (to 312)
+        >>  330 END_FOR
+            332 SWAP                     2
+            334 STORE_FAST               7 (r)
+            336 BINARY_OP               20 (|=)
+            340 STORE_FAST               6 (serials)
+
+ 36         342 LOAD_FAST                6 (serials)
+            344 LOAD_DEREF               0 (self)
+            346 LOAD_ATTR               16 (pending)
+            366 BINARY_OP               10 (-)
+            370 GET_ITER
+        >>  372 FOR_ITER                80 (to 536)
+            376 STORE_DEREF             15 (serial)
+
+ 37         378 NOP
+
+ 38         380 LOAD_FAST                2 (engine)
+            382 LOAD_ATTR               18 (android)
+            402 LOAD_ATTR               21 (NULL|self + device)
+            422 LOAD_DEREF              15 (serial)
+            424 LOAD_CONST               6 ('shell')
+            426 LOAD_CONST               7 ('echo')
+            428 LOAD_CONST               8 ('console_healthy')
+            430 LOAD_CONST               9 (5)
+            432 KW_NAMES                10 (('timeout',))
+            434 CALL                     5
+            442 STORE_FAST               8 (state)
+
+ 39         444 LOAD_FAST                8 (state)
+            446 LOAD_ATTR               23 (NULL|self + strip)
+            466 CALL                     0
+            474 LOAD_CONST               8 ('console_healthy')
+            476 COMPARE_OP              55 (!=)
+            480 POP_JUMP_IF_FALSE       11 (to 504)
+
+ 40         482 LOAD_GLOBAL             25 (NULL + RuntimeError)
+            492 LOAD_CONST              11 ('设备响应异常')
+            494 CALL                     1
+            502 RAISE_VARARGS            1
+
+ 41     >>  504 LOAD_CONST              12 (0)
+            506 LOAD_DEREF               0 (self)
+            508 LOAD_ATTR               26 (failures)
+            528 LOAD_DEREF              15 (serial)
+            530 STORE_SUBSCR
+            534 JUMP_BACKWARD           82 (to 372)
+
+ 36     >>  536 END_FOR
+
+ 52         538 LOAD_GLOBAL              5 (NULL + list)
+            548 LOAD_DEREF               0 (self)
+            550 LOAD_ATTR               16 (pending)
+            570 CALL                     1
+            578 GET_ITER
+        >>  580 EXTENDED_ARG             1
+            582 FOR_ITER               288 (to 1162)
+            586 STORE_DEREF             15 (serial)
+
+ 53         588 LOAD_FAST                2 (engine)
+            590 LOAD_ATTR                2 (lock)
+            610 BEFORE_WITH
+            612 POP_TOP
+
+ 54         614 LOAD_GLOBAL             39 (NULL + any)
+            624 LOAD_CLOSURE            15 (serial)
+            626 BUILD_TUPLE              1
+            628 LOAD_CONST              19 (<code object <genexpr> at 0x000001C217BA5930, file "console\watchdog.py", line 54>)
+            630 MAKE_FUNCTION            8 (closure)
+            632 LOAD_FAST                2 (engine)
+            634 LOAD_ATTR                6 (active)
+            654 LOAD_ATTR                9 (NULL|self + values)
+            674 CALL                     0
+            682 GET_ITER
+            684 CALL                     0
+            692 CALL                     1
+            700 STORE_FAST              11 (busy)
+
+ 53         702 LOAD_CONST               0 (None)
+            704 LOAD_CONST               0 (None)
+            706 LOAD_CONST               0 (None)
+            708 CALL                     2
+            716 POP_TOP
+
+ 55     >>  718 LOAD_FAST_CHECK         11 (busy)
+            720 POP_JUMP_IF_FALSE        1 (to 724)
+
+ 56         722 JUMP_BACKWARD           72 (to 580)
+
+ 57     >>  724 NOP
+
+ 58         726 LOAD_GLOBAL             41 (NULL + MuMu)
+            736 LOAD_FAST                2 (engine)
+            738 LOAD_ATTR               18 (android)
+            758 CALL                     1
+            766 STORE_FAST              12 (manager)
+
+ 59         768 LOAD_FAST               12 (manager)
+            770 LOAD_ATTR               43 (NULL|self + index_for)
+            790 LOAD_DEREF              15 (serial)
+            792 CALL                     1
+            800 STORE_FAST              13 (index)
+
+ 60         802 LOAD_FAST               12 (manager)
+            804 LOAD_ATTR               45 (NULL|self + shutdown_wait)
+            824 LOAD_FAST               13 (index)
+            826 CALL                     1
+            834 POP_TOP
+
+ 61         836 LOAD_FAST               12 (manager)
+            838 LOAD_ATTR               47 (NULL|self + prepare)
+            858 LOAD_FAST               13 (index)
+            860 LOAD_FAST                2 (engine)
+            862 LOAD_ATTR               12 (store)
+            882 LOAD_ATTR               49 (NULL|self + setting)
+            902 LOAD_CONST              20 ('max_devices')
+            904 LOAD_CONST              21 (2)
+            906 CALL                     2
+            914 LOAD_DEREF               0 (self)
+            916 LOAD_ATTR               50 (stop)
+            936 LOAD_CLOSURE             0 (self)
+            938 BUILD_TUPLE              1
+            940 LOAD_CONST              22 (<code object <lambda> at 0x000001C217BA7B30, file "console\watchdog.py", line 61>)
+            942 MAKE_FUNCTION            8 (closure)
+            944 KW_NAMES                23 (('capacity', 'stop', 'delay'))
+            946 CALL                     4
+            954 POP_TOP
+
+ 62         956 LOAD_FAST                2 (engine)
+            958 LOAD_ATTR               12 (store)
+            978 LOAD_ATTR               53 (NULL|self + execute)
+            998 LOAD_CONST              24 ("UPDATE tasks SET state='queued',error='' WHERE serial=? AND kind='check' AND state='interrupted'")
+           1000 LOAD_DEREF              15 (serial)
+           1002 BUILD_TUPLE              1
+           1004 CALL                     2
+           1012 POP_TOP
+
+ 63        1014 LOAD_FAST                2 (engine)
+           1016 LOAD_ATTR               12 (store)
+           1036 LOAD_ATTR               37 (NULL|self + log)
+           1056 LOAD_CONST              25 ('SUCCESS')
+           1058 LOAD_DEREF              15 (serial)
+           1060 LOAD_CONST              17 ('watchdog')
+           1062 LOAD_CONST              26 ('模拟器已重启；只自动重排只读账号检测，其余中断任务等待核查')
+           1064 CALL                     4
+           1072 POP_TOP
+
+ 64        1074 LOAD_CONST              12 (0)
+           1076 LOAD_DEREF               0 (self)
+           1078 LOAD_ATTR               26 (failures)
+           1098 LOAD_DEREF              15 (serial)
+           1100 STORE_SUBSCR
+
+ 68     >> 1104 LOAD_DEREF               0 (self)
+           1106 LOAD_ATTR               16 (pending)
+           1126 LOAD_ATTR               57 (NULL|self + discard)
+           1146 LOAD_DEREF              15 (serial)
+           1148 CALL                     1
+           1156 POP_TOP
+           1158 EXTENDED_ARG             1
+           1160 JUMP_BACKWARD          291 (to 580)
+
+ 52     >> 1162 END_FOR
+           1164 RETURN_CONST             0 (None)
+
+ 32     >> 1166 PUSH_EXC_INFO
+           1168 WITH_EXCEPT_START
+           1170 POP_JUMP_IF_TRUE         1 (to 1174)
+           1172 RERAISE                  2
+        >> 1174 POP_TOP
+           1176 POP_EXCEPT
+           1178 POP_TOP
+           1180 POP_TOP
+           1182 EXTENDED_ARG             2
+           1184 JUMP_BACKWARD          522 (to 142)
+        >> 1186 COPY                     3
+           1188 POP_EXCEPT
+           1190 RERAISE                  1
+        >> 1192 SWAP                     2
+           1194 POP_TOP
+
+ 34        1196 SWAP                     3
+           1198 STORE_FAST               5 (_)
+           1200 STORE_FAST               4 (t)
+           1202 RERAISE                  0
+        >> 1204 SWAP                     2
+           1206 POP_TOP
+
+ 35        1208 SWAP                     2
+           1210 STORE_FAST               7 (r)
+           1212 RERAISE                  0
+        >> 1214 PUSH_EXC_INFO
+
+ 42        1216 LOAD_GLOBAL             28 (Exception)
+           1226 CHECK_EXC_MATCH
+           1228 POP_JUMP_IF_FALSE      222 (to 1674)
+           1230 POP_TOP
+
+ 43        1232 LOAD_DEREF               0 (self)
+           1234 LOAD_ATTR               26 (failures)
+           1254 LOAD_ATTR               31 (NULL|self + get)
+           1274 LOAD_DEREF              15 (serial)
+           1276 LOAD_CONST              12 (0)
+           1278 CALL                     2
+           1286 LOAD_CONST              13 (1)
+           1288 BINARY_OP                0 (+)
+           1292 LOAD_DEREF               0 (self)
+           1294 LOAD_ATTR               26 (failures)
+           1314 LOAD_DEREF              15 (serial)
+           1316 STORE_SUBSCR
+
+ 44        1320 LOAD_DEREF               0 (self)
+           1322 LOAD_ATTR               26 (failures)
+           1342 LOAD_DEREF              15 (serial)
+           1344 BINARY_SUBSCR
+           1348 LOAD_FAST                1 (threshold)
+           1350 COMPARE_OP              92 (>=)
+           1354 POP_JUMP_IF_FALSE      156 (to 1668)
+
+ 45        1356 LOAD_DEREF               0 (self)
+           1358 LOAD_ATTR               16 (pending)
+           1378 LOAD_ATTR               33 (NULL|self + add)
+           1398 LOAD_DEREF              15 (serial)
+           1400 CALL                     1
+           1408 POP_TOP
+
+ 46        1410 LOAD_FAST                2 (engine)
+           1412 LOAD_ATTR                2 (lock)
+           1432 BEFORE_WITH
+           1434 POP_TOP
+
+ 47        1436 LOAD_FAST                2 (engine)
+           1438 LOAD_ATTR                6 (active)
+           1458 LOAD_ATTR                9 (NULL|self + values)
+           1478 CALL                     0
+           1486 GET_ITER
+        >> 1488 FOR_ITER                35 (to 1562)
+           1492 UNPACK_SEQUENCE          2
+           1496 STORE_FAST               9 (task)
+           1498 STORE_FAST              10 (event)
+
+ 48        1500 LOAD_FAST                9 (task)
+           1502 LOAD_CONST               3 ('serial')
+           1504 BINARY_SUBSCR
+           1508 LOAD_DEREF              15 (serial)
+           1510 COMPARE_OP              40 (==)
+           1514 POP_JUMP_IF_TRUE         1 (to 1518)
+           1516 JUMP_BACKWARD           15 (to 1488)
+
+ 49     >> 1518 LOAD_CONST              14 (True)
+           1520 LOAD_FAST                9 (task)
+           1522 LOAD_CONST              15 ('watchdog_interrupted')
+           1524 STORE_SUBSCR
+
+ 50        1528 LOAD_FAST               10 (event)
+           1530 LOAD_ATTR               35 (NULL|self + set)
+           1550 CALL                     0
+           1558 POP_TOP
+           1560 JUMP_BACKWARD           37 (to 1488)
+
+ 47     >> 1562 END_FOR
+           1564 NOP
+
+ 46        1566 LOAD_CONST               0 (None)
+           1568 LOAD_CONST               0 (None)
+           1570 LOAD_CONST               0 (None)
+           1572 CALL                     2
+           1580 POP_TOP
+           1582 JUMP_FORWARD            12 (to 1608)
+        >> 1584 PUSH_EXC_INFO
+           1586 WITH_EXCEPT_START
+           1588 POP_JUMP_IF_TRUE         1 (to 1592)
+           1590 RERAISE                  2
+        >> 1592 POP_TOP
+           1594 POP_EXCEPT
+           1596 POP_TOP
+           1598 POP_TOP
+           1600 JUMP_FORWARD             3 (to 1608)
+        >> 1602 COPY                     3
+           1604 POP_EXCEPT
+           1606 RERAISE                  1
+
+ 51     >> 1608 LOAD_FAST                2 (engine)
+           1610 LOAD_ATTR               12 (store)
+           1630 LOAD_ATTR               37 (NULL|self + log)
+           1650 LOAD_CONST              16 ('WARN')
+           1652 LOAD_DEREF              15 (serial)
+           1654 LOAD_CONST              17 ('watchdog')
+           1656 LOAD_CONST              18 ('设备连续无响应；中止当前任务，等待操作返回后重启')
+           1658 CALL                     4
+           1666 POP_TOP
+        >> 1668 POP_EXCEPT
+           1670 EXTENDED_ARG             2
+           1672 JUMP_BACKWARD          651 (to 372)
+
+ 42     >> 1674 RERAISE                  0
+        >> 1676 COPY                     3
+           1678 POP_EXCEPT
+           1680 RERAISE                  1
+
+ 53     >> 1682 PUSH_EXC_INFO
+           1684 WITH_EXCEPT_START
+           1686 POP_JUMP_IF_TRUE         1 (to 1690)
+           1688 RERAISE                  2
+        >> 1690 POP_TOP
+           1692 POP_EXCEPT
+           1694 POP_TOP
+           1696 POP_TOP
+           1698 EXTENDED_ARG             1
+           1700 JUMP_BACKWARD          492 (to 718)
+        >> 1702 COPY                     3
+           1704 POP_EXCEPT
+           1706 RERAISE                  1
+        >> 1708 PUSH_EXC_INFO
+
+ 65        1710 LOAD_GLOBAL             28 (Exception)
+           1720 CHECK_EXC_MATCH
+           1722 POP_JUMP_IF_FALSE       56 (to 1836)
+           1724 STORE_FAST              14 (error)
+
+ 66        1726 LOAD_FAST                2 (engine)
+           1728 LOAD_ATTR               12 (store)
+           1748 LOAD_ATTR               37 (NULL|self + log)
+           1768 LOAD_CONST              27 ('ERROR')
+           1770 LOAD_DEREF              15 (serial)
+           1772 LOAD_CONST              17 ('watchdog')
+           1774 LOAD_CONST              28 ('重启失败：')
+           1776 LOAD_GLOBAL             55 (NULL + str)
+           1786 LOAD_FAST               14 (error)
+           1788 CALL                     1
+           1796 LOAD_CONST               0 (None)
+           1798 LOAD_CONST              29 (300)
+           1800 BINARY_SLICE
+           1802 BINARY_OP                0 (+)
+           1806 CALL                     4
+           1814 POP_TOP
+           1816 POP_EXCEPT
+           1818 LOAD_CONST               0 (None)
+           1820 STORE_FAST              14 (error)
+           1822 DELETE_FAST             14 (error)
+           1824 EXTENDED_ARG             1
+           1826 JUMP_BACKWARD          362 (to 1104)
+        >> 1828 LOAD_CONST               0 (None)
+           1830 STORE_FAST              14 (error)
+           1832 DELETE_FAST             14 (error)
+           1834 RERAISE                  1
+
+ 65     >> 1836 RERAISE                  0
+        >> 1838 COPY                     3
+           1840 POP_EXCEPT
+           1842 RERAISE                  1
+        >> 1844 PUSH_EXC_INFO
+
+ 68        1846 LOAD_DEREF               0 (self)
+           1848 LOAD_ATTR               16 (pending)
+           1868 LOAD_ATTR               57 (NULL|self + discard)
+           1888 LOAD_DEREF              15 (serial)
+           1890 CALL                     1
+           1898 POP_TOP
+           1900 RERAISE                  0
+        >> 1902 COPY                     3
+           1904 POP_EXCEPT
+           1906 RERAISE                  1
+ExceptionTable:
+  54 to 124 -> 1166 [1] lasti
+  152 to 182 -> 1192 [3]
+  186 to 224 -> 1192 [3]
+  228 to 240 -> 1192 [3]
+  308 to 330 -> 1204 [3]
+  380 to 532 -> 1214 [1]
+  612 to 700 -> 1682 [2] lasti
+  726 to 1102 -> 1708 [1]
+  1166 to 1174 -> 1186 [3] lasti
+  1214 to 1432 -> 1676 [2] lasti
+  1434 to 1514 -> 1584 [3] lasti
+  1518 to 1562 -> 1584 [3] lasti
+  1566 to 1582 -> 1676 [2] lasti
+  1584 to 1592 -> 1602 [5] lasti
+  1594 to 1666 -> 1676 [2] lasti
+  1674 to 1674 -> 1676 [2] lasti
+  1682 to 1690 -> 1702 [4] lasti
+  1708 to 1724 -> 1838 [2] lasti
+  1726 to 1814 -> 1828 [2] lasti
+  1816 to 1826 -> 1844 [1]
+  1828 to 1836 -> 1838 [2] lasti
+  1838 to 1842 -> 1844 [1]
+  1844 to 1900 -> 1902 [2] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217BA5930, file "console\watchdog.py", line 54>:
+              0 COPY_FREE_VARS           1
+
+ 54           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                15 (to 44)
+             14 UNPACK_SEQUENCE          2
+             18 STORE_FAST               1 (t)
+             20 STORE_FAST               2 (_)
+             22 LOAD_FAST                1 (t)
+             24 LOAD_CONST               0 ('serial')
+             26 BINARY_SUBSCR
+             30 LOAD_DEREF               3 (serial)
+             32 COMPARE_OP              40 (==)
+             36 YIELD_VALUE              1
+             38 RESUME                   1
+             40 POP_TOP
+             42 JUMP_BACKWARD           17 (to 10)
+        >>   44 END_FOR
+             46 RETURN_CONST             1 (None)
+        >>   48 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             50 RERAISE                  1
+ExceptionTable:
+  6 to 46 -> 48 [0] lasti
+
+Disassembly of <code object <lambda> at 0x000001C217BA7B30, file "console\watchdog.py", line 61>:
+              0 COPY_FREE_VARS           1
+
+ 61           2 RESUME                   0
+              4 LOAD_DEREF               1 (self)
+              6 LOAD_ATTR                0 (stop)
+             26 LOAD_ATTR                3 (NULL|self + wait)
+             46 LOAD_FAST                0 (seconds)
+             48 CALL                     1
+             56 RETURN_VALUE

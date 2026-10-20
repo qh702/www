@@ -1,0 +1,1251 @@
+Module: console.captcha_solver
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('2Captcha 自动验证码识别模块\n\n警告：此模块用于自动解决验证码挑战，可能违反目标服务的使用条款。\n使用者需自行承担所有法律责任和账号封禁风险。\n')
+              4 STORE_NAME               0 (__doc__)
+
+  7           6 LOAD_CONST               1 (0)
+              8 LOAD_CONST               2 (None)
+             10 IMPORT_NAME              1 (base64)
+             12 STORE_NAME               1 (base64)
+
+  8          14 LOAD_CONST               1 (0)
+             16 LOAD_CONST               2 (None)
+             18 IMPORT_NAME              2 (json)
+             20 STORE_NAME               2 (json)
+
+  9          22 LOAD_CONST               1 (0)
+             24 LOAD_CONST               2 (None)
+             26 IMPORT_NAME              3 (time)
+             28 STORE_NAME               3 (time)
+
+ 10          30 LOAD_CONST               1 (0)
+             32 LOAD_CONST               2 (None)
+             34 IMPORT_NAME              4 (requests)
+             36 STORE_NAME               4 (requests)
+
+ 11          38 LOAD_CONST               1 (0)
+             40 LOAD_CONST               3 (('Path',))
+             42 IMPORT_NAME              5 (pathlib)
+             44 IMPORT_FROM              6 (Path)
+             46 STORE_NAME               6 (Path)
+             48 POP_TOP
+
+ 14          50 PUSH_NULL
+             52 LOAD_BUILD_CLASS
+             54 LOAD_CONST               4 (<code object CaptchaSolver at 0x000001C217B8F000, file "console\captcha_solver.py", line 14>)
+             56 MAKE_FUNCTION            0
+             58 LOAD_CONST               5 ('CaptchaSolver')
+             60 CALL                     2
+             68 STORE_NAME               7 (CaptchaSolver)
+
+190          70 PUSH_NULL
+             72 LOAD_BUILD_CLASS
+             74 LOAD_CONST               6 (<code object SignalCaptchaHandler at 0x000001C217B8EF10, file "console\captcha_solver.py", line 190>)
+             76 MAKE_FUNCTION            0
+             78 LOAD_CONST               7 ('SignalCaptchaHandler')
+             80 CALL                     2
+             88 STORE_NAME               8 (SignalCaptchaHandler)
+
+300          90 LOAD_CONST               8 (<code object test_solver at 0x000001C217D041A0, file "console\captcha_solver.py", line 300>)
+             92 MAKE_FUNCTION            0
+             94 STORE_NAME               9 (test_solver)
+
+314          96 LOAD_NAME               10 (__name__)
+             98 LOAD_CONST               9 ('__main__')
+            100 COMPARE_OP              40 (==)
+            104 POP_JUMP_IF_FALSE       56 (to 218)
+
+316         106 LOAD_CONST               1 (0)
+            108 LOAD_CONST               2 (None)
+            110 IMPORT_NAME             11 (sys)
+            112 STORE_NAME              11 (sys)
+
+317         114 PUSH_NULL
+            116 LOAD_NAME               12 (len)
+            118 LOAD_NAME               11 (sys)
+            120 LOAD_ATTR               26 (argv)
+            140 CALL                     1
+            148 LOAD_CONST              10 (1)
+            150 COMPARE_OP              68 (>)
+            154 POP_JUMP_IF_FALSE       22 (to 200)
+
+318         156 PUSH_NULL
+            158 LOAD_NAME                9 (test_solver)
+            160 LOAD_NAME               11 (sys)
+            162 LOAD_ATTR               26 (argv)
+            182 LOAD_CONST              10 (1)
+            184 BINARY_SUBSCR
+            188 CALL                     1
+            196 POP_TOP
+            198 RETURN_CONST             2 (None)
+
+320     >>  200 PUSH_NULL
+            202 LOAD_NAME               14 (print)
+            204 LOAD_CONST              11 ('用法: python captcha_solver.py <API_KEY>')
+            206 CALL                     1
+            214 POP_TOP
+            216 RETURN_CONST             2 (None)
+
+314     >>  218 RETURN_CONST             2 (None)
+
+Disassembly of <code object CaptchaSolver at 0x000001C217B8F000, file "console\captcha_solver.py", line 14>:
+ 14           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('CaptchaSolver')
+              8 STORE_NAME               2 (__qualname__)
+
+ 15          10 LOAD_CONST               1 ('2Captcha API 客户端')
+             12 STORE_NAME               3 (__doc__)
+
+ 17          14 LOAD_CONST               7 ((120,))
+             16 LOAD_CONST               2 (<code object __init__ at 0x000001C2174A6A60, file "console\captcha_solver.py", line 17>)
+             18 MAKE_FUNCTION            1 (defaults)
+             20 STORE_NAME               4 (__init__)
+
+ 29          22 LOAD_CONST               8 ((None,))
+             24 LOAD_CONST               4 (<code object solve_hcaptcha at 0x000001C2173AB960, file "console\captcha_solver.py", line 29>)
+             26 MAKE_FUNCTION            1 (defaults)
+             28 STORE_NAME               5 (solve_hcaptcha)
+
+ 96          30 LOAD_CONST               5 (<code object solve_image_captcha at 0x000001C2176C4C90, file "console\captcha_solver.py", line 96>)
+             32 MAKE_FUNCTION            0
+             34 STORE_NAME               6 (solve_image_captcha)
+
+161          36 LOAD_CONST               6 (<code object get_balance at 0x000001C217792330, file "console\captcha_solver.py", line 161>)
+             38 MAKE_FUNCTION            0
+             40 STORE_NAME               7 (get_balance)
+             42 RETURN_CONST             3 (None)
+
+Disassembly of <code object __init__ at 0x000001C2174A6A60, file "console\captcha_solver.py", line 17>:
+ 17           0 RESUME                   0
+
+ 25           2 LOAD_FAST                1 (api_key)
+              4 LOAD_FAST                0 (self)
+              6 STORE_ATTR               0 (api_key)
+
+ 26          16 LOAD_FAST                2 (timeout)
+             18 LOAD_FAST                0 (self)
+             20 STORE_ATTR               1 (timeout)
+
+ 27          30 LOAD_CONST               1 ('https://2captcha.com')
+             32 LOAD_FAST                0 (self)
+             34 STORE_ATTR               2 (base_url)
+             44 RETURN_CONST             2 (None)
+
+Disassembly of <code object solve_hcaptcha at 0x000001C2173AB960, file "console\captcha_solver.py", line 29>:
+ 29           0 RESUME                   0
+
+ 41           2 NOP
+
+ 43           4 LOAD_FAST                0 (self)
+              6 LOAD_ATTR                0 (base_url)
+             26 FORMAT_VALUE             0
+             28 LOAD_CONST               1 ('/in.php')
+             30 BUILD_STRING             2
+             32 STORE_FAST               4 (submit_url)
+
+ 45          34 LOAD_FAST                0 (self)
+             36 LOAD_ATTR                2 (api_key)
+
+ 46          56 LOAD_CONST               2 ('hcaptcha')
+
+ 47          58 LOAD_FAST                1 (sitekey)
+
+ 48          60 LOAD_FAST                2 (page_url)
+
+ 49          62 LOAD_CONST               3 (1)
+
+ 44          64 LOAD_CONST               4 (('key', 'method', 'sitekey', 'pageurl', 'json'))
+             66 BUILD_CONST_KEY_MAP      5
+             68 STORE_FAST               5 (data)
+
+ 52          70 LOAD_GLOBAL              5 (NULL + requests)
+             80 LOAD_ATTR                6 (post)
+            100 LOAD_FAST                4 (submit_url)
+            102 LOAD_FAST                5 (data)
+            104 LOAD_CONST               5 (30)
+            106 KW_NAMES                 6 (('data', 'timeout'))
+            108 CALL                     3
+            116 STORE_FAST               6 (response)
+
+ 53         118 LOAD_FAST                6 (response)
+            120 LOAD_ATTR                9 (NULL|self + json)
+            140 CALL                     0
+            148 STORE_FAST               7 (result)
+
+ 55         150 LOAD_FAST                7 (result)
+            152 LOAD_ATTR               11 (NULL|self + get)
+            172 LOAD_CONST               7 ('status')
+            174 CALL                     1
+            182 LOAD_CONST               3 (1)
+            184 COMPARE_OP              55 (!=)
+            188 POP_JUMP_IF_FALSE       27 (to 244)
+
+ 56         190 LOAD_FAST                7 (result)
+            192 LOAD_ATTR               11 (NULL|self + get)
+            212 LOAD_CONST               8 ('request')
+            214 LOAD_CONST               9 ('未知错误')
+            216 CALL                     2
+            224 STORE_FAST               8 (error_msg)
+
+ 57         226 LOAD_CONST              10 (False)
+            228 LOAD_CONST              11 (None)
+            230 LOAD_CONST              12 ('提交失败: ')
+            232 LOAD_FAST                8 (error_msg)
+            234 FORMAT_VALUE             0
+            236 BUILD_STRING             2
+            238 LOAD_CONST              13 (('success', 'token', 'error'))
+            240 BUILD_CONST_KEY_MAP      3
+            242 RETURN_VALUE
+
+ 59     >>  244 LOAD_FAST                7 (result)
+            246 LOAD_ATTR               11 (NULL|self + get)
+            266 LOAD_CONST               8 ('request')
+            268 CALL                     1
+            276 STORE_FAST               9 (task_id)
+
+ 62         278 LOAD_FAST                0 (self)
+            280 LOAD_ATTR                0 (base_url)
+            300 FORMAT_VALUE             0
+            302 LOAD_CONST              14 ('/res.php')
+            304 BUILD_STRING             2
+            306 STORE_FAST              10 (result_url)
+
+ 63         308 LOAD_GLOBAL             13 (NULL + time)
+            318 LOAD_ATTR               12 (time)
+            338 CALL                     0
+            346 STORE_FAST              11 (start_time)
+
+ 65     >>  348 LOAD_GLOBAL             13 (NULL + time)
+            358 LOAD_ATTR               12 (time)
+            378 CALL                     0
+            386 LOAD_FAST               11 (start_time)
+            388 BINARY_OP               10 (-)
+            392 LOAD_FAST                0 (self)
+            394 LOAD_ATTR               14 (timeout)
+            414 COMPARE_OP               2 (<)
+            418 POP_JUMP_IF_FALSE      169 (to 758)
+
+ 66         420 LOAD_GLOBAL             13 (NULL + time)
+            430 LOAD_ATTR               16 (sleep)
+            450 LOAD_CONST              15 (5)
+            452 CALL                     1
+            460 POP_TOP
+
+ 69         462 LOAD_FAST                0 (self)
+            464 LOAD_ATTR                2 (api_key)
+
+ 70         484 LOAD_CONST              16 ('get')
+
+ 71         486 LOAD_FAST                9 (task_id)
+
+ 72         488 LOAD_CONST               3 (1)
+
+ 68         490 LOAD_CONST              17 (('key', 'action', 'id', 'json'))
+            492 BUILD_CONST_KEY_MAP      4
+            494 STORE_FAST              12 (params)
+
+ 75         496 LOAD_GLOBAL              5 (NULL + requests)
+            506 LOAD_ATTR               10 (get)
+            526 LOAD_FAST               10 (result_url)
+            528 LOAD_FAST               12 (params)
+            530 LOAD_CONST               5 (30)
+            532 KW_NAMES                18 (('params', 'timeout'))
+            534 CALL                     3
+            542 STORE_FAST               6 (response)
+
+ 76         544 LOAD_FAST                6 (response)
+            546 LOAD_ATTR                9 (NULL|self + json)
+            566 CALL                     0
+            574 STORE_FAST               7 (result)
+
+ 78         576 LOAD_FAST                7 (result)
+            578 LOAD_ATTR               11 (NULL|self + get)
+            598 LOAD_CONST               7 ('status')
+            600 CALL                     1
+            608 LOAD_CONST               3 (1)
+            610 COMPARE_OP              40 (==)
+            614 POP_JUMP_IF_FALSE       23 (to 662)
+
+ 79         616 LOAD_FAST                7 (result)
+            618 LOAD_ATTR               11 (NULL|self + get)
+            638 LOAD_CONST               8 ('request')
+            640 CALL                     1
+            648 STORE_FAST              13 (token)
+
+ 80         650 LOAD_CONST              19 (True)
+            652 LOAD_FAST               13 (token)
+            654 LOAD_CONST              11 (None)
+            656 LOAD_CONST              13 (('success', 'token', 'error'))
+            658 BUILD_CONST_KEY_MAP      3
+            660 RETURN_VALUE
+
+ 82     >>  662 LOAD_FAST                7 (result)
+            664 LOAD_ATTR               11 (NULL|self + get)
+            684 LOAD_CONST               8 ('request')
+            686 CALL                     1
+            694 LOAD_CONST              20 ('CAPCHA_NOT_READY')
+            696 COMPARE_OP              40 (==)
+            700 POP_JUMP_IF_FALSE        1 (to 704)
+
+ 83         702 JUMP_BACKWARD          178 (to 348)
+
+ 86     >>  704 LOAD_FAST                7 (result)
+            706 LOAD_ATTR               11 (NULL|self + get)
+            726 LOAD_CONST               8 ('request')
+            728 LOAD_CONST               9 ('未知错误')
+            730 CALL                     2
+            738 STORE_FAST               8 (error_msg)
+
+ 87         740 LOAD_CONST              10 (False)
+            742 LOAD_CONST              11 (None)
+            744 LOAD_CONST              21 ('识别失败: ')
+            746 LOAD_FAST                8 (error_msg)
+            748 FORMAT_VALUE             0
+            750 BUILD_STRING             2
+            752 LOAD_CONST              13 (('success', 'token', 'error'))
+            754 BUILD_CONST_KEY_MAP      3
+            756 RETURN_VALUE
+
+ 89     >>  758 LOAD_CONST              10 (False)
+            760 LOAD_CONST              11 (None)
+            762 LOAD_CONST              22 ('超时：验证码识别时间超过限制')
+            764 LOAD_CONST              13 (('success', 'token', 'error'))
+            766 BUILD_CONST_KEY_MAP      3
+            768 RETURN_VALUE
+        >>  770 PUSH_EXC_INFO
+
+ 91         772 LOAD_GLOBAL              4 (requests)
+            782 LOAD_ATTR               18 (RequestException)
+            802 CHECK_EXC_MATCH
+            804 POP_JUMP_IF_FALSE       16 (to 838)
+            806 STORE_FAST              14 (e)
+
+ 92         808 LOAD_CONST              10 (False)
+            810 LOAD_CONST              11 (None)
+            812 LOAD_CONST              23 ('连接 2Captcha 失败，请检查网络')
+            814 LOAD_CONST              13 (('success', 'token', 'error'))
+            816 BUILD_CONST_KEY_MAP      3
+            818 SWAP                     2
+            820 POP_EXCEPT
+            822 LOAD_CONST              11 (None)
+            824 STORE_FAST              14 (e)
+            826 DELETE_FAST             14 (e)
+            828 RETURN_VALUE
+        >>  830 LOAD_CONST              11 (None)
+            832 STORE_FAST              14 (e)
+            834 DELETE_FAST             14 (e)
+            836 RERAISE                  1
+
+ 93     >>  838 LOAD_GLOBAL             20 (Exception)
+            848 CHECK_EXC_MATCH
+            850 POP_JUMP_IF_FALSE       28 (to 908)
+            852 STORE_FAST              14 (e)
+
+ 94         854 LOAD_CONST              10 (False)
+            856 LOAD_CONST              11 (None)
+            858 LOAD_CONST              24 ('未知错误: ')
+            860 LOAD_GLOBAL             23 (NULL + str)
+            870 LOAD_FAST               14 (e)
+            872 CALL                     1
+            880 FORMAT_VALUE             0
+            882 BUILD_STRING             2
+            884 LOAD_CONST              13 (('success', 'token', 'error'))
+            886 BUILD_CONST_KEY_MAP      3
+            888 SWAP                     2
+            890 POP_EXCEPT
+            892 LOAD_CONST              11 (None)
+            894 STORE_FAST              14 (e)
+            896 DELETE_FAST             14 (e)
+            898 RETURN_VALUE
+        >>  900 LOAD_CONST              11 (None)
+            902 STORE_FAST              14 (e)
+            904 DELETE_FAST             14 (e)
+            906 RERAISE                  1
+
+ 93     >>  908 RERAISE                  0
+        >>  910 COPY                     3
+            912 POP_EXCEPT
+            914 RERAISE                  1
+ExceptionTable:
+  4 to 240 -> 770 [0]
+  244 to 658 -> 770 [0]
+  662 to 754 -> 770 [0]
+  758 to 766 -> 770 [0]
+  770 to 806 -> 910 [1] lasti
+  808 to 816 -> 830 [1] lasti
+  818 to 818 -> 910 [1] lasti
+  830 to 852 -> 910 [1] lasti
+  854 to 886 -> 900 [1] lasti
+  888 to 888 -> 910 [1] lasti
+  900 to 908 -> 910 [1] lasti
+
+Disassembly of <code object solve_image_captcha at 0x000001C2176C4C90, file "console\captcha_solver.py", line 96>:
+ 96           0 RESUME                   0
+
+106           2 NOP
+
+108           4 LOAD_GLOBAL              1 (NULL + open)
+             14 LOAD_FAST                1 (image_path)
+             16 LOAD_CONST               1 ('rb')
+             18 CALL                     2
+             26 BEFORE_WITH
+             28 STORE_FAST               2 (f)
+
+109          30 LOAD_GLOBAL              3 (NULL + base64)
+             40 LOAD_ATTR                4 (b64encode)
+             60 LOAD_FAST                2 (f)
+             62 LOAD_ATTR                7 (NULL|self + read)
+             82 CALL                     0
+             90 CALL                     1
+             98 LOAD_ATTR                9 (NULL|self + decode)
+            118 LOAD_CONST               2 ('utf-8')
+            120 CALL                     1
+            128 STORE_FAST               3 (image_data)
+
+108         130 LOAD_CONST               3 (None)
+            132 LOAD_CONST               3 (None)
+            134 LOAD_CONST               3 (None)
+            136 CALL                     2
+            144 POP_TOP
+
+112     >>  146 LOAD_FAST                0 (self)
+            148 LOAD_ATTR               10 (base_url)
+            168 FORMAT_VALUE             0
+            170 LOAD_CONST               4 ('/in.php')
+            172 BUILD_STRING             2
+            174 STORE_FAST               4 (submit_url)
+
+114         176 LOAD_FAST                0 (self)
+            178 LOAD_ATTR               12 (api_key)
+
+115         198 LOAD_CONST               5 ('base64')
+
+116         200 LOAD_FAST_CHECK          3 (image_data)
+
+117         202 LOAD_CONST               6 (1)
+
+113         204 LOAD_CONST               7 (('key', 'method', 'body', 'json'))
+            206 BUILD_CONST_KEY_MAP      4
+            208 STORE_FAST               5 (data)
+
+120         210 LOAD_GLOBAL             15 (NULL + requests)
+            220 LOAD_ATTR               16 (post)
+            240 LOAD_FAST                4 (submit_url)
+            242 LOAD_FAST                5 (data)
+            244 LOAD_CONST               8 (30)
+            246 KW_NAMES                 9 (('data', 'timeout'))
+            248 CALL                     3
+            256 STORE_FAST               6 (response)
+
+121         258 LOAD_FAST                6 (response)
+            260 LOAD_ATTR               19 (NULL|self + json)
+            280 CALL                     0
+            288 STORE_FAST               7 (result)
+
+123         290 LOAD_FAST                7 (result)
+            292 LOAD_ATTR               21 (NULL|self + get)
+            312 LOAD_CONST              10 ('status')
+            314 CALL                     1
+            322 LOAD_CONST               6 (1)
+            324 COMPARE_OP              55 (!=)
+            328 POP_JUMP_IF_FALSE       27 (to 384)
+
+124         330 LOAD_FAST                7 (result)
+            332 LOAD_ATTR               21 (NULL|self + get)
+            352 LOAD_CONST              11 ('request')
+            354 LOAD_CONST              12 ('未知错误')
+            356 CALL                     2
+            364 STORE_FAST               8 (error_msg)
+
+125         366 LOAD_CONST              13 (False)
+            368 LOAD_CONST               3 (None)
+            370 LOAD_CONST              14 ('提交失败: ')
+            372 LOAD_FAST                8 (error_msg)
+            374 FORMAT_VALUE             0
+            376 BUILD_STRING             2
+            378 LOAD_CONST              15 (('success', 'text', 'error'))
+            380 BUILD_CONST_KEY_MAP      3
+            382 RETURN_VALUE
+
+127     >>  384 LOAD_FAST                7 (result)
+            386 LOAD_ATTR               21 (NULL|self + get)
+            406 LOAD_CONST              11 ('request')
+            408 CALL                     1
+            416 STORE_FAST               9 (task_id)
+
+130         418 LOAD_FAST                0 (self)
+            420 LOAD_ATTR               10 (base_url)
+            440 FORMAT_VALUE             0
+            442 LOAD_CONST              16 ('/res.php')
+            444 BUILD_STRING             2
+            446 STORE_FAST              10 (result_url)
+
+131         448 LOAD_GLOBAL             23 (NULL + time)
+            458 LOAD_ATTR               22 (time)
+            478 CALL                     0
+            486 STORE_FAST              11 (start_time)
+
+133     >>  488 LOAD_GLOBAL             23 (NULL + time)
+            498 LOAD_ATTR               22 (time)
+            518 CALL                     0
+            526 LOAD_FAST               11 (start_time)
+            528 BINARY_OP               10 (-)
+            532 LOAD_FAST                0 (self)
+            534 LOAD_ATTR               24 (timeout)
+            554 COMPARE_OP               2 (<)
+            558 POP_JUMP_IF_FALSE      169 (to 898)
+
+134         560 LOAD_GLOBAL             23 (NULL + time)
+            570 LOAD_ATTR               26 (sleep)
+            590 LOAD_CONST              17 (3)
+            592 CALL                     1
+            600 POP_TOP
+
+137         602 LOAD_FAST                0 (self)
+            604 LOAD_ATTR               12 (api_key)
+
+138         624 LOAD_CONST              18 ('get')
+
+139         626 LOAD_FAST                9 (task_id)
+
+140         628 LOAD_CONST               6 (1)
+
+136         630 LOAD_CONST              19 (('key', 'action', 'id', 'json'))
+            632 BUILD_CONST_KEY_MAP      4
+            634 STORE_FAST              12 (params)
+
+143         636 LOAD_GLOBAL             15 (NULL + requests)
+            646 LOAD_ATTR               20 (get)
+            666 LOAD_FAST               10 (result_url)
+            668 LOAD_FAST               12 (params)
+            670 LOAD_CONST               8 (30)
+            672 KW_NAMES                20 (('params', 'timeout'))
+            674 CALL                     3
+            682 STORE_FAST               6 (response)
+
+144         684 LOAD_FAST                6 (response)
+            686 LOAD_ATTR               19 (NULL|self + json)
+            706 CALL                     0
+            714 STORE_FAST               7 (result)
+
+146         716 LOAD_FAST                7 (result)
+            718 LOAD_ATTR               21 (NULL|self + get)
+            738 LOAD_CONST              10 ('status')
+            740 CALL                     1
+            748 LOAD_CONST               6 (1)
+            750 COMPARE_OP              40 (==)
+            754 POP_JUMP_IF_FALSE       23 (to 802)
+
+147         756 LOAD_FAST                7 (result)
+            758 LOAD_ATTR               21 (NULL|self + get)
+            778 LOAD_CONST              11 ('request')
+            780 CALL                     1
+            788 STORE_FAST              13 (text)
+
+148         790 LOAD_CONST              21 (True)
+            792 LOAD_FAST               13 (text)
+            794 LOAD_CONST               3 (None)
+            796 LOAD_CONST              15 (('success', 'text', 'error'))
+            798 BUILD_CONST_KEY_MAP      3
+            800 RETURN_VALUE
+
+150     >>  802 LOAD_FAST                7 (result)
+            804 LOAD_ATTR               21 (NULL|self + get)
+            824 LOAD_CONST              11 ('request')
+            826 CALL                     1
+            834 LOAD_CONST              22 ('CAPCHA_NOT_READY')
+            836 COMPARE_OP              40 (==)
+            840 POP_JUMP_IF_FALSE        1 (to 844)
+
+151         842 JUMP_BACKWARD          178 (to 488)
+
+153     >>  844 LOAD_FAST                7 (result)
+            846 LOAD_ATTR               21 (NULL|self + get)
+            866 LOAD_CONST              11 ('request')
+            868 LOAD_CONST              12 ('未知错误')
+            870 CALL                     2
+            878 STORE_FAST               8 (error_msg)
+
+154         880 LOAD_CONST              13 (False)
+            882 LOAD_CONST               3 (None)
+            884 LOAD_CONST              23 ('识别失败: ')
+            886 LOAD_FAST                8 (error_msg)
+            888 FORMAT_VALUE             0
+            890 BUILD_STRING             2
+            892 LOAD_CONST              15 (('success', 'text', 'error'))
+            894 BUILD_CONST_KEY_MAP      3
+            896 RETURN_VALUE
+
+156     >>  898 LOAD_CONST              13 (False)
+            900 LOAD_CONST               3 (None)
+            902 LOAD_CONST              24 ('超时：验证码识别时间超过限制')
+            904 LOAD_CONST              15 (('success', 'text', 'error'))
+            906 BUILD_CONST_KEY_MAP      3
+            908 RETURN_VALUE
+
+108     >>  910 PUSH_EXC_INFO
+            912 WITH_EXCEPT_START
+            914 POP_JUMP_IF_TRUE         1 (to 918)
+            916 RERAISE                  2
+        >>  918 POP_TOP
+            920 POP_EXCEPT
+            922 POP_TOP
+            924 POP_TOP
+            926 EXTENDED_ARG             1
+            928 JUMP_BACKWARD          392 (to 146)
+        >>  930 COPY                     3
+            932 POP_EXCEPT
+            934 RERAISE                  1
+        >>  936 PUSH_EXC_INFO
+
+158         938 LOAD_GLOBAL             28 (Exception)
+            948 CHECK_EXC_MATCH
+            950 POP_JUMP_IF_FALSE       16 (to 984)
+            952 STORE_FAST              14 (e)
+
+159         954 LOAD_CONST              13 (False)
+            956 LOAD_CONST               3 (None)
+            958 LOAD_CONST              25 ('读取图片或连接 2Captcha 失败')
+            960 LOAD_CONST              15 (('success', 'text', 'error'))
+            962 BUILD_CONST_KEY_MAP      3
+            964 SWAP                     2
+            966 POP_EXCEPT
+            968 LOAD_CONST               3 (None)
+            970 STORE_FAST              14 (e)
+            972 DELETE_FAST             14 (e)
+            974 RETURN_VALUE
+        >>  976 LOAD_CONST               3 (None)
+            978 STORE_FAST              14 (e)
+            980 DELETE_FAST             14 (e)
+            982 RERAISE                  1
+
+158     >>  984 RERAISE                  0
+        >>  986 COPY                     3
+            988 POP_EXCEPT
+            990 RERAISE                  1
+ExceptionTable:
+  4 to 26 -> 936 [0]
+  28 to 128 -> 910 [1] lasti
+  130 to 380 -> 936 [0]
+  384 to 798 -> 936 [0]
+  802 to 894 -> 936 [0]
+  898 to 906 -> 936 [0]
+  910 to 918 -> 930 [3] lasti
+  920 to 934 -> 936 [0]
+  936 to 952 -> 986 [1] lasti
+  954 to 962 -> 976 [1] lasti
+  964 to 964 -> 986 [1] lasti
+  976 to 984 -> 986 [1] lasti
+
+Disassembly of <code object get_balance at 0x000001C217792330, file "console\captcha_solver.py", line 161>:
+161           0 RESUME                   0
+
+168           2 NOP
+
+169           4 LOAD_FAST                0 (self)
+              6 LOAD_ATTR                0 (base_url)
+             26 FORMAT_VALUE             0
+             28 LOAD_CONST               1 ('/res.php')
+             30 BUILD_STRING             2
+             32 STORE_FAST               1 (url)
+
+171          34 LOAD_FAST                0 (self)
+             36 LOAD_ATTR                2 (api_key)
+
+172          56 LOAD_CONST               2 ('getbalance')
+
+173          58 LOAD_CONST               3 (1)
+
+170          60 LOAD_CONST               4 (('key', 'action', 'json'))
+             62 BUILD_CONST_KEY_MAP      3
+             64 STORE_FAST               2 (params)
+
+176          66 LOAD_GLOBAL              5 (NULL + requests)
+             76 LOAD_ATTR                6 (get)
+             96 LOAD_FAST                1 (url)
+             98 LOAD_FAST                2 (params)
+            100 LOAD_CONST               5 (30)
+            102 KW_NAMES                 6 (('params', 'timeout'))
+            104 CALL                     3
+            112 STORE_FAST               3 (response)
+
+177         114 LOAD_FAST                3 (response)
+            116 LOAD_ATTR                9 (NULL|self + json)
+            136 CALL                     0
+            144 STORE_FAST               4 (result)
+
+179         146 LOAD_FAST                4 (result)
+            148 LOAD_ATTR                7 (NULL|self + get)
+            168 LOAD_CONST               7 ('status')
+            170 CALL                     1
+            178 LOAD_CONST               3 (1)
+            180 COMPARE_OP              40 (==)
+            184 POP_JUMP_IF_FALSE       33 (to 252)
+
+180         186 LOAD_GLOBAL             11 (NULL + float)
+            196 LOAD_FAST                4 (result)
+            198 LOAD_ATTR                7 (NULL|self + get)
+            218 LOAD_CONST               8 ('request')
+            220 LOAD_CONST               9 (0)
+            222 CALL                     2
+            230 CALL                     1
+            238 STORE_FAST               5 (balance)
+
+181         240 LOAD_CONST              10 (True)
+            242 LOAD_FAST                5 (balance)
+            244 LOAD_CONST              11 (None)
+            246 LOAD_CONST              12 (('success', 'balance', 'error'))
+            248 BUILD_CONST_KEY_MAP      3
+            250 RETURN_VALUE
+
+183     >>  252 LOAD_FAST                4 (result)
+            254 LOAD_ATTR                7 (NULL|self + get)
+            274 LOAD_CONST               8 ('request')
+            276 LOAD_CONST              13 ('未知错误')
+            278 CALL                     2
+            286 STORE_FAST               6 (error_msg)
+
+184         288 LOAD_CONST              14 (False)
+            290 LOAD_CONST              11 (None)
+            292 LOAD_FAST                6 (error_msg)
+            294 LOAD_CONST              12 (('success', 'balance', 'error'))
+            296 BUILD_CONST_KEY_MAP      3
+            298 RETURN_VALUE
+        >>  300 PUSH_EXC_INFO
+
+186         302 LOAD_GLOBAL             12 (Exception)
+            312 CHECK_EXC_MATCH
+            314 POP_JUMP_IF_FALSE       16 (to 348)
+            316 STORE_FAST               7 (e)
+
+187         318 LOAD_CONST              14 (False)
+            320 LOAD_CONST              11 (None)
+            322 LOAD_CONST              15 ('连接 2Captcha 失败或响应无效，请检查网络和密钥')
+            324 LOAD_CONST              12 (('success', 'balance', 'error'))
+            326 BUILD_CONST_KEY_MAP      3
+            328 SWAP                     2
+            330 POP_EXCEPT
+            332 LOAD_CONST              11 (None)
+            334 STORE_FAST               7 (e)
+            336 DELETE_FAST              7 (e)
+            338 RETURN_VALUE
+        >>  340 LOAD_CONST              11 (None)
+            342 STORE_FAST               7 (e)
+            344 DELETE_FAST              7 (e)
+            346 RERAISE                  1
+
+186     >>  348 RERAISE                  0
+        >>  350 COPY                     3
+            352 POP_EXCEPT
+            354 RERAISE                  1
+ExceptionTable:
+  4 to 248 -> 300 [0]
+  252 to 296 -> 300 [0]
+  300 to 316 -> 350 [1] lasti
+  318 to 326 -> 340 [1] lasti
+  328 to 328 -> 350 [1] lasti
+  340 to 348 -> 350 [1] lasti
+
+Disassembly of <code object SignalCaptchaHandler at 0x000001C217B8EF10, file "console\captcha_solver.py", line 190>:
+190           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('SignalCaptchaHandler')
+              8 STORE_NAME               2 (__qualname__)
+
+191          10 LOAD_CONST               1 ('Signal 验证码自动处理器')
+             12 STORE_NAME               3 (__doc__)
+
+193          14 LOAD_CONST               2 (<code object __init__ at 0x000001C217B9A6B0, file "console\captcha_solver.py", line 193>)
+             16 MAKE_FUNCTION            0
+             18 STORE_NAME               4 (__init__)
+
+202          20 LOAD_CONST               3 (<code object detect_captcha at 0x000001C217AFD1A0, file "console\captcha_solver.py", line 202>)
+             22 MAKE_FUNCTION            0
+             24 STORE_NAME               5 (detect_captcha)
+
+225          26 LOAD_CONST               4 (<code object extract_hcaptcha_info at 0x000001C21728C080, file "console\captcha_solver.py", line 225>)
+             28 MAKE_FUNCTION            0
+             30 STORE_NAME               6 (extract_hcaptcha_info)
+
+253          32 LOAD_CONST               5 (<code object _fallback_extract_sitekey at 0x000001C217727EC0, file "console\captcha_solver.py", line 253>)
+             34 MAKE_FUNCTION            0
+             36 STORE_NAME               7 (_fallback_extract_sitekey)
+
+292          38 LOAD_CONST               8 ((None,))
+             40 LOAD_CONST               7 (<code object solve_and_submit at 0x000001C217B42320, file "console\captcha_solver.py", line 292>)
+             42 MAKE_FUNCTION            1 (defaults)
+             44 STORE_NAME               8 (solve_and_submit)
+             46 RETURN_CONST             6 (None)
+
+Disassembly of <code object __init__ at 0x000001C217B9A6B0, file "console\captcha_solver.py", line 193>:
+193           0 RESUME                   0
+
+199           2 LOAD_FAST                1 (device)
+              4 LOAD_FAST                0 (self)
+              6 STORE_ATTR               0 (device)
+
+200          16 LOAD_FAST                2 (solver)
+             18 LOAD_FAST                0 (self)
+             20 STORE_ATTR               1 (solver)
+             30 RETURN_CONST             1 (None)
+
+Disassembly of <code object detect_captcha at 0x000001C217AFD1A0, file "console\captcha_solver.py", line 202>:
+              0 MAKE_CELL                2 (combined)
+
+202           2 RESUME                   0
+
+212           4 LOAD_CONST               1 (' ')
+              6 LOAD_ATTR                1 (NULL|self + join)
+             26 LOAD_FAST                1 (screen)
+             28 LOAD_ATTR                2 (texts)
+             48 CALL                     1
+             56 LOAD_ATTR                5 (NULL|self + lower)
+             76 CALL                     0
+             84 STORE_DEREF              2 (combined)
+
+214          86 LOAD_CONST               2 ('hcaptcha')
+             88 LOAD_DEREF               2 (combined)
+             90 CONTAINS_OP              0
+             92 POP_JUMP_IF_TRUE        28 (to 150)
+             94 LOAD_GLOBAL              7 (NULL + any)
+            104 LOAD_CONST               3 (<code object <genexpr> at 0x000001C217B8EC40, file "console\captcha_solver.py", line 214>)
+            106 MAKE_FUNCTION            0
+            108 LOAD_FAST                1 (screen)
+            110 LOAD_ATTR                8 (ids)
+            130 GET_ITER
+            132 CALL                     0
+            140 CALL                     1
+            148 POP_JUMP_IF_FALSE        5 (to 160)
+
+215     >>  150 LOAD_CONST               4 (True)
+            152 LOAD_CONST               2 ('hcaptcha')
+            154 LOAD_CONST               5 (('has_captcha', 'type'))
+            156 BUILD_CONST_KEY_MAP      2
+            158 RETURN_VALUE
+
+217     >>  160 LOAD_CONST               6 ('recaptcha')
+            162 LOAD_DEREF               2 (combined)
+            164 CONTAINS_OP              0
+            166 POP_JUMP_IF_TRUE        28 (to 224)
+            168 LOAD_GLOBAL              7 (NULL + any)
+            178 LOAD_CONST               7 (<code object <genexpr> at 0x000001C217B8ED30, file "console\captcha_solver.py", line 217>)
+            180 MAKE_FUNCTION            0
+            182 LOAD_FAST                1 (screen)
+            184 LOAD_ATTR                8 (ids)
+            204 GET_ITER
+            206 CALL                     0
+            214 CALL                     1
+            222 POP_JUMP_IF_FALSE        5 (to 234)
+
+218     >>  224 LOAD_CONST               4 (True)
+            226 LOAD_CONST               6 ('recaptcha')
+            228 LOAD_CONST               5 (('has_captcha', 'type'))
+            230 BUILD_CONST_KEY_MAP      2
+            232 RETURN_VALUE
+
+220     >>  234 LOAD_GLOBAL              7 (NULL + any)
+            244 LOAD_CLOSURE             2 (combined)
+            246 BUILD_TUPLE              1
+            248 LOAD_CONST               8 (<code object <genexpr> at 0x000001C217B8EE20, file "console\captcha_solver.py", line 220>)
+            250 MAKE_FUNCTION            8 (closure)
+            252 LOAD_CONST               9 (('captcha', '人机验证', '人機驗證', 'not a robot'))
+            254 GET_ITER
+            256 CALL                     0
+            264 CALL                     1
+            272 POP_JUMP_IF_FALSE        5 (to 284)
+
+221         274 LOAD_CONST               4 (True)
+            276 LOAD_CONST              10 ('unknown')
+            278 LOAD_CONST               5 (('has_captcha', 'type'))
+            280 BUILD_CONST_KEY_MAP      2
+            282 RETURN_VALUE
+
+223     >>  284 LOAD_CONST              11 (False)
+            286 LOAD_CONST              12 (None)
+            288 LOAD_CONST               5 (('has_captcha', 'type'))
+            290 BUILD_CONST_KEY_MAP      2
+            292 RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x000001C217B8EC40, file "console\captcha_solver.py", line 214>:
+214           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                 8 (to 28)
+             12 STORE_FAST               1 (node_id)
+             14 LOAD_CONST               0 ('hcaptcha')
+             16 LOAD_FAST                1 (node_id)
+             18 CONTAINS_OP              0
+             20 YIELD_VALUE              1
+             22 RESUME                   1
+             24 POP_TOP
+             26 JUMP_BACKWARD           10 (to 8)
+        >>   28 END_FOR
+             30 RETURN_CONST             1 (None)
+        >>   32 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             34 RERAISE                  1
+ExceptionTable:
+  4 to 30 -> 32 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217B8ED30, file "console\captcha_solver.py", line 217>:
+217           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                 8 (to 28)
+             12 STORE_FAST               1 (node_id)
+             14 LOAD_CONST               0 ('recaptcha')
+             16 LOAD_FAST                1 (node_id)
+             18 CONTAINS_OP              0
+             20 YIELD_VALUE              1
+             22 RESUME                   1
+             24 POP_TOP
+             26 JUMP_BACKWARD           10 (to 8)
+        >>   28 END_FOR
+             30 RETURN_CONST             1 (None)
+        >>   32 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             34 RERAISE                  1
+ExceptionTable:
+  4 to 30 -> 32 [0] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217B8EE20, file "console\captcha_solver.py", line 220>:
+              0 COPY_FREE_VARS           1
+
+220           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                 8 (to 30)
+             14 STORE_FAST               1 (x)
+             16 LOAD_FAST                1 (x)
+             18 LOAD_DEREF               2 (combined)
+             20 CONTAINS_OP              0
+             22 YIELD_VALUE              1
+             24 RESUME                   1
+             26 POP_TOP
+             28 JUMP_BACKWARD           10 (to 10)
+        >>   30 END_FOR
+             32 RETURN_CONST             0 (None)
+        >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             36 RERAISE                  1
+ExceptionTable:
+  6 to 32 -> 34 [0] lasti
+
+Disassembly of <code object extract_hcaptcha_info at 0x000001C21728C080, file "console\captcha_solver.py", line 225>:
+225           0 RESUME                   0
+
+233           2 NOP
+
+234           4 LOAD_CONST               1 (1)
+              6 LOAD_CONST               2 (('extract_hcaptcha_sitekey_from_webview', 'get_signal_captcha_url'))
+              8 IMPORT_NAME              0 (captcha_extractor)
+             10 IMPORT_FROM              1 (extract_hcaptcha_sitekey_from_webview)
+             12 STORE_FAST               1 (extract_hcaptcha_sitekey_from_webview)
+             14 IMPORT_FROM              2 (get_signal_captcha_url)
+             16 STORE_FAST               2 (get_signal_captcha_url)
+             18 POP_TOP
+
+236          20 LOAD_GLOBAL              7 (NULL + print)
+             30 LOAD_CONST               3 ('[DEBUG] captcha_extractor 导入成功')
+             32 CALL                     1
+             40 POP_TOP
+
+237          42 PUSH_NULL
+             44 LOAD_FAST                1 (extract_hcaptcha_sitekey_from_webview)
+             46 LOAD_FAST                0 (self)
+             48 LOAD_ATTR                8 (device)
+             68 CALL                     1
+             76 STORE_FAST               3 (sitekey)
+
+238          78 LOAD_GLOBAL              7 (NULL + print)
+             88 LOAD_CONST               4 ('[DEBUG] 提取到 sitekey: ')
+             90 LOAD_FAST                3 (sitekey)
+             92 FORMAT_VALUE             0
+             94 BUILD_STRING             2
+             96 CALL                     1
+            104 POP_TOP
+
+241         106 LOAD_FAST                3 (sitekey)
+
+242         108 PUSH_NULL
+            110 LOAD_FAST                2 (get_signal_captcha_url)
+            112 CALL                     0
+
+240         120 LOAD_CONST               5 (('sitekey', 'url'))
+            122 BUILD_CONST_KEY_MAP      2
+            124 RETURN_VALUE
+        >>  126 PUSH_EXC_INFO
+
+244         128 LOAD_GLOBAL             10 (ImportError)
+            138 CHECK_EXC_MATCH
+            140 POP_JUMP_IF_FALSE       40 (to 222)
+            142 STORE_FAST               4 (e)
+
+246         144 LOAD_GLOBAL              7 (NULL + print)
+            154 LOAD_CONST               6 ('[WARN] captcha_extractor 导入失败: ')
+            156 LOAD_FAST                4 (e)
+            158 FORMAT_VALUE             0
+            160 BUILD_STRING             2
+            162 CALL                     1
+            170 POP_TOP
+
+247         172 LOAD_FAST                0 (self)
+            174 LOAD_ATTR               13 (NULL|self + _fallback_extract_sitekey)
+            194 CALL                     0
+            202 SWAP                     2
+            204 POP_EXCEPT
+            206 LOAD_CONST               7 (None)
+            208 STORE_FAST               4 (e)
+            210 DELETE_FAST              4 (e)
+            212 RETURN_VALUE
+        >>  214 LOAD_CONST               7 (None)
+            216 STORE_FAST               4 (e)
+            218 DELETE_FAST              4 (e)
+            220 RERAISE                  1
+
+248     >>  222 LOAD_GLOBAL             14 (Exception)
+            232 CHECK_EXC_MATCH
+            234 POP_JUMP_IF_FALSE       40 (to 316)
+            236 STORE_FAST               4 (e)
+
+250         238 LOAD_GLOBAL              7 (NULL + print)
+            248 LOAD_CONST               8 ('[WARN] sitekey 提取异常: ')
+            250 LOAD_FAST                4 (e)
+            252 FORMAT_VALUE             0
+            254 BUILD_STRING             2
+            256 CALL                     1
+            264 POP_TOP
+
+251         266 LOAD_FAST                0 (self)
+            268 LOAD_ATTR               13 (NULL|self + _fallback_extract_sitekey)
+            288 CALL                     0
+            296 SWAP                     2
+            298 POP_EXCEPT
+            300 LOAD_CONST               7 (None)
+            302 STORE_FAST               4 (e)
+            304 DELETE_FAST              4 (e)
+            306 RETURN_VALUE
+        >>  308 LOAD_CONST               7 (None)
+            310 STORE_FAST               4 (e)
+            312 DELETE_FAST              4 (e)
+            314 RERAISE                  1
+
+248     >>  316 RERAISE                  0
+        >>  318 COPY                     3
+            320 POP_EXCEPT
+            322 RERAISE                  1
+ExceptionTable:
+  4 to 122 -> 126 [0]
+  126 to 142 -> 318 [1] lasti
+  144 to 200 -> 214 [1] lasti
+  202 to 202 -> 318 [1] lasti
+  214 to 236 -> 318 [1] lasti
+  238 to 294 -> 308 [1] lasti
+  296 to 296 -> 318 [1] lasti
+  308 to 316 -> 318 [1] lasti
+
+Disassembly of <code object _fallback_extract_sitekey at 0x000001C217727EC0, file "console\captcha_solver.py", line 253>:
+253           0 RESUME                   0
+
+255           2 NOP
+
+257           4 LOAD_FAST                0 (self)
+              6 LOAD_ATTR                0 (device)
+             26 LOAD_ATTR                3 (NULL|self + hierarchy)
+             46 CALL                     0
+             54 STORE_FAST               1 (hierarchy)
+
+259          56 LOAD_CONST               1 (False)
+             58 STORE_FAST               2 (has_signal)
+
+260          60 LOAD_CONST               1 (False)
+             62 STORE_FAST               3 (has_hcaptcha)
+
+262          64 LOAD_FAST                1 (hierarchy)
+             66 LOAD_ATTR                5 (NULL|self + iter)
+             86 LOAD_CONST               2 ('node')
+             88 CALL                     1
+             96 GET_ITER
+        >>   98 FOR_ITER                91 (to 284)
+            102 STORE_FAST               4 (node)
+
+263         104 LOAD_FAST                4 (node)
+            106 LOAD_ATTR                7 (NULL|self + get)
+            126 LOAD_CONST               3 ('package')
+            128 LOAD_CONST               4 ('')
+            130 CALL                     2
+            138 STORE_FAST               5 (package)
+
+264         140 LOAD_FAST                4 (node)
+            142 LOAD_ATTR                7 (NULL|self + get)
+            162 LOAD_CONST               5 ('text')
+            164 LOAD_CONST               4 ('')
+            166 CALL                     2
+            174 LOAD_ATTR                9 (NULL|self + lower)
+            194 CALL                     0
+            202 STORE_FAST               6 (text)
+
+265         204 LOAD_FAST                4 (node)
+            206 LOAD_ATTR                7 (NULL|self + get)
+            226 LOAD_CONST               6 ('resource-id')
+            228 LOAD_CONST               4 ('')
+            230 CALL                     2
+            238 STORE_FAST               7 (resource_id)
+
+267         240 LOAD_CONST               7 ('thoughtcrime.securesms')
+            242 LOAD_FAST                5 (package)
+            244 CONTAINS_OP              0
+            246 POP_JUMP_IF_FALSE        2 (to 252)
+
+268         248 LOAD_CONST               8 (True)
+            250 STORE_FAST               2 (has_signal)
+
+270     >>  252 LOAD_CONST               9 ('hcaptcha')
+            254 LOAD_FAST                6 (text)
+            256 CONTAINS_OP              0
+            258 POP_JUMP_IF_TRUE         9 (to 278)
+            260 LOAD_CONST               9 ('hcaptcha')
+            262 LOAD_FAST                7 (resource_id)
+            264 CONTAINS_OP              0
+            266 POP_JUMP_IF_TRUE         5 (to 278)
+
+271         268 LOAD_FAST                7 (resource_id)
+            270 LOAD_CONST              10 (('checkbox', 'anchor', 'captcha'))
+            272 CONTAINS_OP              0
+            274 POP_JUMP_IF_TRUE         1 (to 278)
+            276 JUMP_BACKWARD           90 (to 98)
+
+272     >>  278 LOAD_CONST               8 (True)
+            280 STORE_FAST               3 (has_hcaptcha)
+            282 JUMP_BACKWARD           93 (to 98)
+
+262     >>  284 END_FOR
+
+275         286 LOAD_FAST                2 (has_signal)
+            288 POP_JUMP_IF_FALSE       23 (to 336)
+            290 LOAD_FAST                3 (has_hcaptcha)
+            292 POP_JUMP_IF_FALSE       21 (to 336)
+
+276         294 LOAD_CONST              11 ('a5f74b19-9e45-40e0-b45d-47ff91b7a6c2')
+            296 STORE_FAST               8 (sitekey)
+
+277         298 LOAD_GLOBAL             11 (NULL + print)
+            308 LOAD_CONST              12 ('[INFO] 使用 Signal 已知 sitekey: ')
+            310 LOAD_FAST                8 (sitekey)
+            312 FORMAT_VALUE             0
+            314 BUILD_STRING             2
+            316 CALL                     1
+            324 POP_TOP
+
+279         326 LOAD_FAST                8 (sitekey)
+
+280         328 LOAD_CONST              13 ('https://signalcaptchas.org/registration/generate.html')
+
+278         330 LOAD_CONST              14 (('sitekey', 'url'))
+            332 BUILD_CONST_KEY_MAP      2
+            334 RETURN_VALUE
+
+288     >>  336 LOAD_CONST              16 (None)
+
+289         338 LOAD_CONST              13 ('https://signalcaptchas.org/registration/generate.html')
+
+287         340 LOAD_CONST              14 (('sitekey', 'url'))
+            342 BUILD_CONST_KEY_MAP      2
+            344 RETURN_VALUE
+        >>  346 PUSH_EXC_INFO
+
+283         348 LOAD_GLOBAL             12 (Exception)
+            358 CHECK_EXC_MATCH
+            360 POP_JUMP_IF_FALSE       24 (to 410)
+            362 STORE_FAST               9 (e)
+
+284         364 LOAD_GLOBAL             11 (NULL + print)
+            374 LOAD_CONST              15 ('[ERROR] 回退方案失败: ')
+            376 LOAD_FAST                9 (e)
+            378 FORMAT_VALUE             0
+            380 BUILD_STRING             2
+            382 CALL                     1
+            390 POP_TOP
+            392 POP_EXCEPT
+            394 LOAD_CONST              16 (None)
+            396 STORE_FAST               9 (e)
+            398 DELETE_FAST              9 (e)
+            400 JUMP_BACKWARD           33 (to 336)
+        >>  402 LOAD_CONST              16 (None)
+            404 STORE_FAST               9 (e)
+            406 DELETE_FAST              9 (e)
+            408 RERAISE                  1
+
+283     >>  410 RERAISE                  0
+        >>  412 COPY                     3
+            414 POP_EXCEPT
+            416 RERAISE                  1
+ExceptionTable:
+  4 to 274 -> 346 [0]
+  278 to 332 -> 346 [0]
+  346 to 362 -> 412 [1] lasti
+  364 to 390 -> 402 [1] lasti
+  402 to 410 -> 412 [1] lasti
+
+Disassembly of <code object solve_and_submit at 0x000001C217B42320, file "console\captcha_solver.py", line 292>:
+292           0 RESUME                   0
+
+297           2 LOAD_CONST               1 (False)
+              4 LOAD_CONST               2 ('当前 Signal 验证页面的提交方式尚未适配；请在模拟器中手动完成验证。未向 2Captcha 提交付费任务。')
+              6 LOAD_CONST               3 (('success', 'message'))
+              8 BUILD_CONST_KEY_MAP      2
+             10 RETURN_VALUE
+
+Disassembly of <code object test_solver at 0x000001C217D041A0, file "console\captcha_solver.py", line 300>:
+300           0 RESUME                   0
+
+302           2 LOAD_GLOBAL              1 (NULL + CaptchaSolver)
+             12 LOAD_FAST                0 (api_key)
+             14 CALL                     1
+             22 STORE_FAST               1 (solver)
+
+303          24 LOAD_FAST                1 (solver)
+             26 LOAD_ATTR                3 (NULL|self + get_balance)
+             46 CALL                     0
+             54 STORE_FAST               2 (balance)
+
+305          56 LOAD_FAST                2 (balance)
+             58 LOAD_CONST               1 ('success')
+             60 BINARY_SUBSCR
+             64 POP_JUMP_IF_FALSE       30 (to 126)
+
+306          66 LOAD_GLOBAL              5 (NULL + print)
+             76 LOAD_CONST               2 ('✅ 2Captcha 连接成功')
+             78 CALL                     1
+             86 POP_TOP
+
+307          88 LOAD_GLOBAL              5 (NULL + print)
+             98 LOAD_CONST               3 ('💰 账户余额: $')
+            100 LOAD_FAST                2 (balance)
+            102 LOAD_CONST               4 ('balance')
+            104 BINARY_SUBSCR
+            108 LOAD_CONST               5 ('.4f')
+            110 FORMAT_VALUE             4 (with format)
+            112 BUILD_STRING             2
+            114 CALL                     1
+            122 POP_TOP
+
+308         124 RETURN_CONST             6 (True)
+
+310     >>  126 LOAD_GLOBAL              5 (NULL + print)
+            136 LOAD_CONST               7 ('❌ 2Captcha 连接失败: ')
+            138 LOAD_FAST                2 (balance)
+            140 LOAD_CONST               8 ('error')
+            142 BINARY_SUBSCR
+            146 FORMAT_VALUE             0
+            148 BUILD_STRING             2
+            150 CALL                     1
+            158 POP_TOP
+
+311         160 RETURN_CONST             9 (False)

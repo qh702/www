@@ -1,0 +1,473 @@
+Module: console.param_panel
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('业务参数的常驻编辑面板（仿中控参数页：参数直接摆在主页，而不是全藏在弹窗里）。')
+              4 STORE_NAME               0 (__doc__)
+
+  2           6 LOAD_CONST               1 (0)
+              8 LOAD_CONST               2 (None)
+             10 IMPORT_NAME              1 (tkinter)
+             12 STORE_NAME               2 (tk)
+
+  3          14 LOAD_CONST               1 (0)
+             16 LOAD_CONST               3 (('ttk',))
+             18 IMPORT_NAME              1 (tkinter)
+             20 IMPORT_FROM              3 (ttk)
+             22 STORE_NAME               3 (ttk)
+             24 POP_TOP
+
+  5          26 LOAD_CONST               4 ('#101827')
+             28 STORE_NAME               4 (BG)
+
+  6          30 LOAD_CONST               5 ('#192438')
+             32 STORE_NAME               5 (PANEL)
+
+  7          34 LOAD_CONST               6 ('#e8eef8')
+             36 STORE_NAME               6 (FG)
+
+  8          38 LOAD_CONST               7 ('#98abc4')
+             40 STORE_NAME               7 (MUTED)
+
+ 13          42 LOAD_CONST               8 (('count', '注册目标数量', 1, None))
+             44 LOAD_CONST               9 ('create_instance')
+             46 LOAD_CONST              10 ('创建隔离实例')
+             48 LOAD_CONST              11 ('是')
+             50 LOAD_CONST              11 ('是')
+             52 LOAD_CONST              12 ('否')
+             54 BUILD_LIST               2
+             56 BUILD_TUPLE              4
+
+ 14          58 LOAD_CONST              13 (('apk', 'Signal APK 路径', '', None))
+             60 LOAD_CONST              14 (('budget', '本批次总预算', '0', None))
+
+ 15          62 LOAD_CONST              15 (('timeout', '注册超时（秒）', 600, None))
+             64 LOAD_CONST              16 (('nickname', '新账号显示名称', 'Test Account', None))
+
+ 16          66 LOAD_CONST              17 ('release_on_failure')
+             68 LOAD_CONST              18 ('明确失败释放号码')
+             70 LOAD_CONST              11 ('是')
+             72 LOAD_CONST              11 ('是')
+             74 LOAD_CONST              12 ('否')
+             76 BUILD_LIST               2
+             78 BUILD_TUPLE              4
+
+ 12          80 BUILD_LIST               7
+
+ 19          82 LOAD_CONST              19 (('lifetime_limit', '单账号累计上限', 20, None))
+             84 LOAD_CONST              20 ('allocation')
+             86 LOAD_CONST              21 ('分配顺序')
+             88 LOAD_CONST              22 ('顺序')
+             90 LOAD_CONST              22 ('顺序')
+             92 LOAD_CONST              23 ('随机')
+             94 BUILD_LIST               2
+             96 BUILD_TUPLE              4
+
+ 20          98 LOAD_CONST              24 ('send_after_add')
+            100 LOAD_CONST              25 ('加好友后发话术')
+            102 LOAD_CONST              11 ('是')
+            104 LOAD_CONST              11 ('是')
+            106 LOAD_CONST              12 ('否')
+            108 BUILD_LIST               2
+            110 BUILD_TUPLE              4
+            112 LOAD_CONST              26 ('friend_text_strategy')
+            114 LOAD_CONST              27 ('话术取用')
+            116 LOAD_CONST              28 ('话术库轮换')
+            118 LOAD_CONST              28 ('话术库轮换')
+            120 LOAD_CONST              29 ('仅本页输入')
+            122 BUILD_LIST               2
+            124 BUILD_TUPLE              4
+
+ 21         126 LOAD_CONST              30 (('per_account', '每号本批数量', 0, None))
+            128 LOAD_CONST              31 (('cooldown_days', '目标冷却天数', 0, None))
+
+ 22         130 LOAD_CONST              32 (('new_days', '新号判定天数', 3, None))
+            132 LOAD_CONST              33 (('new_quota', '新号每日上限', 5, None))
+
+ 23         134 LOAD_CONST              34 (('rest_every', '每 N 条休息', 0, None))
+            136 LOAD_CONST              35 (('rest_minutes', '休息分钟数', 10, None))
+
+ 24         138 LOAD_CONST              36 (('window_start', '时段开始小时', '', None))
+            140 LOAD_CONST              37 (('window_end', '时段结束小时', '', None))
+
+ 18         142 BUILD_LIST              12
+
+ 27         144 LOAD_CONST              38 ('strategy')
+            146 LOAD_CONST              39 ('话术取用策略')
+            148 LOAD_CONST              22 ('顺序')
+            150 BUILD_LIST               0
+            152 LOAD_CONST              40 (('顺序', '随机', '仅页面输入'))
+            154 LIST_EXTEND              1
+            156 BUILD_TUPLE              4
+            158 LOAD_CONST              41 ('trigger')
+            160 LOAD_CONST              42 ('发送触发条件')
+            162 LOAD_CONST              43 ('立即')
+            164 LOAD_CONST              43 ('立即')
+            166 LOAD_CONST              44 ('上一条消息显示已读')
+            168 BUILD_LIST               2
+            170 BUILD_TUPLE              4
+
+ 28         172 LOAD_CONST              45 ('self_test')
+            174 LOAD_CONST              46 ('目标为自己的笔记')
+            176 LOAD_CONST              12 ('否')
+            178 LOAD_CONST              12 ('否')
+            180 LOAD_CONST              11 ('是')
+            182 BUILD_LIST               2
+            184 BUILD_TUPLE              4
+            186 LOAD_CONST              47 ('replace_draft')
+            188 LOAD_CONST              48 ('覆盖已有草稿')
+            190 LOAD_CONST              12 ('否')
+            192 LOAD_CONST              12 ('否')
+            194 LOAD_CONST              11 ('是')
+            196 BUILD_LIST               2
+            198 BUILD_TUPLE              4
+
+ 29         200 LOAD_CONST              30 (('per_account', '每号本批数量', 0, None))
+            202 LOAD_CONST              31 (('cooldown_days', '目标冷却天数', 0, None))
+
+ 30         204 LOAD_CONST              32 (('new_days', '新号判定天数', 3, None))
+            206 LOAD_CONST              33 (('new_quota', '新号每日上限', 5, None))
+
+ 31         208 LOAD_CONST              34 (('rest_every', '每 N 条休息', 0, None))
+            210 LOAD_CONST              35 (('rest_minutes', '休息分钟数', 10, None))
+
+ 32         212 LOAD_CONST              36 (('window_start', '时段开始小时', '', None))
+            214 LOAD_CONST              37 (('window_end', '时段结束小时', '', None))
+
+ 33         216 LOAD_CONST              49 (('trigger_timeout', '等待已读超时（秒）', 300, None))
+            218 LOAD_CONST              50 (('previous_message', '待核对原文', '', None))
+
+ 26         220 BUILD_LIST              14
+
+ 36         222 LOAD_CONST              51 ('modify_name')
+            224 LOAD_CONST              52 ('修改昵称')
+            226 LOAD_CONST              11 ('是')
+            228 LOAD_CONST              11 ('是')
+            230 LOAD_CONST              12 ('否')
+            232 BUILD_LIST               2
+            234 BUILD_TUPLE              4
+            236 LOAD_CONST              53 ('modify_signature')
+            238 LOAD_CONST              54 ('修改简介')
+            240 LOAD_CONST              12 ('否')
+            242 LOAD_CONST              11 ('是')
+            244 LOAD_CONST              12 ('否')
+            246 BUILD_LIST               2
+            248 BUILD_TUPLE              4
+
+ 37         250 LOAD_CONST              55 ('modify_avatar')
+            252 LOAD_CONST              56 ('修改头像')
+            254 LOAD_CONST              12 ('否')
+            256 LOAD_CONST              11 ('是')
+            258 LOAD_CONST              12 ('否')
+            260 BUILD_LIST               2
+            262 BUILD_TUPLE              4
+            264 LOAD_CONST              38 ('strategy')
+            266 LOAD_CONST              57 ('素材分配策略')
+            268 LOAD_CONST              22 ('顺序')
+            270 LOAD_CONST              22 ('顺序')
+            272 LOAD_CONST              23 ('随机')
+            274 BUILD_LIST               2
+            276 BUILD_TUPLE              4
+
+ 38         278 LOAD_CONST              58 (('name_file', '昵称 TXT', '', None))
+            280 LOAD_CONST              59 (('signature_file', '简介 TXT', '', None))
+
+ 39         282 LOAD_CONST              60 (('avatar_dir', '头像文件夹', '', None))
+            284 LOAD_CONST              61 (('signature', '固定简介（无 TXT 时）', '', None))
+
+ 35         286 BUILD_LIST               8
+
+ 42         288 LOAD_CONST              62 ('evidence')
+            290 LOAD_CONST              63 ('保存证据截图')
+            292 LOAD_CONST              11 ('是')
+            294 LOAD_CONST              11 ('是')
+            296 BUILD_LIST               1
+            298 BUILD_TUPLE              4
+
+ 41         300 BUILD_LIST               1
+
+ 11         302 LOAD_CONST              64 (('register', 'friend', 'message', 'profile', 'check'))
+            304 BUILD_CONST_KEY_MAP      5
+            306 STORE_NAME               8 (PARAMS)
+
+ 45         308 BUILD_LIST               0
+            310 LOAD_CONST              65 ((('delay_min', '操作最小间隔（秒）', 1, None), ('delay_max', '操作最大间隔（秒）', 3, None), ('safe_retries', '未提交前安全重试', 1, None)))
+            312 LIST_EXTEND              1
+            314 STORE_NAME               9 (COMMON)
+
+ 49         316 LOAD_CONST              66 (<code object render_param_panel at 0x000001C21728C080, file "console\param_panel.py", line 49>)
+            318 MAKE_FUNCTION            0
+            320 STORE_NAME              10 (render_param_panel)
+
+ 76         322 LOAD_CONST              67 (<code object save_param_panel at 0x000001C2177237F0, file "console\param_panel.py", line 76>)
+            324 MAKE_FUNCTION            0
+            326 STORE_NAME              11 (save_param_panel)
+            328 RETURN_CONST             2 (None)
+
+Disassembly of <code object render_param_panel at 0x000001C21728C080, file "console\param_panel.py", line 49>:
+              0 MAKE_CELL                6 (old)
+              2 MAKE_CELL                7 (vars_)
+
+ 49           4 RESUME                   0
+
+ 51           6 LOAD_FAST                0 (app)
+              8 LOAD_ATTR                0 (store)
+             28 LOAD_ATTR                3 (NULL|self + setting)
+             48 LOAD_CONST               1 ('job_options_')
+             50 LOAD_FAST                2 (kind)
+             52 BINARY_OP                0 (+)
+             56 BUILD_MAP                0
+             58 CALL                     2
+             66 STORE_DEREF              6 (old)
+
+ 52          68 BUILD_MAP                0
+             70 STORE_DEREF              7 (vars_)
+
+ 54          72 LOAD_CONST              10 ((2,))
+             74 LOAD_CLOSURE             6 (old)
+             76 LOAD_CLOSURE             7 (vars_)
+             78 BUILD_TUPLE              2
+             80 LOAD_CONST               2 (<code object add_rows at 0x000001C2177D4CF0, file "console\param_panel.py", line 54>)
+             82 MAKE_FUNCTION            9 (defaults, closure)
+             84 STORE_FAST               3 (add_rows)
+
+ 68          86 LOAD_GLOBAL              5 (NULL + ttk)
+             96 LOAD_ATTR                6 (LabelFrame)
+            116 LOAD_FAST                1 (parent)
+            118 LOAD_CONST               3 ('任务节奏（常驻参数，改完点“保存参数”）')
+            120 LOAD_CONST               4 (8)
+            122 KW_NAMES                 5 (('text', 'padding'))
+            124 CALL                     3
+            132 STORE_FAST               4 (box)
+
+ 69         134 LOAD_FAST                4 (box)
+            136 LOAD_ATTR                9 (NULL|self + pack)
+            156 LOAD_CONST               6 ('x')
+            158 LOAD_CONST               7 ((4, 6))
+            160 KW_NAMES                 8 (('fill', 'pady'))
+            162 CALL                     2
+            170 POP_TOP
+
+ 70         172 LOAD_GLOBAL              5 (NULL + ttk)
+            182 LOAD_ATTR               10 (Frame)
+            202 LOAD_FAST                4 (box)
+            204 CALL                     1
+            212 STORE_FAST               5 (grid)
+
+ 71         214 LOAD_FAST                5 (grid)
+            216 LOAD_ATTR                9 (NULL|self + pack)
+            236 LOAD_CONST               6 ('x')
+            238 KW_NAMES                 9 (('fill',))
+            240 CALL                     1
+            248 POP_TOP
+
+ 72         250 PUSH_NULL
+            252 LOAD_FAST                3 (add_rows)
+            254 LOAD_FAST                5 (grid)
+            256 LOAD_GLOBAL             12 (COMMON)
+            266 LOAD_GLOBAL             14 (PARAMS)
+            276 LOAD_ATTR               17 (NULL|self + get)
+            296 LOAD_FAST                2 (kind)
+            298 BUILD_LIST               0
+            300 CALL                     2
+            308 BINARY_OP                0 (+)
+            312 CALL                     2
+            320 POP_TOP
+
+ 73         322 LOAD_DEREF               7 (vars_)
+            324 RETURN_VALUE
+
+Disassembly of <code object add_rows at 0x000001C2177D4CF0, file "console\param_panel.py", line 54>:
+              0 COPY_FREE_VARS           2
+
+ 54           2 RESUME                   0
+
+ 55           4 LOAD_GLOBAL              1 (NULL + enumerate)
+             14 LOAD_FAST                1 (rows)
+             16 CALL                     1
+             24 GET_ITER
+        >>   26 FOR_ITER               235 (to 500)
+             30 UNPACK_SEQUENCE          2
+             34 STORE_FAST               3 (index)
+             36 STORE_FAST               4 (spec)
+
+ 56          38 LOAD_FAST                4 (spec)
+             40 UNPACK_SEQUENCE          4
+             44 STORE_FAST               5 (key)
+             46 STORE_FAST               6 (label)
+             48 STORE_FAST               7 (default)
+             50 STORE_FAST               8 (choices)
+
+ 57          52 LOAD_GLOBAL              3 (NULL + divmod)
+             62 LOAD_FAST                3 (index)
+             64 LOAD_FAST                2 (columns)
+             66 CALL                     2
+             74 UNPACK_SEQUENCE          2
+             78 STORE_FAST               9 (row)
+             80 STORE_FAST              10 (col)
+
+ 58          82 LOAD_GLOBAL              5 (NULL + ttk)
+             92 LOAD_ATTR                6 (Frame)
+            112 LOAD_FAST                0 (frame)
+            114 CALL                     1
+            122 STORE_FAST              11 (cell)
+
+ 59         124 LOAD_FAST               11 (cell)
+            126 LOAD_ATTR                9 (NULL|self + grid)
+            146 LOAD_FAST                9 (row)
+            148 LOAD_FAST               10 (col)
+            150 LOAD_CONST               1 ('ew')
+            152 LOAD_CONST               2 (6)
+            154 LOAD_CONST               3 (3)
+            156 KW_NAMES                 4 (('row', 'column', 'sticky', 'padx', 'pady'))
+            158 CALL                     5
+            166 POP_TOP
+
+ 60         168 LOAD_GLOBAL              5 (NULL + ttk)
+            178 LOAD_ATTR               10 (Label)
+            198 LOAD_FAST               11 (cell)
+            200 LOAD_FAST                6 (label)
+            202 LOAD_CONST               5 (17)
+            204 LOAD_CONST               6 ('Muted.TLabel')
+            206 KW_NAMES                 7 (('text', 'width', 'style'))
+            208 CALL                     4
+            216 LOAD_ATTR               13 (NULL|self + pack)
+            236 LOAD_CONST               8 ('left')
+            238 KW_NAMES                 9 (('side',))
+            240 CALL                     1
+            248 POP_TOP
+
+ 61         250 LOAD_GLOBAL             15 (NULL + tk)
+            260 LOAD_ATTR               16 (StringVar)
+            280 LOAD_GLOBAL             19 (NULL + str)
+            290 LOAD_DEREF              14 (old)
+            292 LOAD_ATTR               21 (NULL|self + get)
+            312 LOAD_FAST                5 (key)
+            314 LOAD_FAST                7 (default)
+            316 CALL                     2
+            324 CALL                     1
+            332 KW_NAMES                10 (('value',))
+            334 CALL                     1
+            342 STORE_FAST              12 (var)
+
+ 62         344 LOAD_FAST                8 (choices)
+            346 POP_JUMP_IF_FALSE       26 (to 400)
+            348 LOAD_GLOBAL              5 (NULL + ttk)
+            358 LOAD_ATTR               22 (Combobox)
+            378 LOAD_FAST               11 (cell)
+            380 LOAD_FAST               12 (var)
+            382 LOAD_FAST                8 (choices)
+            384 LOAD_CONST              11 ('readonly')
+            386 LOAD_CONST              12 (14)
+            388 KW_NAMES                13 (('textvariable', 'values', 'state', 'width'))
+            390 CALL                     5
+            398 JUMP_FORWARD            23 (to 446)
+        >>  400 LOAD_GLOBAL              5 (NULL + ttk)
+            410 LOAD_ATTR               24 (Entry)
+            430 LOAD_FAST               11 (cell)
+            432 LOAD_FAST               12 (var)
+            434 LOAD_CONST              14 (16)
+            436 KW_NAMES                15 (('textvariable', 'width'))
+            438 CALL                     3
+        >>  446 STORE_FAST              13 (widget)
+
+ 63         448 LOAD_FAST               13 (widget)
+            450 LOAD_ATTR               13 (NULL|self + pack)
+            470 LOAD_CONST               8 ('left')
+            472 LOAD_CONST              16 ('x')
+            474 LOAD_CONST              17 (True)
+            476 KW_NAMES                18 (('side', 'fill', 'expand'))
+            478 CALL                     3
+            486 POP_TOP
+
+ 64         488 LOAD_FAST               12 (var)
+            490 LOAD_DEREF              15 (vars_)
+            492 LOAD_FAST                5 (key)
+            494 STORE_SUBSCR
+            498 JUMP_BACKWARD          237 (to 26)
+
+ 55     >>  500 END_FOR
+
+ 65         502 LOAD_FAST                0 (frame)
+            504 LOAD_ATTR               27 (NULL|self + columnconfigure)
+            524 LOAD_CONST              19 (0)
+            526 LOAD_CONST              20 (1)
+            528 KW_NAMES                21 (('weight',))
+            530 CALL                     2
+            538 POP_TOP
+
+ 66         540 LOAD_FAST                0 (frame)
+            542 LOAD_ATTR               27 (NULL|self + columnconfigure)
+            562 LOAD_CONST              20 (1)
+            564 LOAD_CONST              20 (1)
+            566 KW_NAMES                21 (('weight',))
+            568 CALL                     2
+            576 POP_TOP
+            578 RETURN_CONST             0 (None)
+
+Disassembly of <code object save_param_panel at 0x000001C2177237F0, file "console\param_panel.py", line 76>:
+ 76           0 RESUME                   0
+
+ 77           2 LOAD_GLOBAL              1 (NULL + dict)
+             12 LOAD_FAST                0 (app)
+             14 LOAD_ATTR                2 (store)
+             34 LOAD_ATTR                5 (NULL|self + setting)
+             54 LOAD_CONST               1 ('job_options_')
+             56 LOAD_FAST                1 (kind)
+             58 BINARY_OP                0 (+)
+             62 BUILD_MAP                0
+             64 CALL                     2
+             72 CALL                     1
+             80 STORE_FAST               3 (options)
+
+ 78          82 LOAD_FAST                2 (vars_)
+             84 LOAD_ATTR                7 (NULL|self + items)
+            104 CALL                     0
+            112 GET_ITER
+        >>  114 FOR_ITER                38 (to 194)
+            118 UNPACK_SEQUENCE          2
+            122 STORE_FAST               4 (key)
+            124 STORE_FAST               5 (var)
+
+ 79         126 LOAD_FAST                5 (var)
+            128 LOAD_ATTR                9 (NULL|self + get)
+            148 CALL                     0
+            156 LOAD_ATTR               11 (NULL|self + strip)
+            176 CALL                     0
+            184 LOAD_FAST                3 (options)
+            186 LOAD_FAST                4 (key)
+            188 STORE_SUBSCR
+            192 JUMP_BACKWARD           40 (to 114)
+
+ 78     >>  194 END_FOR
+
+ 80         196 LOAD_CONST               2 (('delay_min', 'delay_max'))
+            198 GET_ITER
+        >>  200 FOR_ITER                29 (to 262)
+            204 STORE_FAST               4 (key)
+
+ 81         206 LOAD_GLOBAL             13 (NULL + float)
+            216 LOAD_FAST                3 (options)
+            218 LOAD_ATTR                9 (NULL|self + get)
+            238 LOAD_FAST                4 (key)
+            240 LOAD_CONST               3 (0)
+            242 CALL                     2
+            250 CALL                     1
+            258 POP_TOP
+            260 JUMP_BACKWARD           31 (to 200)
+
+ 80     >>  262 END_FOR
+
+ 82         264 LOAD_FAST                0 (app)
+            266 LOAD_ATTR                2 (store)
+            286 LOAD_ATTR               15 (NULL|self + set_setting)
+            306 LOAD_CONST               1 ('job_options_')
+            308 LOAD_FAST                1 (kind)
+            310 BINARY_OP                0 (+)
+            314 LOAD_FAST                3 (options)
+            316 CALL                     2
+            324 POP_TOP
+
+ 83         326 LOAD_FAST                3 (options)
+            328 RETURN_VALUE

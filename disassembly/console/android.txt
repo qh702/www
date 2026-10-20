@@ -1,0 +1,1179 @@
+Module: console.android
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 (0)
+              4 LOAD_CONST               1 (None)
+              6 IMPORT_NAME              0 (re)
+              8 STORE_NAME               0 (re)
+
+  2          10 LOAD_CONST               0 (0)
+             12 LOAD_CONST               1 (None)
+             14 IMPORT_NAME              1 (subprocess)
+             16 STORE_NAME               1 (subprocess)
+
+  3          18 LOAD_CONST               0 (0)
+             20 LOAD_CONST               1 (None)
+             22 IMPORT_NAME              2 (xml.etree.ElementTree)
+             24 IMPORT_FROM              3 (etree)
+             26 SWAP                     2
+             28 POP_TOP
+             30 IMPORT_FROM              4 (ElementTree)
+             32 STORE_NAME               5 (ET)
+             34 POP_TOP
+
+  4          36 LOAD_CONST               0 (0)
+             38 LOAD_CONST               1 (None)
+             40 IMPORT_NAME              6 (json)
+             42 STORE_NAME               6 (json)
+
+  5          44 LOAD_CONST               0 (0)
+             46 LOAD_CONST               1 (None)
+             48 IMPORT_NAME              7 (uuid)
+             50 STORE_NAME               7 (uuid)
+
+  6          52 LOAD_CONST               0 (0)
+             54 LOAD_CONST               2 (('Path',))
+             56 IMPORT_NAME              8 (pathlib)
+             58 IMPORT_FROM              9 (Path)
+             60 STORE_NAME               9 (Path)
+             62 POP_TOP
+
+  8          64 LOAD_CONST               3 (<code object launcher_component at 0x000001C217AD4D50, file "console\android.py", line 8>)
+             66 MAKE_FUNCTION            0
+             68 STORE_NAME              10 (launcher_component)
+
+ 14          70 PUSH_NULL
+             72 LOAD_BUILD_CLASS
+             74 LOAD_CONST               4 (<code object Android at 0x000001C217B9E2A0, file "console\android.py", line 14>)
+             76 MAKE_FUNCTION            0
+             78 LOAD_CONST               5 ('Android')
+             80 CALL                     2
+             88 STORE_NAME              11 (Android)
+             90 RETURN_CONST             1 (None)
+
+Disassembly of <code object launcher_component at 0x000001C217AD4D50, file "console\android.py", line 8>:
+  8           0 RESUME                   0
+
+  9           2 LOAD_FAST                0 (output)
+              4 LOAD_ATTR                1 (NULL|self + splitlines)
+             24 CALL                     0
+             32 GET_ITER
+             34 LOAD_FAST_AND_CLEAR      2 (line)
+             36 SWAP                     2
+             38 BUILD_LIST               0
+             40 SWAP                     2
+        >>   42 FOR_ITER                77 (to 200)
+             46 STORE_FAST               2 (line)
+             48 LOAD_GLOBAL              3 (NULL + re)
+             58 LOAD_ATTR                4 (fullmatch)
+             78 LOAD_GLOBAL              3 (NULL + re)
+             88 LOAD_ATTR                6 (escape)
+            108 LOAD_FAST                1 (package)
+            110 CALL                     1
+            118 LOAD_CONST               1 ('/[A-Za-z0-9_.$]+')
+            120 BINARY_OP                0 (+)
+            124 LOAD_FAST                2 (line)
+            126 LOAD_ATTR                9 (NULL|self + strip)
+            146 CALL                     0
+            154 CALL                     2
+            162 POP_JUMP_IF_TRUE         1 (to 166)
+            164 JUMP_BACKWARD           62 (to 42)
+        >>  166 LOAD_FAST                2 (line)
+            168 LOAD_ATTR                9 (NULL|self + strip)
+            188 CALL                     0
+            196 LIST_APPEND              2
+            198 JUMP_BACKWARD           79 (to 42)
+        >>  200 END_FOR
+            202 STORE_FAST               3 (candidates)
+            204 STORE_FAST               2 (line)
+
+ 10         206 LOAD_GLOBAL             11 (NULL + len)
+            216 LOAD_FAST                3 (candidates)
+            218 CALL                     1
+            226 LOAD_CONST               2 (1)
+            228 COMPARE_OP              55 (!=)
+            232 POP_JUMP_IF_FALSE       11 (to 256)
+            234 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            244 LOAD_CONST               3 ('无法唯一解析目标 App 的启动入口，未执行启动')
+            246 CALL                     1
+            254 RAISE_VARARGS            1
+
+ 11     >>  256 LOAD_FAST                3 (candidates)
+            258 LOAD_CONST               4 (0)
+            260 BINARY_SUBSCR
+            264 RETURN_VALUE
+        >>  266 SWAP                     2
+            268 POP_TOP
+
+  9         270 SWAP                     2
+            272 STORE_FAST               2 (line)
+            274 RERAISE                  0
+ExceptionTable:
+  38 to 162 -> 266 [2]
+  166 to 200 -> 266 [2]
+
+Disassembly of <code object Android at 0x000001C217B9E2A0, file "console\android.py", line 14>:
+ 14           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('Android')
+              8 STORE_NAME               2 (__qualname__)
+
+ 15          10 LOAD_CONST              16 (('', '', 30))
+             12 LOAD_CONST               1 (<code object __init__ at 0x000001C217405200, file "console\android.py", line 15>)
+             14 MAKE_FUNCTION            1 (defaults)
+             16 STORE_NAME               3 (__init__)
+
+ 20          18 LOAD_CONST              17 ((False, None))
+             20 LOAD_CONST               3 (<code object run at 0x000001C21772BF90, file "console\android.py", line 20>)
+             22 MAKE_FUNCTION            1 (defaults)
+             24 STORE_NAME               4 (run)
+
+ 36          26 LOAD_CONST               4 (<code object device at 0x000001C217B0DDF0, file "console\android.py", line 36>)
+             28 MAKE_FUNCTION            0
+             30 STORE_NAME               5 (device)
+
+ 43          32 LOAD_CONST               5 (<code object devices at 0x000001C21728B210, file "console\android.py", line 43>)
+             34 MAKE_FUNCTION            0
+             36 STORE_NAME               6 (devices)
+
+ 55          38 LOAD_CONST               6 (<code object connect at 0x000001C217B51A70, file "console\android.py", line 55>)
+             40 MAKE_FUNCTION            0
+             42 STORE_NAME               7 (connect)
+
+ 60          44 LOAD_CONST              18 (('',))
+             46 LOAD_CONST               7 (<code object manage at 0x000001C217728FD0, file "console\android.py", line 60>)
+             48 MAKE_FUNCTION            1 (defaults)
+             50 STORE_NAME               8 (manage)
+
+ 72          52 LOAD_CONST               2 (None)
+             54 LOAD_CONST               8 (('timeout',))
+             56 BUILD_CONST_KEY_MAP      1
+             58 LOAD_CONST               9 (<code object shell at 0x000001C2174057A0, file "console\android.py", line 72>)
+             60 MAKE_FUNCTION            2 (kwdefaults)
+             62 STORE_NAME               9 (shell)
+
+ 75          64 LOAD_CONST              10 (<code object install at 0x000001C2176B6550, file "console\android.py", line 75>)
+             66 MAKE_FUNCTION            0
+             68 STORE_NAME              10 (install)
+
+ 83          70 LOAD_CONST              11 (<code object launch at 0x000001C2176B63A0, file "console\android.py", line 83>)
+             72 MAKE_FUNCTION            0
+             74 STORE_NAME              11 (launch)
+
+ 92          76 LOAD_CONST              12 (<code object text at 0x000001C2176E1F10, file "console\android.py", line 92>)
+             78 MAKE_FUNCTION            0
+             80 STORE_NAME              12 (text)
+
+109          82 LOAD_CONST              13 (<code object hierarchy at 0x000001C217392E60, file "console\android.py", line 109>)
+             84 MAKE_FUNCTION            0
+             86 STORE_NAME              13 (hierarchy)
+
+120          88 LOAD_CONST              14 (<code object locate at 0x000001C2171F52D0, file "console\android.py", line 120>)
+             90 MAKE_FUNCTION            0
+             92 STORE_NAME              14 (locate)
+
+131          94 LOAD_CONST              15 (<code object screenshot at 0x000001C217D041A0, file "console\android.py", line 131>)
+             96 MAKE_FUNCTION            0
+             98 STORE_NAME              15 (screenshot)
+            100 RETURN_CONST             2 (None)
+
+Disassembly of <code object __init__ at 0x000001C217405200, file "console\android.py", line 15>:
+ 15           0 RESUME                   0
+
+ 16           2 LOAD_FAST                1 (adb)
+              4 LOAD_FAST                0 (self)
+              6 STORE_ATTR               0 (adb)
+
+ 17          16 LOAD_FAST                2 (manager)
+             18 LOAD_FAST                0 (self)
+             20 STORE_ATTR               1 (manager)
+
+ 18          30 LOAD_FAST                3 (timeout)
+             32 LOAD_FAST                0 (self)
+             34 STORE_ATTR               2 (timeout)
+             44 RETURN_CONST             0 (None)
+
+Disassembly of <code object run at 0x000001C21772BF90, file "console\android.py", line 20>:
+ 20           0 RESUME                   0
+
+ 21           2 LOAD_FAST                3 (timeout)
+              4 COPY                     1
+              6 POP_JUMP_IF_TRUE        12 (to 32)
+              8 POP_TOP
+             10 LOAD_FAST                0 (self)
+             12 LOAD_ATTR                0 (timeout)
+        >>   32 STORE_FAST               4 (limit)
+
+ 22          34 NOP
+
+ 23          36 LOAD_GLOBAL              3 (NULL + subprocess)
+             46 LOAD_ATTR                4 (run)
+             66 LOAD_FAST                1 (args)
+             68 GET_ITER
+             70 LOAD_FAST_AND_CLEAR      5 (a)
+             72 SWAP                     2
+             74 BUILD_LIST               0
+             76 SWAP                     2
+        >>   78 FOR_ITER                13 (to 108)
+             82 STORE_FAST               5 (a)
+             84 LOAD_GLOBAL              7 (NULL + str)
+             94 LOAD_FAST                5 (a)
+             96 CALL                     1
+            104 LIST_APPEND              2
+            106 JUMP_BACKWARD           15 (to 78)
+        >>  108 END_FOR
+            110 SWAP                     2
+            112 STORE_FAST               5 (a)
+            114 LOAD_CONST               1 (True)
+
+ 24         116 LOAD_FAST                4 (limit)
+
+ 25         118 LOAD_GLOBAL              9 (NULL + getattr)
+            128 LOAD_GLOBAL              2 (subprocess)
+            138 LOAD_CONST               2 ('CREATE_NO_WINDOW')
+            140 LOAD_CONST               3 (0)
+            142 CALL                     3
+
+ 23         150 KW_NAMES                 4 (('capture_output', 'timeout', 'creationflags'))
+            152 CALL                     4
+            160 STORE_FAST               6 (result)
+
+ 32         162 LOAD_FAST                6 (result)
+            164 LOAD_ATTR               22 (returncode)
+            184 POP_JUMP_IF_FALSE       55 (to 296)
+
+ 33         186 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            196 LOAD_FAST                6 (result)
+            198 LOAD_ATTR               24 (stderr)
+            218 COPY                     1
+            220 POP_JUMP_IF_TRUE        12 (to 246)
+            222 POP_TOP
+            224 LOAD_FAST                6 (result)
+            226 LOAD_ATTR               26 (stdout)
+        >>  246 LOAD_ATTR               29 (NULL|self + decode)
+            266 LOAD_CONST              11 ('utf-8')
+            268 LOAD_CONST              12 ('replace')
+            270 KW_NAMES                13 (('errors',))
+            272 CALL                     2
+            280 LOAD_CONST               0 (None)
+            282 LOAD_CONST              14 (1500)
+            284 BINARY_SLICE
+            286 CALL                     1
+            294 RAISE_VARARGS            1
+
+ 34     >>  296 LOAD_FAST                2 (binary)
+            298 POP_JUMP_IF_FALSE       12 (to 324)
+            300 LOAD_FAST                6 (result)
+            302 LOAD_ATTR               26 (stdout)
+            322 RETURN_VALUE
+        >>  324 LOAD_FAST                6 (result)
+            326 LOAD_ATTR               26 (stdout)
+            346 LOAD_ATTR               29 (NULL|self + decode)
+            366 LOAD_CONST              11 ('utf-8')
+            368 LOAD_CONST              12 ('replace')
+            370 KW_NAMES                13 (('errors',))
+            372 CALL                     2
+            380 LOAD_ATTR               31 (NULL|self + strip)
+            400 CALL                     0
+            408 RETURN_VALUE
+        >>  410 SWAP                     2
+            412 POP_TOP
+
+ 23         414 SWAP                     2
+            416 STORE_FAST               5 (a)
+            418 RERAISE                  0
+        >>  420 PUSH_EXC_INFO
+
+ 26         422 LOAD_GLOBAL              2 (subprocess)
+            432 LOAD_ATTR               10 (TimeoutExpired)
+            452 CHECK_EXC_MATCH
+            454 POP_JUMP_IF_FALSE       51 (to 558)
+            456 POP_TOP
+
+ 29         458 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            468 LOAD_CONST               5 ('ADB 命令超时（')
+            470 LOAD_FAST                4 (limit)
+            472 FORMAT_VALUE             0
+            474 LOAD_CONST               6 (' 秒）：')
+            476 LOAD_CONST               7 (' ')
+            478 LOAD_ATTR               15 (NULL|self + join)
+            498 LOAD_GLOBAL             17 (NULL + map)
+            508 LOAD_GLOBAL              6 (str)
+            518 LOAD_FAST                1 (args)
+            520 LOAD_CONST               8 (1)
+            522 LOAD_CONST               9 (4)
+            524 BINARY_SLICE
+            526 CALL                     2
+            534 CALL                     1
+            542 FORMAT_VALUE             0
+            544 BUILD_STRING             4
+            546 CALL                     1
+            554 LOAD_CONST               0 (None)
+            556 RAISE_VARARGS            2
+
+ 30     >>  558 LOAD_GLOBAL             18 (FileNotFoundError)
+            568 CHECK_EXC_MATCH
+            570 POP_JUMP_IF_FALSE       13 (to 598)
+            572 POP_TOP
+
+ 31         574 LOAD_GLOBAL             21 (NULL + ValueError)
+            584 LOAD_CONST              10 ('找不到 ADB 程序，请在系统设置中重新选择 adb.exe')
+            586 CALL                     1
+            594 LOAD_CONST               0 (None)
+            596 RAISE_VARARGS            2
+
+ 30     >>  598 RERAISE                  0
+        >>  600 COPY                     3
+            602 POP_EXCEPT
+            604 RERAISE                  1
+ExceptionTable:
+  36 to 72 -> 420 [0]
+  74 to 108 -> 410 [4]
+  110 to 160 -> 420 [0]
+  410 to 418 -> 420 [0]
+  420 to 598 -> 600 [1] lasti
+
+Disassembly of <code object device at 0x000001C217B0DDF0, file "console\android.py", line 36>:
+ 36           0 RESUME                   0
+
+ 37           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (adb)
+             24 POP_JUMP_IF_FALSE       35 (to 96)
+             26 LOAD_GLOBAL              3 (NULL + Path)
+             36 LOAD_FAST                0 (self)
+             38 LOAD_ATTR                0 (adb)
+             58 CALL                     1
+             66 LOAD_ATTR                5 (NULL|self + is_file)
+             86 CALL                     0
+             94 POP_JUMP_IF_TRUE        11 (to 118)
+
+ 38     >>   96 LOAD_GLOBAL              7 (NULL + ValueError)
+            106 LOAD_CONST               1 ('请在系统设置中选择 adb.exe')
+            108 CALL                     1
+            116 RAISE_VARARGS            1
+
+ 39     >>  118 LOAD_FAST                1 (serial)
+            120 POP_JUMP_IF_FALSE       17 (to 156)
+            122 LOAD_FAST                1 (serial)
+            124 LOAD_ATTR                9 (NULL|self + startswith)
+            144 LOAD_CONST               2 ('-')
+            146 CALL                     1
+            154 POP_JUMP_IF_FALSE       11 (to 178)
+
+ 40     >>  156 LOAD_GLOBAL              7 (NULL + ValueError)
+            166 LOAD_CONST               3 ('设备序列号无效')
+            168 CALL                     1
+            176 RAISE_VARARGS            1
+
+ 41     >>  178 PUSH_NULL
+            180 LOAD_FAST                0 (self)
+            182 LOAD_ATTR               10 (run)
+            202 LOAD_FAST                0 (self)
+            204 LOAD_ATTR                0 (adb)
+            224 LOAD_CONST               4 ('-s')
+            226 LOAD_FAST                1 (serial)
+            228 BUILD_LIST               3
+            230 LOAD_FAST                2 (args)
+            232 LIST_EXTEND              1
+            234 BUILD_TUPLE              1
+            236 BUILD_MAP                0
+            238 LOAD_FAST                3 (kw)
+            240 DICT_MERGE               1
+            242 CALL_FUNCTION_EX         1
+            244 RETURN_VALUE
+
+Disassembly of <code object devices at 0x000001C21728B210, file "console\android.py", line 43>:
+ 43           0 RESUME                   0
+
+ 44           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (adb)
+             24 POP_JUMP_IF_TRUE        11 (to 48)
+
+ 45          26 LOAD_GLOBAL              3 (NULL + ValueError)
+             36 LOAD_CONST               1 ('未配置 ADB')
+             38 CALL                     1
+             46 RAISE_VARARGS            1
+
+ 46     >>   48 LOAD_FAST                0 (self)
+             50 LOAD_ATTR                5 (NULL|self + run)
+             70 LOAD_FAST                0 (self)
+             72 LOAD_ATTR                0 (adb)
+             92 LOAD_CONST               2 ('devices')
+             94 LOAD_CONST               3 ('-l')
+             96 BUILD_LIST               3
+             98 CALL                     1
+            106 LOAD_ATTR                7 (NULL|self + splitlines)
+            126 CALL                     0
+            134 LOAD_CONST               4 (1)
+            136 LOAD_CONST               0 (None)
+            138 BINARY_SLICE
+            140 STORE_FAST               1 (lines)
+
+ 47         142 BUILD_LIST               0
+            144 STORE_FAST               2 (result)
+
+ 48         146 LOAD_FAST                1 (lines)
+            148 GET_ITER
+        >>  150 FOR_ITER                82 (to 318)
+            154 STORE_FAST               3 (line)
+
+ 49         156 LOAD_FAST                3 (line)
+            158 LOAD_ATTR                9 (NULL|self + split)
+            178 CALL                     0
+            186 STORE_FAST               4 (parts)
+
+ 50         188 LOAD_GLOBAL             11 (NULL + len)
+            198 LOAD_FAST                4 (parts)
+            200 CALL                     1
+            208 LOAD_CONST               5 (2)
+            210 COMPARE_OP              92 (>=)
+            214 POP_JUMP_IF_TRUE         1 (to 218)
+            216 JUMP_BACKWARD           34 (to 150)
+
+ 51     >>  218 LOAD_GLOBAL             13 (NULL + next)
+            228 LOAD_CONST               6 (<code object <genexpr> at 0x000001C217BB3770, file "console\android.py", line 51>)
+            230 MAKE_FUNCTION            0
+            232 LOAD_FAST                4 (parts)
+            234 LOAD_CONST               5 (2)
+            236 LOAD_CONST               0 (None)
+            238 BINARY_SLICE
+            240 GET_ITER
+            242 CALL                     0
+            250 LOAD_CONST               7 ('')
+            252 CALL                     2
+            260 STORE_FAST               5 (model)
+
+ 52         262 LOAD_FAST                2 (result)
+            264 LOAD_ATTR               15 (NULL|self + append)
+            284 LOAD_FAST                4 (parts)
+            286 LOAD_CONST               8 (0)
+            288 BINARY_SUBSCR
+            292 LOAD_FAST                4 (parts)
+            294 LOAD_CONST               4 (1)
+            296 BINARY_SUBSCR
+            300 LOAD_FAST                5 (model)
+            302 LOAD_CONST               9 (('serial', 'status', 'name'))
+            304 BUILD_CONST_KEY_MAP      3
+            306 CALL                     1
+            314 POP_TOP
+            316 JUMP_BACKWARD           84 (to 150)
+
+ 48     >>  318 END_FOR
+
+ 53         320 LOAD_FAST                2 (result)
+            322 RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x000001C217BB3770, file "console\android.py", line 51>:
+ 51           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                27 (to 66)
+             12 STORE_FAST               1 (x)
+             14 LOAD_FAST                1 (x)
+             16 LOAD_ATTR                1 (NULL|self + startswith)
+             36 LOAD_CONST               0 ('model:')
+             38 CALL                     1
+             46 POP_JUMP_IF_TRUE         1 (to 50)
+             48 JUMP_BACKWARD           21 (to 8)
+        >>   50 LOAD_FAST                1 (x)
+             52 LOAD_CONST               1 (6)
+             54 LOAD_CONST               2 (None)
+             56 BINARY_SLICE
+             58 YIELD_VALUE              1
+             60 RESUME                   1
+             62 POP_TOP
+             64 JUMP_BACKWARD           29 (to 8)
+        >>   66 END_FOR
+             68 RETURN_CONST             2 (None)
+        >>   70 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             72 RERAISE                  1
+ExceptionTable:
+  4 to 46 -> 70 [0] lasti
+  50 to 68 -> 70 [0] lasti
+
+Disassembly of <code object connect at 0x000001C217B51A70, file "console\android.py", line 55>:
+ 55           0 RESUME                   0
+
+ 56           2 LOAD_GLOBAL              1 (NULL + re)
+             12 LOAD_ATTR                2 (fullmatch)
+             32 LOAD_CONST               1 ('[a-zA-Z0-9.\\-]+:\\d{1,5}')
+             34 LOAD_FAST                1 (endpoint)
+             36 CALL                     2
+             44 POP_JUMP_IF_TRUE        11 (to 68)
+
+ 57          46 LOAD_GLOBAL              5 (NULL + ValueError)
+             56 LOAD_CONST               2 ('请输入 IP:端口，例如 127.0.0.1:16512')
+             58 CALL                     1
+             66 RAISE_VARARGS            1
+
+ 58     >>   68 LOAD_FAST                0 (self)
+             70 LOAD_ATTR                7 (NULL|self + run)
+             90 LOAD_FAST                0 (self)
+             92 LOAD_ATTR                8 (adb)
+            112 LOAD_CONST               3 ('connect')
+            114 LOAD_FAST                1 (endpoint)
+            116 BUILD_LIST               3
+            118 CALL                     1
+            126 RETURN_VALUE
+
+Disassembly of <code object manage at 0x000001C217728FD0, file "console\android.py", line 60>:
+ 60           0 RESUME                   0
+
+ 61           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (manager)
+             24 POP_JUMP_IF_FALSE       35 (to 96)
+             26 LOAD_GLOBAL              3 (NULL + Path)
+             36 LOAD_FAST                0 (self)
+             38 LOAD_ATTR                0 (manager)
+             58 CALL                     1
+             66 LOAD_ATTR                5 (NULL|self + is_file)
+             86 CALL                     0
+             94 POP_JUMP_IF_TRUE        11 (to 118)
+
+ 62     >>   96 LOAD_GLOBAL              7 (NULL + ValueError)
+            106 LOAD_CONST               1 ('请配置 MuMuManager.exe 路径；其他模拟器可通过 ADB 管理在线设备')
+            108 CALL                     1
+            116 RAISE_VARARGS            1
+
+ 63     >>  118 LOAD_FAST                1 (action)
+            120 LOAD_CONST               2 ('create')
+            122 COMPARE_OP              40 (==)
+            126 POP_JUMP_IF_FALSE       33 (to 194)
+
+ 64         128 LOAD_FAST                0 (self)
+            130 LOAD_ATTR                9 (NULL|self + run)
+            150 LOAD_FAST                0 (self)
+            152 LOAD_ATTR                0 (manager)
+            172 LOAD_CONST               2 ('create')
+            174 LOAD_CONST               3 ('--number')
+            176 LOAD_CONST               4 ('1')
+            178 BUILD_LIST               4
+            180 LOAD_CONST               5 (180)
+            182 KW_NAMES                 6 (('timeout',))
+            184 CALL                     2
+            192 RETURN_VALUE
+
+ 65     >>  194 LOAD_FAST                1 (action)
+            196 LOAD_CONST               7 (('launch', 'shutdown', 'restart', 'info'))
+            198 CONTAINS_OP              1
+            200 POP_JUMP_IF_FALSE       11 (to 224)
+
+ 66         202 LOAD_GLOBAL              7 (NULL + ValueError)
+            212 LOAD_CONST               8 ('不支持的管理操作')
+            214 CALL                     1
+            222 RAISE_VARARGS            1
+
+ 67     >>  224 LOAD_FAST                2 (index)
+            226 LOAD_CONST               9 ('all')
+            228 COMPARE_OP              55 (!=)
+            232 POP_JUMP_IF_FALSE       33 (to 300)
+            234 LOAD_GLOBAL             11 (NULL + re)
+            244 LOAD_ATTR               12 (fullmatch)
+            264 LOAD_CONST              10 ('\\d+(,\\d+)*')
+            266 LOAD_FAST                2 (index)
+            268 CALL                     2
+            276 POP_JUMP_IF_TRUE        11 (to 300)
+
+ 68         278 LOAD_GLOBAL              7 (NULL + ValueError)
+            288 LOAD_CONST              11 ('请输入 MuMu 实例编号（例如 0 或 0,1），不是 ADB 序列号')
+            290 CALL                     1
+            298 RAISE_VARARGS            1
+
+ 69     >>  300 LOAD_FAST                1 (action)
+            302 LOAD_CONST              12 ('info')
+            304 COMPARE_OP              40 (==)
+            308 POP_JUMP_IF_FALSE       16 (to 342)
+            310 LOAD_FAST                0 (self)
+            312 LOAD_ATTR                0 (manager)
+            332 LOAD_CONST              12 ('info')
+            334 LOAD_CONST              13 ('--vmindex')
+            336 LOAD_FAST                2 (index)
+            338 BUILD_LIST               4
+            340 JUMP_FORWARD            16 (to 374)
+        >>  342 LOAD_FAST                0 (self)
+            344 LOAD_ATTR                0 (manager)
+            364 LOAD_CONST              14 ('control')
+            366 LOAD_CONST              13 ('--vmindex')
+            368 LOAD_FAST                2 (index)
+            370 LOAD_FAST                1 (action)
+            372 BUILD_LIST               5
+        >>  374 STORE_FAST               3 (args)
+
+ 70         376 LOAD_FAST                0 (self)
+            378 LOAD_ATTR                9 (NULL|self + run)
+            398 LOAD_FAST                3 (args)
+            400 LOAD_CONST               5 (180)
+            402 KW_NAMES                 6 (('timeout',))
+            404 CALL                     2
+            412 RETURN_VALUE
+
+Disassembly of <code object shell at 0x000001C2174057A0, file "console\android.py", line 72>:
+ 72           0 RESUME                   0
+
+ 73           2 PUSH_NULL
+              4 LOAD_FAST                0 (self)
+              6 LOAD_ATTR                0 (device)
+             26 LOAD_FAST                1 (serial)
+             28 LOAD_CONST               1 ('shell')
+             30 BUILD_LIST               2
+             32 LOAD_FAST                3 (args)
+             34 LIST_EXTEND              1
+             36 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+             38 LOAD_CONST               2 ('timeout')
+             40 LOAD_FAST                2 (timeout)
+             42 BUILD_MAP                1
+             44 CALL_FUNCTION_EX         1
+             46 RETURN_VALUE
+
+Disassembly of <code object install at 0x000001C2176B6550, file "console\android.py", line 75>:
+ 75           0 RESUME                   0
+
+ 76           2 LOAD_GLOBAL              1 (NULL + Path)
+             12 LOAD_FAST                2 (apk)
+             14 CALL                     1
+             22 LOAD_ATTR                3 (NULL|self + is_file)
+             42 CALL                     0
+             50 POP_JUMP_IF_FALSE       38 (to 128)
+             52 LOAD_GLOBAL              1 (NULL + Path)
+             62 LOAD_FAST                2 (apk)
+             64 CALL                     1
+             72 LOAD_ATTR                4 (suffix)
+             92 LOAD_ATTR                7 (NULL|self + lower)
+            112 CALL                     0
+            120 LOAD_CONST               1 ('.apk')
+            122 COMPARE_OP              55 (!=)
+            126 POP_JUMP_IF_FALSE       11 (to 150)
+
+ 77     >>  128 LOAD_GLOBAL              9 (NULL + ValueError)
+            138 LOAD_CONST               2 ('APK 文件不存在')
+            140 CALL                     1
+            148 RAISE_VARARGS            1
+
+ 78     >>  150 LOAD_FAST                0 (self)
+            152 LOAD_ATTR               11 (NULL|self + device)
+            172 LOAD_FAST                1 (serial)
+            174 LOAD_CONST               3 ('install')
+            176 LOAD_CONST               4 ('-r')
+            178 LOAD_FAST                2 (apk)
+            180 LOAD_CONST               5 (180)
+            182 KW_NAMES                 6 (('timeout',))
+            184 CALL                     5
+            192 STORE_FAST               3 (output)
+
+ 79         194 LOAD_CONST               7 ('Success')
+            196 LOAD_FAST                3 (output)
+            198 CONTAINS_OP              1
+            200 POP_JUMP_IF_FALSE       11 (to 224)
+
+ 80         202 LOAD_GLOBAL             13 (NULL + RuntimeError)
+            212 LOAD_FAST                3 (output)
+            214 CALL                     1
+            222 RAISE_VARARGS            1
+
+ 81     >>  224 LOAD_FAST                3 (output)
+            226 RETURN_VALUE
+
+Disassembly of <code object launch at 0x000001C2176B63A0, file "console\android.py", line 83>:
+ 83           0 RESUME                   0
+
+ 84           2 LOAD_GLOBAL              1 (NULL + re)
+             12 LOAD_ATTR                2 (fullmatch)
+             32 LOAD_CONST               1 ('[A-Za-z][A-Za-z0-9_.]+')
+             34 LOAD_FAST                2 (package)
+             36 CALL                     2
+             44 POP_JUMP_IF_TRUE        11 (to 68)
+
+ 85          46 LOAD_GLOBAL              5 (NULL + ValueError)
+             56 LOAD_CONST               2 ('App 包名无效')
+             58 CALL                     1
+             66 RAISE_VARARGS            1
+
+ 86     >>   68 LOAD_GLOBAL              7 (NULL + launcher_component)
+             78 LOAD_FAST                0 (self)
+             80 LOAD_ATTR                9 (NULL|self + shell)
+            100 LOAD_FAST                1 (serial)
+            102 LOAD_CONST               3 ('cmd')
+            104 LOAD_CONST               4 ('package')
+            106 LOAD_CONST               5 ('resolve-activity')
+            108 LOAD_CONST               6 ('--brief')
+            110 LOAD_CONST               7 ('-c')
+            112 LOAD_CONST               8 ('android.intent.category.LAUNCHER')
+            114 LOAD_FAST                2 (package)
+            116 CALL                     8
+            124 LOAD_FAST                2 (package)
+            126 CALL                     2
+            134 STORE_FAST               3 (component)
+
+ 87         136 LOAD_FAST                0 (self)
+            138 LOAD_ATTR                9 (NULL|self + shell)
+            158 LOAD_FAST                1 (serial)
+            160 LOAD_CONST               9 ('am')
+            162 LOAD_CONST              10 ('start')
+            164 LOAD_CONST              11 ('-W')
+            166 LOAD_CONST              12 ('-a')
+            168 LOAD_CONST              13 ('android.intent.action.MAIN')
+            170 LOAD_CONST               7 ('-c')
+            172 LOAD_CONST               8 ('android.intent.category.LAUNCHER')
+            174 LOAD_CONST              14 ('-n')
+            176 LOAD_FAST                3 (component)
+            178 CALL                    10
+            186 STORE_FAST               4 (output)
+
+ 88         188 LOAD_CONST              15 ('Error')
+            190 LOAD_FAST                4 (output)
+            192 CONTAINS_OP              0
+            194 POP_JUMP_IF_TRUE         4 (to 204)
+            196 LOAD_CONST              16 ('Exception')
+            198 LOAD_FAST                4 (output)
+            200 CONTAINS_OP              0
+            202 POP_JUMP_IF_FALSE       11 (to 226)
+
+ 89     >>  204 LOAD_GLOBAL             11 (NULL + RuntimeError)
+            214 LOAD_FAST                4 (output)
+            216 CALL                     1
+            224 RAISE_VARARGS            1
+
+ 90     >>  226 LOAD_FAST                4 (output)
+            228 RETURN_VALUE
+
+Disassembly of <code object text at 0x000001C2176E1F10, file "console\android.py", line 92>:
+ 92           0 RESUME                   0
+
+ 94           2 LOAD_CONST               1 ('\x00')
+              4 LOAD_FAST                2 (value)
+              6 CONTAINS_OP              0
+              8 POP_JUMP_IF_FALSE       11 (to 32)
+
+ 95          10 LOAD_GLOBAL              1 (NULL + ValueError)
+             20 LOAD_CONST               2 ('输入内容不能包含空字符')
+             22 CALL                     1
+             30 RAISE_VARARGS            1
+
+ 96     >>   32 LOAD_FAST                2 (value)
+             34 LOAD_ATTR                3 (NULL|self + isascii)
+             54 CALL                     0
+             62 POP_JUMP_IF_FALSE       22 (to 108)
+             64 LOAD_GLOBAL              5 (NULL + any)
+             74 LOAD_CONST               3 (<code object <genexpr> at 0x000001C217BA5730, file "console\android.py", line 96>)
+             76 MAKE_FUNCTION            0
+             78 LOAD_FAST                2 (value)
+             80 GET_ITER
+             82 CALL                     0
+             90 CALL                     1
+             98 POP_JUMP_IF_TRUE         4 (to 108)
+            100 LOAD_CONST               4 ('%s')
+            102 LOAD_FAST                2 (value)
+            104 CONTAINS_OP              0
+            106 POP_JUMP_IF_FALSE      117 (to 342)
+
+ 97     >>  108 LOAD_CONST               5 (1)
+            110 LOAD_CONST               6 (('MuMu',))
+            112 IMPORT_NAME              3 (infrastructure)
+            114 IMPORT_FROM              4 (MuMu)
+            116 STORE_FAST               3 (MuMu)
+            118 POP_TOP
+
+ 98         120 PUSH_NULL
+            122 LOAD_FAST                3 (MuMu)
+            124 LOAD_FAST                0 (self)
+            126 CALL                     1
+            134 LOAD_ATTR               11 (NULL|self + index_for)
+            154 LOAD_FAST                1 (serial)
+            156 CALL                     1
+            164 STORE_FAST               4 (index)
+
+ 99         166 LOAD_FAST                0 (self)
+            168 LOAD_ATTR               13 (NULL|self + run)
+            188 LOAD_FAST                0 (self)
+            190 LOAD_ATTR               14 (manager)
+            210 LOAD_CONST               7 ('control')
+            212 LOAD_CONST               8 ('--vmindex')
+            214 LOAD_FAST                4 (index)
+            216 LOAD_CONST               9 ('tool')
+            218 LOAD_CONST              10 ('cmd')
+            220 LOAD_CONST              11 ('--cmd')
+            222 LOAD_CONST              12 ('input_text')
+            224 LOAD_CONST              13 ('--text')
+            226 LOAD_FAST                2 (value)
+            228 BUILD_LIST              10
+            230 CALL                     1
+            238 STORE_FAST               5 (result)
+
+100         240 LOAD_GLOBAL             17 (NULL + json)
+            250 LOAD_ATTR               18 (loads)
+            270 LOAD_FAST                5 (result)
+            272 CALL                     1
+            280 STORE_FAST               6 (parsed)
+
+101         282 LOAD_FAST                6 (parsed)
+            284 LOAD_ATTR               21 (NULL|self + get)
+            304 LOAD_CONST              14 ('errcode')
+            306 CALL                     1
+            314 POP_JUMP_IF_FALSE       11 (to 338)
+
+102         316 LOAD_GLOBAL             23 (NULL + RuntimeError)
+            326 LOAD_CONST              15 ('MuMu 原生 Unicode 输入失败')
+            328 CALL                     1
+            336 RAISE_VARARGS            1
+
+103     >>  338 LOAD_FAST                5 (result)
+            340 RETURN_VALUE
+
+104     >>  342 LOAD_CONST               4 ('%s')
+            344 LOAD_FAST                2 (value)
+            346 CONTAINS_OP              0
+            348 POP_JUMP_IF_FALSE       11 (to 372)
+
+105         350 LOAD_GLOBAL              1 (NULL + ValueError)
+            360 LOAD_CONST              16 ('ADB 会把字面量 %s 转为空格；请更换文本或适配输入法')
+            362 CALL                     1
+            370 RAISE_VARARGS            1
+
+106     >>  372 LOAD_CONST              17 ("'")
+            374 LOAD_FAST                2 (value)
+            376 LOAD_ATTR               25 (NULL|self + replace)
+            396 LOAD_CONST              18 (' ')
+            398 LOAD_CONST               4 ('%s')
+            400 CALL                     2
+            408 LOAD_ATTR               25 (NULL|self + replace)
+            428 LOAD_CONST              17 ("'")
+            430 LOAD_CONST              19 ("'\\''")
+            432 CALL                     2
+            440 BINARY_OP                0 (+)
+            444 LOAD_CONST              17 ("'")
+            446 BINARY_OP                0 (+)
+            450 STORE_FAST               7 (safe)
+
+107         452 LOAD_FAST                0 (self)
+            454 LOAD_ATTR               27 (NULL|self + shell)
+            474 LOAD_FAST                1 (serial)
+            476 LOAD_CONST              20 ('input')
+            478 LOAD_CONST              21 ('text')
+            480 LOAD_FAST                7 (safe)
+            482 CALL                     4
+            490 RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x000001C217BA5730, file "console\android.py", line 96>:
+ 96           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                18 (to 48)
+             12 STORE_FAST               1 (c)
+             14 LOAD_GLOBAL              1 (NULL + ord)
+             24 LOAD_FAST                1 (c)
+             26 CALL                     1
+             34 LOAD_CONST               0 (32)
+             36 COMPARE_OP               2 (<)
+             40 YIELD_VALUE              1
+             42 RESUME                   1
+             44 POP_TOP
+             46 JUMP_BACKWARD           20 (to 8)
+        >>   48 END_FOR
+             50 RETURN_CONST             1 (None)
+        >>   52 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             54 RERAISE                  1
+ExceptionTable:
+  4 to 50 -> 52 [0] lasti
+
+Disassembly of <code object hierarchy at 0x000001C217392E60, file "console\android.py", line 109>:
+109           0 RESUME                   0
+
+110           2 LOAD_CONST               1 ('/sdcard/console-')
+              4 LOAD_GLOBAL              1 (NULL + uuid)
+             14 LOAD_ATTR                2 (uuid4)
+             34 CALL                     0
+             42 LOAD_ATTR                4 (hex)
+             62 BINARY_OP                0 (+)
+             66 LOAD_CONST               2 ('.xml')
+             68 BINARY_OP                0 (+)
+             72 STORE_FAST               2 (filename)
+
+111          74 LOAD_FAST                0 (self)
+             76 LOAD_ATTR                7 (NULL|self + shell)
+             96 LOAD_FAST                1 (serial)
+             98 LOAD_CONST               3 ('uiautomator')
+            100 LOAD_CONST               4 ('dump')
+            102 LOAD_FAST                2 (filename)
+            104 CALL                     4
+            112 STORE_FAST               3 (result)
+
+112         114 LOAD_CONST               5 ('dumped to:')
+            116 LOAD_FAST                3 (result)
+            118 LOAD_ATTR                9 (NULL|self + lower)
+            138 CALL                     0
+            146 CONTAINS_OP              1
+            148 POP_JUMP_IF_FALSE       17 (to 184)
+
+113         150 LOAD_GLOBAL             11 (NULL + RuntimeError)
+            160 LOAD_CONST               6 ('界面树尚未就绪：')
+            162 LOAD_FAST                3 (result)
+            164 LOAD_CONST               0 (None)
+            166 LOAD_CONST               7 (200)
+            168 BINARY_SLICE
+            170 BINARY_OP                0 (+)
+            174 CALL                     1
+            182 RAISE_VARARGS            1
+
+114     >>  184 NOP
+
+115         186 LOAD_FAST                0 (self)
+            188 LOAD_ATTR                7 (NULL|self + shell)
+            208 LOAD_FAST                1 (serial)
+            210 LOAD_CONST               8 ('cat')
+            212 LOAD_FAST                2 (filename)
+            214 CALL                     3
+            222 STORE_FAST               4 (raw)
+
+116         224 LOAD_CONST               9 ('<?xml')
+            226 LOAD_FAST                4 (raw)
+            228 CONTAINS_OP              0
+            230 POP_JUMP_IF_FALSE       39 (to 310)
+            232 LOAD_GLOBAL             13 (NULL + ET)
+            242 LOAD_ATTR               14 (fromstring)
+            262 LOAD_FAST                4 (raw)
+            264 LOAD_FAST                4 (raw)
+            266 LOAD_ATTR               17 (NULL|self + index)
+            286 LOAD_CONST               9 ('<?xml')
+            288 CALL                     1
+            296 LOAD_CONST               0 (None)
+            298 BINARY_SLICE
+            300 CALL                     1
+            308 JUMP_FORWARD            20 (to 350)
+        >>  310 LOAD_GLOBAL             13 (NULL + ET)
+            320 LOAD_ATTR               14 (fromstring)
+            340 LOAD_FAST                4 (raw)
+            342 CALL                     1
+        >>  350 NOP
+
+118         352 LOAD_FAST                0 (self)
+            354 LOAD_ATTR                7 (NULL|self + shell)
+            374 LOAD_FAST                1 (serial)
+            376 LOAD_CONST              10 ('rm')
+            378 LOAD_FAST                2 (filename)
+            380 CALL                     3
+            388 POP_TOP
+            390 RETURN_VALUE
+        >>  392 PUSH_EXC_INFO
+            394 LOAD_FAST                0 (self)
+            396 LOAD_ATTR                7 (NULL|self + shell)
+            416 LOAD_FAST                1 (serial)
+            418 LOAD_CONST              10 ('rm')
+            420 LOAD_FAST                2 (filename)
+            422 CALL                     3
+            430 POP_TOP
+            432 RERAISE                  0
+        >>  434 COPY                     3
+            436 POP_EXCEPT
+            438 RERAISE                  1
+ExceptionTable:
+  186 to 348 -> 392 [0]
+  392 to 432 -> 434 [1] lasti
+
+Disassembly of <code object locate at 0x000001C2171F52D0, file "console\android.py", line 120>:
+              0 MAKE_CELL                3 (n)
+
+120           2 RESUME                   0
+
+121           4 LOAD_FAST                2 (selector)
+              6 POP_JUMP_IF_FALSE       16 (to 40)
+              8 LOAD_GLOBAL              1 (NULL + set)
+             18 LOAD_FAST                2 (selector)
+             20 CALL                     1
+             28 BUILD_SET                0
+             30 LOAD_CONST               1 (frozenset({'text', 'resource-id', 'content-desc', 'class'}))
+             32 SET_UPDATE               1
+             34 COMPARE_OP              26 (<=)
+             38 POP_JUMP_IF_TRUE        11 (to 62)
+
+122     >>   40 LOAD_GLOBAL              3 (NULL + ValueError)
+             50 LOAD_CONST               2 ('selector 只允许 resource-id/text/content-desc/class，且不能为空')
+             52 CALL                     1
+             60 RAISE_VARARGS            1
+
+123     >>   62 LOAD_FAST                0 (self)
+             64 LOAD_ATTR                5 (NULL|self + hierarchy)
+             84 LOAD_FAST                1 (serial)
+             86 CALL                     1
+             94 LOAD_ATTR                7 (NULL|self + iter)
+            114 LOAD_CONST               3 ('node')
+            116 CALL                     1
+            124 GET_ITER
+            126 LOAD_FAST_AND_CLEAR      3 (n)
+            128 MAKE_CELL                3 (n)
+            130 SWAP                     2
+            132 BUILD_LIST               0
+            134 SWAP                     2
+        >>  136 FOR_ITER                39 (to 218)
+            140 STORE_DEREF              3 (n)
+            142 LOAD_GLOBAL              9 (NULL + all)
+            152 LOAD_CLOSURE             3 (n)
+            154 BUILD_TUPLE              1
+            156 LOAD_CONST               4 (<code object <genexpr> at 0x000001C217B94FF0, file "console\android.py", line 123>)
+            158 MAKE_FUNCTION            8 (closure)
+            160 LOAD_FAST                2 (selector)
+            162 LOAD_ATTR               11 (NULL|self + items)
+            182 CALL                     0
+            190 GET_ITER
+            192 CALL                     0
+            200 CALL                     1
+            208 POP_JUMP_IF_TRUE         1 (to 212)
+            210 JUMP_BACKWARD           38 (to 136)
+        >>  212 LOAD_DEREF               3 (n)
+            214 LIST_APPEND              2
+            216 JUMP_BACKWARD           41 (to 136)
+        >>  218 END_FOR
+            220 STORE_FAST               4 (nodes)
+            222 STORE_FAST               3 (n)
+
+124         224 LOAD_GLOBAL             13 (NULL + len)
+            234 LOAD_FAST                4 (nodes)
+            236 CALL                     1
+            244 LOAD_CONST               5 (1)
+            246 COMPARE_OP              55 (!=)
+            250 POP_JUMP_IF_FALSE       26 (to 304)
+
+125         252 LOAD_GLOBAL             15 (NULL + RuntimeError)
+            262 LOAD_CONST               6 ('定位到 ')
+            264 LOAD_GLOBAL             13 (NULL + len)
+            274 LOAD_FAST                4 (nodes)
+            276 CALL                     1
+            284 FORMAT_VALUE             0
+            286 LOAD_CONST               7 (' 个控件，必须精确匹配一个：')
+            288 LOAD_FAST                2 (selector)
+            290 FORMAT_VALUE             0
+            292 BUILD_STRING             4
+            294 CALL                     1
+            302 RAISE_VARARGS            1
+
+126     >>  304 LOAD_GLOBAL             17 (NULL + list)
+            314 LOAD_GLOBAL             19 (NULL + map)
+            324 LOAD_GLOBAL             20 (int)
+            334 LOAD_GLOBAL             23 (NULL + re)
+            344 LOAD_ATTR               24 (findall)
+            364 LOAD_CONST               8 ('\\d+')
+            366 LOAD_FAST                4 (nodes)
+            368 LOAD_CONST               9 (0)
+            370 BINARY_SUBSCR
+            374 LOAD_ATTR               27 (NULL|self + get)
+            394 LOAD_CONST              10 ('bounds')
+            396 LOAD_CONST              11 ('')
+            398 CALL                     2
+            406 CALL                     2
+            414 CALL                     2
+            422 CALL                     1
+            430 STORE_FAST               5 (bounds)
+
+127         432 LOAD_GLOBAL             13 (NULL + len)
+            442 LOAD_FAST                5 (bounds)
+            444 CALL                     1
+            452 LOAD_CONST              12 (4)
+            454 COMPARE_OP              55 (!=)
+            458 POP_JUMP_IF_FALSE       11 (to 482)
+
+128         460 LOAD_GLOBAL             15 (NULL + RuntimeError)
+            470 LOAD_CONST              13 ('控件无有效坐标')
+            472 CALL                     1
+            480 RAISE_VARARGS            1
+
+129     >>  482 LOAD_FAST                5 (bounds)
+            484 LOAD_CONST               9 (0)
+            486 BINARY_SUBSCR
+            490 LOAD_FAST                5 (bounds)
+            492 LOAD_CONST              14 (2)
+            494 BINARY_SUBSCR
+            498 BINARY_OP                0 (+)
+            502 LOAD_CONST              14 (2)
+            504 BINARY_OP                2 (//)
+            508 LOAD_FAST                5 (bounds)
+            510 LOAD_CONST               5 (1)
+            512 BINARY_SUBSCR
+            516 LOAD_FAST                5 (bounds)
+            518 LOAD_CONST              15 (3)
+            520 BINARY_SUBSCR
+            524 BINARY_OP                0 (+)
+            528 LOAD_CONST              14 (2)
+            530 BINARY_OP                2 (//)
+            534 BUILD_TUPLE              2
+            536 RETURN_VALUE
+        >>  538 SWAP                     2
+            540 POP_TOP
+
+123         542 SWAP                     2
+            544 STORE_FAST               3 (n)
+            546 RERAISE                  0
+ExceptionTable:
+  132 to 208 -> 538 [2]
+  212 to 218 -> 538 [2]
+
+Disassembly of <code object <genexpr> at 0x000001C217B94FF0, file "console\android.py", line 123>:
+              0 COPY_FREE_VARS           1
+
+123           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                36 (to 86)
+             14 UNPACK_SEQUENCE          2
+             18 STORE_FAST               1 (k)
+             20 STORE_FAST               2 (v)
+             22 LOAD_DEREF               3 (n)
+             24 LOAD_ATTR                1 (NULL|self + get)
+             44 LOAD_FAST                1 (k)
+             46 CALL                     1
+             54 LOAD_GLOBAL              3 (NULL + str)
+             64 LOAD_FAST                2 (v)
+             66 CALL                     1
+             74 COMPARE_OP              40 (==)
+             78 YIELD_VALUE              1
+             80 RESUME                   1
+             82 POP_TOP
+             84 JUMP_BACKWARD           38 (to 10)
+        >>   86 END_FOR
+             88 RETURN_CONST             0 (None)
+        >>   90 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             92 RERAISE                  1
+ExceptionTable:
+  6 to 88 -> 90 [0] lasti
+
+Disassembly of <code object screenshot at 0x000001C217D041A0, file "console\android.py", line 131>:
+131           0 RESUME                   0
+
+132           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + device)
+             24 LOAD_FAST                1 (serial)
+             26 LOAD_CONST               1 ('exec-out')
+             28 LOAD_CONST               2 ('screencap')
+             30 LOAD_CONST               3 ('-p')
+             32 LOAD_CONST               4 (True)
+             34 KW_NAMES                 5 (('binary',))
+             36 CALL                     5
+             44 STORE_FAST               3 (data)
+
+133          46 LOAD_FAST                3 (data)
+             48 LOAD_ATTR                3 (NULL|self + startswith)
+             68 LOAD_CONST               6 (b'\x89PNG')
+             70 CALL                     1
+             78 POP_JUMP_IF_TRUE        11 (to 102)
+
+134          80 LOAD_GLOBAL              5 (NULL + RuntimeError)
+             90 LOAD_CONST               7 ('未获取到有效 PNG 截图')
+             92 CALL                     1
+            100 RAISE_VARARGS            1
+
+135     >>  102 LOAD_GLOBAL              7 (NULL + Path)
+            112 LOAD_FAST                2 (path)
+            114 CALL                     1
+            122 LOAD_ATTR                9 (NULL|self + write_bytes)
+            142 LOAD_FAST                3 (data)
+            144 CALL                     1
+            152 POP_TOP
+
+136         154 LOAD_GLOBAL             11 (NULL + str)
+            164 LOAD_FAST                2 (path)
+            166 CALL                     1
+            174 RETURN_VALUE

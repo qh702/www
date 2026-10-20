@@ -1,0 +1,1402 @@
+Module: console.infrastructure
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('MuMu lifecycle, host pressure and durable local schedules.')
+              4 STORE_NAME               0 (__doc__)
+
+  2           6 LOAD_CONST               1 (0)
+              8 LOAD_CONST               2 (None)
+             10 IMPORT_NAME              1 (ctypes)
+             12 STORE_NAME               1 (ctypes)
+
+  3          14 LOAD_CONST               1 (0)
+             16 LOAD_CONST               2 (None)
+             18 IMPORT_NAME              2 (json)
+             20 STORE_NAME               2 (json)
+
+  4          22 LOAD_CONST               1 (0)
+             24 LOAD_CONST               2 (None)
+             26 IMPORT_NAME              3 (re)
+             28 STORE_NAME               3 (re)
+
+  5          30 LOAD_CONST               1 (0)
+             32 LOAD_CONST               2 (None)
+             34 IMPORT_NAME              4 (threading)
+             36 STORE_NAME               4 (threading)
+
+  6          38 LOAD_CONST               1 (0)
+             40 LOAD_CONST               2 (None)
+             42 IMPORT_NAME              5 (time)
+             44 STORE_NAME               5 (time)
+
+  7          46 LOAD_CONST               1 (0)
+             48 LOAD_CONST               3 (('datetime', 'timedelta'))
+             50 IMPORT_NAME              6 (datetime)
+             52 IMPORT_FROM              6 (datetime)
+             54 STORE_NAME               6 (datetime)
+             56 IMPORT_FROM              7 (timedelta)
+             58 STORE_NAME               7 (timedelta)
+             60 POP_TOP
+
+  8          62 LOAD_CONST               1 (0)
+             64 LOAD_CONST               4 (('Path',))
+             66 IMPORT_NAME              8 (pathlib)
+             68 IMPORT_FROM              9 (Path)
+             70 STORE_NAME               9 (Path)
+             72 POP_TOP
+
+ 11          74 PUSH_NULL
+             76 LOAD_BUILD_CLASS
+             78 LOAD_CONST               5 (<code object MuMu at 0x000001C217B517F0, file "console\infrastructure.py", line 11>)
+             80 MAKE_FUNCTION            0
+             82 LOAD_CONST               6 ('MuMu')
+             84 CALL                     2
+             92 STORE_NAME              10 (MuMu)
+
+119          94 PUSH_NULL
+             96 LOAD_BUILD_CLASS
+             98 LOAD_CONST               7 (<code object ResourceGuard at 0x000001C217B9AA30, file "console\infrastructure.py", line 119>)
+            100 MAKE_FUNCTION            0
+            102 LOAD_CONST               8 ('ResourceGuard')
+            104 CALL                     2
+            112 STORE_NAME              11 (ResourceGuard)
+
+153         114 LOAD_CONST               9 (<code object next_due at 0x000001C217C209D0, file "console\infrastructure.py", line 153>)
+            116 MAKE_FUNCTION            0
+            118 STORE_NAME              12 (next_due)
+
+159         120 LOAD_CONST              10 (<code object validate_proxy at 0x000001C217D04030, file "console\infrastructure.py", line 159>)
+            122 MAKE_FUNCTION            0
+            124 STORE_NAME              13 (validate_proxy)
+            126 RETURN_CONST             2 (None)
+
+Disassembly of <code object MuMu at 0x000001C217B517F0, file "console\infrastructure.py", line 11>:
+ 11           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('MuMu')
+              8 STORE_NAME               2 (__qualname__)
+
+ 12          10 PUSH_NULL
+             12 LOAD_NAME                3 (threading)
+             14 LOAD_ATTR                8 (RLock)
+             34 CALL                     0
+             42 STORE_NAME               5 (_shared_lock)
+
+ 13          44 LOAD_CONST               1 (<code object __init__ at 0x000001C21594AC30, file "console\infrastructure.py", line 13>)
+             46 MAKE_FUNCTION            0
+             48 STORE_NAME               6 (__init__)
+
+ 17          50 LOAD_CONST               2 (180)
+             52 LOAD_CONST               3 (('timeout',))
+             54 BUILD_CONST_KEY_MAP      1
+             56 LOAD_CONST               4 (<code object call at 0x000001C21734E100, file "console\infrastructure.py", line 17>)
+             58 MAKE_FUNCTION            2 (kwdefaults)
+             60 STORE_NAME               7 (call)
+
+ 25          62 LOAD_CONST               5 (<code object info at 0x000001C2174A6A60, file "console\infrastructure.py", line 25>)
+             64 MAKE_FUNCTION            0
+             66 STORE_NAME               8 (info)
+
+ 28          68 LOAD_CONST               6 (<code object create at 0x000001C217B6AC30, file "console\infrastructure.py", line 28>)
+             70 MAKE_FUNCTION            0
+             72 STORE_NAME               9 (create)
+
+ 37          74 LOAD_CONST              16 ((1080, 1920, 360, 2, 2, 'Samsung', 'Galaxy S25', 'SM-S938U'))
+             76 LOAD_CONST               8 (<code object configure at 0x000001C217758A50, file "console\infrastructure.py", line 37>)
+             78 MAKE_FUNCTION            1 (defaults)
+             80 STORE_NAME              10 (configure)
+
+ 50          82 LOAD_CONST               9 ('')
+             84 LOAD_CONST               7 (2)
+             86 LOAD_CONST              10 (None)
+             88 LOAD_CONST              11 (<code object <lambda> at 0x000001C217405200, file "console\infrastructure.py", line 50>)
+             90 MAKE_FUNCTION            0
+             92 LOAD_CONST              10 (None)
+             94 BUILD_TUPLE              5
+             96 LOAD_CONST              12 (<code object prepare at 0x000001C217855A40, file "console\infrastructure.py", line 50>)
+             98 MAKE_FUNCTION            1 (defaults)
+            100 STORE_NAME              11 (prepare)
+
+ 88         102 LOAD_CONST              13 (<code object index_for at 0x000001C2176B7480, file "console\infrastructure.py", line 88>)
+            104 MAKE_FUNCTION            0
+            106 STORE_NAME              12 (index_for)
+
+ 94         108 LOAD_CONST              14 (<code object recreate at 0x000001C2172DF870, file "console\infrastructure.py", line 94>)
+            110 MAKE_FUNCTION            0
+            112 STORE_NAME              13 (recreate)
+
+107         114 LOAD_CONST              17 ((60,))
+            116 LOAD_CONST              15 (<code object shutdown_wait at 0x000001C2177294B0, file "console\infrastructure.py", line 107>)
+            118 MAKE_FUNCTION            1 (defaults)
+            120 STORE_NAME              14 (shutdown_wait)
+            122 RETURN_CONST            10 (None)
+
+Disassembly of <code object __init__ at 0x000001C21594AC30, file "console\infrastructure.py", line 13>:
+ 13           0 RESUME                   0
+
+ 14           2 LOAD_FAST                1 (android)
+              4 LOAD_FAST                0 (self)
+              6 STORE_ATTR               0 (android)
+
+ 15          16 LOAD_FAST                0 (self)
+             18 LOAD_ATTR                2 (_shared_lock)
+             38 LOAD_FAST                0 (self)
+             40 STORE_ATTR               2 (lock)
+             50 RETURN_CONST             0 (None)
+
+Disassembly of <code object call at 0x000001C21734E100, file "console\infrastructure.py", line 17>:
+ 17           0 RESUME                   0
+
+ 18           2 LOAD_GLOBAL              1 (NULL + Path)
+             12 LOAD_FAST                0 (self)
+             14 LOAD_ATTR                2 (android)
+             34 LOAD_ATTR                4 (manager)
+             54 CALL                     1
+             62 LOAD_ATTR                7 (NULL|self + is_file)
+             82 CALL                     0
+             90 POP_JUMP_IF_TRUE        11 (to 114)
+
+ 19          92 LOAD_GLOBAL              9 (NULL + ValueError)
+            102 LOAD_CONST               1 ('请配置 MuMuManager.exe')
+            104 CALL                     1
+            112 RAISE_VARARGS            1
+
+ 20     >>  114 LOAD_GLOBAL             11 (NULL + json)
+            124 LOAD_ATTR               12 (loads)
+            144 LOAD_FAST                0 (self)
+            146 LOAD_ATTR                2 (android)
+            166 LOAD_ATTR               15 (NULL|self + run)
+            186 LOAD_FAST                0 (self)
+            188 LOAD_ATTR                2 (android)
+            208 LOAD_ATTR                4 (manager)
+            228 BUILD_LIST               1
+            230 LOAD_FAST                2 (args)
+            232 LIST_EXTEND              1
+            234 LOAD_FAST                1 (timeout)
+            236 KW_NAMES                 2 (('timeout',))
+            238 CALL                     2
+            246 CALL                     1
+            254 STORE_FAST               3 (value)
+
+ 21         256 LOAD_GLOBAL             17 (NULL + isinstance)
+            266 LOAD_FAST                3 (value)
+            268 LOAD_GLOBAL             18 (dict)
+            278 CALL                     2
+            286 POP_JUMP_IF_FALSE       44 (to 376)
+            288 LOAD_FAST                3 (value)
+            290 LOAD_ATTR               21 (NULL|self + get)
+            310 LOAD_CONST               3 ('errcode')
+            312 CALL                     1
+            320 POP_JUMP_IF_FALSE       27 (to 376)
+
+ 22         322 LOAD_GLOBAL             23 (NULL + RuntimeError)
+            332 LOAD_FAST                3 (value)
+            334 LOAD_ATTR               21 (NULL|self + get)
+            354 LOAD_CONST               4 ('errmsg')
+            356 LOAD_CONST               5 ('MuMu 命令失败')
+            358 CALL                     2
+            366 CALL                     1
+            374 RAISE_VARARGS            1
+
+ 23     >>  376 LOAD_FAST                3 (value)
+            378 RETURN_VALUE
+
+Disassembly of <code object info at 0x000001C2174A6A60, file "console\infrastructure.py", line 25>:
+ 25           0 RESUME                   0
+
+ 26           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + call)
+             24 LOAD_CONST               1 ('info')
+             26 LOAD_CONST               2 ('--vmindex')
+             28 LOAD_CONST               3 ('all')
+             30 LOAD_CONST               4 (30)
+             32 KW_NAMES                 5 (('timeout',))
+             34 CALL                     4
+             42 RETURN_VALUE
+
+Disassembly of <code object create at 0x000001C217B6AC30, file "console\infrastructure.py", line 28>:
+ 28           0 RESUME                   0
+
+ 29           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (lock)
+             24 BEFORE_WITH
+             26 POP_TOP
+
+ 30          28 LOAD_GLOBAL              3 (NULL + set)
+             38 LOAD_FAST                0 (self)
+             40 LOAD_ATTR                5 (NULL|self + info)
+             60 CALL                     0
+             68 CALL                     1
+             76 STORE_FAST               1 (before)
+
+ 31          78 LOAD_FAST                0 (self)
+             80 LOAD_ATTR                7 (NULL|self + call)
+            100 LOAD_CONST               1 ('create')
+            102 LOAD_CONST               2 ('--number')
+            104 LOAD_CONST               3 ('1')
+            106 LOAD_CONST               4 ('--version')
+            108 LOAD_CONST               5 ('12')
+            110 CALL                     5
+            118 POP_TOP
+
+ 32         120 LOAD_GLOBAL              3 (NULL + set)
+            130 LOAD_FAST                0 (self)
+            132 LOAD_ATTR                5 (NULL|self + info)
+            152 CALL                     0
+            160 CALL                     1
+            168 LOAD_FAST                1 (before)
+            170 BINARY_OP               10 (-)
+            174 STORE_FAST               2 (created)
+
+ 33         176 LOAD_GLOBAL              9 (NULL + len)
+            186 LOAD_FAST                2 (created)
+            188 CALL                     1
+            196 LOAD_CONST               6 (1)
+            198 COMPARE_OP              55 (!=)
+            202 POP_JUMP_IF_FALSE       11 (to 226)
+
+ 34         204 LOAD_GLOBAL             11 (NULL + RuntimeError)
+            214 LOAD_CONST               7 ('创建结果不明确，请检查实例列表，不要重复创建')
+            216 CALL                     1
+            224 RAISE_VARARGS            1
+
+ 35     >>  226 LOAD_GLOBAL             13 (NULL + next)
+            236 LOAD_GLOBAL             15 (NULL + iter)
+            246 LOAD_FAST                2 (created)
+            248 CALL                     1
+            256 CALL                     1
+
+ 29         264 SWAP                     2
+            266 LOAD_CONST               0 (None)
+            268 LOAD_CONST               0 (None)
+            270 LOAD_CONST               0 (None)
+            272 CALL                     2
+            280 POP_TOP
+            282 RETURN_VALUE
+        >>  284 PUSH_EXC_INFO
+            286 WITH_EXCEPT_START
+            288 POP_JUMP_IF_TRUE         1 (to 292)
+            290 RERAISE                  2
+        >>  292 POP_TOP
+            294 POP_EXCEPT
+            296 POP_TOP
+            298 POP_TOP
+            300 RETURN_CONST             0 (None)
+        >>  302 COPY                     3
+            304 POP_EXCEPT
+            306 RERAISE                  1
+ExceptionTable:
+  26 to 262 -> 284 [1] lasti
+  284 to 292 -> 302 [3] lasti
+
+Disassembly of <code object configure at 0x000001C217758A50, file "console\infrastructure.py", line 37>:
+ 37           0 RESUME                   0
+
+ 38           2 LOAD_GLOBAL              1 (NULL + str)
+             12 LOAD_FAST                1 (index)
+             14 CALL                     1
+             22 LOAD_ATTR                3 (NULL|self + isdigit)
+             42 CALL                     0
+             50 POP_JUMP_IF_TRUE        11 (to 74)
+
+ 39          52 LOAD_GLOBAL              5 (NULL + ValueError)
+             62 LOAD_CONST               1 ('实例编号必须是数字')
+             64 CALL                     1
+             72 RAISE_VARARGS            1
+
+ 40     >>   74 LOAD_CONST               2 (320)
+             76 LOAD_GLOBAL              7 (NULL + int)
+             86 LOAD_FAST                2 (width)
+             88 CALL                     1
+             96 SWAP                     2
+             98 COPY                     2
+            100 COMPARE_OP              26 (<=)
+            104 POP_JUMP_IF_FALSE        5 (to 116)
+            106 LOAD_CONST               3 (3840)
+            108 COMPARE_OP              26 (<=)
+            112 POP_JUMP_IF_FALSE       78 (to 270)
+            114 JUMP_FORWARD            12 (to 140)
+        >>  116 POP_TOP
+
+ 41         118 LOAD_GLOBAL              5 (NULL + ValueError)
+            128 LOAD_CONST               6 ('分辨率或 DPI 超出范围')
+            130 CALL                     1
+            138 RAISE_VARARGS            1
+
+ 40     >>  140 LOAD_CONST               2 (320)
+            142 LOAD_GLOBAL              7 (NULL + int)
+            152 LOAD_FAST                3 (height)
+            154 CALL                     1
+            162 SWAP                     2
+            164 COPY                     2
+            166 COMPARE_OP              26 (<=)
+            170 POP_JUMP_IF_FALSE        5 (to 182)
+            172 LOAD_CONST               3 (3840)
+            174 COMPARE_OP              26 (<=)
+            178 POP_JUMP_IF_FALSE       45 (to 270)
+            180 JUMP_FORWARD            12 (to 206)
+        >>  182 POP_TOP
+
+ 41         184 LOAD_GLOBAL              5 (NULL + ValueError)
+            194 LOAD_CONST               6 ('分辨率或 DPI 超出范围')
+            196 CALL                     1
+            204 RAISE_VARARGS            1
+
+ 40     >>  206 LOAD_CONST               4 (120)
+            208 LOAD_GLOBAL              7 (NULL + int)
+            218 LOAD_FAST                4 (dpi)
+            220 CALL                     1
+            228 SWAP                     2
+            230 COPY                     2
+            232 COMPARE_OP              26 (<=)
+            236 POP_JUMP_IF_FALSE       15 (to 268)
+            238 LOAD_CONST               5 (640)
+            240 COMPARE_OP              26 (<=)
+            244 POP_JUMP_IF_TRUE        23 (to 292)
+
+ 41         246 LOAD_GLOBAL              5 (NULL + ValueError)
+            256 LOAD_CONST               6 ('分辨率或 DPI 超出范围')
+            258 CALL                     1
+            266 RAISE_VARARGS            1
+
+ 40     >>  268 POP_TOP
+
+ 41     >>  270 LOAD_GLOBAL              5 (NULL + ValueError)
+            280 LOAD_CONST               6 ('分辨率或 DPI 超出范围')
+            282 CALL                     1
+            290 RAISE_VARARGS            1
+
+ 42     >>  292 LOAD_CONST               7 (1)
+            294 LOAD_GLOBAL              7 (NULL + int)
+            304 LOAD_FAST                5 (cpu)
+            306 CALL                     1
+            314 SWAP                     2
+            316 COPY                     2
+            318 COMPARE_OP              26 (<=)
+            322 POP_JUMP_IF_FALSE        5 (to 334)
+            324 LOAD_CONST               8 (16)
+            326 COMPARE_OP              26 (<=)
+            330 POP_JUMP_IF_FALSE       45 (to 422)
+            332 JUMP_FORWARD            12 (to 358)
+        >>  334 POP_TOP
+
+ 43         336 LOAD_GLOBAL              5 (NULL + ValueError)
+            346 LOAD_CONST              11 ('CPU 核数或内存超出范围')
+            348 CALL                     1
+            356 RAISE_VARARGS            1
+
+ 42     >>  358 LOAD_CONST               9 (0.5)
+            360 LOAD_GLOBAL              9 (NULL + float)
+            370 LOAD_FAST                6 (memory)
+            372 CALL                     1
+            380 SWAP                     2
+            382 COPY                     2
+            384 COMPARE_OP              26 (<=)
+            388 POP_JUMP_IF_FALSE       15 (to 420)
+            390 LOAD_CONST              10 (32)
+            392 COMPARE_OP              26 (<=)
+            396 POP_JUMP_IF_TRUE        23 (to 444)
+
+ 43         398 LOAD_GLOBAL              5 (NULL + ValueError)
+            408 LOAD_CONST              11 ('CPU 核数或内存超出范围')
+            410 CALL                     1
+            418 RAISE_VARARGS            1
+
+ 42     >>  420 POP_TOP
+
+ 43     >>  422 LOAD_GLOBAL              5 (NULL + ValueError)
+            432 LOAD_CONST              11 ('CPU 核数或内存超出范围')
+            434 CALL                     1
+            442 RAISE_VARARGS            1
+
+ 44     >>  444 LOAD_CONST              12 ('custom')
+            446 LOAD_GLOBAL              1 (NULL + str)
+            456 LOAD_FAST                2 (width)
+            458 CALL                     1
+            466 LOAD_GLOBAL              1 (NULL + str)
+            476 LOAD_FAST                3 (height)
+            478 CALL                     1
+            486 LOAD_GLOBAL              1 (NULL + str)
+            496 LOAD_FAST                4 (dpi)
+            498 CALL                     1
+            506 LOAD_CONST              12 ('custom')
+            508 LOAD_GLOBAL              1 (NULL + str)
+            518 LOAD_FAST                5 (cpu)
+            520 CALL                     1
+            528 LOAD_GLOBAL              1 (NULL + str)
+            538 LOAD_FAST                6 (memory)
+            540 CALL                     1
+            548 LOAD_FAST                7 (brand)
+            550 LOAD_FAST                8 (model)
+            552 LOAD_FAST                9 (device_name)
+            554 LOAD_CONST              13 (('resolution_mode', 'resolution_width.custom', 'resolution_height.custom', 'resolution_dpi.custom', 'performance_mode', 'performance_cpu.custom', 'performance_mem.custom', 'phone_brand', 'phone_model', 'phone_miit'))
+            556 BUILD_CONST_KEY_MAP     10
+            558 STORE_FAST              10 (settings)
+
+ 45         560 LOAD_CONST              14 ('setting')
+            562 LOAD_CONST              15 ('--vmindex')
+            564 LOAD_GLOBAL              1 (NULL + str)
+            574 LOAD_FAST                1 (index)
+            576 CALL                     1
+            584 BUILD_LIST               3
+            586 STORE_FAST              11 (args)
+
+ 46         588 LOAD_FAST               10 (settings)
+            590 LOAD_ATTR               11 (NULL|self + items)
+            610 CALL                     0
+            618 GET_ITER
+        >>  620 FOR_ITER                14 (to 652)
+            624 UNPACK_SEQUENCE          2
+            628 STORE_FAST              12 (key)
+            630 STORE_FAST              13 (value)
+
+ 47         632 LOAD_FAST               11 (args)
+            634 LOAD_CONST              16 ('--key')
+            636 LOAD_FAST               12 (key)
+            638 LOAD_CONST              17 ('--value')
+            640 LOAD_FAST               13 (value)
+            642 BUILD_LIST               4
+            644 BINARY_OP               13 (+=)
+            648 STORE_FAST              11 (args)
+            650 JUMP_BACKWARD           16 (to 620)
+
+ 46     >>  652 END_FOR
+
+ 48         654 PUSH_NULL
+            656 LOAD_FAST                0 (self)
+            658 LOAD_ATTR               12 (call)
+            678 LOAD_FAST               11 (args)
+            680 CALL_FUNCTION_EX         0
+            682 RETURN_VALUE
+
+Disassembly of <code object <lambda> at 0x000001C217405200, file "console\infrastructure.py", line 50>:
+ 50           0 RESUME                   0
+              2 LOAD_GLOBAL              1 (NULL + time)
+             12 LOAD_ATTR                2 (sleep)
+             32 LOAD_FAST                0 (seconds)
+             34 CALL                     1
+             42 RETURN_VALUE
+
+Disassembly of <code object prepare at 0x000001C217855A40, file "console\infrastructure.py", line 50>:
+ 50           0 RESUME                   0
+
+ 51           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (lock)
+             24 BEFORE_WITH
+             26 POP_TOP
+
+ 52          28 LOAD_FAST                0 (self)
+             30 LOAD_ATTR                3 (NULL|self + info)
+             50 CALL                     0
+             58 STORE_FAST               7 (info)
+
+ 53          60 LOAD_GLOBAL              5 (NULL + str)
+             70 LOAD_FAST                1 (index)
+             72 CALL                     1
+             80 LOAD_FAST                7 (info)
+             82 CONTAINS_OP              1
+             84 POP_JUMP_IF_FALSE       11 (to 108)
+
+ 54          86 LOAD_GLOBAL              7 (NULL + ValueError)
+             96 LOAD_CONST               1 ('MuMu 实例不存在')
+             98 CALL                     1
+            106 RAISE_VARARGS            1
+
+ 55     >>  108 LOAD_GLOBAL              9 (NULL + sum)
+            118 LOAD_CONST               2 (<code object <genexpr> at 0x000001C217B51BB0, file "console\infrastructure.py", line 55>)
+            120 MAKE_FUNCTION            0
+            122 LOAD_FAST                7 (info)
+            124 LOAD_ATTR               11 (NULL|self + values)
+            144 CALL                     0
+            152 GET_ITER
+            154 CALL                     0
+            162 CALL                     1
+            170 STORE_FAST               8 (running)
+
+ 56         172 LOAD_FAST                7 (info)
+            174 LOAD_GLOBAL              5 (NULL + str)
+            184 LOAD_FAST                1 (index)
+            186 CALL                     1
+            194 BINARY_SUBSCR
+            198 LOAD_ATTR               13 (NULL|self + get)
+            218 LOAD_CONST               3 ('is_process_started')
+            220 CALL                     1
+            228 POP_JUMP_IF_TRUE        25 (to 280)
+            230 LOAD_FAST                8 (running)
+            232 LOAD_GLOBAL             15 (NULL + int)
+            242 LOAD_FAST                3 (capacity)
+            244 CALL                     1
+            252 COMPARE_OP              92 (>=)
+            256 POP_JUMP_IF_FALSE       11 (to 280)
+
+ 57         258 LOAD_GLOBAL             17 (NULL + RuntimeError)
+            268 LOAD_CONST               4 ('已达到同时运行模拟器上限，请关闭空闲实例后继续')
+            270 CALL                     1
+            278 RAISE_VARARGS            1
+
+ 58     >>  280 LOAD_FAST                7 (info)
+            282 LOAD_GLOBAL              5 (NULL + str)
+            292 LOAD_FAST                1 (index)
+            294 CALL                     1
+            302 BINARY_SUBSCR
+            306 LOAD_ATTR               13 (NULL|self + get)
+            326 LOAD_CONST               3 ('is_process_started')
+            328 CALL                     1
+            336 POP_JUMP_IF_TRUE        48 (to 434)
+
+ 59         338 LOAD_FAST                0 (self)
+            340 LOAD_ATTR               19 (NULL|self + call)
+            360 LOAD_CONST               5 ('control')
+            362 LOAD_CONST               6 ('--vmindex')
+            364 LOAD_GLOBAL              5 (NULL + str)
+            374 LOAD_FAST                1 (index)
+            376 CALL                     1
+            384 LOAD_CONST               7 ('launch')
+            386 CALL                     4
+            394 POP_TOP
+
+ 60         396 LOAD_FAST                6 (on_launch)
+            398 POP_JUMP_IF_NONE        17 (to 434)
+
+ 61         400 PUSH_NULL
+            402 LOAD_FAST                6 (on_launch)
+            404 LOAD_GLOBAL              5 (NULL + str)
+            414 LOAD_FAST                1 (index)
+            416 CALL                     1
+            424 CALL                     1
+            432 POP_TOP
+
+ 51     >>  434 LOAD_CONST               0 (None)
+            436 LOAD_CONST               0 (None)
+            438 LOAD_CONST               0 (None)
+            440 CALL                     2
+            448 POP_TOP
+
+ 62     >>  450 LOAD_GLOBAL             21 (NULL + time)
+            460 LOAD_ATTR               22 (monotonic)
+            480 CALL                     0
+            488 LOAD_CONST               8 (360)
+            490 BINARY_OP                0 (+)
+            494 STORE_FAST               9 (deadline)
+
+ 63         496 LOAD_CONST               9 ('')
+            498 STORE_FAST              10 (last_error)
+
+ 64         500 LOAD_GLOBAL             21 (NULL + time)
+            510 LOAD_ATTR               22 (monotonic)
+            530 CALL                     0
+            538 LOAD_FAST                9 (deadline)
+            540 COMPARE_OP               2 (<)
+            544 EXTENDED_ARG             1
+            546 POP_JUMP_IF_FALSE      331 (to 1210)
+
+ 65     >>  548 LOAD_FAST                4 (stop)
+            550 POP_JUMP_IF_NONE        27 (to 606)
+            552 LOAD_FAST                4 (stop)
+            554 LOAD_ATTR               25 (NULL|self + is_set)
+            574 CALL                     0
+            582 POP_JUMP_IF_FALSE       11 (to 606)
+
+ 66         584 LOAD_GLOBAL             27 (NULL + InterruptedError)
+            594 LOAD_CONST              10 ('启动已停止；已创建实例保留')
+            596 CALL                     1
+            604 RAISE_VARARGS            1
+
+ 67     >>  606 LOAD_FAST                0 (self)
+            608 LOAD_ATTR                3 (NULL|self + info)
+            628 CALL                     0
+            636 LOAD_ATTR               13 (NULL|self + get)
+            656 LOAD_GLOBAL              5 (NULL + str)
+            666 LOAD_FAST                1 (index)
+            668 CALL                     1
+            676 BUILD_MAP                0
+            678 CALL                     2
+            686 STORE_FAST              11 (item)
+
+ 68         688 LOAD_FAST               11 (item)
+            690 LOAD_ATTR               13 (NULL|self + get)
+            710 LOAD_CONST              11 ('is_android_started')
+            712 CALL                     1
+            720 POP_JUMP_IF_FALSE      211 (to 1144)
+            722 LOAD_FAST               11 (item)
+            724 LOAD_ATTR               13 (NULL|self + get)
+            744 LOAD_CONST              12 ('adb_port')
+            746 CALL                     1
+            754 POP_JUMP_IF_FALSE      194 (to 1144)
+
+ 69         756 LOAD_FAST               11 (item)
+            758 LOAD_ATTR               13 (NULL|self + get)
+            778 LOAD_CONST              13 ('adb_host_ip')
+            780 LOAD_CONST              14 ('127.0.0.1')
+            782 CALL                     2
+            790 FORMAT_VALUE             0
+            792 LOAD_CONST              15 (':')
+            794 LOAD_FAST               11 (item)
+            796 LOAD_CONST              12 ('adb_port')
+            798 BINARY_SUBSCR
+            802 FORMAT_VALUE             0
+            804 BUILD_STRING             3
+            806 STORE_FAST              12 (serial)
+
+ 70         808 NOP
+
+ 71         810 LOAD_FAST                0 (self)
+            812 LOAD_ATTR               28 (android)
+            832 LOAD_ATTR               31 (NULL|self + connect)
+            852 LOAD_FAST               12 (serial)
+            854 CALL                     1
+            862 POP_TOP
+
+ 74         864 LOAD_FAST                0 (self)
+            866 LOAD_ATTR               28 (android)
+            886 LOAD_ATTR               33 (NULL|self + device)
+            906 LOAD_FAST               12 (serial)
+            908 LOAD_CONST              16 ('get-state')
+            910 LOAD_CONST              17 (10)
+            912 KW_NAMES                18 (('timeout',))
+            914 CALL                     3
+            922 LOAD_CONST              19 ('device')
+            924 COMPARE_OP              40 (==)
+            928 COPY                     1
+            930 POP_JUMP_IF_FALSE       34 (to 1000)
+            932 POP_TOP
+
+ 75         934 LOAD_FAST                0 (self)
+            936 LOAD_ATTR               28 (android)
+            956 LOAD_ATTR               35 (NULL|self + shell)
+            976 LOAD_FAST               12 (serial)
+            978 LOAD_CONST              20 ('getprop')
+            980 LOAD_CONST              21 ('sys.boot_completed')
+            982 LOAD_CONST              22 (15)
+            984 KW_NAMES                18 (('timeout',))
+            986 CALL                     4
+            994 LOAD_CONST              23 ('1')
+            996 COMPARE_OP              40 (==)
+
+ 74     >> 1000 STORE_FAST              13 (ready)
+
+ 79     >> 1002 LOAD_FAST               13 (ready)
+           1004 POP_JUMP_IF_FALSE       69 (to 1144)
+
+ 80        1006 LOAD_FAST                2 (apk)
+           1008 POP_JUMP_IF_FALSE       65 (to 1140)
+
+ 81        1010 LOAD_FAST                0 (self)
+           1012 LOAD_ATTR               28 (android)
+           1032 LOAD_ATTR               35 (NULL|self + shell)
+           1052 LOAD_FAST               12 (serial)
+           1054 LOAD_CONST              25 ('pm')
+           1056 LOAD_CONST              26 ('list')
+           1058 LOAD_CONST              27 ('packages')
+           1060 LOAD_CONST              28 ('org.thoughtcrime.securesms')
+           1062 LOAD_CONST              29 (20)
+           1064 KW_NAMES                18 (('timeout',))
+           1066 CALL                     6
+           1074 STORE_FAST              15 (installed)
+
+ 82        1076 LOAD_CONST              30 ('package:org.thoughtcrime.securesms')
+           1078 LOAD_FAST               15 (installed)
+           1080 CONTAINS_OP              1
+           1082 POP_JUMP_IF_FALSE       28 (to 1140)
+
+ 83        1084 LOAD_FAST                0 (self)
+           1086 LOAD_ATTR               28 (android)
+           1106 LOAD_ATTR               37 (NULL|self + install)
+           1126 LOAD_FAST               12 (serial)
+           1128 LOAD_FAST                2 (apk)
+           1130 CALL                     2
+           1138 POP_TOP
+
+ 84     >> 1140 LOAD_FAST               12 (serial)
+           1142 RETURN_VALUE
+
+ 85     >> 1144 PUSH_NULL
+           1146 LOAD_FAST                5 (delay)
+           1148 LOAD_CONST              31 (2)
+           1150 CALL                     1
+           1158 POP_TOP
+
+ 64        1160 LOAD_GLOBAL             21 (NULL + time)
+           1170 LOAD_ATTR               22 (monotonic)
+           1190 CALL                     0
+           1198 LOAD_FAST                9 (deadline)
+           1200 COMPARE_OP               2 (<)
+           1204 POP_JUMP_IF_FALSE        2 (to 1210)
+           1206 EXTENDED_ARG             1
+           1208 JUMP_BACKWARD          331 (to 548)
+
+ 86     >> 1210 LOAD_GLOBAL             39 (NULL + TimeoutError)
+           1220 LOAD_CONST              32 ('模拟器启动超时（360 秒），实例保留，请核查后继续')
+           1222 LOAD_FAST               10 (last_error)
+           1224 POP_JUMP_IF_FALSE       14 (to 1254)
+           1226 LOAD_CONST              33 ('；最后错误：')
+           1228 LOAD_FAST               10 (last_error)
+           1230 LOAD_CONST               0 (None)
+           1232 LOAD_CONST              34 (200)
+           1234 BINARY_SLICE
+           1236 BINARY_OP                0 (+)
+           1240 BINARY_OP                0 (+)
+           1244 CALL                     1
+           1252 RAISE_VARARGS            1
+        >> 1254 LOAD_CONST               9 ('')
+           1256 BINARY_OP                0 (+)
+           1260 CALL                     1
+           1268 RAISE_VARARGS            1
+
+ 51     >> 1270 PUSH_EXC_INFO
+           1272 WITH_EXCEPT_START
+           1274 POP_JUMP_IF_TRUE         1 (to 1278)
+           1276 RERAISE                  2
+        >> 1278 POP_TOP
+           1280 POP_EXCEPT
+           1282 POP_TOP
+           1284 POP_TOP
+           1286 EXTENDED_ARG             1
+           1288 JUMP_BACKWARD          420 (to 450)
+        >> 1290 COPY                     3
+           1292 POP_EXCEPT
+           1294 RERAISE                  1
+        >> 1296 PUSH_EXC_INFO
+
+ 76        1298 LOAD_GLOBAL             16 (RuntimeError)
+           1308 LOAD_GLOBAL              6 (ValueError)
+           1318 BUILD_TUPLE              2
+           1320 CHECK_EXC_MATCH
+           1322 POP_JUMP_IF_FALSE       23 (to 1370)
+           1324 STORE_FAST              14 (error)
+
+ 77        1326 LOAD_CONST              24 (False)
+           1328 STORE_FAST              13 (ready)
+
+ 78        1330 LOAD_GLOBAL              5 (NULL + str)
+           1340 LOAD_FAST               14 (error)
+           1342 CALL                     1
+           1350 STORE_FAST              10 (last_error)
+           1352 POP_EXCEPT
+           1354 LOAD_CONST               0 (None)
+           1356 STORE_FAST              14 (error)
+           1358 DELETE_FAST             14 (error)
+           1360 JUMP_BACKWARD          180 (to 1002)
+        >> 1362 LOAD_CONST               0 (None)
+           1364 STORE_FAST              14 (error)
+           1366 DELETE_FAST             14 (error)
+           1368 RERAISE                  1
+
+ 76     >> 1370 RERAISE                  0
+        >> 1372 COPY                     3
+           1374 POP_EXCEPT
+           1376 RERAISE                  1
+ExceptionTable:
+  26 to 432 -> 1270 [1] lasti
+  810 to 1000 -> 1296 [0]
+  1270 to 1278 -> 1290 [3] lasti
+  1296 to 1324 -> 1372 [1] lasti
+  1326 to 1350 -> 1362 [1] lasti
+  1362 to 1370 -> 1372 [1] lasti
+
+Disassembly of <code object <genexpr> at 0x000001C217B51BB0, file "console\infrastructure.py", line 55>:
+ 55           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                47 (to 106)
+             12 STORE_FAST               1 (v)
+             14 LOAD_GLOBAL              1 (NULL + isinstance)
+             24 LOAD_FAST                1 (v)
+             26 LOAD_GLOBAL              2 (dict)
+             36 CALL                     2
+             44 POP_JUMP_IF_TRUE         1 (to 48)
+             46 JUMP_BACKWARD           20 (to 8)
+        >>   48 LOAD_GLOBAL              5 (NULL + bool)
+             58 LOAD_FAST                1 (v)
+             60 LOAD_ATTR                7 (NULL|self + get)
+             80 LOAD_CONST               0 ('is_process_started')
+             82 CALL                     1
+             90 CALL                     1
+             98 YIELD_VALUE              1
+            100 RESUME                   1
+            102 POP_TOP
+            104 JUMP_BACKWARD           49 (to 8)
+        >>  106 END_FOR
+            108 RETURN_CONST             1 (None)
+        >>  110 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            112 RERAISE                  1
+ExceptionTable:
+  4 to 44 -> 110 [0] lasti
+  48 to 108 -> 110 [0] lasti
+
+Disassembly of <code object index_for at 0x000001C2176B7480, file "console\infrastructure.py", line 88>:
+ 88           0 RESUME                   0
+
+ 89           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + info)
+             24 CALL                     0
+             32 LOAD_ATTR                3 (NULL|self + items)
+             52 CALL                     0
+             60 GET_ITER
+        >>   62 FOR_ITER                75 (to 216)
+             66 UNPACK_SEQUENCE          2
+             70 STORE_FAST               2 (index)
+             72 STORE_FAST               3 (item)
+
+ 90          74 LOAD_GLOBAL              5 (NULL + isinstance)
+             84 LOAD_FAST                3 (item)
+             86 LOAD_GLOBAL              6 (dict)
+             96 CALL                     2
+            104 POP_JUMP_IF_TRUE         1 (to 108)
+            106 JUMP_BACKWARD           23 (to 62)
+        >>  108 LOAD_FAST                1 (serial)
+            110 LOAD_FAST                3 (item)
+            112 LOAD_ATTR                9 (NULL|self + get)
+            132 LOAD_CONST               1 ('adb_host_ip')
+            134 CALL                     1
+            142 FORMAT_VALUE             0
+            144 LOAD_CONST               2 (':')
+            146 LOAD_FAST                3 (item)
+            148 LOAD_ATTR                9 (NULL|self + get)
+            168 LOAD_CONST               3 ('adb_port')
+            170 CALL                     1
+            178 FORMAT_VALUE             0
+            180 BUILD_STRING             3
+            182 COMPARE_OP              40 (==)
+            186 POP_JUMP_IF_TRUE         1 (to 190)
+            188 JUMP_BACKWARD           64 (to 62)
+
+ 91     >>  190 LOAD_GLOBAL             11 (NULL + str)
+            200 LOAD_FAST                2 (index)
+            202 CALL                     1
+            210 SWAP                     2
+            212 POP_TOP
+            214 RETURN_VALUE
+
+ 89     >>  216 END_FOR
+
+ 92         218 LOAD_GLOBAL             13 (NULL + ValueError)
+            228 LOAD_CONST               4 ('无法将 ADB 地址对应到 MuMu 实例')
+            230 CALL                     1
+            238 RAISE_VARARGS            1
+
+Disassembly of <code object recreate at 0x000001C2172DF870, file "console\infrastructure.py", line 94>:
+ 94           0 RESUME                   0
+
+ 95           2 LOAD_GLOBAL              1 (NULL + str)
+             12 LOAD_FAST                1 (index)
+             14 CALL                     1
+             22 STORE_FAST               1 (index)
+
+ 96          24 LOAD_FAST                1 (index)
+             26 LOAD_ATTR                3 (NULL|self + isdigit)
+             46 CALL                     0
+             54 POP_JUMP_IF_TRUE        11 (to 78)
+
+ 97          56 LOAD_GLOBAL              5 (NULL + ValueError)
+             66 LOAD_CONST               1 ('只能重建一个明确的数字实例编号')
+             68 CALL                     1
+             76 RAISE_VARARGS            1
+
+ 98     >>   78 LOAD_FAST                0 (self)
+             80 LOAD_ATTR                6 (lock)
+            100 BEFORE_WITH
+            102 POP_TOP
+
+ 99         104 LOAD_FAST                1 (index)
+            106 LOAD_FAST                0 (self)
+            108 LOAD_ATTR                9 (NULL|self + info)
+            128 CALL                     0
+            136 CONTAINS_OP              1
+            138 POP_JUMP_IF_FALSE       11 (to 162)
+
+100         140 LOAD_GLOBAL              5 (NULL + ValueError)
+            150 LOAD_CONST               2 ('实例不存在')
+            152 CALL                     1
+            160 RAISE_VARARGS            1
+
+101     >>  162 LOAD_FAST                0 (self)
+            164 LOAD_ATTR               11 (NULL|self + shutdown_wait)
+            184 LOAD_FAST                1 (index)
+            186 CALL                     1
+            194 POP_TOP
+
+102         196 LOAD_FAST                0 (self)
+            198 LOAD_ATTR               13 (NULL|self + call)
+            218 LOAD_CONST               3 ('delete')
+            220 LOAD_CONST               4 ('--vmindex')
+            222 LOAD_FAST                1 (index)
+            224 CALL                     3
+            232 POP_TOP
+
+103         234 LOAD_FAST                1 (index)
+            236 LOAD_FAST                0 (self)
+            238 LOAD_ATTR                9 (NULL|self + info)
+            258 CALL                     0
+            266 CONTAINS_OP              0
+            268 POP_JUMP_IF_FALSE       11 (to 292)
+
+104         270 LOAD_GLOBAL             15 (NULL + RuntimeError)
+            280 LOAD_CONST               5 ('旧实例删除尚未确认，不重复操作')
+            282 CALL                     1
+            290 RAISE_VARARGS            1
+
+105     >>  292 LOAD_FAST                0 (self)
+            294 LOAD_ATTR               17 (NULL|self + create)
+            314 CALL                     0
+
+ 98         322 SWAP                     2
+            324 LOAD_CONST               0 (None)
+            326 LOAD_CONST               0 (None)
+            328 LOAD_CONST               0 (None)
+            330 CALL                     2
+            338 POP_TOP
+            340 RETURN_VALUE
+        >>  342 PUSH_EXC_INFO
+            344 WITH_EXCEPT_START
+            346 POP_JUMP_IF_TRUE         1 (to 350)
+            348 RERAISE                  2
+        >>  350 POP_TOP
+            352 POP_EXCEPT
+            354 POP_TOP
+            356 POP_TOP
+            358 RETURN_CONST             0 (None)
+        >>  360 COPY                     3
+            362 POP_EXCEPT
+            364 RERAISE                  1
+ExceptionTable:
+  102 to 320 -> 342 [1] lasti
+  342 to 350 -> 360 [3] lasti
+
+Disassembly of <code object shutdown_wait at 0x000001C2177294B0, file "console\infrastructure.py", line 107>:
+107           0 RESUME                   0
+
+108           2 LOAD_GLOBAL              1 (NULL + str)
+             12 LOAD_FAST                1 (index)
+             14 CALL                     1
+             22 STORE_FAST               1 (index)
+
+109          24 LOAD_FAST                1 (index)
+             26 LOAD_ATTR                3 (NULL|self + isdigit)
+             46 CALL                     0
+             54 POP_JUMP_IF_TRUE        11 (to 78)
+             56 LOAD_GLOBAL              5 (NULL + ValueError)
+             66 LOAD_CONST               1 ('关闭等待需要明确的实例编号')
+             68 CALL                     1
+             76 RAISE_VARARGS            1
+
+110     >>   78 LOAD_FAST                0 (self)
+             80 LOAD_ATTR                7 (NULL|self + call)
+            100 LOAD_CONST               2 ('control')
+            102 LOAD_CONST               3 ('--vmindex')
+            104 LOAD_FAST                1 (index)
+            106 LOAD_CONST               4 ('shutdown')
+            108 CALL                     4
+            116 POP_TOP
+
+111         118 LOAD_GLOBAL              9 (NULL + time)
+            128 LOAD_ATTR               10 (monotonic)
+            148 CALL                     0
+            156 LOAD_FAST                2 (timeout)
+            158 BINARY_OP                0 (+)
+            162 STORE_FAST               3 (deadline)
+
+112         164 LOAD_GLOBAL              9 (NULL + time)
+            174 LOAD_ATTR               10 (monotonic)
+            194 CALL                     0
+            202 LOAD_FAST                3 (deadline)
+            204 COMPARE_OP               2 (<)
+            208 POP_JUMP_IF_FALSE       96 (to 402)
+
+113     >>  210 LOAD_FAST                0 (self)
+            212 LOAD_ATTR               13 (NULL|self + info)
+            232 CALL                     0
+            240 LOAD_ATTR               15 (NULL|self + get)
+            260 LOAD_FAST                1 (index)
+            262 CALL                     1
+            270 STORE_FAST               4 (item)
+
+114         272 LOAD_FAST                4 (item)
+            274 POP_JUMP_IF_NONE        17 (to 310)
+            276 LOAD_FAST                4 (item)
+            278 LOAD_ATTR               15 (NULL|self + get)
+            298 LOAD_CONST               5 ('is_process_started')
+            300 CALL                     1
+            308 POP_JUMP_IF_TRUE         1 (to 312)
+        >>  310 RETURN_CONST             0 (None)
+
+115     >>  312 LOAD_GLOBAL              9 (NULL + time)
+            322 LOAD_ATTR               16 (sleep)
+            342 LOAD_CONST               6 (0.5)
+            344 CALL                     1
+            352 POP_TOP
+
+112         354 LOAD_GLOBAL              9 (NULL + time)
+            364 LOAD_ATTR               10 (monotonic)
+            384 CALL                     0
+            392 LOAD_FAST                3 (deadline)
+            394 COMPARE_OP               2 (<)
+            398 POP_JUMP_IF_FALSE        1 (to 402)
+            400 JUMP_BACKWARD           96 (to 210)
+
+116     >>  402 LOAD_GLOBAL             19 (NULL + TimeoutError)
+            412 LOAD_CONST               7 ('模拟器关闭尚未完成，未删除实例，请核查后继续')
+            414 CALL                     1
+            422 RAISE_VARARGS            1
+
+Disassembly of <code object ResourceGuard at 0x000001C217B9AA30, file "console\infrastructure.py", line 119>:
+119           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('ResourceGuard')
+              8 STORE_NAME               2 (__qualname__)
+
+120          10 LOAD_CONST               1 (<code object __init__ at 0x000001C217B9A5D0, file "console\infrastructure.py", line 120>)
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (__init__)
+
+123          16 LOAD_CONST               2 (<code object sample at 0x000001C217355460, file "console\infrastructure.py", line 123>)
+             18 MAKE_FUNCTION            0
+             20 STORE_NAME               4 (sample)
+
+144          22 LOAD_CONST               3 (<code object reason at 0x000001C2176B6550, file "console\infrastructure.py", line 144>)
+             24 MAKE_FUNCTION            0
+             26 STORE_NAME               5 (reason)
+             28 RETURN_CONST             4 (None)
+
+Disassembly of <code object __init__ at 0x000001C217B9A5D0, file "console\infrastructure.py", line 120>:
+120           0 RESUME                   0
+
+121           2 LOAD_CONST               0 (None)
+              4 LOAD_FAST                0 (self)
+              6 STORE_ATTR               0 (previous)
+             16 RETURN_CONST             0 (None)
+
+Disassembly of <code object sample at 0x000001C217355460, file "console\infrastructure.py", line 123>:
+123           0 RESUME                   0
+
+124           2 PUSH_NULL
+              4 LOAD_BUILD_CLASS
+              6 LOAD_CONST               1 (<code object Memory at 0x000001C217C20710, file "console\infrastructure.py", line 124>)
+              8 MAKE_FUNCTION            0
+             10 LOAD_CONST               2 ('Memory')
+             12 LOAD_GLOBAL              0 (ctypes)
+             22 LOAD_ATTR                2 (Structure)
+             42 CALL                     3
+             50 STORE_FAST               1 (Memory)
+
+126          52 PUSH_NULL
+             54 LOAD_FAST                1 (Memory)
+             56 CALL                     0
+             64 STORE_FAST               2 (memory)
+
+127          66 LOAD_GLOBAL              1 (NULL + ctypes)
+             76 LOAD_ATTR                4 (sizeof)
+             96 LOAD_FAST                2 (memory)
+             98 CALL                     1
+            106 LOAD_FAST                2 (memory)
+            108 STORE_ATTR               3 (length)
+
+128         118 LOAD_GLOBAL              9 (NULL + getattr)
+            128 LOAD_GLOBAL              0 (ctypes)
+            138 LOAD_CONST               3 ('windll')
+            140 LOAD_CONST               0 (None)
+            142 CALL                     3
+            150 STORE_FAST               3 (kernel)
+
+129         152 LOAD_FAST                3 (kernel)
+            154 POP_JUMP_IF_NOT_NONE     6 (to 168)
+
+130         156 LOAD_CONST               4 (0)
+            158 LOAD_CONST               5 (999999)
+            160 LOAD_CONST               4 (0)
+            162 LOAD_CONST               6 (('memory_percent', 'available_mb', 'cpu_percent'))
+            164 BUILD_CONST_KEY_MAP      3
+            166 RETURN_VALUE
+
+131     >>  168 LOAD_FAST                3 (kernel)
+            170 LOAD_ATTR               10 (kernel32)
+            190 LOAD_ATTR               13 (NULL|self + GlobalMemoryStatusEx)
+            210 LOAD_GLOBAL              1 (NULL + ctypes)
+            220 LOAD_ATTR               14 (byref)
+            240 LOAD_FAST                2 (memory)
+            242 CALL                     1
+            250 CALL                     1
+            258 POP_JUMP_IF_TRUE        11 (to 282)
+
+132         260 LOAD_GLOBAL             17 (NULL + OSError)
+            270 LOAD_CONST               7 ('无法读取 Windows 内存状态')
+            272 CALL                     1
+            280 RAISE_VARARGS            1
+
+133     >>  282 LOAD_GLOBAL              1 (NULL + ctypes)
+            292 LOAD_ATTR               18 (c_ulonglong)
+            312 CALL                     0
+            320 LOAD_GLOBAL              1 (NULL + ctypes)
+            330 LOAD_ATTR               18 (c_ulonglong)
+            350 CALL                     0
+            358 LOAD_GLOBAL              1 (NULL + ctypes)
+            368 LOAD_ATTR               18 (c_ulonglong)
+            388 CALL                     0
+            396 STORE_FAST               6 (user)
+            398 STORE_FAST               5 (system)
+            400 STORE_FAST               4 (idle)
+
+134         402 LOAD_FAST                3 (kernel)
+            404 LOAD_ATTR               10 (kernel32)
+            424 LOAD_ATTR               21 (NULL|self + GetSystemTimes)
+            444 LOAD_GLOBAL              1 (NULL + ctypes)
+            454 LOAD_ATTR               14 (byref)
+            474 LOAD_FAST                4 (idle)
+            476 CALL                     1
+            484 LOAD_GLOBAL              1 (NULL + ctypes)
+            494 LOAD_ATTR               14 (byref)
+            514 LOAD_FAST                5 (system)
+            516 CALL                     1
+            524 LOAD_GLOBAL              1 (NULL + ctypes)
+            534 LOAD_ATTR               14 (byref)
+            554 LOAD_FAST                6 (user)
+            556 CALL                     1
+            564 CALL                     3
+            572 POP_TOP
+
+135         574 LOAD_FAST                4 (idle)
+            576 LOAD_ATTR               22 (value)
+            596 LOAD_FAST                5 (system)
+            598 LOAD_ATTR               22 (value)
+            618 LOAD_FAST                6 (user)
+            620 LOAD_ATTR               22 (value)
+            640 BINARY_OP                0 (+)
+            644 BUILD_TUPLE              2
+            646 STORE_FAST               7 (sample)
+
+136         648 LOAD_CONST               4 (0)
+            650 STORE_FAST               8 (cpu)
+
+137         652 LOAD_FAST                0 (self)
+            654 LOAD_ATTR               24 (previous)
+            674 POP_JUMP_IF_FALSE       76 (to 828)
+
+138         676 LOAD_FAST                7 (sample)
+            678 LOAD_CONST               8 (1)
+            680 BINARY_SUBSCR
+            684 LOAD_FAST                0 (self)
+            686 LOAD_ATTR               24 (previous)
+            706 LOAD_CONST               8 (1)
+            708 BINARY_SUBSCR
+            712 BINARY_OP               10 (-)
+            716 STORE_FAST               9 (elapsed)
+
+139         718 LOAD_FAST                9 (elapsed)
+            720 LOAD_CONST               4 (0)
+            722 COMPARE_OP              68 (>)
+            726 POP_JUMP_IF_FALSE       50 (to 828)
+
+140         728 LOAD_GLOBAL             27 (NULL + max)
+            738 LOAD_CONST               4 (0)
+            740 LOAD_GLOBAL             29 (NULL + min)
+            750 LOAD_CONST               9 (100)
+            752 LOAD_CONST               9 (100)
+            754 LOAD_CONST               8 (1)
+            756 LOAD_FAST                7 (sample)
+            758 LOAD_CONST               4 (0)
+            760 BINARY_SUBSCR
+            764 LOAD_FAST                0 (self)
+            766 LOAD_ATTR               24 (previous)
+            786 LOAD_CONST               4 (0)
+            788 BINARY_SUBSCR
+            792 BINARY_OP               10 (-)
+            796 LOAD_FAST                9 (elapsed)
+            798 BINARY_OP               11 (/)
+            802 BINARY_OP               10 (-)
+            806 BINARY_OP                5 (*)
+            810 CALL                     2
+            818 CALL                     2
+            826 STORE_FAST               8 (cpu)
+
+141     >>  828 LOAD_FAST                7 (sample)
+            830 LOAD_FAST                0 (self)
+            832 STORE_ATTR              12 (previous)
+
+142         842 LOAD_FAST                2 (memory)
+            844 LOAD_ATTR               30 (load)
+            864 LOAD_FAST                2 (memory)
+            866 LOAD_ATTR               32 (available)
+            886 LOAD_CONST              10 (1048576)
+            888 BINARY_OP               11 (/)
+            892 LOAD_FAST                8 (cpu)
+            894 LOAD_CONST               6 (('memory_percent', 'available_mb', 'cpu_percent'))
+            896 BUILD_CONST_KEY_MAP      3
+            898 RETURN_VALUE
+
+Disassembly of <code object Memory at 0x000001C217C20710, file "console\infrastructure.py", line 124>:
+124           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('ResourceGuard.sample.<locals>.Memory')
+              8 STORE_NAME               2 (__qualname__)
+
+125          10 LOAD_CONST               1 ('length')
+             12 LOAD_NAME                3 (ctypes)
+             14 LOAD_ATTR                8 (c_ulong)
+             34 BUILD_TUPLE              2
+             36 LOAD_CONST               2 ('load')
+             38 LOAD_NAME                3 (ctypes)
+             40 LOAD_ATTR                8 (c_ulong)
+             60 BUILD_TUPLE              2
+             62 BUILD_LIST               2
+             64 LOAD_CONST               3 (('total', 'available', 'page_total', 'page_available', 'virtual_total', 'virtual_available', 'extended'))
+             66 GET_ITER
+             68 LOAD_FAST_AND_CLEAR      0 (.0)
+             70 LOAD_FAST_AND_CLEAR      1 (name)
+             72 LOAD_FAST_AND_CLEAR      2 (ctypes)
+             74 SWAP                     4
+             76 BUILD_LIST               0
+             78 SWAP                     2
+        >>   80 FOR_ITER                20 (to 124)
+             84 STORE_FAST               1 (name)
+             86 LOAD_FAST                1 (name)
+             88 LOAD_GLOBAL              6 (ctypes)
+             98 LOAD_ATTR               10 (c_ulonglong)
+            118 BUILD_TUPLE              2
+            120 LIST_APPEND              2
+            122 JUMP_BACKWARD           22 (to 80)
+        >>  124 END_FOR
+            126 SWAP                     4
+            128 STORE_FAST               2 (ctypes)
+            130 STORE_FAST               1 (name)
+            132 STORE_FAST               0 (.0)
+            134 BINARY_OP                0 (+)
+            138 STORE_NAME               6 (_fields_)
+            140 RETURN_CONST             4 (None)
+        >>  142 SWAP                     2
+            144 POP_TOP
+            146 SWAP                     4
+            148 STORE_FAST               2 (ctypes)
+            150 STORE_FAST               1 (name)
+            152 STORE_FAST               0 (.0)
+            154 RERAISE                  0
+ExceptionTable:
+  76 to 124 -> 142 [5]
+
+Disassembly of <code object reason at 0x000001C2176B6550, file "console\infrastructure.py", line 144>:
+144           0 RESUME                   0
+
+145           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + sample)
+             24 CALL                     0
+             32 STORE_FAST               2 (sample)
+
+146          34 LOAD_FAST                2 (sample)
+             36 LOAD_CONST               1 ('memory_percent')
+             38 BINARY_SUBSCR
+             42 LOAD_GLOBAL              3 (NULL + float)
+             52 LOAD_FAST                1 (config)
+             54 LOAD_ATTR                5 (NULL|self + get)
+             74 LOAD_CONST               1 ('memory_percent')
+             76 LOAD_CONST               2 (92)
+             78 CALL                     2
+             86 CALL                     1
+             94 COMPARE_OP              92 (>=)
+             98 POP_JUMP_IF_TRUE        33 (to 166)
+            100 LOAD_FAST                2 (sample)
+            102 LOAD_CONST               3 ('available_mb')
+            104 BINARY_SUBSCR
+            108 LOAD_GLOBAL              3 (NULL + float)
+            118 LOAD_FAST                1 (config)
+            120 LOAD_ATTR                5 (NULL|self + get)
+            140 LOAD_CONST               4 ('min_free_mb')
+            142 LOAD_CONST               5 (512)
+            144 CALL                     2
+            152 CALL                     1
+            160 COMPARE_OP               2 (<)
+            164 POP_JUMP_IF_FALSE        1 (to 168)
+
+147     >>  166 RETURN_CONST             6 ('内存不足，暂停派发新任务')
+
+148     >>  168 LOAD_FAST                2 (sample)
+            170 LOAD_CONST               7 ('cpu_percent')
+            172 BINARY_SUBSCR
+            176 LOAD_GLOBAL              3 (NULL + float)
+            186 LOAD_FAST                1 (config)
+            188 LOAD_ATTR                5 (NULL|self + get)
+            208 LOAD_CONST               7 ('cpu_percent')
+            210 LOAD_CONST               8 (98)
+            212 CALL                     2
+            220 CALL                     1
+            228 COMPARE_OP              92 (>=)
+            232 POP_JUMP_IF_FALSE        1 (to 236)
+
+149         234 RETURN_CONST             9 ('CPU 占用过高，暂停派发新任务')
+
+150     >>  236 RETURN_CONST            10 ('')
+
+Disassembly of <code object next_due at 0x000001C217C209D0, file "console\infrastructure.py", line 153>:
+153           0 RESUME                   0
+
+154           2 LOAD_GLOBAL              1 (NULL + int)
+             12 LOAD_FAST                1 (interval)
+             14 CALL                     1
+             22 LOAD_CONST               1 (0)
+             24 COMPARE_OP              26 (<=)
+             28 POP_JUMP_IF_FALSE        1 (to 32)
+
+155          30 RETURN_CONST             0 (None)
+
+156     >>   32 LOAD_GLOBAL              3 (NULL + datetime)
+             42 LOAD_ATTR                4 (fromisoformat)
+             62 LOAD_FAST                0 (current)
+             64 CALL                     1
+             72 LOAD_GLOBAL              7 (NULL + timedelta)
+             82 LOAD_GLOBAL              1 (NULL + int)
+             92 LOAD_FAST                1 (interval)
+             94 CALL                     1
+            102 KW_NAMES                 2 (('seconds',))
+            104 CALL                     1
+            112 BINARY_OP                0 (+)
+            116 LOAD_ATTR                9 (NULL|self + isoformat)
+            136 LOAD_CONST               3 ('seconds')
+            138 KW_NAMES                 4 (('timespec',))
+            140 CALL                     1
+            148 RETURN_VALUE
+
+Disassembly of <code object validate_proxy at 0x000001C217D04030, file "console\infrastructure.py", line 159>:
+159           0 RESUME                   0
+
+160           2 LOAD_GLOBAL              1 (NULL + re)
+             12 LOAD_ATTR                2 (fullmatch)
+             32 LOAD_CONST               1 ('[A-Za-z0-9.\\-]+:\\d{1,5}')
+             34 LOAD_FAST                0 (endpoint)
+             36 CALL                     2
+             44 POP_JUMP_IF_FALSE       51 (to 148)
+             46 LOAD_CONST               2 (1)
+             48 LOAD_GLOBAL              5 (NULL + int)
+             58 LOAD_FAST                0 (endpoint)
+             60 LOAD_ATTR                7 (NULL|self + rsplit)
+             80 LOAD_CONST               3 (':')
+             82 LOAD_CONST               2 (1)
+             84 CALL                     2
+             92 LOAD_CONST               2 (1)
+             94 BINARY_SUBSCR
+             98 CALL                     1
+            106 SWAP                     2
+            108 COPY                     2
+            110 COMPARE_OP              26 (<=)
+            114 POP_JUMP_IF_FALSE       15 (to 146)
+            116 LOAD_CONST               4 (65535)
+            118 COMPARE_OP              26 (<=)
+            122 POP_JUMP_IF_TRUE        23 (to 170)
+
+161         124 LOAD_GLOBAL              9 (NULL + ValueError)
+            134 LOAD_CONST               5 ('HTTP 代理格式应为 host:port，端口 1–65535；不支持含密码的代理 URL')
+            136 CALL                     1
+            144 RAISE_VARARGS            1
+
+160     >>  146 POP_TOP
+
+161     >>  148 LOAD_GLOBAL              9 (NULL + ValueError)
+            158 LOAD_CONST               5 ('HTTP 代理格式应为 host:port，端口 1–65535；不支持含密码的代理 URL')
+            160 CALL                     1
+            168 RAISE_VARARGS            1
+
+162     >>  170 LOAD_FAST                0 (endpoint)
+            172 RETURN_VALUE

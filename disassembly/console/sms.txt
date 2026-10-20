@@ -1,0 +1,933 @@
+Module: console.sms
+Python bytecode: 3.12
+
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 ('Grizzly SMS compatible API. No retries of paid getNumber operations.')
+              4 STORE_NAME               0 (__doc__)
+
+  2           6 LOAD_CONST               1 (0)
+              8 LOAD_CONST               2 (None)
+             10 IMPORT_NAME              1 (re)
+             12 STORE_NAME               1 (re)
+
+  3          14 LOAD_CONST               1 (0)
+             16 LOAD_CONST               2 (None)
+             18 IMPORT_NAME              2 (json)
+             20 STORE_NAME               2 (json)
+
+  4          22 LOAD_CONST               1 (0)
+             24 LOAD_CONST               2 (None)
+             26 IMPORT_NAME              3 (urllib.error)
+             28 STORE_NAME               4 (urllib)
+
+  5          30 LOAD_CONST               1 (0)
+             32 LOAD_CONST               2 (None)
+             34 IMPORT_NAME              5 (urllib.parse)
+             36 STORE_NAME               4 (urllib)
+
+  6          38 LOAD_CONST               1 (0)
+             40 LOAD_CONST               2 (None)
+             42 IMPORT_NAME              6 (urllib.request)
+             44 STORE_NAME               4 (urllib)
+
+  7          46 LOAD_CONST               1 (0)
+             48 LOAD_CONST               3 (('Decimal', 'InvalidOperation'))
+             50 IMPORT_NAME              7 (decimal)
+             52 IMPORT_FROM              8 (Decimal)
+             54 STORE_NAME               8 (Decimal)
+             56 IMPORT_FROM              9 (InvalidOperation)
+             58 STORE_NAME               9 (InvalidOperation)
+             60 POP_TOP
+
+ 10          62 PUSH_NULL
+             64 LOAD_BUILD_CLASS
+             66 LOAD_CONST               4 (<code object Grizzly at 0x000001C217B9E3D0, file "console\sms.py", line 10>)
+             68 MAKE_FUNCTION            0
+             70 LOAD_CONST               5 ('Grizzly')
+             72 CALL                     2
+             80 STORE_NAME              10 (Grizzly)
+             82 RETURN_CONST             2 (None)
+
+Disassembly of <code object Grizzly at 0x000001C217B9E3D0, file "console\sms.py", line 10>:
+ 10           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('Grizzly')
+              8 STORE_NAME               2 (__qualname__)
+
+ 11          10 LOAD_CONST               1 ('https://api.grizzlysms.com/stubs/handler_api.php')
+             12 STORE_NAME               3 (BASE)
+
+ 13          14 LOAD_CONST              13 ((None, None))
+             16 LOAD_CONST               3 (<code object __init__ at 0x000001C217B0DDF0, file "console\sms.py", line 13>)
+             18 MAKE_FUNCTION            1 (defaults)
+             20 STORE_NAME               4 (__init__)
+
+ 20          22 LOAD_NAME                5 (staticmethod)
+
+ 21          24 LOAD_CONST               4 (<code object validate_base at 0x000001C217AFCFB0, file "console\sms.py", line 20>)
+             26 MAKE_FUNCTION            0
+
+ 20          28 CALL                     0
+
+ 21          36 STORE_NAME               6 (validate_base)
+
+ 27          38 LOAD_CONST               5 (<code object call at 0x000001C2176D7960, file "console\sms.py", line 27>)
+             40 MAKE_FUNCTION            0
+             42 STORE_NAME               7 (call)
+
+ 43          44 LOAD_CONST               6 (<code object json_call at 0x000001C217C21790, file "console\sms.py", line 43>)
+             46 MAKE_FUNCTION            0
+             48 STORE_NAME               8 (json_call)
+
+ 50          50 LOAD_CONST               7 (<code object signal_quotes at 0x000001C217282E60, file "console\sms.py", line 50>)
+             52 MAKE_FUNCTION            0
+             54 STORE_NAME               9 (signal_quotes)
+
+ 79          56 LOAD_CONST               8 (<code object balance at 0x000001C217C20710, file "console\sms.py", line 79>)
+             58 MAKE_FUNCTION            0
+             60 STORE_NAME              10 (balance)
+
+ 85          62 LOAD_CONST               9 (<code object buy at 0x000001C217743460, file "console\sms.py", line 85>)
+             64 MAKE_FUNCTION            0
+             66 STORE_NAME              11 (buy)
+
+100          68 LOAD_CONST              10 (<code object status at 0x000001C217C209D0, file "console\sms.py", line 100>)
+             70 MAKE_FUNCTION            0
+             72 STORE_NAME              12 (status)
+
+107          74 LOAD_CONST              11 (<code object set_status at 0x000001C217D04030, file "console\sms.py", line 107>)
+             76 MAKE_FUNCTION            0
+             78 STORE_NAME              13 (set_status)
+
+117          80 LOAD_NAME                5 (staticmethod)
+
+118          82 LOAD_CONST              12 (<code object validate_id at 0x000001C217BB3BB0, file "console\sms.py", line 117>)
+             84 MAKE_FUNCTION            0
+
+117          86 CALL                     0
+
+118          94 STORE_NAME              14 (validate_id)
+             96 RETURN_CONST             2 (None)
+
+Disassembly of <code object __init__ at 0x000001C217B0DDF0, file "console\sms.py", line 13>:
+ 13           0 RESUME                   0
+
+ 14           2 LOAD_FAST                1 (key)
+              4 POP_JUMP_IF_FALSE       16 (to 38)
+              6 LOAD_FAST                1 (key)
+              8 LOAD_ATTR                1 (NULL|self + strip)
+             28 CALL                     0
+             36 POP_JUMP_IF_TRUE        11 (to 60)
+
+ 15     >>   38 LOAD_GLOBAL              3 (NULL + ValueError)
+             48 LOAD_CONST               1 ('请在本机填写 API 密钥，或设置 GRIZZLY_API_KEY 环境变量')
+             50 CALL                     1
+             58 RAISE_VARARGS            1
+
+ 16     >>   60 LOAD_FAST                1 (key)
+             62 LOAD_ATTR                1 (NULL|self + strip)
+             82 CALL                     0
+             90 LOAD_FAST                0 (self)
+             92 STORE_ATTR               2 (key)
+
+ 17         102 LOAD_FAST                0 (self)
+            104 LOAD_ATTR                7 (NULL|self + validate_base)
+            124 LOAD_FAST                3 (base_url)
+            126 COPY                     1
+            128 POP_JUMP_IF_TRUE        12 (to 154)
+            130 POP_TOP
+            132 LOAD_FAST                0 (self)
+            134 LOAD_ATTR                8 (BASE)
+        >>  154 CALL                     1
+            162 LOAD_FAST                0 (self)
+            164 STORE_ATTR               5 (base_url)
+
+ 18         174 LOAD_FAST                2 (transport)
+            176 COPY                     1
+            178 POP_JUMP_IF_TRUE        26 (to 232)
+            180 POP_TOP
+            182 LOAD_GLOBAL             12 (urllib)
+            192 LOAD_ATTR               14 (request)
+            212 LOAD_ATTR               16 (urlopen)
+        >>  232 LOAD_FAST                0 (self)
+            234 STORE_ATTR               9 (transport)
+            244 RETURN_CONST             0 (None)
+
+Disassembly of <code object validate_base at 0x000001C217AFCFB0, file "console\sms.py", line 20>:
+ 20           0 RESUME                   0
+
+ 22           2 LOAD_GLOBAL              0 (urllib)
+             12 LOAD_ATTR                2 (parse)
+             32 LOAD_ATTR                5 (NULL|self + urlsplit)
+             52 LOAD_FAST                0 (value)
+             54 LOAD_ATTR                7 (NULL|self + strip)
+             74 CALL                     0
+             82 CALL                     1
+             90 STORE_FAST               1 (parsed)
+
+ 23          92 LOAD_FAST                1 (parsed)
+             94 LOAD_ATTR                8 (scheme)
+            114 LOAD_CONST               1 ('https')
+            116 COMPARE_OP              55 (!=)
+            120 POP_JUMP_IF_TRUE        60 (to 242)
+            122 LOAD_FAST                1 (parsed)
+            124 LOAD_ATTR               10 (hostname)
+            144 POP_JUMP_IF_FALSE       48 (to 242)
+            146 LOAD_FAST                1 (parsed)
+            148 LOAD_ATTR               12 (username)
+            168 POP_JUMP_IF_TRUE        36 (to 242)
+            170 LOAD_FAST                1 (parsed)
+            172 LOAD_ATTR               14 (password)
+            192 POP_JUMP_IF_TRUE        24 (to 242)
+            194 LOAD_FAST                1 (parsed)
+            196 LOAD_ATTR               16 (query)
+            216 POP_JUMP_IF_TRUE        12 (to 242)
+            218 LOAD_FAST                1 (parsed)
+            220 LOAD_ATTR               18 (fragment)
+            240 POP_JUMP_IF_FALSE       11 (to 264)
+
+ 24     >>  242 LOAD_GLOBAL             21 (NULL + ValueError)
+            252 LOAD_CONST               2 ('API 地址必须是 HTTPS 接口地址，不能包含密钥、查询参数或用户密码')
+            254 CALL                     1
+            262 RAISE_VARARGS            1
+
+ 25     >>  264 LOAD_FAST                0 (value)
+            266 LOAD_ATTR                7 (NULL|self + strip)
+            286 CALL                     0
+            294 RETURN_VALUE
+
+Disassembly of <code object call at 0x000001C2176D7960, file "console\sms.py", line 27>:
+ 27           0 RESUME                   0
+
+ 28           2 LOAD_GLOBAL              0 (urllib)
+             12 LOAD_ATTR                2 (parse)
+             32 LOAD_ATTR                5 (NULL|self + urlencode)
+             52 LOAD_GLOBAL              7 (NULL + dict)
+             62 LOAD_CONST              14 (())
+             64 LOAD_FAST                0 (self)
+             66 LOAD_ATTR                8 (key)
+             86 LOAD_FAST                1 (action)
+             88 LOAD_CONST               1 (('api_key', 'action'))
+             90 BUILD_CONST_KEY_MAP      2
+             92 LOAD_FAST                2 (params)
+             94 DICT_MERGE               1
+             96 CALL_FUNCTION_EX         1
+             98 CALL                     1
+            106 STORE_FAST               3 (query)
+
+ 29         108 LOAD_GLOBAL              0 (urllib)
+            118 LOAD_ATTR               10 (request)
+            138 LOAD_ATTR               13 (NULL|self + Request)
+            158 LOAD_FAST                0 (self)
+            160 LOAD_ATTR               14 (base_url)
+            180 LOAD_CONST               2 ('?')
+            182 BINARY_OP                0 (+)
+            186 LOAD_FAST                3 (query)
+            188 BINARY_OP                0 (+)
+            192 LOAD_CONST               3 ('User-Agent')
+            194 LOAD_CONST               4 ('LocalAndroidConsole/1.0')
+            196 BUILD_MAP                1
+            198 KW_NAMES                 5 (('headers',))
+            200 CALL                     2
+            208 STORE_FAST               4 (request)
+
+ 30         210 NOP
+
+ 31         212 LOAD_FAST                0 (self)
+            214 LOAD_ATTR               17 (NULL|self + transport)
+            234 LOAD_FAST                4 (request)
+            236 LOAD_CONST               6 (25)
+            238 KW_NAMES                 7 (('timeout',))
+            240 CALL                     2
+            248 BEFORE_WITH
+            250 STORE_FAST               5 (response)
+
+ 32         252 LOAD_FAST                5 (response)
+            254 LOAD_ATTR               19 (NULL|self + read)
+            274 LOAD_CONST               8 (4194305)
+            276 CALL                     1
+            284 STORE_FAST               6 (payload)
+
+ 33         286 LOAD_GLOBAL             21 (NULL + len)
+            296 LOAD_FAST                6 (payload)
+            298 CALL                     1
+            306 LOAD_CONST               9 (4194304)
+            308 COMPARE_OP              68 (>)
+            312 POP_JUMP_IF_FALSE       11 (to 336)
+
+ 34         314 LOAD_GLOBAL             23 (NULL + ValueError)
+            324 LOAD_CONST              10 ('接口响应超过 4MB，已停止解析')
+            326 CALL                     1
+            334 RAISE_VARARGS            1
+
+ 35     >>  336 LOAD_FAST                6 (payload)
+            338 LOAD_ATTR               25 (NULL|self + decode)
+            358 LOAD_CONST              11 ('utf-8')
+            360 CALL                     1
+            368 LOAD_ATTR               27 (NULL|self + strip)
+            388 CALL                     0
+            396 STORE_FAST               7 (text)
+
+ 31         398 LOAD_CONST               0 (None)
+            400 LOAD_CONST               0 (None)
+            402 LOAD_CONST               0 (None)
+            404 CALL                     2
+            412 POP_TOP
+
+ 39     >>  414 LOAD_FAST                0 (self)
+            416 LOAD_ATTR                8 (key)
+            436 LOAD_FAST_CHECK          7 (text)
+            438 CONTAINS_OP              0
+            440 POP_JUMP_IF_FALSE       28 (to 498)
+
+ 40         442 LOAD_FAST                7 (text)
+            444 LOAD_ATTR               39 (NULL|self + replace)
+            464 LOAD_FAST                0 (self)
+            466 LOAD_ATTR                8 (key)
+            486 LOAD_CONST              13 ('[REDACTED]')
+            488 CALL                     2
+            496 STORE_FAST               7 (text)
+
+ 41     >>  498 LOAD_FAST                7 (text)
+            500 RETURN_VALUE
+
+ 31     >>  502 PUSH_EXC_INFO
+            504 WITH_EXCEPT_START
+            506 POP_JUMP_IF_TRUE         1 (to 510)
+            508 RERAISE                  2
+        >>  510 POP_TOP
+            512 POP_EXCEPT
+            514 POP_TOP
+            516 POP_TOP
+            518 JUMP_BACKWARD           53 (to 414)
+        >>  520 COPY                     3
+            522 POP_EXCEPT
+            524 RERAISE                  1
+        >>  526 PUSH_EXC_INFO
+
+ 36         528 LOAD_GLOBAL              0 (urllib)
+            538 LOAD_ATTR               28 (error)
+            558 LOAD_ATTR               30 (URLError)
+            578 LOAD_GLOBAL             32 (OSError)
+            588 LOAD_GLOBAL             34 (TimeoutError)
+            598 BUILD_TUPLE              3
+            600 CHECK_EXC_MATCH
+            602 POP_JUMP_IF_FALSE       13 (to 630)
+            604 POP_TOP
+
+ 38         606 LOAD_GLOBAL             37 (NULL + RuntimeError)
+            616 LOAD_CONST              12 ('接码接口网络异常。购买请求不自动重试；请先检查平台购买记录，避免重复扣费。')
+            618 CALL                     1
+            626 LOAD_CONST               0 (None)
+            628 RAISE_VARARGS            2
+
+ 36     >>  630 RERAISE                  0
+        >>  632 COPY                     3
+            634 POP_EXCEPT
+            636 RERAISE                  1
+ExceptionTable:
+  212 to 248 -> 526 [0]
+  250 to 396 -> 502 [1] lasti
+  398 to 412 -> 526 [0]
+  502 to 510 -> 520 [3] lasti
+  512 to 524 -> 526 [0]
+  526 to 630 -> 632 [1] lasti
+
+Disassembly of <code object json_call at 0x000001C217C21790, file "console\sms.py", line 43>:
+ 43           0 RESUME                   0
+
+ 44           2 PUSH_NULL
+              4 LOAD_FAST                0 (self)
+              6 LOAD_ATTR                0 (call)
+             26 LOAD_FAST                1 (action)
+             28 BUILD_TUPLE              1
+             30 BUILD_MAP                0
+             32 LOAD_FAST                2 (params)
+             34 DICT_MERGE               1
+             36 CALL_FUNCTION_EX         1
+             38 STORE_FAST               3 (value)
+
+ 45          40 NOP
+
+ 46          42 LOAD_GLOBAL              3 (NULL + json)
+             52 LOAD_ATTR                4 (loads)
+             72 LOAD_FAST                3 (value)
+             74 CALL                     1
+             82 RETURN_VALUE
+        >>   84 PUSH_EXC_INFO
+
+ 47          86 LOAD_GLOBAL              6 (ValueError)
+             96 LOAD_GLOBAL              8 (TypeError)
+            106 BUILD_TUPLE              2
+            108 CHECK_EXC_MATCH
+            110 POP_JUMP_IF_FALSE       19 (to 150)
+            112 POP_TOP
+
+ 48         114 LOAD_GLOBAL             11 (NULL + RuntimeError)
+            124 LOAD_CONST               1 ('接口未返回有效 JSON：')
+            126 LOAD_FAST                3 (value)
+            128 LOAD_CONST               0 (None)
+            130 LOAD_CONST               2 (150)
+            132 BINARY_SLICE
+            134 BINARY_OP                0 (+)
+            138 CALL                     1
+            146 LOAD_CONST               0 (None)
+            148 RAISE_VARARGS            2
+
+ 47     >>  150 RERAISE                  0
+        >>  152 COPY                     3
+            154 POP_EXCEPT
+            156 RERAISE                  1
+ExceptionTable:
+  42 to 80 -> 84 [0]
+  84 to 150 -> 152 [1] lasti
+
+Disassembly of <code object signal_quotes at 0x000001C217282E60, file "console\sms.py", line 50>:
+ 50           0 RESUME                   0
+
+ 51           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + json_call)
+             24 LOAD_CONST               1 ('getServicesList')
+             26 LOAD_CONST               2 ('en')
+             28 KW_NAMES                 3 (('lang',))
+             30 CALL                     2
+             38 STORE_FAST               1 (services)
+
+ 52          40 LOAD_GLOBAL              3 (NULL + isinstance)
+             50 LOAD_FAST                1 (services)
+             52 LOAD_GLOBAL              4 (dict)
+             62 CALL                     2
+             70 POP_JUMP_IF_FALSE       31 (to 134)
+             72 LOAD_GLOBAL              3 (NULL + isinstance)
+             82 LOAD_FAST                1 (services)
+             84 LOAD_ATTR                7 (NULL|self + get)
+            104 LOAD_CONST               4 ('services')
+            106 CALL                     1
+            114 LOAD_GLOBAL              8 (list)
+            124 CALL                     2
+            132 POP_JUMP_IF_TRUE        11 (to 156)
+
+ 53     >>  134 LOAD_GLOBAL             11 (NULL + RuntimeError)
+            144 LOAD_CONST               5 ('服务目录格式不兼容，需要适配此接码平台')
+            146 CALL                     1
+            154 RAISE_VARARGS            1
+
+ 54     >>  156 LOAD_FAST                1 (services)
+            158 LOAD_CONST               4 ('services')
+            160 BINARY_SUBSCR
+            164 GET_ITER
+            166 LOAD_FAST_AND_CLEAR      2 (s)
+            168 SWAP                     2
+            170 BUILD_LIST               0
+            172 SWAP                     2
+        >>  174 FOR_ITER                63 (to 304)
+            178 STORE_FAST               2 (s)
+            180 LOAD_GLOBAL             13 (NULL + str)
+            190 LOAD_FAST                2 (s)
+            192 LOAD_ATTR                7 (NULL|self + get)
+            212 LOAD_CONST               6 ('name')
+            214 LOAD_CONST               7 ('')
+            216 CALL                     2
+            224 CALL                     1
+            232 LOAD_ATTR               15 (NULL|self + strip)
+            252 CALL                     0
+            260 LOAD_ATTR               17 (NULL|self + lower)
+            280 CALL                     0
+            288 LOAD_CONST               8 ('signal')
+            290 COMPARE_OP              40 (==)
+            294 POP_JUMP_IF_TRUE         1 (to 298)
+            296 JUMP_BACKWARD           62 (to 174)
+        >>  298 LOAD_FAST                2 (s)
+            300 LIST_APPEND              2
+            302 JUMP_BACKWARD           65 (to 174)
+        >>  304 END_FOR
+            306 STORE_FAST               3 (matches)
+            308 STORE_FAST               2 (s)
+
+ 55         310 LOAD_GLOBAL             19 (NULL + len)
+            320 LOAD_FAST                3 (matches)
+            322 CALL                     1
+            330 LOAD_CONST               9 (1)
+            332 COMPARE_OP              55 (!=)
+            336 POP_JUMP_IF_FALSE       11 (to 360)
+
+ 56         338 LOAD_GLOBAL             11 (NULL + RuntimeError)
+            348 LOAD_CONST              10 ('服务目录未唯一匹配到 Signal，不能猜测服务代码')
+            350 CALL                     1
+            358 RAISE_VARARGS            1
+
+ 57     >>  360 LOAD_FAST                3 (matches)
+            362 LOAD_CONST              11 (0)
+            364 BINARY_SUBSCR
+            368 LOAD_CONST              12 ('code')
+            370 BINARY_SUBSCR
+            374 STORE_FAST               4 (service)
+
+ 58         376 LOAD_FAST                0 (self)
+            378 LOAD_ATTR                1 (NULL|self + json_call)
+            398 LOAD_CONST              13 ('getCountries')
+            400 CALL                     1
+            408 STORE_FAST               5 (countries)
+
+ 59         410 LOAD_FAST                0 (self)
+            412 LOAD_ATTR                1 (NULL|self + json_call)
+            432 LOAD_CONST              14 ('getPrices')
+            434 LOAD_FAST                4 (service)
+            436 KW_NAMES                15 (('service',))
+            438 CALL                     2
+            446 STORE_FAST               6 (prices)
+
+ 60         448 LOAD_GLOBAL              3 (NULL + isinstance)
+            458 LOAD_FAST                5 (countries)
+            460 LOAD_GLOBAL              4 (dict)
+            470 CALL                     2
+            478 POP_JUMP_IF_FALSE       16 (to 512)
+            480 LOAD_GLOBAL              3 (NULL + isinstance)
+            490 LOAD_FAST                6 (prices)
+            492 LOAD_GLOBAL              4 (dict)
+            502 CALL                     2
+            510 POP_JUMP_IF_TRUE        11 (to 534)
+
+ 61     >>  512 LOAD_GLOBAL             11 (NULL + RuntimeError)
+            522 LOAD_CONST              16 ('国家或价格目录格式不兼容，需要适配此平台')
+            524 CALL                     1
+            532 RAISE_VARARGS            1
+
+ 62     >>  534 BUILD_LIST               0
+            536 STORE_FAST               7 (offers)
+
+ 63         538 LOAD_FAST                6 (prices)
+            540 LOAD_ATTR               21 (NULL|self + items)
+            560 CALL                     0
+            568 GET_ITER
+        >>  570 FOR_ITER               239 (to 1052)
+            574 UNPACK_SEQUENCE          2
+            578 STORE_FAST               8 (country_id)
+            580 STORE_FAST               9 (items)
+
+ 64         582 LOAD_GLOBAL              3 (NULL + isinstance)
+            592 LOAD_FAST                9 (items)
+            594 LOAD_GLOBAL              4 (dict)
+            604 CALL                     2
+            612 POP_JUMP_IF_FALSE       31 (to 676)
+            614 LOAD_GLOBAL              3 (NULL + isinstance)
+            624 LOAD_FAST                9 (items)
+            626 LOAD_ATTR                7 (NULL|self + get)
+            646 LOAD_FAST                4 (service)
+            648 CALL                     1
+            656 LOAD_GLOBAL              4 (dict)
+            666 CALL                     2
+            674 POP_JUMP_IF_TRUE         1 (to 678)
+
+ 65     >>  676 JUMP_BACKWARD           54 (to 570)
+
+ 66     >>  678 LOAD_FAST                9 (items)
+            680 LOAD_FAST                4 (service)
+            682 BINARY_SUBSCR
+            686 STORE_FAST              10 (offer)
+
+ 67         688 NOP
+
+ 68         690 LOAD_GLOBAL             23 (NULL + Decimal)
+            700 LOAD_GLOBAL             13 (NULL + str)
+            710 LOAD_FAST               10 (offer)
+            712 LOAD_CONST              17 ('cost')
+            714 BINARY_SUBSCR
+            718 CALL                     1
+            726 CALL                     1
+            734 LOAD_GLOBAL             25 (NULL + int)
+            744 LOAD_FAST               10 (offer)
+            746 LOAD_CONST              18 ('count')
+            748 BINARY_SUBSCR
+            752 CALL                     1
+            760 STORE_FAST              12 (count)
+            762 STORE_FAST              11 (cost)
+
+ 71         764 LOAD_FAST               11 (cost)
+            766 LOAD_ATTR               35 (NULL|self + is_finite)
+            786 CALL                     0
+            794 POP_JUMP_IF_FALSE       10 (to 816)
+            796 LOAD_FAST               11 (cost)
+            798 LOAD_CONST              11 (0)
+            800 COMPARE_OP               2 (<)
+            804 POP_JUMP_IF_TRUE         5 (to 816)
+            806 LOAD_FAST               12 (count)
+            808 LOAD_CONST              11 (0)
+            810 COMPARE_OP              26 (<=)
+            814 POP_JUMP_IF_FALSE        1 (to 818)
+
+ 72     >>  816 JUMP_BACKWARD          124 (to 570)
+
+ 73     >>  818 LOAD_FAST                5 (countries)
+            820 LOAD_ATTR                7 (NULL|self + get)
+            840 LOAD_GLOBAL             13 (NULL + str)
+            850 LOAD_FAST                8 (country_id)
+            852 CALL                     1
+            860 BUILD_MAP                0
+            862 CALL                     2
+            870 STORE_FAST              13 (country)
+
+ 74         872 LOAD_FAST               13 (country)
+            874 LOAD_ATTR                7 (NULL|self + get)
+            894 LOAD_CONST              19 ('chn')
+            896 CALL                     1
+            904 COPY                     1
+            906 POP_JUMP_IF_TRUE        30 (to 968)
+            908 POP_TOP
+            910 LOAD_FAST               13 (country)
+            912 LOAD_ATTR                7 (NULL|self + get)
+            932 LOAD_CONST              20 ('eng')
+            934 CALL                     1
+            942 COPY                     1
+            944 POP_JUMP_IF_TRUE        11 (to 968)
+            946 POP_TOP
+            948 LOAD_GLOBAL             13 (NULL + str)
+            958 LOAD_FAST                8 (country_id)
+            960 CALL                     1
+        >>  968 STORE_FAST              14 (name)
+
+ 75         970 LOAD_FAST                7 (offers)
+            972 LOAD_ATTR               37 (NULL|self + append)
+            992 LOAD_GLOBAL             13 (NULL + str)
+           1002 LOAD_FAST                8 (country_id)
+           1004 CALL                     1
+           1012 LOAD_FAST               14 (name)
+           1014 LOAD_GLOBAL             13 (NULL + str)
+           1024 LOAD_FAST               11 (cost)
+           1026 CALL                     1
+           1034 LOAD_FAST               12 (count)
+           1036 LOAD_CONST              21 (('country_id', 'country', 'price', 'stock'))
+           1038 BUILD_CONST_KEY_MAP      4
+           1040 CALL                     1
+           1048 POP_TOP
+           1050 JUMP_BACKWARD          241 (to 570)
+
+ 63     >> 1052 END_FOR
+
+ 76        1054 LOAD_FAST                7 (offers)
+           1056 LOAD_ATTR               39 (NULL|self + sort)
+           1076 LOAD_CONST              22 (<code object <lambda> at 0x000001C217B9A5D0, file "console\sms.py", line 76>)
+           1078 MAKE_FUNCTION            0
+           1080 KW_NAMES                23 (('key',))
+           1082 CALL                     1
+           1090 POP_TOP
+
+ 77        1092 LOAD_FAST                4 (service)
+           1094 LOAD_FAST                7 (offers)
+           1096 LOAD_CONST              24 (('service', 'offers'))
+           1098 BUILD_CONST_KEY_MAP      2
+           1100 RETURN_VALUE
+        >> 1102 SWAP                     2
+           1104 POP_TOP
+
+ 54        1106 SWAP                     2
+           1108 STORE_FAST               2 (s)
+           1110 RERAISE                  0
+        >> 1112 PUSH_EXC_INFO
+
+ 69        1114 LOAD_GLOBAL             26 (KeyError)
+           1124 LOAD_GLOBAL             28 (ValueError)
+           1134 LOAD_GLOBAL             30 (TypeError)
+           1144 LOAD_GLOBAL             32 (InvalidOperation)
+           1154 BUILD_TUPLE              4
+           1156 CHECK_EXC_MATCH
+           1158 POP_JUMP_IF_FALSE        4 (to 1168)
+           1160 POP_TOP
+
+ 70        1162 POP_EXCEPT
+           1164 EXTENDED_ARG             1
+           1166 JUMP_BACKWARD          299 (to 570)
+
+ 69     >> 1168 RERAISE                  0
+        >> 1170 COPY                     3
+           1172 POP_EXCEPT
+           1174 RERAISE                  1
+ExceptionTable:
+  170 to 294 -> 1102 [2]
+  298 to 304 -> 1102 [2]
+  690 to 762 -> 1112 [1]
+  1112 to 1160 -> 1170 [2] lasti
+  1168 to 1168 -> 1170 [2] lasti
+
+Disassembly of <code object <lambda> at 0x000001C217B9A5D0, file "console\sms.py", line 76>:
+ 76           0 RESUME                   0
+              2 LOAD_GLOBAL              1 (NULL + Decimal)
+             12 LOAD_FAST                0 (r)
+             14 LOAD_CONST               1 ('price')
+             16 BINARY_SUBSCR
+             20 CALL                     1
+             28 RETURN_VALUE
+
+Disassembly of <code object balance at 0x000001C217C20710, file "console\sms.py", line 79>:
+ 79           0 RESUME                   0
+
+ 80           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + call)
+             24 LOAD_CONST               1 ('getBalance')
+             26 CALL                     1
+             34 STORE_FAST               1 (value)
+
+ 81          36 LOAD_FAST                1 (value)
+             38 LOAD_ATTR                3 (NULL|self + startswith)
+             58 LOAD_CONST               2 ('ACCESS_BALANCE:')
+             60 CALL                     1
+             68 POP_JUMP_IF_TRUE        17 (to 104)
+
+ 82          70 LOAD_GLOBAL              5 (NULL + RuntimeError)
+             80 LOAD_CONST               3 ('接码平台返回：')
+             82 LOAD_FAST                1 (value)
+             84 LOAD_CONST               0 (None)
+             86 LOAD_CONST               4 (300)
+             88 BINARY_SLICE
+             90 BINARY_OP                0 (+)
+             94 CALL                     1
+            102 RAISE_VARARGS            1
+
+ 83     >>  104 LOAD_CONST               5 ('平台余额：')
+            106 LOAD_FAST                1 (value)
+            108 LOAD_ATTR                7 (NULL|self + split)
+            128 LOAD_CONST               6 (':')
+            130 LOAD_CONST               7 (1)
+            132 CALL                     2
+            140 LOAD_CONST               7 (1)
+            142 BINARY_SUBSCR
+            146 BINARY_OP                0 (+)
+            150 RETURN_VALUE
+
+Disassembly of <code object buy at 0x000001C217743460, file "console\sms.py", line 85>:
+ 85           0 RESUME                   0
+
+ 86           2 NOP
+
+ 87           4 LOAD_GLOBAL              1 (NULL + Decimal)
+             14 LOAD_FAST                3 (price)
+             16 CALL                     1
+             24 STORE_FAST               4 (cap)
+
+ 88          26 LOAD_FAST                4 (cap)
+             28 LOAD_ATTR                3 (NULL|self + is_finite)
+             48 CALL                     0
+             56 POP_JUMP_IF_FALSE        5 (to 68)
+             58 LOAD_FAST                4 (cap)
+             60 LOAD_CONST               1 (0)
+             62 COMPARE_OP              26 (<=)
+             66 POP_JUMP_IF_FALSE       10 (to 88)
+
+ 89     >>   68 LOAD_GLOBAL              5 (NULL + ValueError)
+             78 CALL                     0
+             86 RAISE_VARARGS            1
+
+ 88     >>   88 NOP
+
+ 92          90 LOAD_GLOBAL              9 (NULL + re)
+            100 LOAD_ATTR               10 (fullmatch)
+            120 LOAD_CONST               3 ('[a-zA-Z0-9_]+')
+            122 LOAD_FAST                1 (service)
+            124 CALL                     2
+            132 POP_JUMP_IF_FALSE       22 (to 178)
+            134 LOAD_GLOBAL              9 (NULL + re)
+            144 LOAD_ATTR               10 (fullmatch)
+            164 LOAD_CONST               4 ('\\d+')
+            166 LOAD_FAST                2 (country)
+            168 CALL                     2
+            176 POP_JUMP_IF_TRUE        11 (to 200)
+
+ 93     >>  178 LOAD_GLOBAL              5 (NULL + ValueError)
+            188 LOAD_CONST               5 ('服务代码或国家代码无效')
+            190 CALL                     1
+            198 RAISE_VARARGS            1
+
+ 94     >>  200 LOAD_FAST                0 (self)
+            202 LOAD_ATTR               13 (NULL|self + call)
+            222 LOAD_CONST               6 ('getNumber')
+            224 LOAD_FAST                1 (service)
+            226 LOAD_FAST                2 (country)
+            228 LOAD_GLOBAL             15 (NULL + str)
+            238 LOAD_FAST                4 (cap)
+            240 CALL                     1
+            248 KW_NAMES                 7 (('service', 'country', 'maxPrice'))
+            250 CALL                     4
+            258 STORE_FAST               5 (value)
+
+ 95         260 LOAD_FAST                5 (value)
+            262 LOAD_ATTR               17 (NULL|self + split)
+            282 LOAD_CONST               8 (':')
+            284 CALL                     1
+            292 STORE_FAST               6 (parts)
+
+ 96         294 LOAD_GLOBAL             19 (NULL + len)
+            304 LOAD_FAST                6 (parts)
+            306 CALL                     1
+            314 LOAD_CONST               9 (3)
+            316 COMPARE_OP              55 (!=)
+            320 POP_JUMP_IF_TRUE        46 (to 414)
+            322 LOAD_FAST                6 (parts)
+            324 LOAD_CONST               1 (0)
+            326 BINARY_SUBSCR
+            330 LOAD_CONST              10 ('ACCESS_NUMBER')
+            332 COMPARE_OP              55 (!=)
+            336 POP_JUMP_IF_TRUE        38 (to 414)
+            338 LOAD_FAST                6 (parts)
+            340 LOAD_CONST              11 (1)
+            342 BINARY_SUBSCR
+            346 LOAD_ATTR               21 (NULL|self + isdigit)
+            366 CALL                     0
+            374 POP_JUMP_IF_FALSE       19 (to 414)
+            376 LOAD_FAST                6 (parts)
+            378 LOAD_CONST              12 (2)
+            380 BINARY_SUBSCR
+            384 LOAD_ATTR               21 (NULL|self + isdigit)
+            404 CALL                     0
+            412 POP_JUMP_IF_TRUE        17 (to 448)
+
+ 97     >>  414 LOAD_GLOBAL             23 (NULL + RuntimeError)
+            424 LOAD_CONST              13 ('购买失败：')
+            426 LOAD_FAST                5 (value)
+            428 LOAD_CONST               0 (None)
+            430 LOAD_CONST              14 (300)
+            432 BINARY_SLICE
+            434 BINARY_OP                0 (+)
+            438 CALL                     1
+            446 RAISE_VARARGS            1
+
+ 98     >>  448 LOAD_FAST                6 (parts)
+            450 LOAD_CONST              11 (1)
+            452 BINARY_SUBSCR
+            456 LOAD_FAST                6 (parts)
+            458 LOAD_CONST              12 (2)
+            460 BINARY_SUBSCR
+            464 LOAD_CONST              15 (('id', 'phone'))
+            466 BUILD_CONST_KEY_MAP      2
+            468 RETURN_VALUE
+        >>  470 PUSH_EXC_INFO
+
+ 90         472 LOAD_GLOBAL              6 (InvalidOperation)
+            482 LOAD_GLOBAL              4 (ValueError)
+            492 BUILD_TUPLE              2
+            494 CHECK_EXC_MATCH
+            496 POP_JUMP_IF_FALSE       13 (to 524)
+            498 POP_TOP
+
+ 91         500 LOAD_GLOBAL              5 (NULL + ValueError)
+            510 LOAD_CONST               2 ('最高价格必须是大于 0 的数字')
+            512 CALL                     1
+            520 LOAD_CONST               0 (None)
+            522 RAISE_VARARGS            2
+
+ 90     >>  524 RERAISE                  0
+        >>  526 COPY                     3
+            528 POP_EXCEPT
+            530 RERAISE                  1
+ExceptionTable:
+  4 to 86 -> 470 [0]
+  470 to 524 -> 526 [1] lasti
+
+Disassembly of <code object status at 0x000001C217C209D0, file "console\sms.py", line 100>:
+100           0 RESUME                   0
+
+101           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + validate_id)
+             24 LOAD_FAST                1 (activation_id)
+             26 CALL                     1
+             34 POP_TOP
+
+102          36 LOAD_FAST                0 (self)
+             38 LOAD_ATTR                3 (NULL|self + call)
+             58 LOAD_CONST               1 ('getStatus')
+             60 LOAD_FAST                1 (activation_id)
+             62 KW_NAMES                 2 (('id',))
+             64 CALL                     2
+             72 STORE_FAST               2 (value)
+
+103          74 LOAD_FAST                2 (value)
+             76 LOAD_ATTR                5 (NULL|self + startswith)
+             96 LOAD_CONST               3 (('STATUS_',))
+             98 CALL                     1
+            106 POP_JUMP_IF_TRUE        17 (to 142)
+
+104         108 LOAD_GLOBAL              7 (NULL + RuntimeError)
+            118 LOAD_CONST               4 ('状态查询失败：')
+            120 LOAD_FAST                2 (value)
+            122 LOAD_CONST               0 (None)
+            124 LOAD_CONST               5 (300)
+            126 BINARY_SLICE
+            128 BINARY_OP                0 (+)
+            132 CALL                     1
+            140 RAISE_VARARGS            1
+
+105     >>  142 LOAD_FAST                2 (value)
+            144 RETURN_VALUE
+
+Disassembly of <code object set_status at 0x000001C217D04030, file "console\sms.py", line 107>:
+107           0 RESUME                   0
+
+108           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + validate_id)
+             24 LOAD_FAST                1 (activation_id)
+             26 CALL                     1
+             34 POP_TOP
+
+109          36 LOAD_FAST                2 (status)
+             38 LOAD_CONST               1 ((1, 6, 8))
+             40 CONTAINS_OP              1
+             42 POP_JUMP_IF_FALSE       11 (to 66)
+
+110          44 LOAD_GLOBAL              3 (NULL + ValueError)
+             54 LOAD_CONST               2 ('不支持的激活状态')
+             56 CALL                     1
+             64 RAISE_VARARGS            1
+
+111     >>   66 LOAD_FAST                0 (self)
+             68 LOAD_ATTR                5 (NULL|self + call)
+             88 LOAD_CONST               3 ('setStatus')
+             90 LOAD_FAST                1 (activation_id)
+             92 LOAD_FAST                2 (status)
+             94 KW_NAMES                 4 (('id', 'status'))
+             96 CALL                     3
+            104 STORE_FAST               3 (value)
+
+112         106 LOAD_CONST               5 ('ACCESS_READY')
+            108 LOAD_CONST               6 ('ACCESS_ACTIVATION')
+            110 LOAD_CONST               7 ('ACCESS_CANCEL')
+            112 LOAD_CONST               1 ((1, 6, 8))
+            114 BUILD_CONST_KEY_MAP      3
+            116 LOAD_FAST                2 (status)
+            118 BINARY_SUBSCR
+            122 STORE_FAST               4 (expected)
+
+113         124 LOAD_FAST                3 (value)
+            126 LOAD_FAST                4 (expected)
+            128 COMPARE_OP              55 (!=)
+            132 POP_JUMP_IF_FALSE       17 (to 168)
+
+114         134 LOAD_GLOBAL              7 (NULL + RuntimeError)
+            144 LOAD_CONST               8 ('激活状态修改失败：')
+            146 LOAD_FAST                3 (value)
+            148 LOAD_CONST               0 (None)
+            150 LOAD_CONST               9 (300)
+            152 BINARY_SLICE
+            154 BINARY_OP                0 (+)
+            158 CALL                     1
+            166 RAISE_VARARGS            1
+
+115     >>  168 LOAD_FAST                3 (value)
+            170 RETURN_VALUE
+
+Disassembly of <code object validate_id at 0x000001C217BB3BB0, file "console\sms.py", line 117>:
+117           0 RESUME                   0
+
+119           2 LOAD_GLOBAL              1 (NULL + re)
+             12 LOAD_ATTR                2 (fullmatch)
+             32 LOAD_CONST               1 ('\\d+')
+             34 LOAD_FAST                0 (value)
+             36 CALL                     2
+             44 POP_JUMP_IF_TRUE        11 (to 68)
+
+120          46 LOAD_GLOBAL              5 (NULL + ValueError)
+             56 LOAD_CONST               2 ('激活 ID 必须为数字')
+             58 CALL                     1
+             66 RAISE_VARARGS            1
+
+119     >>   68 RETURN_CONST             0 (None)
